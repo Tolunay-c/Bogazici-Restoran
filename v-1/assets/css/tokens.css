@@ -1,0 +1,116 @@
+/* ==============================================================
+   TOKENS — logo geldiğinde SADECE "1. katman" bloğu değişir.
+   Bileşenlerde 1. katman token'ı doğrudan kullanılmaz.
+   ============================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* --- 1. katman: ham marka değerleri --------------------------
+     Logo gelince değişecek olanlar. Başka hiçbir yerde hex yok. */
+  --marka-koyu:   #0E1F26;
+  --marka:        #14424E;
+  --marka-vurgu:  #A8894C;   /* geçici soluk pirinç — logoya göre güncellenecek */
+  --notr-kum:     #F4EFE7;
+  --notr-beyaz:   #FBF9F6;
+  --notr-gri:     #6E7379;
+
+  /* Açık zeminde metin/link olarak kullanılabilir koyu aksan.
+     --marka-vurgu beyaz üstünde 3:1 altında kalır, metin için kullanma. */
+  --marka-vurgu-koyu: #7C6231;
+
+  /* --- 2. katman: semantik — bileşenler sadece bunları kullanır */
+  --zemin:          var(--notr-beyaz);
+  --zemin-alt:      var(--notr-kum);
+  --zemin-koyu:     var(--marka-koyu);
+  --zemin-yukseltilmis: #FFFFFF;
+
+  --metin:          var(--marka-koyu);
+  --metin-ikincil:  var(--notr-gri);
+  --metin-ters:     var(--notr-kum);
+  --metin-ters-ikincil: rgb(244 239 231 / .68);
+
+  --cizgi:          rgb(14 31 38 / .10);
+  --cizgi-guclu:    rgb(14 31 38 / .22);
+  --cizgi-ters:     rgb(244 239 231 / .18);
+
+  --aksiyon:        var(--marka-koyu);
+  --aksiyon-hover:  var(--marka);
+  --aksiyon-metin:  var(--notr-kum);
+  --vurgu:          var(--marka-vurgu);
+  --vurgu-metin:    var(--marka-vurgu-koyu);
+
+  --odak:           var(--marka);
+  --basarili:       #2E6F52;
+  --hata:           #A3271E;
+
+  --overlay-hero:   linear-gradient(to top, rgb(14 31 38 / .78) 0%, rgb(14 31 38 / .35) 45%, rgb(14 31 38 / .05) 100%);
+
+  /* --- Tipografi ---------------------------------------------- */
+  --f-display: "Playfair Display", "Times New Roman", serif;
+  --f-govde:   "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --yazi-xs:   0.75rem;                              /* 12 */
+  --yazi-sm:   0.875rem;                             /* 14 */
+  --yazi-base: 1rem;                                 /* 16 */
+  --yazi-lg:   1.125rem;                             /* 18 */
+  --yazi-xl:   clamp(1.188rem, 1.10rem + 0.44vw, 1.313rem);
+  --yazi-2xl:  clamp(1.375rem, 1.22rem + 0.78vw, 1.625rem);
+  --yazi-3xl:  clamp(1.625rem, 1.33rem + 1.47vw, 2.063rem);
+  --yazi-4xl:  clamp(2rem, 1.52rem + 2.39vw, 2.75rem);
+  --yazi-5xl:  clamp(2.375rem, 1.63rem + 3.72vw, 3.625rem);
+
+  --satir-baslik: 1.14;
+  --satir-govde:  1.62;
+  --harf-baslik:  -0.02em;
+  --harf-ustluk:  0.14em;
+
+  /* --- Boşluk (taban 4) --------------------------------------- */
+  --bosluk-1: 4px;
+  --bosluk-2: 8px;
+  --bosluk-3: 12px;
+  --bosluk-4: 16px;
+  --bosluk-5: 24px;
+  --bosluk-6: 32px;
+  --bosluk-7: 48px;
+  --bosluk-8: 64px;
+  --bosluk-9: 96px;
+  --bosluk-10: 128px;
+
+  /* --- Yerleşim ------------------------------------------------ */
+  --konteyner:     1140px;
+  --konteyner-dar: 720px;
+  --kenar:         clamp(16px, 5vw, 40px);
+  --oluk:          clamp(16px, 3vw, 32px);
+  --galeri-oluk:   clamp(6px, 0.7vw, 8px);     /* yoğun doku için dar; dikey = yatay */
+  --bolum:         clamp(72px, 11vw, 160px);
+  --header-y:      64px;
+  --altbar-y:      64px;
+
+  /* --- Yüzey --------------------------------------------------- */
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-tam: 999px;
+  --golge-katman: 0 12px 32px rgb(14 31 38 / .16);   /* SADECE drawer/lightbox/açılır */
+
+  /* --- Hareket ------------------------------------------------- */
+  --gecis:      200ms ease-out;
+  --gecis-yavas: 320ms ease-out;
+}
+
+/* Koyu zeminli bölümlerin içinde semantik katman devrilir.
+   Bileşenler değişmez — bu yüzden koyu bant "bedava" gelir. */
+[data-zemin="koyu"] {
+  --zemin:         var(--marka-koyu);
+  --zemin-alt:     var(--marka);
+  --zemin-yukseltilmis: var(--marka);
+  --metin:         var(--notr-kum);
+  --metin-ikincil: var(--metin-ters-ikincil);
+  --cizgi:         var(--cizgi-ters);
+  --cizgi-guclu:   rgb(244 239 231 / .34);
+  --aksiyon:       var(--marka-vurgu);
+  --aksiyon-hover: #BF9E5C;
+  --aksiyon-metin: var(--marka-koyu);
+  --vurgu-metin:   var(--marka-vurgu);
+  --odak:          var(--marka-vurgu);
+}
