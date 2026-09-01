@@ -1,0 +1,119 @@
+/* ==============================================================
+   tokens.css — v-2 Editorial Coastal
+   Kaynak: design-system/bogazici-v-2/MASTER.md
+   ============================================================== */
+
+:root {
+  /* --- Renk (light) ------------------------------------------ */
+  --renk-birincil:        #0E1B2C;
+  --renk-birincil-ustu:   #FAF6EF;
+  --renk-vurgu:           #B8863B;   /* SADECE zemin */
+  --renk-vurgu-koyu:      #8F6528;   /* metin, ikon, alt-çizgi (AA) */
+  --renk-vurgu-ustu:      #0E1B2C;
+  --renk-zemin:           #F7F2EA;
+  --renk-metin:           #14181F;
+  --renk-kart:            #FFFFFF;
+  --renk-nötr:            #E9E1D3;
+  --renk-nötr-metin:      #5B6472;
+  --renk-kenar:           #D9CFBD;   /* dekoratif */
+  --renk-kenar-form:      #8B8578;   /* form/etkileşimli, ≥3:1 */
+  --renk-hata:            #B4322A;
+  --renk-hata-ustu:       #FFFFFF;
+  --renk-halka:           #0E1B2C;
+
+  /* --- Tipografi -------------------------------------------- */
+  --yazi-serif:  "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+  --yazi-sans:   "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --yazi-xs:   12px;
+  --yazi-sm:   14px;
+  --yazi-base: 16px;
+  --yazi-md:   18px;
+  --yazi-lg:   22px;
+  --yazi-xl:   28px;
+  --yazi-2xl:  40px;
+  --yazi-3xl:  56px;
+  --yazi-4xl:  80px;   /* hero desktop */
+  --yazi-hero-mobil: 44px;
+
+  --satir-govde:   1.65;
+  --satir-baslik:  1.1;
+
+  /* --- Boşluk (8pt) ----------------------------------------- */
+  --bosluk-1:  4px;
+  --bosluk-2:  8px;
+  --bosluk-3:  12px;
+  --bosluk-4:  16px;
+  --bosluk-5:  24px;
+  --bosluk-6:  32px;
+  --bosluk-7:  48px;
+  --bosluk-8:  64px;
+  --bosluk-9:  96px;
+  --bosluk-10: 128px;
+
+  /* --- Yarıçap --------------------------------------------- */
+  --yaricap-sm:  2px;
+  --yaricap-md:  4px;   /* buton, input, kart, modal — TÜMÜ */
+  --yaricap-tam: 50%;
+
+  /* --- Gölge ----------------------------------------------- */
+  --golge-1: 0 1px 0 var(--renk-kenar);
+  --golge-2: 0 24px 60px -30px rgba(14,27,44,.25);
+
+  /* --- Geçiş / süre --------------------------------------- */
+  --sure-mikro: 200ms;
+  --sure-orta:  400ms;
+  --sure-uzun:  500ms;
+  --egri-cikis: cubic-bezier(0.16, 1, 0.3, 1);   /* power2.out benzeri */
+  --egri-giris: cubic-bezier(0.32, 0, 0.67, 0);
+
+  /* --- Kap genişliği ------------------------------------- */
+  --kap-en:  1280px;
+  --oluk:    clamp(16px, 4vw, 48px);
+
+  /* --- Katman ---------------------------------------------- */
+  --z-taban:   0;
+  --z-yukari:  10;
+  --z-sabit:   40;
+  --z-ustust:  100;
+  --z-ortu:    1000;
+
+  color-scheme: light;
+}
+
+/* --- Dark mode -------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="light"]) {
+    --renk-birincil:      #F0EADC;
+    --renk-birincil-ustu: #0B1220;
+    --renk-vurgu:         #D5A25A;   /* dark'ta text için de güvenli (8.15:1) */
+    --renk-vurgu-koyu:    #D5A25A;
+    --renk-vurgu-ustu:    #0B1220;
+    --renk-zemin:         #0B1220;
+    --renk-metin:         #F0EADC;
+    --renk-kart:          #121B2A;
+    --renk-nötr:          #16223A;
+    --renk-nötr-metin:    #A9B3C7;
+    --renk-kenar:         #22304A;
+    --renk-kenar-form:    #5A6A85;
+    --renk-halka:         #F0EADC;
+    color-scheme: dark;
+  }
+}
+
+:root[data-tema="dark"] {
+  --renk-birincil:      #F0EADC;
+  --renk-birincil-ustu: #0B1220;
+  --renk-vurgu:         #D5A25A;
+  --renk-vurgu-koyu:    #D5A25A;
+  --renk-vurgu-ustu:    #0B1220;
+  --renk-zemin:         #0B1220;
+  --renk-metin:         #F0EADC;
+  --renk-kart:          #121B2A;
+  --renk-nötr:          #16223A;
+  --renk-nötr-metin:    #A9B3C7;
+  --renk-kenar:         #22304A;
+  --renk-kenar-form:    #5A6A85;
+  --renk-halka:         #F0EADC;
+  color-scheme: dark;
+}
