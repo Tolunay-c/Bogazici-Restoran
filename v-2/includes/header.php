@@ -10,12 +10,12 @@ $sayfa_js        = $sayfa_js        ?? null;   // sayfaya özel ek js dosyası
 $sayfa_leaflet   = $sayfa_leaflet   ?? false;  // haritalı sayfa (subeler)
 
 $menu = [
-    'kurumsal'    => ['Kurumsal',   '/kurumsal.php'],
-    'subeler'     => ['Şubeler',    '/subeler.php'],
-    'menu'        => ['Menü',       '/menu.php'],
-    'hizmetler'   => ['Hizmetler',  '/hizmetler.php'],
-    'galeri'      => ['Galeri',     '/galeri.php'],
-    'iletisim'    => ['İletişim',   '/iletisim.php'],
+    'kurumsal'    => ['Kurumsal',   '/v-2/kurumsal.php'],
+    'subeler'     => ['Şubeler',    '/v-2/subeler.php'],
+    'menu'        => ['Menü',       '/v-2/menu.php'],
+    'hizmetler'   => ['Hizmetler',  '/v-2/hizmetler.php'],
+    'galeri'      => ['Galeri',     '/v-2/galeri.php'],
+    'iletisim'    => ['İletişim',   '/v-2/iletisim.php'],
 ];
 ?>
 <!doctype html>
@@ -35,7 +35,6 @@ $menu = [
 <link rel="stylesheet" href="/v-2/assets/css/base.css?v=1.0.1">
 <link rel="stylesheet" href="/v-2/assets/css/bilesenler.css?v=1.0.1">
 <link rel="stylesheet" href="/v-2/assets/css/bolumler.css?v=1.0.1">
-
 
 <?php if ($sayfa_leaflet): ?>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -60,7 +59,7 @@ $menu = [
   </div>
 
   <div class="konteyner ust__ic">
-    <a class="ust__logo" href="/">Boğaziçi</a>
+    <a class="ust__logo" href="/v-2/">Boğaziçi</a>
 
     <nav class="ust__menu" aria-label="Ana menü">
       <?php foreach ($menu as $anahtar => [$ad, $link]): ?>
@@ -69,7 +68,7 @@ $menu = [
     </nav>
 
     <div class="ust__aksiyon">
-      <a class="btn btn--birincil btn--sm" href="/rezervasyon.php">Rezervasyon</a>
+      <a class="btn btn--birincil btn--sm" href="/v-2/rezervasyon.php">Rezervasyon</a>
       <button class="menu-btn" type="button" data-cekmece-ac aria-label="Menüyü aç" aria-expanded="false" aria-controls="cekmece">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
@@ -97,7 +96,7 @@ $menu = [
     </nav>
 
     <div class="cekmece__alt">
-      <a class="btn btn--birincil btn--tam" href="/rezervasyon.php">Rezervasyon yap</a>
+      <a class="btn btn--birincil btn--tam" href="/v-2/rezervasyon.php">Rezervasyon yap</a>
       <a class="btn btn--ikincil btn--tam" href="tel:+902321234567">0232 123 45 67</a>
     </div>
   </div>
