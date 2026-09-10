@@ -14,6 +14,10 @@
       "dest": "/v-1/assets/$1"
     },
     {
+      "src": "/v-2(.*)",
+      "dest": "/api/index.php"
+    },
+    {
       "handle": "filesystem"
     },
     {
