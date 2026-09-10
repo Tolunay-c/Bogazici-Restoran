@@ -6,6 +6,10 @@
   },
   "routes": [
     {
+      "src": "/v-2/assets/(.*)",
+      "dest": "/v-2/assets/$1"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "/v-1/assets/$1"
     },
