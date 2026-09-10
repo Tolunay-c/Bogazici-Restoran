@@ -287,6 +287,47 @@ $sayfalar['galeri'] = [
      'ogeler' => $sayfalar['anasayfa'][5]['ogeler']],
 ];
 
+/* -------------------- Rezervasyon --------------------
+   Her şubede bölge listesi + kroki yerleşim koordinatları.
+   viewBox: 800x600 sabit; gerçek şube krokisi geldiğinde
+   yalnız 'yerlesim' değerleri değişir. */
+/* viewBox 800×600. Yatay gap = 20px (sol 420, sağ 440),
+   dikey gap = 20px. Zemin --notr-kum boşlukta görünür. */
+const REZERVASYON_BOLGELER = [
+    'alsancak' => [
+        ['id' => 'ic-salon',     'ad' => 'İç Salon',     'kapasite' => 40, 'musait' => 12, 'ikon' => 'chair_alt', 'yerlesim' => [40, 40, 380, 520]],
+        ['id' => 'deniz-kenari', 'ad' => 'Deniz Kenarı', 'kapasite' => 8,  'musait' => 2,  'ikon' => 'waves',     'yerlesim' => [440, 40, 320, 160]],
+        ['id' => 'teras',        'ad' => 'Teras',        'kapasite' => 20, 'musait' => 6,  'ikon' => 'deck',      'yerlesim' => [440, 220, 320, 160]],
+        ['id' => 'bahce',        'ad' => 'Bahçe',        'kapasite' => 14, 'musait' => 4,  'ikon' => 'yard',      'yerlesim' => [440, 400, 320, 160]],
+    ],
+    'cesme' => [
+        ['id' => 'ic-salon',      'ad' => 'İç Salon',      'kapasite' => 30, 'musait' => 15, 'ikon' => 'chair_alt', 'yerlesim' => [40, 40, 380, 520]],
+        ['id' => 'sahil-terasi',  'ad' => 'Sahil Terası',  'kapasite' => 24, 'musait' => 8,  'ikon' => 'waves',     'yerlesim' => [440, 40, 320, 240]],
+        ['id' => 'loca',          'ad' => 'Loca',          'kapasite' => 6,  'musait' => 2,  'ikon' => 'star',      'yerlesim' => [440, 300, 320, 260]],
+    ],
+    'karsiyaka' => [
+        ['id' => 'ic-salon',     'ad' => 'İç Salon',     'kapasite' => 50, 'musait' => 20, 'ikon' => 'chair_alt', 'yerlesim' => [40, 40, 380, 520]],
+        ['id' => 'deniz-kenari', 'ad' => 'Deniz Kenarı', 'kapasite' => 6,  'musait' => 0,  'ikon' => 'waves',     'yerlesim' => [440, 40, 320, 160]],
+        ['id' => 'teras',        'ad' => 'Teras',        'kapasite' => 22, 'musait' => 7,  'ikon' => 'deck',      'yerlesim' => [440, 220, 320, 160]],
+        ['id' => 'bahce',        'ad' => 'Bahçe',        'kapasite' => 18, 'musait' => 9,  'ikon' => 'yard',      'yerlesim' => [440, 400, 320, 160]],
+    ],
+];
+
+const REZERVASYON_SAATLERI = [
+    'Öğle servisi' => ['12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00'],
+    'Akşam servisi' => ['18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30'],
+];
+
+$sayfalar['rezervasyon'] = [
+    [
+        'tip' => 'rezervasyon-akis',
+        'zemin' => 'beyaz',
+        'ustluk' => 'Rezervasyon',
+        'baslik' => 'Yeriniz hazır olsun',
+        'alt_baslik' => 'Şube ve bölge seçin, gerisi kolay. Rezervasyonunuz mesai saatinde onaylanır.',
+    ],
+];
+
 /* -------------------- İletişim -------------------- */
 $sayfalar['iletisim'] = [
     ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'İletişim',

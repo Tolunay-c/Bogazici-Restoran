@@ -260,6 +260,139 @@
     sayaclar.forEach(function (el) { sayacGozlemci.observe(el); });
   }
 
+  /* --- Rezervasyon: şube tab + bölge seçim + kroki/liste -------
+     v-2 MASTER §7.1 spec, v-1 token'larıyla. Roving tabindex,
+     ArrowLeft/Right; şube değişince form sıfırlanır;
+     bölge seçilince aria-live duyurusu + form kilit açılır. */
+  var rez = document.querySelector('.rezervasyon');
+  if (rez) {
+    var sekmeler = Array.prototype.slice.call(rez.querySelectorAll('.rezervasyon__sekme'));
+    var paneller = Array.prototype.slice.call(rez.querySelectorAll('.rezervasyon__panel'));
+    var form     = rez.querySelector('.rezervasyon__form');
+    var duyuru   = rez.querySelector('[data-duyuru]');
+    var secimAd  = rez.querySelector('[data-secim-ad]');
+    var secimIp  = rez.querySelector('[data-secim-ipucu]');
+    var seciliSube  = rez.querySelector('[data-secili-sube]');
+    var seciliBolge = rez.querySelector('[data-secili-bolge]');
+
+    function panelGoster(slug) {
+      paneller.forEach(function (p) {
+        var aktif = p.getAttribute('data-sube') === slug;
+        if (aktif) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
+      });
+    }
+
+    function subeSec(slug) {
+      sekmeler.forEach(function (s) {
+        var aktif = s.getAttribute('data-sube') === slug;
+        s.setAttribute('aria-selected', aktif ? 'true' : 'false');
+        s.setAttribute('tabindex', aktif ? '0' : '-1');
+        s.classList.toggle('rezervasyon__sekme--secili', aktif);
+      });
+      panelGoster(slug);
+      seciliSube.value = slug;
+      bolgeSifirla();
+    }
+
+    function bolgeSifirla() {
+      seciliBolge.value = '';
+      form.setAttribute('data-hazir', 'false');
+      secimAd.textContent = '— henüz seçilmedi —';
+      secimIp.textContent = 'Devam etmek için bir bölge seçin.';
+      rez.querySelectorAll('[aria-pressed="true"]').forEach(function (el) {
+        el.setAttribute('aria-pressed', 'false');
+      });
+    }
+
+    function bolgeSec(tetik) {
+      if (tetik.getAttribute('aria-disabled') === 'true' || tetik.disabled) return;
+      var id     = tetik.getAttribute('data-bolge-id');
+      var ad     = tetik.getAttribute('data-bolge-ad');
+      var musait = tetik.getAttribute('data-bolge-musait');
+      var panel  = tetik.closest('.rezervasyon__panel');
+      if (!panel) return;
+
+      panel.querySelectorAll('[data-bolge-id]').forEach(function (el) {
+        el.setAttribute('aria-pressed', el.getAttribute('data-bolge-id') === id ? 'true' : 'false');
+      });
+
+      seciliBolge.value = id;
+      form.setAttribute('data-hazir', 'true');
+      secimAd.textContent = ad;
+      secimIp.textContent = musait + ' masa müsait — bilgilerinizi girip onaylayın.';
+      // aria-live duyurusu için içerik değişikliği yeterli
+    }
+
+    // Tab click + klavye
+    sekmeler.forEach(function (s, i) {
+      s.addEventListener('click', function () { subeSec(s.getAttribute('data-sube')); s.focus(); });
+      s.addEventListener('keydown', function (ev) {
+        var yon = ev.key === 'ArrowRight' ? 1 : (ev.key === 'ArrowLeft' ? -1 : 0);
+        if (!yon) return;
+        ev.preventDefault();
+        var yeni = sekmeler[(i + yon + sekmeler.length) % sekmeler.length];
+        subeSec(yeni.getAttribute('data-sube'));
+        yeni.focus();
+      });
+    });
+
+    // Bölge tıklama + klavye (SVG g + liste button)
+    rez.addEventListener('click', function (ev) {
+      var t = ev.target.closest('[data-bolge-id]');
+      if (t && rez.contains(t)) bolgeSec(t);
+    });
+    rez.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Enter' && ev.key !== ' ') return;
+      var t = ev.target.closest('[data-bolge-id]');
+      if (!t) return;
+      ev.preventDefault();
+      bolgeSec(t);
+    });
+
+    // Kroki / Liste toggle
+    rez.querySelectorAll('.rezervasyon__gorunum').forEach(function (grup) {
+      var btnlar = Array.prototype.slice.call(grup.querySelectorAll('.rezervasyon__gorunum-btn'));
+      btnlar.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var mod = b.getAttribute('data-gorunum');
+          var panel = b.closest('.rezervasyon__panel');
+          btnlar.forEach(function (x) {
+            var aktif = x === b;
+            x.setAttribute('aria-selected', aktif ? 'true' : 'false');
+            x.classList.toggle('rezervasyon__gorunum-btn--secili', aktif);
+          });
+          panel.querySelectorAll('[data-gorunum-panel]').forEach(function (p) {
+            if (p.getAttribute('data-gorunum-panel') === mod) p.removeAttribute('hidden');
+            else p.setAttribute('hidden', '');
+          });
+        });
+      });
+    });
+
+    // Kişi sayacı
+    var kisi = rez.querySelector('#rez-kisi');
+    var eksi = rez.querySelector('[data-sayac-eksi]');
+    var arti = rez.querySelector('[data-sayac-arti]');
+    if (kisi && eksi && arti) {
+      function guncelle(delta) {
+        var v = parseInt(kisi.value, 10) || 2;
+        v = Math.max(1, Math.min(12, v + delta));
+        kisi.value = v;
+      }
+      eksi.addEventListener('click', function () { guncelle(-1); });
+      arti.addEventListener('click', function () { guncelle(1); });
+    }
+
+    // Nefes hint (§5.3): açılışta aktif panelde 2 döngü
+    if (!azHareket) {
+      var aktifPanel = rez.querySelector('.rezervasyon__panel:not([hidden])');
+      if (aktifPanel) {
+        aktifPanel.setAttribute('data-nefes', '1');
+        setTimeout(function () { aktifPanel.removeAttribute('data-nefes'); }, 3600);
+      }
+    }
+  }
+
   /* --- Scroll reveal: tek tip, stagger yok --------------------- */
   var hedefler = document.querySelectorAll('[data-goster]');
   if (azHareket || !('IntersectionObserver' in window)) {
