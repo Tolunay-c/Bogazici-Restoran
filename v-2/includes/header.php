@@ -31,10 +31,11 @@ $menu = [
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap">
 
-<link rel="stylesheet" href="<?= VARLIK ?>/css/tokens.css?v=<?= SURUM ?>">
-<link rel="stylesheet" href="<?= VARLIK ?>/css/base.css?v=<?= SURUM ?>">
-<link rel="stylesheet" href="<?= VARLIK ?>/css/bilesenler.css?v=<?= SURUM ?>">
-<link rel="stylesheet" href="<?= VARLIK ?>/css/bolumler.css?v=<?= SURUM ?>">
+<link rel="stylesheet" href="/v-2/assets/css/tokens.css?v=1.0.1">
+<link rel="stylesheet" href="/v-2/assets/css/base.css?v=1.0.1">
+<link rel="stylesheet" href="/v-2/assets/css/bilesenler.css?v=1.0.1">
+<link rel="stylesheet" href="/v-2/assets/css/bolumler.css?v=1.0.1">
+
 
 <?php if ($sayfa_leaflet): ?>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
