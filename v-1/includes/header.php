@@ -1,4 +1,13 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+chdir(__DIR__ . '/../v-1');
+require __DIR__ . '/../v-1/index.php';
+
+
 /** @var string $sayfa_basligi */
 /** @var string $sayfa_aciklama */
 /** @var string $aktif  index|kurumsal|subeler|hizmetler|menu|rezervasyon|galeri|iletisim */
