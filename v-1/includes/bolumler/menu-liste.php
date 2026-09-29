@@ -21,8 +21,6 @@
                 <li class="urun" data-goster>
                   <div class="urun__ust">
                     <h3 class="urun__ad"><?= e($u['ad']) ?></h3>
-                    <span class="urun__nokta" aria-hidden="true"></span>
-                    <span class="urun__fiyat"><?= e($u['fiyat']) ?></span>
                   </div>
                   <?php if (!empty($u['aciklama'])): ?>
                     <p class="urun__aciklama"><?= e($u['aciklama']) ?></p>

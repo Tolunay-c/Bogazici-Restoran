@@ -84,6 +84,116 @@ public_html/            ← web kökü
 
 ---
 
+## 3B. Kurulum — DirectAdmin (adım adım)
+
+DirectAdmin genelde cPanel'den daha sade bir arayüz; işlemler aynı ama menü isimleri farklı.
+
+### 3B.1 PHP sürümünü seç
+- DirectAdmin sol menü → **Domain Setup** → domain adına tıkla
+- **PHP Version:** açılırdan **PHP 8.1** veya üstünü seç
+- **PHP Extensions** listesinde şunlar işaretli olmalı:
+  - `gd` (görsel türev üretimi için **ZORUNLU**)
+  - `mbstring`, `fileinfo`, `openssl`, `session`, `json` (varsayılan açık)
+- **Save** ile onayla
+
+`gd` eklentisi listede yoksa hosting desteğinden aç istemek gerek — bu olmadan görsel yükleme çalışır ama responsive türevler (`-480/-960/-1440/-2200`) üretilmez, yalnızca base dosya kopyalanır (fallback).
+
+### 3B.2 Dosyaları yükle
+- **Yol 1 — FTP/SFTP (önerilen, hızlı):** FileZilla ile bağlan (host: domain veya IP, port 21/22, kullanıcı adı DirectAdmin'in verdiği). `v-1/` klasörünün **içeriğini** (klasörün kendisini değil) sürükle → `/domains/senindomain.com/public_html/` klasörüne bırak.
+- **Yol 2 — File Manager:** DirectAdmin → **File Manager** → `public_html/` → *Upload files* → `v-1/*` içeriğini yükle (klasör yükleme için önce `v-1.zip` sıkıştır, yükle, sağ tık → *Extract*).
+
+Yükleme sonrası `public_html/` içinde şunlar olmalı:
+```
+public_html/
+├── index.php
+├── kurumsal.php, subeler.php, menu.php, hizmetler.php,
+│   galeri.php, rezervasyon.php, iletisim.php, sube.php
+├── config.php
+├── admin/
+├── assets/  (css, js, fonts, img)
+├── data/    (icerik.php, varsayilan.php, admin.php)
+└── includes/
+```
+
+### 3B.3 Dosya izinleri
+DirectAdmin File Manager'da klasöre/dosyaya sağ tık → **Set Permissions**. Terminal'de olsaydı:
+```
+data/            → 755
+data/veri.json   → 644 (yoksa File Manager → New File → oluştur)
+data/*.php       → 644
+assets/img/      → 755
+assets/img/*     → 644
+```
+
+### 3B.4 `.htaccess` (yoksa oluştur)
+`public_html/` altında `.htaccess` dosyası oluştur (File Manager → *New File*):
+
+```apache
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [L]
+</IfModule>
+
+# data/ dizinine dışarıdan erişim yok
+RewriteRule ^data/ - [F,L]
+
+# Gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+# Cache — görseller uzun, HTML kısa
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png  "access plus 1 year"
+  ExpiresByType text/css   "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresDefault "access plus 1 hour"
+</IfModule>
+```
+
+### 3B.5 SSL (Let's Encrypt)
+- DirectAdmin sol menü → **SSL Certificates** → domain seç
+- **Free & automatic certificate from Let's Encrypt** işaretle → **Save**
+- Sertifika kurulduktan sonra aynı sayfada **Force SSL with HTTPS redirect** işaretini aç
+
+### 3B.6 Admin parolasını değiştir
+İlk giriş sonrası **ZORUNLU** (varsayılan `admin / bogazici2026`).
+
+- **SSH varsa:**
+  ```bash
+  php -r "echo password_hash('yeni_parola_buraya', PASSWORD_BCRYPT), PHP_EOL;"
+  ```
+- **SSH yoksa:** [bcrypt-generator.com](https://bcrypt-generator.com/) gibi bir sitede parolanı **cost=12** ile hashle (şifreni asla üçüncü sitelerde uzun süre bırakma; hash aldıktan sonra sitede geçmişi temizle).
+
+Çıkan `$2y$12$...` değerini File Manager'dan `public_html/data/admin.php` içine yapıştır:
+```php
+'parola_hash' => '$2y$12$yeniHashBuraya...',
+```
+
+### 3B.7 Yedekleme (DirectAdmin panelinden)
+- Sol menü → **Create/Restore Backups** → *Create Backup* → aşağıdakileri seç:
+  - E-mail data ✗
+  - Databases ✗ (bu projede yok)
+  - Domains Directory ✓ (kod + `data/veri.json` + görseller)
+- İdeal: sağlayıcının **otomatik yedek** planını aç (günlük/haftalık)
+- Kritik dosya: `public_html/data/veri.json` — admin edit'leri burada tutuluyor
+
+### 3B.8 Test et
+- `https://senindomain.com/` → anasayfa (Boğaziçi hero)
+- `https://senindomain.com/admin/` → giriş formu
+- Giriş yap → dashboard
+- Bir bölümde metni değiştir → **Değişiklikleri kaydet** → anasayfayı yenile → yeni metin görünmeli
+- **Görseller** sayfasından test görseli yükle → kaydet → frontend'de göründü mü?
+
+---
+
 ## 4. Kurulum — VPS (Ubuntu + Nginx)
 
 ### 4.1 Bağımlılıklar

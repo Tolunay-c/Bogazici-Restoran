@@ -194,28 +194,97 @@
 }
 
 /* ==============================================================
-   harita — Leaflet + OpenStreetMap (anahtar gerektirmez)
+   harita — Leaflet + CartoDB Positron (editöryal, marka uyumlu)
    ============================================================== */
-.harita__cerceve { position: relative; }
+.harita__cerceve {
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    inset 0 0 0 1px rgba(14, 31, 38, .08),
+    0 30px 60px -40px rgba(14, 31, 38, .28);
+}
 .harita__tuval {
   width: 100%;
   height: 280px;
   background: var(--zemin-alt);
-  border-radius: var(--r-md);
   z-index: 0;                      /* Leaflet katmanları header'ın üstüne çıkmasın */
 }
-/* Grayscale YOK: haritanın okunabilirliği renkten geliyor —
-   yol/su/yeşil ayrımı silinince harita işlevini kaybediyor. */
-.harita__tuval .leaflet-control-attribution { font-size: 10px; background: rgb(251 249 246 / .82); }
+/* Karolara çok hafif ton denklemi — renkleri koru, sadece nefes ver */
+.harita__tuval .leaflet-tile-pane { filter: saturate(1) contrast(1); }
+
+/* Üstte ve altta yumuşak vignette; harita kartla yumuşak bağlansın */
+.harita__cerceve::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(14, 31, 38, .08), transparent 12%, transparent 82%, rgba(14, 31, 38, .12));
+  z-index: 1;
+}
+
+.harita__tuval .leaflet-control-attribution {
+  font-size: 10px;
+  padding: 2px 8px;
+  background: rgb(251 249 246 / .92);
+  color: var(--metin-ikincil);
+  border-top-left-radius: var(--r-sm);
+}
+.harita__tuval .leaflet-control-attribution a { color: var(--vurgu-metin); }
 .harita__tuval .leaflet-bar a {
   width: 34px; height: 34px; line-height: 34px;
   color: var(--marka-koyu); border-radius: 0;
 }
 
-.harita__isaret { display: block; width: 26px; height: 34px; filter: drop-shadow(0 3px 4px rgb(14 31 38 / .35)); }
-.harita__isaret svg { width: 100%; height: 100%; display: block; }
-.harita__isaret .pin-govde { fill: var(--marka-koyu); }
-.harita__isaret .pin-nokta { fill: var(--marka-vurgu); }
+/* --- Pin: nabız halkalı zarif nokta -------------------------- */
+.harita__isaret-kutu { pointer-events: auto; }
+.harita__isaret {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.harita__isaret-nokta {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: var(--marka-koyu);
+  border: 3px solid var(--marka-vurgu);
+  box-shadow:
+    0 0 0 3px rgb(255 255 255 / .95),
+    0 6px 14px rgb(14 31 38 / .35);
+  z-index: 2;
+}
+.harita__isaret-halka {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--marka-vurgu);
+  transform-origin: center;
+  animation: harita-nabiz 2.4s cubic-bezier(.22, .61, .36, 1) infinite;
+  opacity: 0;
+  z-index: 1;
+}
+.harita__isaret-halka--gec { animation-delay: 1.2s; }
+@keyframes harita-nabiz {
+  0%   { transform: scale(1);   opacity: .55; }
+  70%  { opacity: 0; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .harita__isaret-halka { animation: none; opacity: 0; }
+}
+
+/* Popup — beyaz kart, marka tipografisi */
+.harita__tuval .leaflet-popup-content-wrapper {
+  border-radius: var(--r-sm);
+  padding: 4px 6px;
+  background: var(--zemin-yukseltilmis);
+  box-shadow: 0 12px 30px -10px rgb(14 31 38 / .35);
+}
+.harita__tuval .leaflet-popup-content { font-size: var(--yazi-sm); color: var(--metin); margin: 10px 14px; }
+.harita__tuval .leaflet-popup-content strong { font-family: var(--f-display); font-weight: 500; }
+.harita__tuval .leaflet-popup-tip { background: var(--zemin-yukseltilmis); }
 
 .harita__kart {
   margin-top: var(--bosluk-5);
@@ -590,10 +659,42 @@
 
 /* --- Mobil (≤ 899) --- */
 @media (max-width: 899px) {
-  .rezervasyon__subeler { width: 100%; overflow-x: auto; }
-  .rezervasyon__sekme { flex: 1 0 auto; }
+  .rezervasyon__subeler {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;         /* center → sol hizala, ilk sekme kesilmesin */
+    gap: var(--bosluk-4);
+    margin-inline: calc(var(--kenar) * -1);
+    padding-inline: var(--kenar);
+    margin-bottom: var(--bosluk-5);      /* 64 → 24, tab ile form arası nefes */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .rezervasyon__subeler::-webkit-scrollbar { display: none; }
+  .rezervasyon__sekme {
+    flex: 0 0 auto;                       /* büyümesin — içerik kadar yer alsın */
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
   .rezervasyon__kolon-kroki { padding: var(--bosluk-4); }
   .rezervasyon__form { padding: var(--bosluk-5); }
+  .rezervasyon__ic--tekli { margin-top: 0; } /* subeler'in margin-bottom'ı yeter */
+}
+
+/* --- Çok dar ekran (≤ 420) — tab & form sıkışıklığı --- */
+@media (max-width: 420px) {
+  .rezervasyon__subeler {
+    gap: var(--bosluk-3);
+    /* sağda daha fazla sekme olduğuna dair yumuşak fade */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+  .rezervasyon__sekme {
+    padding: var(--bosluk-3) 0;
+    letter-spacing: .04em;
+    font-size: var(--yazi-xs);
+  }
 }
 
 /* --------------------------------------------------------------
@@ -622,12 +723,38 @@
 @media (max-width: 899px) {
   .rezervasyon__form--tekli {
     padding: var(--bosluk-6) var(--bosluk-5);
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
     box-shadow: none;
-    margin-inline: calc(var(--bosluk-4) * -1);
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    justify-self: stretch;
   }
+}
+
+/* Çok dar ekranda (≤ 420) form nefes alsın: yatay padding daralt */
+@media (max-width: 420px) {
+  .rezervasyon__form--tekli {
+    padding: var(--bosluk-5) var(--bosluk-4);
+    gap: var(--bosluk-5);
+  }
+  .rezervasyon__form__basluk {
+    padding-bottom: var(--bosluk-4);
+  }
+  .rezervasyon__form__baslik {
+    font-size: 1.5rem;
+  }
+  .rezervasyon__form--tekli .rezervasyon__gerisi {
+    gap: var(--bosluk-5);
+  }
+  /* KVKK metni kırılıp uzun link viewport dışına taşmasın */
+  .rezervasyon__form--tekli .onay { column-gap: var(--bosluk-2); }
+  .rezervasyon__form--tekli .onay__metin { word-break: break-word; }
+  /* Saat çipleri dar ekranda daha kompakt sığsın */
+  .saat-cip span {
+    min-width: 60px;
+    padding-inline: var(--bosluk-3);
+  }
+  .saat-cip__grup { gap: var(--bosluk-2); }
 }
 
 /* Form başlık bloğu */
@@ -706,8 +833,11 @@
   margin-top: var(--bosluk-2);
 }
 
-/* Sekmeler ile form arası nefes */
+/* Sekmeler ile form arası nefes (masaüstü) */
 .rezervasyon__ic--tekli { margin-top: var(--bosluk-6); }
+@media (max-width: 899px) {
+  .rezervasyon__ic--tekli { margin-top: 0; }
+}
 
 /* ==============================================================
    menu-liste — kategoriler solda sabit, ürünler sağda

@@ -15,8 +15,6 @@
           <div class="kart__govde">
             <div class="urun__ust">
               <h3 class="kart__baslik"><?= e($o['baslik'] ?? '') ?></h3>
-              <span class="urun__nokta" aria-hidden="true"></span>
-              <span class="urun__fiyat"><?= e($o['fiyat'] ?? '') ?></span>
             </div>
             <?php if (!empty($o['metin'])): ?><p class="kart__metin"><?= e($o['metin']) ?></p><?php endif; ?>
           </div>

@@ -257,10 +257,25 @@
   background: var(--zemin);
   border-bottom: 1px solid var(--cizgi);
 }
-.ust__ic { display: flex; align-items: center; justify-content: space-between; gap: var(--bosluk-5); width: 100%; }
-.ust__logo { font-family: var(--f-display); font-size: var(--yazi-xl); text-decoration: none; letter-spacing: -.01em; }
+.ust__ic { display: flex; align-items: center; justify-content: space-between; gap: var(--bosluk-3); width: 100%; }
+.ust__logo {
+  font-family: var(--f-display);
+  font-size: var(--yazi-xl);
+  text-decoration: none;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .ust__menu { display: none; }
-.ust__aksiyon { display: flex; align-items: center; gap: var(--bosluk-3); }
+.ust__aksiyon { display: flex; align-items: center; gap: var(--bosluk-3); flex: 0 0 auto; }
+
+/* Küçük ekran — logo tek satırda kalabilsin (Rezervasyon btn + hamburger ile) */
+@media (max-width: 420px) {
+  .ust__logo { font-size: var(--yazi-base); }
+  .ust__aksiyon .btn { padding-inline: var(--bosluk-3); font-size: var(--yazi-sm); }
+}
 
 .menu-btn {
   display: inline-flex; align-items: center; justify-content: center;

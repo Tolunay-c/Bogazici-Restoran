@@ -182,22 +182,24 @@
       attributionControl: true
     });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap katkıcıları'
+    L.tileLayer('https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}{r}.png?key=xq1fgVVFhTHrdVSQ6lwc', {
+      maxZoom: 20,
+      tileSize: 512,
+      zoomOffset: -1,
+      crossOrigin: true,
+      attribution: '&copy; <a href="https://www.maptiler.com/copyright/" target="_blank" rel="noopener">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> katkıcıları'
     }).addTo(harita);
 
     var isaret = L.divIcon({
-      className: '',
+      className: 'harita__isaret-kutu',
       html: '<span class="harita__isaret">' +
-              '<svg viewBox="0 0 26 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
-                '<path class="pin-govde" d="M13 0C5.8 0 0 5.8 0 13c0 9.1 13 21 13 21s13-11.9 13-21C26 5.8 20.2 0 13 0z"/>' +
-                '<circle class="pin-nokta" cx="13" cy="12.5" r="4.6"/>' +
-              '</svg>' +
+              '<span class="harita__isaret-halka"></span>' +
+              '<span class="harita__isaret-halka harita__isaret-halka--gec"></span>' +
+              '<span class="harita__isaret-nokta"></span>' +
             '</span>',
-      iconSize: [26, 34],
-      iconAnchor: [13, 34],
-      popupAnchor: [0, -30]
+      iconSize: [22, 22],
+      iconAnchor: [11, 11],
+      popupAnchor: [0, -14]
     });
 
     L.marker([enlem, boylam], {

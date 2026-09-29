@@ -75,6 +75,13 @@ h1, h2, h3, h4 {
 h1 { font-size: var(--yazi-5xl); }
 h2 { font-size: var(--yazi-4xl); }
 h3 { font-size: var(--yazi-3xl); }
+
+/* Ultra-mobil (≤ 380) — display başlıkları daha da kısıl */
+@media (max-width: 380px) {
+  h1 { font-size: 1.875rem; }   /* 30px */
+  h2 { font-size: 1.625rem; }   /* 26px */
+  h3 { font-size: 1.375rem; }   /* 22px */
+}
 h4 { font-family: var(--f-govde); font-size: var(--yazi-lg); font-weight: 500; letter-spacing: 0; }
 
 p { text-wrap: pretty; }
@@ -162,3 +169,6 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; 
   }
   [data-goster] { opacity: 1 !important; transform: none !important; }
 }
+
+
+.leaflet-control-attribution, .leaflet-control-attribution { display: none; }
