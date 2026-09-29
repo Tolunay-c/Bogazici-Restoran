@@ -596,6 +596,119 @@
   .rezervasyon__form { padding: var(--bosluk-5); }
 }
 
+/* --------------------------------------------------------------
+   Rezervasyon — tekli form varyantı (kroki/liste kaldırıldı)
+   Formu tek kolon, ortalanmış, kart hissiyle sunar.
+   -------------------------------------------------------------- */
+.rezervasyon__ic--tekli { grid-template-columns: 1fr !important; }
+@media (min-width: 900px) {
+  .rezervasyon__ic--tekli { grid-template-columns: 1fr !important; }
+}
+
+.rezervasyon__form--tekli {
+  position: static !important;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: var(--bosluk-7) var(--bosluk-6);
+  background: var(--zemin-yukseltilmis, #FFFFFF);
+  border: 1px solid var(--cizgi);
+  border-top: 3px solid var(--vurgu);
+  border-radius: var(--r-sm);
+  box-shadow: 0 24px 60px -40px rgba(14, 31, 38, .18);
+  gap: var(--bosluk-6);
+}
+
+@media (max-width: 899px) {
+  .rezervasyon__form--tekli {
+    padding: var(--bosluk-6) var(--bosluk-5);
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    box-shadow: none;
+    margin-inline: calc(var(--bosluk-4) * -1);
+  }
+}
+
+/* Form başlık bloğu */
+.rezervasyon__form__basluk {
+  display: grid;
+  gap: var(--bosluk-2);
+  padding-bottom: var(--bosluk-5);
+  border-bottom: 1px solid var(--cizgi);
+  text-align: left;
+}
+.rezervasyon__form__basluk .ustluk {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bosluk-3);
+  color: var(--vurgu-metin);
+}
+.rezervasyon__form__basluk .ustluk::after {
+  content: "";
+  flex: 0 0 40px;
+  height: 1px;
+  background: var(--vurgu);
+}
+.rezervasyon__form__baslik {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  line-height: 1.15;
+  color: var(--marka-koyu);
+  margin: 0;
+}
+.rezervasyon__form__yardim {
+  color: var(--metin-ikincil);
+  font-size: var(--yazi-sm);
+  max-width: 56ch;
+  margin: 0;
+}
+
+/* Tekli formda kilit kaldırılır */
+.rezervasyon__form--tekli[data-hazir="true"] .rezervasyon__gerisi {
+  opacity: 1;
+  pointer-events: auto;
+  filter: none;
+}
+.rezervasyon__form--tekli .rezervasyon__gerisi {
+  gap: var(--bosluk-6);
+  grid-auto-rows: min-content;   /* row'lar içerik boyu — textarea/onay stretch olmasın */
+}
+.rezervasyon__form--tekli .alan { align-self: start; }
+
+/* Not textarea: rows="3" değerine sadık kal, stretch olmasın */
+.rezervasyon__form--tekli .metin-alani {
+  min-height: 96px;
+  height: 96px;
+  max-height: 240px;
+  resize: vertical;
+  display: block;
+}
+
+/* Tekli form içinde 2 kolonlu alan */
+.rezervasyon__form--tekli .form-izgara--iki {
+  display: grid;
+  gap: var(--bosluk-5);
+}
+@media (min-width: 640px) {
+  .rezervasyon__form--tekli .form-izgara--iki {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Onay ve gönder butonuna hafif üst çizgi */
+.rezervasyon__form--tekli .onay {
+  padding-top: var(--bosluk-4);
+  border-top: 1px dashed var(--cizgi);
+}
+.rezervasyon__form--tekli .btn[type="submit"] {
+  margin-top: var(--bosluk-2);
+}
+
+/* Sekmeler ile form arası nefes */
+.rezervasyon__ic--tekli { margin-top: var(--bosluk-6); }
+
 /* ==============================================================
    menu-liste — kategoriler solda sabit, ürünler sağda
    ============================================================== */

@@ -12,12 +12,12 @@
         </div>
       </div>
 
+      <?php $subeAdlari = implode(' · ', array_column(SUBELER, 'ad')); ?>
       <ol class="rezervasyon-ozet">
-        <li class="rezervasyon-ozet__satir"><span>1. Şube</span><span class="metin-ikincil">Alsancak · Çeşme · Karşıyaka</span></li>
-        <li class="rezervasyon-ozet__satir"><span>2. Bölge</span><span class="metin-ikincil">Kroki üzerinden seçim</span></li>
-        <li class="rezervasyon-ozet__satir"><span>3. Tarih ve saat</span><span class="metin-ikincil">Dolu saatler kapalı görünür</span></li>
-        <li class="rezervasyon-ozet__satir"><span>4. Bilgileriniz</span><span class="metin-ikincil">Ad, telefon, kişi sayısı</span></li>
-        <li class="rezervasyon-ozet__satir"><span>5. Onay</span><span class="metin-ikincil">SMS ile anında teyit</span></li>
+        <li class="rezervasyon-ozet__satir"><span>1. Şube</span><span class="metin-ikincil"><?= e($subeAdlari) ?></span></li>
+        <li class="rezervasyon-ozet__satir"><span>2. Tarih ve saat</span><span class="metin-ikincil">Öğle veya akşam servisi</span></li>
+        <li class="rezervasyon-ozet__satir"><span>3. Bilgileriniz</span><span class="metin-ikincil">Ad, telefon, kişi sayısı</span></li>
+        <li class="rezervasyon-ozet__satir"><span>4. Onay</span><span class="metin-ikincil">Mesai saatinde teyit</span></li>
       </ol>
     </div>
   </div>

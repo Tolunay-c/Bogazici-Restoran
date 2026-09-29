@@ -3,7 +3,7 @@ require_once __DIR__ . '/config.php';
 
 $aktif          = 'kurumsal';
 $sayfa_basligi  = 'Kurumsal — ' . SITE_ADI;
-$sayfa_aciklama = '1998’den bu yana İzmir’de. Boğaziçi Restaurant’ın hikâyesi ve çalışma biçimi.';
+$sayfa_aciklama = '1993’ten bu yana İzmir’de. Bostanlı, Üçkuyular ve Narlıdere şubelerimizle Boğaziçi Restaurant’ın hikâyesi.';
 
 require __DIR__ . '/includes/header.php';
 

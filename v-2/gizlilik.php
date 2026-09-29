@@ -29,7 +29,7 @@ require __DIR__ . '/includes/header.php';
       <p>Ziyaret sırasında, teknik nedenlerle IP adresi, tarayıcı ve cihaz bilgisi
       gibi anonim veriler işlenebilir. Rezervasyon formuyla iletilen kişisel
       veriler için ayrıntı için
-      <a href="/kvkk.php" class="baglanti-vurgu">KVKK Aydınlatma Metni</a>.</p>
+      <a href="/v-2/kvkk.php" class="baglanti-vurgu">KVKK Aydınlatma Metni</a>.</p>
 
       <h2>2. Çerezler</h2>
       <p>Site oturum çerezleri ve tercihlerinize ilişkin çerezler kullanır.

@@ -19,110 +19,18 @@
       <?php $ilk = false; endforeach; ?>
     </div>
 
-    <div class="rezervasyon__ic">
+    <div class="rezervasyon__ic rezervasyon__ic--tekli">
 
-      <div class="rezervasyon__kolon-kroki">
-        <?php $ilk = true; foreach (SUBELER as $s):
-          $bolgeler = REZERVASYON_BOLGELER[$s['slug']] ?? [];
-        ?>
-          <div
-            class="rezervasyon__panel"
-            role="tabpanel"
-            id="sube-panel-<?= e($s['slug']) ?>"
-            aria-labelledby="sube-tab-<?= e($s['slug']) ?>"
-            data-sube="<?= e($s['slug']) ?>"
-            <?= $ilk ? '' : 'hidden' ?>>
-
-            <div class="rezervasyon__gorunum" role="tablist" aria-label="Görünüm">
-              <button
-                class="rezervasyon__gorunum-btn rezervasyon__gorunum-btn--secili"
-                type="button"
-                role="tab"
-                aria-selected="true"
-                data-gorunum="kroki">Kroki</button>
-              <button
-                class="rezervasyon__gorunum-btn"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                data-gorunum="liste">Liste</button>
-            </div>
-
-            <div class="rezervasyon__kroki" data-gorunum-panel="kroki">
-              <svg viewBox="0 0 800 600" class="rez-kroki" aria-label="<?= e($s['ad']) ?> şube krokisi" role="group">
-                <rect x="16" y="16" width="768" height="568" rx="6" class="rez-kroki__cerceve" />
-                <?php foreach ($bolgeler as $z):
-                  [$x, $y, $w, $h] = $z['yerlesim'];
-                  $dolu   = $z['musait'] <= 0;
-                  $cx = $x + $w / 2;
-                  $cy = $y + $h / 2;
-                ?>
-                  <g class="rez-kroki__bolge<?= $dolu ? ' rez-kroki__bolge--dolu' : '' ?>"
-                     data-bolge-id="<?= e($z['id']) ?>"
-                     data-bolge-ad="<?= e($z['ad']) ?>"
-                     data-bolge-musait="<?= (int) $z['musait'] ?>"
-                     role="button"
-                     tabindex="<?= $dolu ? '-1' : '0' ?>"
-                     aria-pressed="false"
-                     aria-disabled="<?= $dolu ? 'true' : 'false' ?>"
-                     aria-label="<?= e($z['ad']) ?>. <?= $dolu ? 'Dolu.' : e($z['musait']) . ' masa müsait.' ?>">
-                    <rect x="<?= $x ?>" y="<?= $y ?>" width="<?= $w ?>" height="<?= $h ?>" rx="4" class="rez-kroki__zemin" />
-                    <foreignObject x="<?= $x ?>" y="<?= $y ?>" width="<?= $w ?>" height="<?= $h ?>">
-                      <div xmlns="http://www.w3.org/1999/xhtml" class="rez-kroki__etiket">
-                        <span class="ikon rez-kroki__ikon" aria-hidden="true"><?= e($z['ikon']) ?></span>
-                        <span class="rez-kroki__ad"><?= e($z['ad']) ?></span>
-                        <span class="rez-kroki__durum">
-                          <?= $dolu ? 'Dolu' : ((int) $z['musait']) . ' masa müsait' ?>
-                        </span>
-                      </div>
-                    </foreignObject>
-                  </g>
-                <?php endforeach; ?>
-              </svg>
-            </div>
-
-            <ul class="rezervasyon__liste" data-gorunum-panel="liste" hidden>
-              <?php foreach ($bolgeler as $z):
-                $dolu = $z['musait'] <= 0;
-              ?>
-                <li>
-                  <button
-                    class="rezervasyon__liste-btn"
-                    type="button"
-                    data-bolge-id="<?= e($z['id']) ?>"
-                    data-bolge-ad="<?= e($z['ad']) ?>"
-                    data-bolge-musait="<?= (int) $z['musait'] ?>"
-                    aria-pressed="false"
-                    <?= $dolu ? 'disabled aria-disabled="true"' : '' ?>>
-                    <span class="ikon" aria-hidden="true"><?= e($z['ikon']) ?></span>
-                    <span class="rezervasyon__liste-ad"><?= e($z['ad']) ?></span>
-                    <span class="rezervasyon__liste-durum">
-                      <?= $dolu ? 'Dolu' : ((int) $z['musait']) . ' masa müsait' ?>
-                    </span>
-                  </button>
-                </li>
-              <?php endforeach; ?>
-            </ul>
-
-            <div class="rezervasyon__lejant" aria-hidden="true">
-              <span class="rez-lejant"><span class="rez-lejant__nokta rez-lejant__nokta--musait"></span>Müsait</span>
-              <span class="rez-lejant"><span class="rez-lejant__nokta rez-lejant__nokta--secili"></span>Seçili</span>
-              <span class="rez-lejant"><span class="rez-lejant__nokta rez-lejant__nokta--dolu"></span>Dolu</span>
-            </div>
-            <p class="rezervasyon__ipucu">Kroki temsili, gerçek yerleşim şubede farklılık gösterebilir.</p>
-          </div>
-        <?php $ilk = false; endforeach; ?>
-      </div>
-
-      <form class="rezervasyon__form" method="post" action="/rezervasyon-gonder.php" novalidate data-hazir="false">
-        <div class="rezervasyon__secim" aria-live="polite" data-duyuru>
-          <p class="ustluk">Seçili bölge</p>
-          <p class="rezervasyon__secim-ad" data-secim-ad>— henüz seçilmedi —</p>
-          <p class="rezervasyon__secim-ipucu" data-secim-ipucu>Devam etmek için bir bölge seçin.</p>
-        </div>
-
+      <form class="rezervasyon__form rezervasyon__form--tekli" method="post" action="/rezervasyon-gonder.php" novalidate data-hazir="true">
         <input type="hidden" name="sube"  value="<?= e(SUBELER[0]['slug']) ?>" data-secili-sube>
-        <input type="hidden" name="bolge" value="" data-secili-bolge>
+
+        <header class="rezervasyon__form__basluk">
+          <p class="ustluk">Masa Rezervasyonu</p>
+          <h2 class="rezervasyon__form__baslik">Detayları paylaşın</h2>
+          <p class="rezervasyon__form__yardim">
+            Tarih, saat ve kişi sayısını seçin; ekibimiz rezervasyonunuzu mesai saatinde onaylayıp size dönüş yapar.
+          </p>
+        </header>
 
         <div class="rezervasyon__gerisi">
           <div class="form-izgara form-izgara--iki">
@@ -134,11 +42,15 @@
               <label class="alan__etiket" for="rez-kisi">Kişi sayısı</label>
               <div class="sayac">
                 <button type="button" class="sayac__btn" data-sayac-eksi aria-label="Kişi sayısını azalt">
-                  <span class="ikon" aria-hidden="true">remove</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                    <path d="M5 12h14"/>
+                  </svg>
                 </button>
                 <input class="sayac__girdi" type="number" id="rez-kisi" name="kisi" min="1" max="12" value="2" inputmode="numeric">
                 <button type="button" class="sayac__btn" data-sayac-arti aria-label="Kişi sayısını arttır">
-                  <span class="ikon" aria-hidden="true">add</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14"/>
+                  </svg>
                 </button>
               </div>
             </div>

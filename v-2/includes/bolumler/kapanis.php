@@ -12,6 +12,9 @@
       <?php endif; ?>
       <div class="kapanis__aksiyon">
         <a class="btn btn--birincil" href="<?= e($b['buton_link']) ?>"><?= e($b['buton_yazi']) ?></a>
+        <?php if (!empty($b['buton2_link']) && !empty($b['buton2_yazi'])): ?>
+          <a class="btn btn--ikincil" href="<?= e($b['buton2_link']) ?>"><?= e($b['buton2_yazi']) ?></a>
+        <?php endif; ?>
       </div>
     </div>
   </div>

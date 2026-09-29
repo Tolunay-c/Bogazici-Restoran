@@ -13,7 +13,7 @@ $konular = [
     'geribildirim'  => 'Geri bildirim',
 ];
 
-$merkez = SUBELER[0];
+$merkez = sube_bul('bostanli') ?? SUBELER[0];
 ?>
 <section class="iletisim" id="form">
   <div class="konteyner">
@@ -33,7 +33,7 @@ $merkez = SUBELER[0];
     <div class="iletisim__izgara">
 
       <!-- FORM -->
-      <form class="iletisim__form" method="post" action="/iletisim.php#form" novalidate data-reveal>
+      <form class="iletisim__form" method="post" action="/v-2/iletisim.php#form" novalidate data-reveal>
         <input type="hidden" name="csrf" value="<?= e($csrf) ?>">
 
         <div class="rez__ikili">
@@ -103,7 +103,7 @@ $merkez = SUBELER[0];
               <?= $deger['kvkk'] ? 'checked' : '' ?>
               <?= !empty($hatalar['kvkk']) ? 'aria-invalid="true" aria-describedby="il-kvkk-hata"' : '' ?>>
             <span>
-              <a href="/kvkk.php" target="_blank" rel="noopener" class="baglanti-vurgu">KVKK Aydınlatma Metni</a>'ni
+              <a href="/v-2/kvkk.php" target="_blank" rel="noopener" class="baglanti-vurgu">KVKK Aydınlatma Metni</a>'ni
               okudum, mesajım için kişisel verilerimin işlenmesine onay veriyorum.
             </span>
           </label>
@@ -111,6 +111,11 @@ $merkez = SUBELER[0];
         </div>
 
         <button type="submit" class="btn btn--birincil">Mesajı gönder</button>
+
+        <p class="iletisim__form__rez-not">
+          Rezervasyon işlemleri için Rezervasyon sayfamızı kullanabilirsiniz.
+          <a class="btn btn--ikincil btn--sm" href="/v-2/rezervasyon.php">Rezervasyon Yap</a>
+        </p>
       </form>
 
       <!-- SIDEBAR -->
@@ -118,18 +123,17 @@ $merkez = SUBELER[0];
         <div class="iletisim__yan__oge">
           <span class="ustluk">Telefon</span>
           <a href="tel:<?= e($merkez['telefon']) ?>" class="iletisim__yan__buyuk"><?= e($merkez['telefon_yazi']) ?></a>
-          <p class="iletisim__yan__not">Alsancak — merkez</p>
+          <p class="iletisim__yan__not">Genel iletişim hattı</p>
         </div>
 
         <div class="iletisim__yan__oge">
           <span class="ustluk">E-posta</span>
           <a href="mailto:info@bogazicirestaurant.com.tr">info@bogazicirestaurant.com.tr</a>
-          <a href="mailto:etkinlik@bogazicirestaurant.com.tr" class="baglanti-vurgu">etkinlik@bogazicirestaurant.com.tr</a>
         </div>
 
         <div class="iletisim__yan__oge">
           <span class="ustluk">Adres</span>
-          <p><?= e($merkez['adres']) ?></p>
+          <p><?= e($merkez['ad']) ?> · <?= e($merkez['adres']) ?></p>
         </div>
 
         <div class="iletisim__yan__oge">

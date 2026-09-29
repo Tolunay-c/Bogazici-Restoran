@@ -3,7 +3,7 @@ require_once __DIR__ . '/config.php';
 
 $aktif          = 'kurumsal';
 $sayfa_basligi  = 'Kurumsal — ' . SITE_ADI;
-$sayfa_aciklama = '1998’den bu yana İzmir’de üç şubede tek mutfak. Hikâyemiz, ilkelerimiz ve zaman çizelgesi.';
+$sayfa_aciklama = '1993’ten bugüne İzmir’de üç şube: Bostanlı, Üçkuyular, Narlıdere. Hikâyemiz, mutfak anlayışımız ve değerlerimiz.';
 
 require __DIR__ . '/includes/header.php';
 

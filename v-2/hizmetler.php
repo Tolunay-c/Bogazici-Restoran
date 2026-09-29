@@ -3,7 +3,7 @@ require_once __DIR__ . '/config.php';
 
 $aktif          = 'hizmetler';
 $sayfa_basligi  = 'Hizmetler — ' . SITE_ADI;
-$sayfa_aciklama = 'Kurumsal davet, düğün, catering ve özel menü. Üç şubede aynı mutfak, size özel plan.';
+$sayfa_aciklama = 'İş toplantıları, kokteyl & etkinlik, catering ve paket servis. Boğaziçi dokunuşuyla size özel planlama.';
 
 require __DIR__ . '/includes/header.php';
 

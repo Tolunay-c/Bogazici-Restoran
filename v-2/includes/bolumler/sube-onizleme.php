@@ -1,5 +1,8 @@
-<?php /** @var array $b */ ?>
-<section class="subeler">
+<?php
+/** @var array $b */
+$varyant = ($b['varyant'] ?? 'anasayfa') === 'iletisim' ? 'iletisim' : 'anasayfa';
+?>
+<section class="subeler subeler--<?= e($varyant) ?>">
   <div class="konteyner">
 
     <header class="bolum-basligi bolum-basligi--merkez" data-reveal>
@@ -23,15 +26,24 @@
                  loading="lazy" decoding="async">
           </figure>
           <div class="sube-kart__ic">
-            <h3 class="sube-kart__ad"><?= e($s['ad']) ?></h3>
+            <h3 class="sube-kart__ad"><?= e(mb_strtoupper($s['ad'], 'UTF-8')) ?></h3>
             <div class="sube-kart__meta">
               <span><?= e($s['adres']) ?></span>
-              <span><?= e($s['saat']) ?></span>
               <a href="tel:<?= e($s['telefon']) ?>" class="baglanti-vurgu"><?= e($s['telefon_yazi']) ?></a>
+              <?php if ($varyant === 'iletisim' && !empty($s['eposta'])): ?>
+                <a href="mailto:<?= e($s['eposta']) ?>" class="baglanti-vurgu"><?= e($s['eposta']) ?></a>
+              <?php endif; ?>
             </div>
             <div class="sube-kart__aksiyonlar">
-              <a class="btn btn--birincil btn--sm" href="/rezervasyon.php">Rezervasyon</a>
-              <a class="btn btn--ikincil btn--sm" href="/subeler.php#sube-<?= e($s['slug']) ?>">Detay</a>
+              <?php if ($varyant === 'anasayfa'): ?>
+                <a class="btn btn--ikincil btn--sm" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol Tarifi</a>
+                <a class="btn btn--birincil btn--sm" href="/v-2/rezervasyon.php">Rezervasyon</a>
+                <?php if (!empty($s['paket_servis'])): ?>
+                  <a class="btn btn--ikincil btn--sm" href="<?= e($s['paket_servis']) ?>">Paket Servis</a>
+                <?php endif; ?>
+              <?php else: ?>
+                <a class="btn btn--ikincil btn--sm" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol Tarifi</a>
+              <?php endif; ?>
             </div>
           </div>
         </article>

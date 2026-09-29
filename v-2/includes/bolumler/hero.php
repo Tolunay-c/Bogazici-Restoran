@@ -12,6 +12,10 @@
     <h1 class="hero__baslik" data-reveal><?= e($b['baslik']) ?></h1>
     <p class="hero__alt" data-reveal><?= e($b['alt_baslik']) ?></p>
 
+    <?php if (!empty($b['ek_yazi'])): ?>
+      <p class="hero__ek" data-reveal><?= e($b['ek_yazi']) ?></p>
+    <?php endif; ?>
+
     <?php if (!empty($b['butonlar'])): ?>
       <div class="hero__aksiyonlar" data-reveal>
         <?php foreach ($b['butonlar'] as $bt): ?>

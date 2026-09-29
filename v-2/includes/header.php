@@ -14,7 +14,6 @@ $menu = [
     'subeler'     => ['Şubeler',    '/v-2/subeler.php'],
     'menu'        => ['Menü',       '/v-2/menu.php'],
     'hizmetler'   => ['Hizmetler',  '/v-2/hizmetler.php'],
-    'galeri'      => ['Galeri',     '/v-2/galeri.php'],
     'iletisim'    => ['İletişim',   '/v-2/iletisim.php'],
 ];
 ?>
@@ -53,8 +52,8 @@ $menu = [
 <header class="ust">
   <div class="ust__utility">
     <div class="konteyner">
-      <span><a href="tel:+902321234567" class="baglanti-vurgu">0232 123 45 67</a></span>
-      <span>Alsancak · Çeşme · Karşıyaka</span>
+      <span><a href="tel:+908508500850" class="baglanti-vurgu">0850 850 0850</a></span>
+      <span>Üçkuyular · Narlıdere · Bostanlı</span>
     </div>
   </div>
 
@@ -97,7 +96,7 @@ $menu = [
 
     <div class="cekmece__alt">
       <a class="btn btn--birincil btn--tam" href="/v-2/rezervasyon.php">Rezervasyon yap</a>
-      <a class="btn btn--ikincil btn--tam" href="tel:+902321234567">0232 123 45 67</a>
+      <a class="btn btn--ikincil btn--tam" href="tel:+908508500850">0850 850 0850</a>
     </div>
   </div>
 </dialog>

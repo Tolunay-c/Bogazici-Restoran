@@ -4,6 +4,8 @@ require_once __DIR__ . '/config.php';
 $aktif          = 'iletisim';
 $sayfa_basligi  = 'İletişim — ' . SITE_ADI;
 $sayfa_aciklama = 'Yazın, arayın ya da şubelerimize uğrayın. Mesajlar mesai saatinde yanıtlanır.';
+$sayfa_leaflet  = true;
+$sayfa_js       = 'harita.js';
 
 /* --------------------------------------------------------------
    POST işleme

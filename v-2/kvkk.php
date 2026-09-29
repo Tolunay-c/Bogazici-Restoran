@@ -29,7 +29,7 @@ require __DIR__ . '/includes/header.php';
       <p>
         Boğaziçi Restaurant · İzmir. İletişim:
         <a href="mailto:kvkk@bogazicirestaurant.com.tr" class="baglanti-vurgu">kvkk@bogazicirestaurant.com.tr</a>,
-        <a href="tel:+902321234567" class="baglanti-vurgu">0232 123 45 67</a>.
+        <a href="tel:+908508500850" class="baglanti-vurgu">0850 850 0850</a>.
       </p>
 
       <h2>2. İşlenen Kişisel Veriler</h2>

@@ -2,7 +2,7 @@
 /** @var array $b */
 $yon = ($b['yon'] ?? 'sag') === 'sol' ? 'sol' : 'sag';
 ?>
-<section class="hikaye" data-yon="<?= e($yon) ?>">
+<section class="hikaye" data-yon="<?= e($yon) ?>"<?= !empty($b['id']) ? ' id="' . e($b['id']) . '"' : '' ?>>
   <div class="konteyner">
     <div class="hikaye__izgara">
 

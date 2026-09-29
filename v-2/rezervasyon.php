@@ -12,7 +12,7 @@ $sayfa_js       = 'rezervasyon.js';
 $hatalar = [];
 $basari  = null;
 $deger   = [
-    'sube'    => $_POST['sube']    ?? 'alsancak',
+    'sube'    => $_POST['sube']    ?? 'uckuyular',
     'bolge'   => $_POST['bolge']   ?? '',
     'tarih'   => $_POST['tarih']   ?? '',
     'kisi'    => (int)($_POST['kisi'] ?? 2),
@@ -272,7 +272,7 @@ require __DIR__ . '/includes/header.php';
       <form
         class="rez__form"
         method="post"
-        action="/rezervasyon.php#form"
+        action="/v-2/rezervasyon.php#form"
         id="form"
         novalidate
       >
@@ -378,7 +378,7 @@ require __DIR__ . '/includes/header.php';
                 <?= $deger['kvkk'] ? 'checked' : '' ?>
                 <?= !empty($hatalar['kvkk']) ? 'aria-invalid="true" aria-describedby="kvkk-hata"' : '' ?>>
               <span>
-                <a href="/kvkk.php" target="_blank" rel="noopener" class="baglanti-vurgu">KVKK Aydınlatma Metni</a>'ni
+                <a href="/v-2/kvkk.php" target="_blank" rel="noopener" class="baglanti-vurgu">KVKK Aydınlatma Metni</a>'ni
                 okudum, kişisel verilerimin rezervasyon amacıyla işlenmesine onay veriyorum.
               </span>
             </label>

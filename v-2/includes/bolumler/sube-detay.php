@@ -7,12 +7,13 @@ $yon  = ($b['yon'] ?? 'sag') === 'sol' ? 'sol' : 'sag';
   <div class="konteyner">
     <div class="sube-detay__izgara">
 
-      <figure class="sube-detay__gorsel" data-reveal>
-        <img src="<?= e(gorsel_url($sube['gorsel'], 1440)) ?>"
-             alt="<?= e($sube['ad'] . ' şubesi') ?>"
-             width="1440" height="1080"
-             loading="lazy" decoding="async">
-      </figure>
+      <div class="sube-detay__gorsel sube-detay__harita"
+           data-reveal
+           data-harita-lat="<?= e((string)$sube['enlem']) ?>"
+           data-harita-lng="<?= e((string)$sube['boylam']) ?>"
+           data-harita-etiket="<?= e($sube['ad']) ?>"
+           role="region"
+           aria-label="<?= e($sube['ad']) ?> şubesi harita"></div>
 
       <div class="sube-detay__ic" data-reveal>
         <?php if (!empty($b['numara'])): ?>
@@ -50,8 +51,12 @@ $yon  = ($b['yon'] ?? 'sag') === 'sol' ? 'sol' : 'sag';
           </div>
         <?php endif; ?>
 
+        <?php if (!empty($sube['eposta'])): ?>
+          <p class="sube-detay__eposta"><a href="mailto:<?= e($sube['eposta']) ?>" class="baglanti-vurgu"><?= e($sube['eposta']) ?></a></p>
+        <?php endif; ?>
+
         <div class="sube-detay__aksiyonlar">
-          <a class="btn btn--birincil" href="/rezervasyon.php">Rezervasyon</a>
+          <a class="btn btn--birincil" href="/v-2/rezervasyon.php">Rezervasyon</a>
           <?php if (!empty($sube['yol_tarifi'])): ?>
             <a class="btn btn--ikincil" href="<?= e($sube['yol_tarifi']) ?>" target="_blank" rel="noopener">
               <span>Yol tarifi</span>

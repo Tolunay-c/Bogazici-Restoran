@@ -15,7 +15,6 @@ $menu = [
     'subeler'     => ['Şubeler',    '/subeler.php'],
     'menu'        => ['Menü',       '/menu.php'],
     'hizmetler'   => ['Hizmetler',  '/hizmetler.php'],
-    'galeri'      => ['Galeri',     '/galeri.php'],
     'iletisim'    => ['İletişim',   '/iletisim.php'],
 ];
 ?>
@@ -86,7 +85,7 @@ $menu = [
 
     <div class="cekmece__alt">
       <a class="btn btn--birincil btn--tam" href="/rezervasyon.php">Rezervasyon yap</a>
-      <a class="btn btn--ikincil btn--tam" href="tel:+902321234567">0232 123 45 67</a>
+      <a class="btn btn--ikincil btn--tam" href="tel:+908508500850">0850 850 0850</a>
     </div>
   </div>
 </dialog>

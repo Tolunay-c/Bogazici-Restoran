@@ -295,10 +295,11 @@
     }
 
     function bolgeSifirla() {
+      if (!seciliBolge) return; // kroki/liste kaldırıldı — bölge seçimi yok
       seciliBolge.value = '';
       form.setAttribute('data-hazir', 'false');
-      secimAd.textContent = '— henüz seçilmedi —';
-      secimIp.textContent = 'Devam etmek için bir bölge seçin.';
+      if (secimAd) secimAd.textContent = '— henüz seçilmedi —';
+      if (secimIp) secimIp.textContent = 'Devam etmek için bir bölge seçin.';
       rez.querySelectorAll('[aria-pressed="true"]').forEach(function (el) {
         el.setAttribute('aria-pressed', 'false');
       });
