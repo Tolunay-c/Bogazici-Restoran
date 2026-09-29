@@ -7,16 +7,6 @@
         <?php if (!empty($b['metin'])): ?>
           <p class="metin-ikincil"><?= e($b['metin']) ?></p>
         <?php endif; ?>
-
-        <ul class="iletisim__subeler">
-          <?php foreach (SUBELER as $s): ?>
-            <li>
-              <p class="ustluk"><?= e($s['ad']) ?></p>
-              <p class="metin-ikincil"><?= e($s['adres']) ?></p>
-              <a class="btn btn--duz" href="tel:<?= e($s['telefon']) ?>"><?= e($s['telefon_yazi']) ?></a>
-            </li>
-          <?php endforeach; ?>
-        </ul>
       </div>
 
       <form class="iletisim__form form-izgara" method="post" action="/iletisim-gonder.php" novalidate>
@@ -48,7 +38,12 @@
           </label>
         </div>
 
-        <button class="btn btn--birincil" type="submit">Gönder</button>
+        <button class="btn btn--birincil" type="submit">Mesajı gönder</button>
+
+        <p class="iletisim__form__rez-not">
+          Rezervasyon işlemleri için Rezervasyon sayfamızı kullanabilirsiniz.
+          <a class="btn btn--ikincil btn--sm" href="/rezervasyon.php">Rezervasyon yap</a>
+        </p>
       </form>
     </div>
   </div>

@@ -10,6 +10,9 @@ $yon = ($b['yon'] ?? 'sag') === 'sol' ? 'sol' : 'sag';
         <?php if (!empty($b['metin'])): ?>
           <div class="metin-akis"><p><?= nl2br(e($b['metin'])) ?></p></div>
         <?php endif; ?>
+        <?php if (!empty($b['alinti'])): ?>
+          <blockquote class="metin-gorsel__alinti"><?= e($b['alinti']) ?></blockquote>
+        <?php endif; ?>
         <?php if ($btn = buton($b['buton_yazi'] ?? '', $b['buton_link'] ?? '', 'ikincil')): ?>
           <div class="btn-grup"><?= $btn ?></div>
         <?php endif; ?>

@@ -82,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'boylam'       => (float) ($g['boylam'] ?? 0),
             'yol_tarifi'   => trim((string) ($g['yol_tarifi'] ?? '')),
             'bolgeler'     => $bolgeler,
+            'paket_servis' => trim((string) ($g['paket_servis'] ?? '')),
         ];
 
         if ($yeniSube['slug'] === '' || $yeniSube['ad'] === '') {
@@ -122,6 +123,7 @@ $sube = $mevcut ?? [
     'slug' => '', 'ad' => '', 'adres' => '', 'telefon' => '+90', 'telefon_yazi' => '',
     'eposta' => '', 'saat' => 'Her gün 12:00 – 24:00', 'gorsel' => '',
     'enlem' => 38.4, 'boylam' => 27.1, 'yol_tarifi' => '', 'bolgeler' => [],
+    'paket_servis' => '',
 ];
 
 $gorseller = gorsel_listesi();
@@ -192,6 +194,11 @@ require __DIR__ . '/_ust.php';
     <label class="admin-alan">
       <span>Yol tarifi bağlantısı (Google Maps)</span>
       <input type="url" name="sube[yol_tarifi]" value="<?= e($sube['yol_tarifi']) ?>">
+    </label>
+
+    <label class="admin-alan">
+      <span>Paket servis bağlantısı <small class="admin-alan__ipucu">(opsiyonel — boş bırakılırsa kart üzerinde buton görünmez)</small></span>
+      <input type="text" name="sube[paket_servis]" value="<?= e($sube['paket_servis'] ?? '') ?>" placeholder="/hizmetler.php#paket-servis">
     </label>
   </section>
 

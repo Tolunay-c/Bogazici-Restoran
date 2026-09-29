@@ -9,6 +9,9 @@
       </div>
       <div class="btn-grup">
         <?= buton($b['buton_yazi'] ?? '', $b['buton_link'] ?? '', 'birincil', 'btn--lg') ?>
+        <?php if (!empty($b['buton2_yazi'])): ?>
+          <?= buton($b['buton2_yazi'], $b['buton2_link'] ?? '', 'ikincil', 'btn--lg') ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

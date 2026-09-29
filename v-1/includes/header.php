@@ -11,6 +11,7 @@ $sayfa_basligi   = $sayfa_basligi   ?? SITE_ADI;
 $sayfa_aciklama  = $sayfa_aciklama  ?? '';
 
 $menu = [
+    'index'       => ['Ana Sayfa',  '/'],
     'kurumsal'    => ['Kurumsal',   '/kurumsal.php'],
     'subeler'     => ['Şubeler',    '/subeler.php'],
     'menu'        => ['Menü',       '/menu.php'],

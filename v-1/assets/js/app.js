@@ -169,6 +169,23 @@
      yüklendiği için hazır olmasını bekliyoruz; yoksa alan boş kalır
      ama sayfa çalışmaya devam eder.
      ------------------------------------------------------------ */
+  var HARITA_KAROSU = 'https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}{r}.png?key=xq1fgVVFhTHrdVSQ6lwc';
+  var HARITA_ATIF = '&copy; <a href="https://www.maptiler.com/copyright/" target="_blank" rel="noopener">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> katkıcıları';
+
+  function haritaIsaretIkonu() {
+    return L.divIcon({
+      className: 'harita__isaret-kutu',
+      html: '<span class="harita__isaret">' +
+              '<span class="harita__isaret-halka"></span>' +
+              '<span class="harita__isaret-halka harita__isaret-halka--gec"></span>' +
+              '<span class="harita__isaret-nokta"></span>' +
+            '</span>',
+      iconSize: [22, 22],
+      iconAnchor: [11, 11],
+      popupAnchor: [0, -14]
+    });
+  }
+
   function haritaKur(el) {
     var enlem = parseFloat(el.getAttribute('data-enlem'));
     var boylam = parseFloat(el.getAttribute('data-boylam'));
@@ -182,28 +199,16 @@
       attributionControl: true
     });
 
-    L.tileLayer('https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}{r}.png?key=xq1fgVVFhTHrdVSQ6lwc', {
+    L.tileLayer(HARITA_KAROSU, {
       maxZoom: 20,
       tileSize: 512,
       zoomOffset: -1,
       crossOrigin: true,
-      attribution: '&copy; <a href="https://www.maptiler.com/copyright/" target="_blank" rel="noopener">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> katkıcıları'
+      attribution: HARITA_ATIF
     }).addTo(harita);
 
-    var isaret = L.divIcon({
-      className: 'harita__isaret-kutu',
-      html: '<span class="harita__isaret">' +
-              '<span class="harita__isaret-halka"></span>' +
-              '<span class="harita__isaret-halka harita__isaret-halka--gec"></span>' +
-              '<span class="harita__isaret-nokta"></span>' +
-            '</span>',
-      iconSize: [22, 22],
-      iconAnchor: [11, 11],
-      popupAnchor: [0, -14]
-    });
-
     L.marker([enlem, boylam], {
-      icon: isaret,
+      icon: haritaIsaretIkonu(),
       title: el.getAttribute('data-ad') || '',
       alt: el.getAttribute('data-ad') || ''
     }).addTo(harita)
@@ -223,6 +228,83 @@
       haritalar.forEach(haritaKur);
     }, 60);
     setTimeout(function () { clearInterval(bekle); }, 8000);
+  }
+
+  /* --- Harita (sekmeli, tek harita) — iletişim sayfası ----------
+     Şube sekmesine basınca aynı harita yeni konuma kayar; ayrı bir
+     Leaflet örneği açmaz. ------------------------------------- */
+  function haritaSekmeliKur(kok) {
+    var tuval = kok.querySelector('[data-harita-sekmeli-tuval]');
+    if (!tuval) return;
+
+    var enlem = parseFloat(tuval.getAttribute('data-enlem'));
+    var boylam = parseFloat(tuval.getAttribute('data-boylam'));
+    if (isNaN(enlem) || isNaN(boylam)) return;
+
+    var harita = L.map(tuval, {
+      center: [enlem, boylam],
+      zoom: 15,
+      scrollWheelZoom: false,
+      zoomControl: false,
+      attributionControl: true
+    });
+
+    L.tileLayer(HARITA_KAROSU, {
+      maxZoom: 20,
+      tileSize: 512,
+      zoomOffset: -1,
+      crossOrigin: true,
+      attribution: HARITA_ATIF
+    }).addTo(harita);
+
+    var isaret = L.marker([enlem, boylam], {
+      icon: haritaIsaretIkonu(),
+      title: tuval.getAttribute('data-ad') || ''
+    }).addTo(harita);
+
+    harita.on('click', function () { harita.scrollWheelZoom.enable(); });
+    harita.on('mouseout', function () { harita.scrollWheelZoom.disable(); });
+
+    var sekmeler = kok.parentElement.querySelectorAll('.harita-sekmeli__sekme');
+    var link = kok.querySelector('[data-harita-sekmeli-link]');
+    var adEl = kok.querySelector('[data-harita-sekmeli-ad]');
+    var adresEl = kok.querySelector('[data-harita-sekmeli-adres]');
+
+    sekmeler.forEach(function (sekme) {
+      sekme.addEventListener('click', function () {
+        var e = parseFloat(sekme.getAttribute('data-enlem'));
+        var b = parseFloat(sekme.getAttribute('data-boylam'));
+        if (isNaN(e) || isNaN(b)) return;
+
+        sekmeler.forEach(function (s) {
+          s.classList.remove('harita-sekmeli__sekme--aktif');
+          s.setAttribute('aria-selected', 'false');
+        });
+        sekme.classList.add('harita-sekmeli__sekme--aktif');
+        sekme.setAttribute('aria-selected', 'true');
+
+        harita.setView([e, b], 15);
+        isaret.setLatLng([e, b]);
+        isaret.setIcon(haritaIsaretIkonu());
+        tuval.setAttribute('aria-label', (sekme.getAttribute('data-ad') || '') + ' şubesi konumu haritada');
+
+        if (adEl) adEl.textContent = sekme.getAttribute('data-ad') || '';
+        if (adresEl) adresEl.textContent = sekme.getAttribute('data-adres') || '';
+        if (link) link.setAttribute('href', sekme.getAttribute('data-yol-tarifi') || '#');
+
+        setTimeout(function () { harita.invalidateSize(); }, 50);
+      });
+    });
+  }
+
+  var haritaSekmeliKoklari = document.querySelectorAll('[data-harita-sekmeli]');
+  if (haritaSekmeliKoklari.length) {
+    var bekleSekmeli = setInterval(function () {
+      if (typeof L === 'undefined') return;
+      clearInterval(bekleSekmeli);
+      haritaSekmeliKoklari.forEach(haritaSekmeliKur);
+    }, 60);
+    setTimeout(function () { clearInterval(bekleSekmeli); }, 8000);
   }
 
   /* --- Sayaç ---------------------------------------------------

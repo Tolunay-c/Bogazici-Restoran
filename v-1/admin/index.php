@@ -4,7 +4,7 @@ require_once __DIR__ . '/ortak.php';
 admin_zorunlu();
 
 $veri = veri_oku();
-$sayfalar = array_keys($veri['sayfalar'] ?? []);
+$sayfalar = array_filter(array_keys($veri['sayfalar'] ?? []), static fn (string $s): bool => $s !== '');
 $subeler  = $veri['subeler'] ?? [];
 $gorseller = gorsel_listesi();
 

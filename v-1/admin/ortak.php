@@ -82,6 +82,13 @@ function veri_oku(): array
 
 function veri_yaz(array $veri): bool
 {
+    // Boş/geçersiz slug'lı "hayalet" sayfa girdileri hiçbir URL'e bağlı
+    // değildir; admin arayüzünde yanlışlıkla açılıp kaydedilebiliyorlar
+    // ama siteye hiç yansımıyorlar. Her yazımda temizle.
+    if (isset($veri['sayfalar']) && is_array($veri['sayfalar'])) {
+        unset($veri['sayfalar']['']);
+    }
+
     $y = veri_yolu();
     $yedek = $y . '.yedek';
     if (is_file($y)) {
@@ -204,6 +211,10 @@ function sayfa_etiket(string $slug): string
         'galeri'      => 'Galeri',
         'rezervasyon' => 'Rezervasyon',
         'iletisim'    => 'İletişim',
+        'kvkk'        => 'KVKK Aydınlatma Metni',
+        'gizlilik'    => 'Gizlilik Politikası',
+        'cerez'       => 'Çerez Aydınlatma Metni',
+        'ik'          => 'İnsan Kaynakları',
     ][$slug] ?? ucfirst($slug);
 }
 
@@ -367,6 +378,12 @@ function bolum_tip_etiket(string $tip): string
         'menu-liste'       => 'Menü Listesi',
         'iletisim'         => 'İletişim Bloğu',
         'rezervasyon-akis' => 'Rezervasyon Akışı',
+        'harita'           => 'Harita (tekli)',
+        'harita-sekmeli'   => 'Harita (sekmeli)',
+        'zaman-cizelgesi'  => 'Zaman Çizelgesi',
+        'sube-iletisim'    => 'Şube Kartları (İletişim)',
+        'genel-iletisim'   => 'Genel İletişim Şeridi',
+        'belge'            => 'Belge Metni (KVKK/Gizlilik vb.)',
     ][$tip] ?? $tip;
 }
 
@@ -403,5 +420,12 @@ function alan_etiket(string $k): string
         'ad'             => 'Ad',
         'fiyat'          => 'Fiyat',
         'ozet'           => 'Özet',
+        'telefon'        => 'Telefon (tel: link)',
+        'telefon_yazi'   => 'Telefon (gösterim)',
+        'eposta'         => 'E-posta',
+        'guncelleme'     => 'Son Güncelleme Tarihi',
+        'bolumler'       => 'Bölümler',
+        'kimlik'         => 'Bağlantı Kimliği (id, opsiyonel)',
+        'alinti'         => 'Alıntı / Slogan',
     ][$k] ?? ucfirst(str_replace('_', ' ', $k));
 }

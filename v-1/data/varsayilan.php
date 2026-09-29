@@ -47,6 +47,7 @@ $varsayilan = [
             'enlem' => 38.4664, 'boylam' => 27.0975,
             'yol_tarifi' => 'https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Bostanli+Izmir',
             'bolgeler' => ['Bahçe', 'İç salon', 'Üst kat'],
+            'paket_servis' => '/hizmetler.php#paket-servis',
         ],
     ],
     'sayfalar' => [],
@@ -73,18 +74,6 @@ $varsayilan['sayfalar']['anasayfa'] = [
         'gorsel' => 'mutfak.webp', 'gorsel_odak' => 'merkez',
         'gorsel_alt' => 'Mutfakta günlük meze hazırlığı',
         'buton_yazi' => 'Hikâyemiz', 'buton_link' => '/kurumsal.php',
-    ],
-    [
-        'tip' => 'menu-vitrin', 'zemin' => 'kum',
-        'ustluk' => 'Bu haftanın tezgâhı', 'baslik' => 'Öne çıkanlar',
-        'alt_baslik' => 'Fiyatlar günlük tezgâha göre değişebilir.',
-        'buton_yazi' => 'Menünün tamamı', 'buton_link' => '/menu.php',
-        'ogeler' => [
-            ['baslik' => 'Çupra ızgara', 'metin' => 'Porsiyon, mevsim yeşilliği ile', 'fiyat' => '780 ₺', 'gorsel' => 'urun-cupra.webp'],
-            ['baslik' => 'Ahtapot ızgara', 'metin' => 'Közlenmiş patates, limon', 'fiyat' => '920 ₺', 'gorsel' => 'urun-ahtapot.webp'],
-            ['baslik' => 'Karides güveç', 'metin' => 'Kaşarlı, fırında', 'fiyat' => '640 ₺', 'gorsel' => 'urun-karides.webp'],
-            ['baslik' => 'Meze tabağı', 'metin' => 'Yedi çeşit, iki kişilik', 'fiyat' => '540 ₺', 'gorsel' => 'urun-meze.webp'],
-        ],
     ],
     [
         'tip' => 'sube-listesi', 'zemin' => 'beyaz',
@@ -152,29 +141,54 @@ $varsayilan['sayfalar']['anasayfa'] = [
 $varsayilan['sayfalar']['kurumsal'] = [
     [
         'tip' => 'sayfa-basligi', 'zemin' => 'koyu',
-        'ustluk' => 'Kurumsal', 'baslik' => 'Bir tezgâhla başladı',
+        'ustluk' => 'Kurumsal', 'baslik' => '1993’ten Bugüne, Aynı Özenle',
+        'alt_baslik' => 'İzmir’de başlayan Boğaziçi yolculuğu, bugün Bostanlı, Üçkuyular ve Narlıdere’de aynı kalite ve hizmet anlayışıyla devam ediyor.',
         'gorsel' => 'basluk-kurumsal.webp', 'gorsel_odak' => 'ust', 'gorsel_alt' => '',
     ],
     [
         'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
-        'baslik' => '1993’ten bugüne',
-        'metin' => 'Bostanlı’da on iki masalık bir balıkçı olarak açıldık. Bugün Üçkuyular ve Narlıdere şubelerimizle üç ayrı noktada hizmet veriyoruz; mutfak ekibinin çekirdek kadrosu ilk günden beri aynı.',
+        'ustluk' => 'Hikâyemiz', 'baslik' => 'İzmir’de Bir Boğaziçi Klasiği',
+        'metin' => "Boğaziçi Restaurant’ın yolculuğu 1993 yılında Bostanlı’da başladı. 2010 yılında Üçkuyular, 2017 yılında ise Narlıdere şubesinin katılmasıyla Boğaziçi lezzetleri İzmir Körfezi’nin farklı noktalarında misafirleriyle buluşmaya devam etti.\nYıllar içinde değişen ve gelişen menümüzü; kaliteli ürün, özenli hazırlık ve misafir memnuniyetini merkeze alan hizmet anlayışımızla bir araya getiriyoruz.\nBugün üç şubemizde, yılların deneyimini her sofraya aynı özenle taşıyoruz.",
         'gorsel' => 'kurumsal-01.webp', 'gorsel_alt' => 'İlk şubenin arşiv fotoğrafı',
     ],
     [
-        'tip' => 'kart-izgara', 'zemin' => 'kum',
-        'ustluk' => 'Çalışma biçimimiz', 'baslik' => 'Değişmeyen üç şey',
+        'tip' => 'zaman-cizelgesi', 'zemin' => 'kum',
+        'ustluk' => 'Otuz yılı aşan bir hikâye',
         'ogeler' => [
-            ['baslik' => 'Günlük tedarik', 'metin' => 'Balık ve sebze her sabah alınır; dondurulmuş ürün kullanılmaz.'],
-            ['baslik' => 'Tek tarif defteri', 'metin' => 'Üç şubede aynı ölçüler, aynı sunum.'],
-            ['baslik' => 'Sabit ekip', 'metin' => 'Mutfak şefleri ve servis sorumluları uzun yıllardır bizimle.'],
+            ['yil' => '1993', 'baslik' => 'Bostanlı', 'metin' => 'Boğaziçi Restaurant’ın İzmir’deki yolculuğu başladı.'],
+            ['yil' => '2010', 'baslik' => 'Üçkuyular', 'metin' => 'Boğaziçi deneyimi Körfez’in diğer yakasına taşındı.'],
+            ['yil' => '2017', 'baslik' => 'Narlıdere', 'metin' => 'Üçüncü şubemizle İzmir’deki hizmet ağımız genişledi.'],
+            ['yil' => 'Bugün', 'baslik' => 'Üç Şube, Tek Boğaziçi', 'metin' => 'Bostanlı, Üçkuyular ve Narlıdere’de aynı hizmet anlayışıyla misafirlerimizi ağırlamaya devam ediyoruz.'],
         ],
     ],
     [
+        'tip' => 'kart-izgara', 'zemin' => 'beyaz',
+        'ustluk' => 'Çalışma biçimimiz', 'baslik' => 'Boğaziçi’nin Değişmeyen Değerleri',
+        'ogeler' => [
+            ['baslik' => 'Kalite', 'metin' => 'Ürün seçiminden sunuma kadar her aşamada kaliteyi ön planda tutuyoruz.'],
+            ['baslik' => 'Özen', 'metin' => 'Her tabağı, her sofrayı ve her misafirimizi Boğaziçi deneyiminin bir parçası olarak görüyoruz.'],
+            ['baslik' => 'Misafirperverlik', 'metin' => 'Yılların deneyimini güler yüzlü ve özenli hizmet anlayışıyla buluşturuyoruz.'],
+        ],
+    ],
+    [
+        'tip' => 'metin-gorsel', 'zemin' => 'kum', 'yon' => 'sol',
+        'ustluk' => 'Mutfak Anlayışımız', 'baslik' => 'Lezzetin Temelinde Kalite Var',
+        'metin' => 'Mevsiminde balık çeşitlerinden yöresel kebaplara, Ege mutfağının zeytinyağlılarından sıcak ve soğuk mezelere uzanan zengin mutfağımızda, ürün kalitesini ve tazeliği ön planda tutuyoruz.',
+        'alinti' => '“İyi Ye, İyi Yaşa”',
+        'gorsel' => 'mutfak.webp', 'gorsel_alt' => 'Mutfakta hazırlanan sofra',
+    ],
+    [
+        'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
+        'ustluk' => 'Kalite & Hijyen', 'baslik' => 'Kalite, Boğaziçi’nin Temelidir',
+        'metin' => 'Sağlıklı ürün, hijyen ve kaliteli hizmet anlayışını mutfağımızın temel standartları arasında görüyoruz. Et ve balık hazırlama süreçlerinin ayrı mutfaklarda yürütülmesi dahil olmak üzere, mutfak organizasyonumuzu kalite ve hijyen anlayışımız doğrultusunda sürdürüyoruz.',
+        'gorsel' => 'kurumsal-01.webp', 'gorsel_alt' => '',
+    ],
+    [
         'tip' => 'cta-bant', 'zemin' => 'koyu',
-        'baslik' => 'Özel gününüz için ayrı planlama yapıyoruz',
-        'metin' => 'Nişan, doğum günü ve kurumsal yemekler için şube sorumlusuyla görüşün.',
-        'buton_yazi' => 'İletişime geçin', 'buton_link' => '/iletisim.php',
+        'baslik' => 'Boğaziçi Deneyimini Keşfedin',
+        'metin' => 'Bostanlı, Üçkuyular ve Narlıdere şubelerimizde sizi aynı özen ve misafirperverlikle karşılıyoruz.',
+        'buton_yazi' => 'Şubelerimiz', 'buton_link' => '/subeler.php',
+        'buton2_yazi' => 'Rezervasyon', 'buton2_link' => '/rezervasyon.php',
     ],
 ];
 
@@ -191,21 +205,47 @@ $varsayilan['sayfalar']['subeler'] = [
 ];
 
 $varsayilan['sayfalar']['hizmetler'] = [
-    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Hizmetler',
-     'baslik' => 'Sofranızı biz kuralım', 'gorsel' => 'basluk-hizmetler.webp', 'gorsel_alt' => ''],
-    ['tip' => 'kart-izgara', 'zemin' => 'beyaz',
-     'ustluk' => 'Ne yapıyoruz', 'baslik' => 'Üç ayrı hizmet',
-     'alt_baslik' => 'Restoran dışında da çalışıyoruz.',
-     'ogeler' => [
-        ['baslik' => 'Özel gün organizasyonu', 'metin' => 'Nişan, doğum günü ve yıldönümleri için ayrı menü ve yerleşim planı.', 'gorsel' => 'hizmet-01.webp', 'gorsel_alt' => ''],
-        ['baslik' => 'Kurumsal yemek', 'metin' => 'Toplantı ve ekip yemekleri; sabit menü, fatura ve önceden yerleşim.', 'gorsel' => 'hizmet-02.webp', 'gorsel_alt' => ''],
-        ['baslik' => 'Paket servis', 'metin' => 'Meze ve ızgara seçkisi; üç şubeden de aynı gün teslim.', 'gorsel' => 'hizmet-03.webp', 'gorsel_alt' => ''],
-     ]],
-    ['tip' => 'metin-gorsel', 'zemin' => 'kum', 'yon' => 'sol',
-     'ustluk' => 'Nasıl ilerliyor', 'baslik' => 'Önce konuşuyoruz, sonra menü yazıyoruz',
-     'metin' => 'Kişi sayısı, bütçe ve tercihleri konuşuyoruz; şube sorumlusu size özel bir menü önerisi hazırlıyor. Onaydan sonra yerleşim planını birlikte çıkarıyoruz.',
-     'gorsel' => 'kurumsal-01.webp', 'gorsel_alt' => '',
-     'buton_yazi' => 'Teklif isteyin', 'buton_link' => '/iletisim.php'],
+    [
+        'tip' => 'sayfa-basligi', 'zemin' => 'koyu',
+        'ustluk' => 'Hizmetler', 'baslik' => 'Her Buluşmaya Boğaziçi Dokunuşu',
+        'alt_baslik' => 'İş dünyasından özel davetlere, farklı ihtiyaçlara özenli mutfak ve profesyonel hizmet anlayışımızla eşlik ediyoruz.',
+        'gorsel' => 'basluk-hizmetler.webp', 'gorsel_alt' => '',
+    ],
+    [
+        'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
+        'ustluk' => '01 — İş Toplantıları & Seminerler', 'baslik' => 'İş Buluşmalarınıza Özenli Bir Ev Sahipliği',
+        'metin' => 'İş yemekleri, kurumsal buluşmalar, toplantılar ve seminerler için Boğaziçi’nin hizmet anlayışını profesyonel organizasyon deneyimiyle bir araya getiriyoruz.',
+        'buton_yazi' => 'Bilgi al', 'buton_link' => '/iletisim.php',
+        'gorsel' => 'hizmet-01.webp', 'gorsel_alt' => 'İş toplantısı için hazırlanmış masa',
+    ],
+    [
+        'tip' => 'metin-gorsel', 'zemin' => 'kum', 'yon' => 'sol',
+        'ustluk' => '02 — Kokteyl & Etkinlik', 'baslik' => 'Özel Anlara Özenli Dokunuşlar',
+        'metin' => 'Kurumsal etkinliklerden özel davetlere, farklı organizasyon ihtiyaçlarını Boğaziçi mutfağı ve hizmet kalitesiyle buluşturuyoruz.',
+        'buton_yazi' => 'Organizasyon bilgisi al', 'buton_link' => '/iletisim.php',
+        'gorsel' => 'hizmet-02.webp', 'gorsel_alt' => 'Kokteyl etkinliği hazırlığı',
+    ],
+    [
+        'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
+        'ustluk' => '03 — Catering', 'baslik' => 'Boğaziçi Lezzetleri Dilediğiniz Yerde',
+        'metin' => 'Toplantı, davet ve özel organizasyonlarınız için Boğaziçi mutfağının deneyimini bulunduğunuz mekâna taşıyoruz.',
+        'buton_yazi' => 'Catering için bilgi al', 'buton_link' => '/iletisim.php',
+        'gorsel' => 'hizmet-03.webp', 'gorsel_alt' => 'Catering için hazırlanmış sofra',
+    ],
+    [
+        'tip' => 'metin-gorsel', 'zemin' => 'kum', 'yon' => 'sol', 'kimlik' => 'paket-servis',
+        'ustluk' => '04 — Paket Servis', 'baslik' => 'Boğaziçi Lezzetleri Size Gelsin',
+        'metin' => 'Sevdiğiniz Boğaziçi lezzetlerini restoran deneyiminden ödün vermeden, özenli hazırlık ve paketleme anlayışıyla sofranıza ulaştırıyoruz.',
+        'buton_yazi' => 'Paket servis bilgi al', 'buton_link' => '/iletisim.php',
+        'gorsel' => 'mutfak.webp', 'gorsel_alt' => 'Paket servis için hazırlanan lezzetler',
+    ],
+    [
+        'tip' => 'cta-bant', 'zemin' => 'koyu',
+        'baslik' => 'İhtiyacınıza Özel Çözümler',
+        'metin' => 'Organizasyon, catering ve diğer hizmetlerimiz hakkında detaylı bilgi almak için ekibimizle iletişime geçebilirsiniz.',
+        'buton_yazi' => 'Bilgi alın', 'buton_link' => '/iletisim.php',
+        'buton2_yazi' => 'İletişim', 'buton2_link' => '/iletisim.php',
+    ],
 ];
 
 $menu_kategorileri = [
@@ -263,20 +303,24 @@ $menu_kategorileri = [
 
 $varsayilan['sayfalar']['menu'] = [
     ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Menü',
-     'baslik' => 'Bugün tezgâhta ne var?', 'gorsel' => 'basluk-menu.webp', 'gorsel_alt' => ''],
+     'baslik' => 'Boğaziçi Mutfağını Keşfedin',
+     'alt_baslik' => 'Deniz ürünlerinden Ege’nin sevilen lezzetlerine, mezelerden sıcaklara uzanan Boğaziçi mutfağını keşfedin.',
+     'gorsel' => 'basluk-menu.webp', 'gorsel_alt' => ''],
     ['tip' => 'menu-liste', 'zemin' => 'beyaz',
-     'alt_baslik' => 'Fiyatlar günlük tezgâha göre değişebilir. Paket servise uygun ürünler ayrıca işaretlidir.',
+     'alt_baslik' => 'Menü içeriği şubelere ve ürünlerin mevsimsel durumuna göre farklılık gösterebilir.',
      'kategoriler' => $menu_kategorileri],
     ['tip' => 'cta-bant', 'zemin' => 'kum',
-     'baslik' => 'Masanızı ayırtın', 'metin' => 'Menüyü beğendiyseniz gerisi kolay.',
-     'buton_yazi' => 'Rezervasyon yap', 'buton_link' => '/rezervasyon.php'],
+     'baslik' => 'Boğaziçi Sofrasında Yerinizi Ayırtın',
+     'metin' => 'Seçkin lezzetlerimizi Üçkuyular, Narlıdere ve Bostanlı şubelerimizde keşfedin.',
+     'buton_yazi' => 'Rezervasyon yap', 'buton_link' => '/rezervasyon.php',
+     'buton2_yazi' => 'Şubelerimiz', 'buton2_link' => '/subeler.php'],
 ];
 
 $varsayilan['sayfalar']['galeri'] = [
     ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Galeri',
      'baslik' => 'Mekândan kareler', 'gorsel' => 'basluk-galeri.webp', 'gorsel_alt' => ''],
     ['tip' => 'galeri-onizleme', 'zemin' => 'beyaz',
-     'ogeler' => $varsayilan['sayfalar']['anasayfa'][5]['ogeler']],
+     'ogeler' => $varsayilan['sayfalar']['anasayfa'][4]['ogeler']],
 ];
 
 $varsayilan['sayfalar']['rezervasyon'] = [
@@ -291,8 +335,69 @@ $varsayilan['sayfalar']['iletisim'] = [
     ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'İletişim',
      'baslik' => 'Bize ulaşın', 'gorsel' => 'basluk-iletisim.webp', 'gorsel_alt' => ''],
     ['tip' => 'iletisim', 'zemin' => 'beyaz',
-     'ustluk' => 'Yazın', 'baslik' => 'Sorunuz mu var?',
-     'metin' => 'Rezervasyon için formu değil, rezervasyon sayfasını kullanın — orada anında onay alıyorsunuz.'],
+     'ustluk' => 'İletişim', 'baslik' => 'Bize Yazın',
+     'metin' => 'Görüş, öneri ve taleplerinizi form aracılığıyla bizimle paylaşabilirsiniz. Ekibimiz en kısa sürede sizinle iletişime geçecektir.'],
+    ['tip' => 'sube-iletisim', 'zemin' => 'kum',
+     'ustluk' => 'Şubeler', 'baslik' => 'Şubelerimize Ulaşın'],
+    ['tip' => 'harita-sekmeli', 'zemin' => 'beyaz',
+     'ustluk' => 'Harita', 'baslik' => 'Size En Yakın Boğaziçi'],
+    ['tip' => 'genel-iletisim', 'zemin' => 'kum',
+     'ustluk' => 'Genel', 'baslik' => 'Genel İletişim',
+     'telefon' => '+908508500850', 'telefon_yazi' => '0850 850 0850',
+     'eposta' => 'info@bogazicirestaurant.com.tr'],
+];
+
+$varsayilan['sayfalar']['kvkk'] = [
+    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Kurumsal',
+     'baslik' => 'KVKK Aydınlatma Metni'],
+    ['tip' => 'belge', 'zemin' => 'beyaz',
+     'guncelleme' => 'Ocak 2026',
+     'bolumler' => [
+        ['baslik' => 'Veri Sorumlusu', 'metin' => 'İşbu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca, Boğaziçi Restaurant (“Boğaziçi”, veri sorumlusu) tarafından işlenen kişisel verileriniz hakkında sizi bilgilendirmek amacıyla hazırlanmıştır.'],
+        ['baslik' => 'İşlenen Kişisel Veriler', 'metin' => 'Rezervasyon, iletişim formu ve şube içi işlemleriniz sırasında ad soyad, telefon, e-posta, rezervasyon tercihleri ve mesaj içeriğiniz gibi kişisel verileriniz işlenmektedir.'],
+        ['baslik' => 'İşleme Amaçları', 'metin' => 'Kişisel verileriniz; rezervasyon taleplerinizin karşılanması, iletişim formu üzerinden ilettiğiniz talep ve önerilerin yanıtlanması, hizmet kalitesinin artırılması ve yasal yükümlülüklerin yerine getirilmesi amaçlarıyla işlenir.'],
+        ['baslik' => 'Aktarım', 'metin' => 'Kişisel verileriniz, yasal zorunluluklar dışında üçüncü kişilerle paylaşılmaz; yalnızca hizmetin sunumu için gerekli iş ortaklarımızla (örn. rezervasyon/SMS altyapı sağlayıcıları) sınırlı ölçüde paylaşılabilir.'],
+        ['baslik' => 'Haklarınız', 'metin' => 'KVKK’nın 11. maddesi kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya silinmesini talep etme dahil haklarınızı kullanmak için info@bogazicirestaurant.com.tr adresinden bizimle iletişime geçebilirsiniz.'],
+     ]],
+];
+
+$varsayilan['sayfalar']['gizlilik'] = [
+    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Kurumsal',
+     'baslik' => 'Gizlilik Politikası'],
+    ['tip' => 'belge', 'zemin' => 'beyaz',
+     'guncelleme' => 'Ocak 2026',
+     'bolumler' => [
+        ['baslik' => 'Kapsam', 'metin' => 'Bu gizlilik politikası, bogazicirestaurant.com.tr web sitesi üzerinden topladığımız bilgilerin nasıl kullanıldığını ve korunduğunu açıklar.'],
+        ['baslik' => 'Toplanan Bilgiler', 'metin' => 'Rezervasyon ve iletişim formları aracılığıyla paylaştığınız ad soyad, telefon, e-posta ve mesaj bilgileri ile sitenin genel kullanım istatistiklerine ilişkin teknik veriler toplanır.'],
+        ['baslik' => 'Bilgilerin Kullanımı', 'metin' => 'Toplanan bilgiler yalnızca rezervasyon süreçlerinizin yürütülmesi, taleplerinize dönüş yapılması ve site deneyiminin iyileştirilmesi amacıyla kullanılır; pazarlama amacıyla üçüncü taraflarla paylaşılmaz.'],
+        ['baslik' => 'Veri Güvenliği', 'metin' => 'Kişisel verilerinizin güvenliğini sağlamak için makul teknik ve idari tedbirler alınmaktadır. Yine de internet üzerinden yapılan hiçbir veri aktarımının %100 güvenli olduğu garanti edilemez.'],
+        ['baslik' => 'İletişim', 'metin' => 'Gizlilik politikamızla ilgili sorularınız için info@bogazicirestaurant.com.tr adresinden bize ulaşabilirsiniz.'],
+     ]],
+];
+
+$varsayilan['sayfalar']['cerez'] = [
+    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Kurumsal',
+     'baslik' => 'Çerez Aydınlatma Metni'],
+    ['tip' => 'belge', 'zemin' => 'beyaz',
+     'guncelleme' => 'Ocak 2026',
+     'bolumler' => [
+        ['baslik' => 'Çerez Nedir?', 'metin' => 'Çerezler, ziyaret ettiğiniz web siteleri tarafından tarayıcınıza kaydedilen küçük metin dosyalarıdır. Sitemizin düzgün çalışmasını ve deneyiminizi iyileştirmeyi sağlarlar.'],
+        ['baslik' => 'Kullanılan Çerez Türleri', 'metin' => 'Sitemizde; temel site işlevlerini sağlayan zorunlu çerezler ile ziyaretçi davranışlarını anonim biçimde ölçen performans/analiz çerezleri kullanılmaktadır.'],
+        ['baslik' => 'Çerez Yönetimi', 'metin' => 'Tarayıcı ayarlarınız üzerinden çerezleri silebilir veya engelleyebilirsiniz. Ancak zorunlu çerezlerin engellenmesi, sitenin bazı bölümlerinin düzgün çalışmamasına neden olabilir.'],
+        ['baslik' => 'İletişim', 'metin' => 'Çerez kullanımımızla ilgili sorularınız için info@bogazicirestaurant.com.tr adresinden bize ulaşabilirsiniz.'],
+     ]],
+];
+
+$varsayilan['sayfalar']['ik'] = [
+    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Kurumsal',
+     'baslik' => 'İnsan Kaynakları'],
+    ['tip' => 'belge', 'zemin' => 'beyaz',
+     'bolumler' => [
+        ['baslik' => 'Neden Boğaziçi?', 'metin' => '1993’ten bu yana İzmir’de aynı özenle hizmet veren ekibimiz, üç şubede büyümeye devam ediyor. Boğaziçi ailesinde uzun soluklu bir kariyer, güçlü bir mutfak kültürü ve misafirperverlik anlayışı sizi bekliyor.'],
+        ['baslik' => 'Açık Pozisyonlar', 'metin' => 'Şu anda güncel ilan bulunmasa da, mutfak, servis ve yönetim alanlarında özgeçmişinizi değerlendirmek üzere ik@bogazicirestaurant.com.tr adresine iletebilirsiniz.'],
+        ['baslik' => 'Başvuru Süreci', 'metin' => 'Başvurunuz İnsan Kaynakları ekibimiz tarafından değerlendirilir; uygun bir pozisyon açıldığında sizinle iletişime geçilir.'],
+        ['baslik' => 'KVKK Bilgilendirmesi', 'metin' => 'Paylaştığınız özgeçmiş ve iletişim bilgileri, yalnızca işe alım süreçleri kapsamında işlenir. Detaylı bilgi için KVKK Aydınlatma Metni’ni inceleyebilirsiniz.'],
+     ]],
 ];
 
 return $varsayilan;

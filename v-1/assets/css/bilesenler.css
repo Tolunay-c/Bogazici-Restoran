@@ -361,6 +361,24 @@ body { padding-bottom: var(--altbar-y); }
 .alt__izgara { display: grid; gap: var(--bosluk-7); }
 .alt__baslik { font-family: var(--f-govde); font-size: var(--yazi-xs); font-weight: 500; letter-spacing: var(--harf-ustluk); text-transform: uppercase; color: var(--metin-ters-ikincil); margin-bottom: var(--bosluk-4); }
 .alt__liste { display: grid; gap: var(--bosluk-3); font-size: var(--yazi-sm); }
+.alt__moto {
+  margin-top: var(--bosluk-4);
+  font-family: var(--f-display);
+  font-style: italic;
+  color: var(--marka-vurgu);
+}
+.alt__sosyal { display: flex; gap: var(--bosluk-4); margin-top: var(--bosluk-5); }
+.alt__sosyal a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--cizgi-ters);
+  border-radius: var(--r-tam);
+  color: var(--metin-ters-ikincil);
+}
+.alt__sosyal svg { width: 17px; height: 17px; }
+.alt__sosyal a:hover { color: var(--notr-kum); border-color: var(--metin-ters-ikincil); }
 .alt__telif {
   margin-top: var(--bosluk-8);
   padding-top: var(--bosluk-5);

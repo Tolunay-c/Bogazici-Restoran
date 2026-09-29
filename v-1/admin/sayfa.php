@@ -141,7 +141,7 @@ require __DIR__ . '/_ust.php';
     $tip = (string) ($b['tip'] ?? '');
     // Bu bölümde JSON olarak düzenlenecek alanlar
     $jsonAlanlar = [];
-    foreach (['ogeler', 'kategoriler'] as $ja) {
+    foreach (['ogeler', 'kategoriler', 'bolumler'] as $ja) {
       if (isset($b[$ja]) && is_array($b[$ja])) $jsonAlanlar[] = $ja;
     }
   ?>

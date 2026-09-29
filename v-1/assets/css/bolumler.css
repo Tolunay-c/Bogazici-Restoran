@@ -79,6 +79,16 @@
   .metin-gorsel--sol .metin-gorsel__gorsel { margin-left: calc(var(--kenar) * -1); border-radius: 0 var(--r-md) var(--r-md) 0; }
 }
 
+.metin-gorsel__alinti {
+  margin: 0;
+  padding-left: var(--bosluk-5);
+  border-left: 2px solid var(--vurgu);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--yazi-xl);
+  color: var(--vurgu-metin);
+}
+
 /* ==============================================================
    kart-izgara  (1 -> 2 -> 3; 4 öğede 2x2)
    ============================================================== */
@@ -88,6 +98,93 @@
   .kart-izgara__liste { grid-template-columns: repeat(3, 1fr); }
   .kart-izgara__liste[data-adet="4"] { grid-template-columns: repeat(2, 1fr); }
   .kart-izgara__liste[data-adet="2"] { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==============================================================
+   zaman-cizelgesi — hikâye zaman çizelgesi (1993 ─ 2010 ─ 2017 ─ Bugün)
+   Mobilde dikey ray + kart; masaüstünde yatay ray + kart.
+   ============================================================== */
+.zaman-cizelgesi__liste {
+  position: relative;
+  display: grid;
+  gap: var(--bosluk-7);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/* Sürekli ray — her öğenin kendi kenarlığı yerine tek parça çizgi */
+.zaman-cizelgesi__liste::before {
+  content: "";
+  position: absolute;
+  background: var(--cizgi-guclu);
+  left: 9px;
+  top: 9px;
+  bottom: 9px;
+  width: 2px;
+}
+.zaman-cizelgesi__oge {
+  position: relative;
+  padding-left: var(--bosluk-7);
+  display: flex;
+  flex-direction: column;
+}
+.zaman-cizelgesi__nokta {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--r-tam);
+  background: var(--zemin);
+  border: 2px solid var(--vurgu);
+  z-index: 1;
+}
+.zaman-cizelgesi__oge--vurgu .zaman-cizelgesi__nokta {
+  background: var(--vurgu);
+  box-shadow: 0 0 0 4px rgb(168 137 76 / .18);
+}
+.zaman-cizelgesi__kart {
+  flex: 1;
+  background: var(--zemin-yukseltilmis);
+  border: 1px solid var(--cizgi);
+  border-radius: var(--r-md);
+  padding: var(--bosluk-5);
+  display: grid;
+  align-content: start;
+  gap: var(--bosluk-2);
+  box-shadow: 0 1px 2px rgb(14 31 38 / .04), 0 10px 24px -16px rgb(14 31 38 / .18);
+}
+.zaman-cizelgesi__oge--vurgu .zaman-cizelgesi__kart {
+  background: rgb(168 137 76 / .07);
+  border-color: rgb(168 137 76 / .4);
+  box-shadow: 0 1px 2px rgb(14 31 38 / .04), 0 12px 28px -16px rgb(168 137 76 / .32);
+}
+.zaman-cizelgesi__yil {
+  font-family: var(--f-display);
+  font-size: var(--yazi-sm);
+  letter-spacing: var(--harf-ustluk);
+  text-transform: uppercase;
+  color: var(--vurgu-metin);
+}
+.zaman-cizelgesi__baslik { font-size: var(--yazi-xl); margin: 0; text-wrap: balance; }
+.zaman-cizelgesi__metin { color: var(--metin-ikincil); margin: 0; }
+
+@media (min-width: 900px) {
+  .zaman-cizelgesi__liste {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--oluk);
+  }
+  .zaman-cizelgesi__liste::before {
+    left: calc(100% / 8);
+    right: calc(100% / 8);
+    top: 9px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+  .zaman-cizelgesi__oge { padding-left: 0; padding-top: var(--bosluk-7); }
+  .zaman-cizelgesi__nokta { left: 50%; top: 0; transform: translateX(-50%); }
 }
 
 /* ==============================================================
@@ -884,13 +981,136 @@
 .iletisim__ic { display: grid; gap: var(--bosluk-8); }
 .iletisim__yan { display: grid; gap: var(--bosluk-5); align-content: start; }
 .iletisim__yan .bolum-basligi { margin-bottom: 0; }
-.iletisim__subeler { display: grid; gap: var(--bosluk-5); list-style: none; padding: 0; margin-top: var(--bosluk-4); }
-.iletisim__subeler li { padding-top: var(--bosluk-4); border-top: 1px solid var(--cizgi); }
 .iletisim__form { align-content: start; }
+.iletisim__form__rez-not {
+  margin-top: var(--bosluk-2);
+  padding-top: var(--bosluk-5);
+  border-top: 1px solid var(--cizgi);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bosluk-4);
+  color: var(--metin-ikincil);
+  font-size: var(--yazi-sm);
+}
 
 @media (min-width: 900px) {
   .iletisim__ic { grid-template-columns: 5fr 7fr; gap: var(--bosluk-9); align-items: start; }
 }
+
+/* ==============================================================
+   sube-iletisim — İletişim sayfasındaki 3 sade şube kartı
+   ============================================================== */
+.sube-iletisim__liste {
+  display: grid;
+  gap: var(--oluk);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.sube-iletisim__kart {
+  display: flex;
+  flex-direction: column;
+  background: var(--zemin-yukseltilmis);
+  border: 1px solid var(--cizgi);
+  border-radius: var(--r-md);
+  padding: var(--bosluk-6);
+  box-shadow: 0 1px 2px rgb(14 31 38 / .04), 0 10px 24px -16px rgb(14 31 38 / .18);
+}
+.sube-iletisim__ad { font-size: var(--yazi-xl); margin: 0 0 var(--bosluk-3); }
+.sube-iletisim__adres { color: var(--metin-ikincil); margin: 0 0 var(--bosluk-5); }
+.sube-iletisim__bilgi {
+  display: grid;
+  gap: var(--bosluk-3);
+  margin-bottom: var(--bosluk-6);
+  padding-top: var(--bosluk-5);
+  border-top: 1px solid var(--cizgi);
+}
+.sube-iletisim__bilgi a {
+  display: flex;
+  align-items: center;
+  gap: var(--bosluk-3);
+  color: var(--metin);
+  text-decoration: none;
+}
+.sube-iletisim__bilgi a .ikon { color: var(--vurgu-metin); }
+@media (hover: hover) {
+  .sube-iletisim__bilgi a:hover { color: var(--vurgu-metin); }
+}
+.sube-iletisim__aksiyon {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bosluk-4);
+}
+.sube-iletisim__ek-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bosluk-1);
+  color: var(--vurgu-metin);
+  font-size: var(--yazi-sm);
+  font-weight: 500;
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .sube-iletisim__ek-link:hover { text-decoration: underline; }
+}
+
+@media (min-width: 640px) { .sube-iletisim__liste { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .sube-iletisim__liste { grid-template-columns: repeat(3, 1fr); } }
+
+/* ==============================================================
+   harita-sekmeli — İletişim sayfasında 3 sekmeli tek harita
+   ============================================================== */
+.harita-sekmeli__sekmeler {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--bosluk-3);
+  margin-bottom: var(--bosluk-6);
+}
+.harita-sekmeli__sekme {
+  font: inherit;
+  cursor: pointer;
+  min-height: 44px;
+  padding: var(--bosluk-3) var(--bosluk-5);
+  border: 1px solid var(--cizgi-guclu);
+  border-radius: var(--r-tam);
+  background: var(--zemin-yukseltilmis);
+  color: var(--metin-ikincil);
+  transition: border-color var(--gecis), color var(--gecis), background var(--gecis);
+}
+.harita-sekmeli__sekme--aktif {
+  border-color: var(--marka-koyu);
+  background: var(--marka-koyu);
+  color: var(--notr-kum);
+}
+@media (hover: hover) {
+  .harita-sekmeli__sekme:not(.harita-sekmeli__sekme--aktif):hover { border-color: var(--cizgi-guclu); color: var(--metin); }
+}
+.harita-sekmeli__sekme:focus-visible { outline: 2px solid var(--odak); outline-offset: 2px; }
+
+/* ==============================================================
+   genel-iletisim — şube kartlarından ayrı, sade telefon/e-posta şeridi
+   ============================================================== */
+.genel-iletisim__ic { display: grid; justify-items: center; gap: var(--bosluk-6); text-align: center; }
+.genel-iletisim__bilgi { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--bosluk-6); }
+.genel-iletisim__deger {
+  font-family: var(--f-display);
+  font-size: var(--yazi-2xl);
+  color: var(--metin);
+}
+@media (hover: hover) {
+  .genel-iletisim__deger:hover { color: var(--vurgu-metin); }
+}
+
+/* ==============================================================
+   belge — KVKK / Gizlilik / Çerez / İK gibi düz metin sayfaları
+   ============================================================== */
+.belge__guncelleme { color: var(--metin-ikincil); font-size: var(--yazi-sm); margin-bottom: var(--bosluk-7); }
+.belge__bolum + .belge__bolum { margin-top: var(--bosluk-7); }
+.belge__baslik { font-size: var(--yazi-xl); margin-bottom: var(--bosluk-3); }
 
 /* ==============================================================
    Mobil düzeltmeler (< 640)
