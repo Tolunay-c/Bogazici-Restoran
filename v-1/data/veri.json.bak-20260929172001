@@ -61,28 +61,28 @@
             {
                 "tip": "hero",
                 "zemin": "koyu",
-                "ustluk": "Boğaziçi Restaurant",
-                "baslik": "İzmir’de Lezzetin Buluşma Noktası",
-                "alt_baslik": "Üç şubemizde, özenle hazırlanan sofraları kaliteli hizmet ve Boğaziçi deneyimiyle buluşturuyoruz.",
+                "ustluk": "1993’ten beri İzmir’de",
+                "baslik": "Denizin sofraya en kısa yolu",
+                "alt_baslik": "Günlük tezgâh, üç şube, aynı mutfak. Akşam için yeriniz hazır olsun.",
                 "gorsel": "hero-anasayfa.webp",
                 "gorsel_mobil": "hero-anasayfa-mobil.webp",
                 "gorsel_odak": "merkez",
                 "gorsel_alt": "Kordon’a bakan teras ve akşam servisi",
-                "buton_yazi": "Şubelerimizi Keşfedin",
-                "buton_link": "/subeler.php",
-                "buton2_yazi": "Rezervasyon",
-                "buton2_link": "/rezervasyon.php",
-                "alt_not": "Üçkuyular • Narlıdere • Bostanlı"
+                "buton_yazi": "Rezervasyon yap",
+                "buton_link": "/rezervasyon.php",
+                "buton2_yazi": "Menüyü incele",
+                "buton2_link": "/menu.php"
             },
             {
                 "tip": "metin-gorsel",
                 "zemin": "beyaz",
                 "yon": "sag",
-                "baslik": "Yemekte Boğaziçi Dokunuşu",
-                "metin": "İyi bir yemeğin yalnızca lezzetten ibaret olmadığına inanıyoruz. Özenli sunum, kaliteli ürünler ve güçlü hizmet anlayışımızla her buluşmayı keyifli bir deneyime dönüştürüyoruz.",
+                "ustluk": "Mutfak",
+                "baslik": "Tezgâhta ne varsa, tabakta o var",
+                "metin": "Balık her sabah İzmir hâlinden geliyor; menü mevsime göre değişiyor. Meze tabaklarımızın tamamı günlük hazırlanıyor, hiçbiri bir gün öncesinden kalmıyor. Şubeler arasında tarif farkı yok — Üçkuyular’da yediğiniz humus Bostanlı’da da aynı.",
                 "gorsel": "mutfak.webp",
                 "gorsel_odak": "merkez",
-                "gorsel_alt": "Özenle hazırlanmış bir Boğaziçi sofrası",
+                "gorsel_alt": "Mutfakta günlük meze hazırlığı",
                 "buton_yazi": "Hikâyemiz",
                 "buton_link": "/kurumsal.php"
             },
@@ -90,44 +90,153 @@
                 "tip": "sube-listesi",
                 "zemin": "beyaz",
                 "ustluk": "Şubeler",
-                "baslik": "Size En Yakın Boğaziçi",
-                "alt_baslik": "İzmir’in üç farklı noktasında aynı lezzet ve hizmet anlayışı."
+                "baslik": "Üç sahil, tek mutfak",
+                "alt_baslik": "Rezervasyon sırasında şubeyi ve oturmak istediğiniz bölgeyi siz seçiyorsunuz."
             },
             {
-                "tip": "metin-gorsel",
-                "zemin": "beyaz",
-                "yon": "sol",
-                "baslik": "Her Sofraya Bir Boğaziçi Klasiği",
-                "metin": "Geleneksel tatlardan özenle hazırlanan özel lezzetlere uzanan menümüzle, günün her anına eşlik eden zengin bir sofra sunuyoruz.",
-                "gorsel": "urun-meze.webp",
+                "tip": "rakamlar",
+                "zemin": "kum",
+                "ustluk": "Kısaca",
+                "baslik": "Boğaziçi rakamlarla",
+                "alt_baslik": "Otuz yılı aşkın süredir aynı tezgâh anlayışı, üç ayrı noktada.",
+                "gorsel": "rakamlar.webp",
                 "gorsel_odak": "merkez",
-                "gorsel_alt": "Boğaziçi mezelerinden bir sofra",
-                "buton_yazi": "Menüyü İncele",
-                "buton_link": "/menu.php"
-            },
-            {
-                "tip": "kart-izgara",
-                "zemin": "beyaz",
-                "baslik": "Boğaziçi’nden Kareler",
-                "alt_baslik": "Üç farklı lokasyon, aynı Boğaziçi atmosferi.",
+                "gorsel_alt": "Tezgâhta günlük balık seçimi",
                 "ogeler": [
                     {
-                        "baslik": "Üçkuyular",
-                        "gorsel": "sube-uckuyular-ic.webp",
-                        "gorsel_alt": "Boğaziçi Üçkuyular şubesinden bir kare",
-                        "link": "/subeler.php#sube-uckuyular"
+                        "sayi": "1993",
+                        "etiket": "Kuruluş yılı"
                     },
                     {
-                        "baslik": "Narlıdere",
-                        "gorsel": "sube-narlidere-ic.webp",
-                        "gorsel_alt": "Boğaziçi Narlıdere şubesinden bir kare",
-                        "link": "/subeler.php#sube-narlidere"
+                        "sayi": "3",
+                        "etiket": "Şube"
                     },
                     {
-                        "baslik": "Bostanlı",
-                        "gorsel": "sube-bostanli-ic.webp",
-                        "gorsel_alt": "Boğaziçi Bostanlı şubesinden bir kare",
-                        "link": "/subeler.php#sube-bostanli"
+                        "sayi": "40+",
+                        "etiket": "Meze çeşidi"
+                    },
+                    {
+                        "sayi": "260",
+                        "etiket": "Kişilik toplam kapasite"
+                    }
+                ]
+            },
+            {
+                "tip": "galeri-onizleme",
+                "zemin": "beyaz",
+                "ustluk": "Galeri",
+                "baslik": "Mekândan kareler",
+                "kirp": true,
+                "buton_yazi": "Tüm galeri",
+                "buton_link": "/galeri.php",
+                "ogeler": [
+                    {
+                        "gorsel": "galeri-01.webp",
+                        "gorsel_alt": "Galeri 1",
+                        "en": 960,
+                        "boy": 1280
+                    },
+                    {
+                        "gorsel": "galeri-02.webp",
+                        "gorsel_alt": "Galeri 2",
+                        "en": 960,
+                        "boy": 720
+                    },
+                    {
+                        "gorsel": "galeri-03.webp",
+                        "gorsel_alt": "Galeri 3",
+                        "en": 960,
+                        "boy": 1440
+                    },
+                    {
+                        "gorsel": "galeri-04.webp",
+                        "gorsel_alt": "Galeri 4",
+                        "en": 960,
+                        "boy": 960
+                    },
+                    {
+                        "gorsel": "galeri-05.webp",
+                        "gorsel_alt": "Galeri 5",
+                        "en": 960,
+                        "boy": 640
+                    },
+                    {
+                        "gorsel": "galeri-06.webp",
+                        "gorsel_alt": "Galeri 6",
+                        "en": 960,
+                        "boy": 1200
+                    },
+                    {
+                        "gorsel": "galeri-07.webp",
+                        "gorsel_alt": "Galeri 7",
+                        "en": 960,
+                        "boy": 1280
+                    },
+                    {
+                        "gorsel": "galeri-08.webp",
+                        "gorsel_alt": "Galeri 8",
+                        "en": 960,
+                        "boy": 960
+                    },
+                    {
+                        "gorsel": "galeri-09.webp",
+                        "gorsel_alt": "Galeri 9",
+                        "en": 960,
+                        "boy": 720
+                    },
+                    {
+                        "gorsel": "galeri-10.webp",
+                        "gorsel_alt": "Galeri 10",
+                        "en": 960,
+                        "boy": 1440
+                    },
+                    {
+                        "gorsel": "galeri-11.webp",
+                        "gorsel_alt": "Galeri 11",
+                        "en": 960,
+                        "boy": 1280
+                    },
+                    {
+                        "gorsel": "galeri-12.webp",
+                        "gorsel_alt": "Galeri 12",
+                        "en": 960,
+                        "boy": 540
+                    },
+                    {
+                        "gorsel": "galeri-13.webp",
+                        "gorsel_alt": "Galeri 13",
+                        "en": 960,
+                        "boy": 960
+                    },
+                    {
+                        "gorsel": "galeri-14.webp",
+                        "gorsel_alt": "Galeri 14",
+                        "en": 960,
+                        "boy": 1200
+                    },
+                    {
+                        "gorsel": "galeri-15.webp",
+                        "gorsel_alt": "Galeri 15",
+                        "en": 960,
+                        "boy": 640
+                    },
+                    {
+                        "gorsel": "galeri-16.webp",
+                        "gorsel_alt": "Galeri 16",
+                        "en": 960,
+                        "boy": 1280
+                    },
+                    {
+                        "gorsel": "galeri-17.webp",
+                        "gorsel_alt": "Galeri 17",
+                        "en": 960,
+                        "boy": 960
+                    },
+                    {
+                        "gorsel": "galeri-18.webp",
+                        "gorsel_alt": "Galeri 18",
+                        "en": 960,
+                        "boy": 720
                     }
                 ]
             },
@@ -135,13 +244,35 @@
                 "tip": "rezervasyon-blok",
                 "zemin": "koyu",
                 "ustluk": "Rezervasyon",
-                "baslik": "Yeriniz Hazır",
-                "metin": "Boğaziçi deneyimini Üçkuyular, Narlıdere veya Bostanlı şubemizde yaşayın.",
-                "buton_yazi": "Rezervasyon Yap",
+                "baslik": "Masanız birkaç adımda hazır",
+                "metin": "Şube ve bölgeyi seçin, saatinizi belirleyin. Rezervasyonunuz anında onaylanır, SMS ile teyit gelir.",
+                "buton_yazi": "Rezervasyona başla",
                 "buton_link": "/rezervasyon.php",
-                "buton2_yazi": "Şubeleri Gör",
-                "buton2_link": "/subeler.php",
                 "on_secili_sube": ""
+            },
+            {
+                "tip": "sss",
+                "zemin": "beyaz",
+                "ustluk": "Sık sorulanlar",
+                "baslik": "Gelmeden önce",
+                "ogeler": [
+                    {
+                        "baslik": "Rezervasyon ücretli mi?",
+                        "metin": "Hayır. Rezervasyon için ön ödeme veya kart bilgisi istemiyoruz."
+                    },
+                    {
+                        "baslik": "Kaç kişiye kadar rezervasyon yapabilirim?",
+                        "metin": "Siteden 12 kişiye kadar rezervasyon yapılabilir. Daha kalabalık gruplar için şubeyi arayın."
+                    },
+                    {
+                        "baslik": "Bölge seçimim garanti mi?",
+                        "metin": "Seçtiğiniz bölge sizin adınıza ayrılır. Belirli bir masa talebiniz varsa rezervasyon notuna yazabilirsiniz."
+                    },
+                    {
+                        "baslik": "Paket servis var mı?",
+                        "metin": "Üç şubede de paket servis mevcut. Menüde paket servise uygun ürünler ayrıca işaretlidir."
+                    }
+                ]
             }
         ],
         "kurumsal": [
@@ -168,7 +299,7 @@
             {
                 "tip": "zaman-cizelgesi",
                 "zemin": "kum",
-                "baslik": "30 Yılı Aşan Bir Hikâye",
+                "ustluk": "Otuz yılı aşan bir hikâye",
                 "ogeler": [
                     {
                         "yil": "1993",
@@ -248,9 +379,8 @@
             {
                 "tip": "sayfa-basligi",
                 "zemin": "koyu",
-                "ustluk": "Boğaziçi Restaurant",
-                "baslik": "Üç Şube, Tek Boğaziçi Deneyimi",
-                "alt_baslik": "İzmir’in üç farklı noktasında, aynı özenli hizmet anlayışı ve Boğaziçi lezzetleriyle sizi ağırlıyoruz.",
+                "ustluk": "Şubeler",
+                "baslik": "Üç sahil, tek mutfak",
                 "gorsel": "basluk-subeler.webp",
                 "gorsel_odak": "merkez",
                 "gorsel_alt": ""
@@ -259,16 +389,16 @@
                 "tip": "sube-listesi",
                 "zemin": "beyaz",
                 "duzen": "yatay",
-                "baslik": "Boğaziçi’nde Buluşalım",
-                "alt_baslik": "Size en yakın Boğaziçi şubesini seçin, sofranızı ayırtın."
+                "baslik": "Nerede buluşalım?",
+                "alt_baslik": "Her şubede aynı menü ve aynı mutfak ekibi. Fark yalnızca manzarada."
             },
             {
                 "tip": "cta-bant",
                 "zemin": "koyu",
-                "baslik": "Üç Farklı Lokasyon, Aynı Boğaziçi",
-                "metin": "İzmir’in üç farklı noktasında, aynı özen ve hizmet anlayışıyla sizi ağırlıyoruz.",
-                "buton_yazi": "Rezervasyon Yap",
-                "buton_link": "/rezervasyon.php"
+                "baslik": "Kalabalık grup mu geliyor?",
+                "metin": "12 kişiden büyük gruplar için şube sorumlusuyla doğrudan görüşün.",
+                "buton_yazi": "İletişim",
+                "buton_link": "/iletisim.php"
             }
         ],
         "hizmetler": [
@@ -395,8 +525,7 @@
                                 "etiketler": [
                                     "Vejetaryen",
                                     "Paket servis"
-                                ],
-                                "gorsel": "urun-humus.webp"
+                                ]
                             },
                             {
                                 "ad": "Haydari",
@@ -429,8 +558,7 @@
                                 "fiyat": "540 ₺",
                                 "etiketler": [
                                     "Paket servis"
-                                ],
-                                "gorsel": "urun-meze.webp"
+                                ]
                             }
                         ]
                     },
@@ -450,8 +578,7 @@
                                 "ad": "Kalamar tava",
                                 "aciklama": "Tartar sos ile",
                                 "fiyat": "480 ₺",
-                                "etiketler": [],
-                                "gorsel": "urun-kalamar.webp"
+                                "etiketler": []
                             },
                             {
                                 "ad": "Karides güveç",
@@ -459,8 +586,7 @@
                                 "fiyat": "640 ₺",
                                 "etiketler": [
                                     "Paket servis"
-                                ],
-                                "gorsel": "urun-karides.webp"
+                                ]
                             },
                             {
                                 "ad": "Midye tava",
@@ -555,15 +681,13 @@
                                 "ad": "Çupra ızgara",
                                 "aciklama": "Porsiyon, mevsim yeşilliği ile",
                                 "fiyat": "780 ₺",
-                                "etiketler": [],
-                                "gorsel": "urun-cupra.webp"
+                                "etiketler": []
                             },
                             {
                                 "ad": "Levrek ızgara",
                                 "aciklama": "Porsiyon, limon sos",
                                 "fiyat": "760 ₺",
-                                "etiketler": [],
-                                "gorsel": "urun-levrek.webp"
+                                "etiketler": []
                             },
                             {
                                 "ad": "Somon ızgara",
@@ -577,15 +701,13 @@
                                 "fiyat": "920 ₺",
                                 "etiketler": [
                                     "Paket servis"
-                                ],
-                                "gorsel": "urun-ahtapot.webp"
+                                ]
                             },
                             {
                                 "ad": "Karides ızgara",
                                 "aciklama": "Sarımsaklı yağda",
                                 "fiyat": "620 ₺",
-                                "etiketler": [],
-                                "gorsel": "urun-karides.webp"
+                                "etiketler": []
                             }
                         ]
                     },
@@ -645,8 +767,7 @@
                                 "fiyat": "210 ₺",
                                 "etiketler": [
                                     "Vejetaryen"
-                                ],
-                                "gorsel": "urun-tatli.webp"
+                                ]
                             },
                             {
                                 "ad": "Kazandibi",

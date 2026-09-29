@@ -10,7 +10,7 @@ $duzen = ($b['duzen'] ?? 'izgara') === 'yatay' ? 'yatay' : 'izgara';
 
       <ul class="sube-yatay__liste">
         <?php foreach (SUBELER as $s): ?>
-          <li class="sube-yatay kart--cerceveli" data-goster>
+          <li class="sube-yatay kart--cerceveli" id="sube-<?= e($s['slug']) ?>" data-goster>
             <!-- Bilgi ÖNCE gelir: harita ancak adı okuduktan sonra
                  anlam kazanıyor. Görsel tarama sırası ad -> adres ->
                  aksiyon -> doğrulama (harita). -->

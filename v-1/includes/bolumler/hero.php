@@ -17,5 +17,6 @@
       <?= buton($b['buton_yazi'] ?? '', $b['buton_link'] ?? '', 'birincil', 'btn--lg') ?>
       <?= buton($b['buton2_yazi'] ?? '', $b['buton2_link'] ?? '', 'ikincil', 'btn--lg') ?>
     </div>
+    <?php if (!empty($b['alt_not'])): ?><p class="hero__alt-not"><?= e($b['alt_not']) ?></p><?php endif; ?>
   </div>
 </section>

@@ -1,0 +1,300 @@
+- generic [active] [ref=f1e1]:
+  - link "İçeriğe geç" [ref=f1e2] [cursor=pointer]:
+    - /url: "#icerik"
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - link "Boğaziçi Restaurant" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+      - navigation "Ana menü" [ref=f1e6]:
+        - link "Ana Sayfa" [ref=f1e7] [cursor=pointer]:
+          - /url: /
+        - link "Kurumsal" [ref=f1e8] [cursor=pointer]:
+          - /url: /kurumsal.php
+        - link "Şubeler" [ref=f1e9] [cursor=pointer]:
+          - /url: /subeler.php
+        - link "Menü" [ref=f1e10] [cursor=pointer]:
+          - /url: /menu.php
+        - link "Hizmetler" [ref=f1e11] [cursor=pointer]:
+          - /url: /hizmetler.php
+        - link "İletişim" [ref=f1e12] [cursor=pointer]:
+          - /url: /iletisim.php
+      - link "Rezervasyon" [ref=f1e14] [cursor=pointer]:
+        - /url: /rezervasyon.php
+  - main [ref=f1e15]:
+    - generic [ref=f1e16]:
+      - img "Kordon’a bakan teras ve akşam servisi" [ref=f1e19]
+      - generic [ref=f1e20]:
+        - paragraph [ref=f1e21]: 1993’ten beri İzmir’de
+        - heading "Denizin sofraya en kısa yolu" [level=1] [ref=f1e22]
+        - paragraph [ref=f1e23]: Günlük tezgâh, üç şube, aynı mutfak. Akşam için yeriniz hazır olsun.
+        - generic [ref=f1e24]:
+          - link "Rezervasyon yap" [ref=f1e25] [cursor=pointer]:
+            - /url: /rezervasyon.php
+          - link "Menüyü incele" [ref=f1e26] [cursor=pointer]:
+            - /url: /menu.php
+    - generic [ref=f1e28]:
+      - generic [ref=f1e29]:
+        - paragraph [ref=f1e30]: Boğaziçi Restaurant
+        - heading "İzmir’de Lezzetin Buluşma Noktası" [level=2] [ref=f1e31]
+        - paragraph [ref=f1e32]: Üç şubemizde, özenle hazırlanan sofraları kaliteli hizmet ve Boğaziçi deneyimiyle buluşturuyoruz.
+      - generic [ref=f1e33]:
+        - link "Şubelerimizi Keşfedin" [ref=f1e34] [cursor=pointer]:
+          - /url: /subeler.php
+        - link "Rezervasyon" [ref=f1e35] [cursor=pointer]:
+          - /url: /rezervasyon.php
+      - paragraph [ref=f1e36]: Üçkuyular • Narlıdere • Bostanlı
+    - generic [ref=f1e38]:
+      - generic [ref=f1e39]:
+        - paragraph [ref=f1e40]: Yemekte Boğaziçi Dokunuşu
+        - heading "Üç farklı lokasyon, aynı Boğaziçi deneyimi" [level=2] [ref=f1e41]
+        - paragraph [ref=f1e42]: İyi bir yemeğin yalnızca lezzetten ibaret olmadığına inanıyoruz. Özenli sunum, kaliteli ürünler ve güçlü hizmet anlayışımızla her buluşmayı keyifli bir deneyime dönüştürüyoruz.
+      - list [ref=f1e43]:
+        - listitem [ref=f1e44]:
+          - generic [ref=f1e45]:
+            - heading "Özenli Mutfak" [level=3] [ref=f1e46]
+            - paragraph [ref=f1e47]: Seçkin ürünler, özenli hazırlık.
+        - listitem [ref=f1e48]:
+          - generic [ref=f1e49]:
+            - heading "Kaliteli Hizmet" [level=3] [ref=f1e50]
+            - paragraph [ref=f1e51]: Misafir memnuniyetini merkeze alan servis anlayışı.
+        - listitem [ref=f1e52]:
+          - generic [ref=f1e53]:
+            - heading "Keyifli Atmosfer" [level=3] [ref=f1e54]
+            - paragraph [ref=f1e55]: Her buluşmaya eşlik eden sıcak ve şık mekânlar.
+    - generic [ref=f1e57]:
+      - generic [ref=f1e58]:
+        - paragraph [ref=f1e59]: Şubeler
+        - heading "Üç sahil, tek mutfak" [level=2] [ref=f1e60]
+        - paragraph [ref=f1e61]: Rezervasyon sırasında şubeyi ve oturmak istediğiniz bölgeyi siz seçiyorsunuz.
+      - list [ref=f1e62]:
+        - listitem [ref=f1e63]:
+          - img "Üçkuyular şubesi" [ref=f1e65]
+          - generic [ref=f1e66]:
+            - heading [level=3] [ref=f1e67]:
+              - link "Üçkuyular" [ref=f1e68] [cursor=pointer]:
+                - /url: /sube.php?s=uckuyular
+            - generic [ref=f1e69]:
+              - generic [ref=f1e70]: "Bahçeler Arası Mah. Haydar Aliyev Bulvarı No: 2/A, Balçova / İzmir"
+              - generic [ref=f1e71]: Her gün 12:00 – 24:00
+              - generic [ref=f1e72]: Deniz manzaralı teras · İç salon · Bahçe
+          - generic [ref=f1e73]:
+            - link "Bu şubede yer ayır" [ref=f1e74] [cursor=pointer]:
+              - /url: /rezervasyon.php?sube=uckuyular
+            - link "Yol tarifi al →" [ref=f1e75] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Uckuyular+Balcova
+        - listitem [ref=f1e76]:
+          - img "Narlıdere şubesi" [ref=f1e78]
+          - generic [ref=f1e79]:
+            - heading [level=3] [ref=f1e80]:
+              - link "Narlıdere" [ref=f1e81] [cursor=pointer]:
+                - /url: /sube.php?s=narlidere
+            - generic [ref=f1e82]:
+              - generic [ref=f1e83]: "Limanreis Mah. Mithatpaşa Cd. No: 606, 35320 Narlıdere / İzmir"
+              - generic [ref=f1e84]: Her gün 11:00 – 01:00
+              - generic [ref=f1e85]: Sahil terası · İç salon · Loca
+          - generic [ref=f1e86]:
+            - link "Bu şubede yer ayır" [ref=f1e87] [cursor=pointer]:
+              - /url: /rezervasyon.php?sube=narlidere
+            - link "Yol tarifi al →" [ref=f1e88] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Narlidere
+        - listitem [ref=f1e89]:
+          - img "Bostanlı şubesi" [ref=f1e91]
+          - generic [ref=f1e92]:
+            - heading [level=3] [ref=f1e93]:
+              - link "Bostanlı" [ref=f1e94] [cursor=pointer]:
+                - /url: /sube.php?s=bostanli
+            - generic [ref=f1e95]:
+              - generic [ref=f1e96]: "Cengiz Topel Caddesi No: 38/B, Bostanlı – İzmir"
+              - generic [ref=f1e97]: Her gün 12:00 – 24:00
+              - generic [ref=f1e98]: Bahçe · İç salon · Üst kat
+          - generic [ref=f1e99]:
+            - link "Bu şubede yer ayır" [ref=f1e100] [cursor=pointer]:
+              - /url: /rezervasyon.php?sube=bostanli
+            - link "Yol tarifi al →" [ref=f1e101] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Bostanli+Izmir
+    - generic [ref=f1e104]:
+      - generic [ref=f1e105]:
+        - heading "Her Sofraya Bir Boğaziçi Klasiği" [level=2] [ref=f1e107]
+        - paragraph [ref=f1e109]: Geleneksel tatlardan özenle hazırlanan özel lezzetlere uzanan menümüzle, günün her anına eşlik eden zengin bir sofra sunuyoruz.
+        - link "Menüyü İncele" [ref=f1e111] [cursor=pointer]:
+          - /url: /menu.php
+      - img "Boğaziçi mezelerinden bir sofra" [ref=f1e113]
+    - generic [ref=f1e116]:
+      - img "Tezgâhta günlük balık seçimi" [ref=f1e118]
+      - generic [ref=f1e119]:
+        - generic [ref=f1e120]:
+          - paragraph [ref=f1e121]: Kısaca
+          - heading "Boğaziçi rakamlarla" [level=2] [ref=f1e122]
+          - paragraph [ref=f1e123]: Otuz yılı aşkın süredir aynı tezgâh anlayışı, üç ayrı noktada.
+        - list [ref=f1e124]:
+          - listitem [ref=f1e125]:
+            - generic [ref=f1e126]: "1993"
+            - generic [ref=f1e127]: Kuruluş yılı
+          - listitem [ref=f1e128]:
+            - generic [ref=f1e129]: "3"
+            - generic [ref=f1e130]: Şube
+          - listitem [ref=f1e131]:
+            - generic [ref=f1e132]: 40+
+            - generic [ref=f1e133]: Meze çeşidi
+          - listitem [ref=f1e134]:
+            - generic [ref=f1e135]: "260"
+            - generic [ref=f1e136]: Kişilik toplam kapasite
+    - generic [ref=f1e138]:
+      - generic [ref=f1e139]:
+        - paragraph [ref=f1e140]: Galeri
+        - heading "Mekândan kareler" [level=2] [ref=f1e141]
+      - generic [ref=f1e142]:
+        - button "Galeri 1" [ref=f1e144]:
+          - img "Galeri 1" [ref=f1e145]
+        - button "Galeri 2" [ref=f1e147]:
+          - img "Galeri 2" [ref=f1e148]
+        - button "Galeri 3" [ref=f1e150]:
+          - img "Galeri 3" [ref=f1e151]
+        - button "Galeri 4" [ref=f1e153]:
+          - img "Galeri 4" [ref=f1e154]
+        - button "Galeri 5" [ref=f1e156]:
+          - img "Galeri 5" [ref=f1e157]
+        - button "Galeri 6" [ref=f1e159]:
+          - img "Galeri 6" [ref=f1e160]
+        - button "Galeri 7" [ref=f1e162]:
+          - img "Galeri 7" [ref=f1e163]
+        - button "Galeri 8" [ref=f1e165]:
+          - img "Galeri 8" [ref=f1e166]
+        - button "Galeri 9" [ref=f1e168]:
+          - img "Galeri 9" [ref=f1e169]
+        - button "Galeri 10" [ref=f1e171]:
+          - img "Galeri 10" [ref=f1e172]
+        - button "Galeri 11" [ref=f1e174]:
+          - img "Galeri 11" [ref=f1e175]
+        - button "Galeri 12" [ref=f1e177]:
+          - img "Galeri 12" [ref=f1e178]
+        - button "Galeri 13" [ref=f1e180]:
+          - img "Galeri 13" [ref=f1e181]
+        - button "Galeri 14" [ref=f1e183]:
+          - img "Galeri 14" [ref=f1e184]
+        - button "Galeri 15" [ref=f1e186]:
+          - img "Galeri 15" [ref=f1e187]
+        - button "Galeri 16" [ref=f1e189]:
+          - img "Galeri 16" [ref=f1e190]
+        - button "Galeri 17" [ref=f1e192]:
+          - img "Galeri 17" [ref=f1e193]
+        - button "Galeri 18" [ref=f1e195]:
+          - img "Galeri 18" [ref=f1e196]
+      - link "Tüm galeri" [ref=f1e198] [cursor=pointer]:
+        - /url: /galeri.php
+    - generic [ref=f1e201]:
+      - generic [ref=f1e202]:
+        - generic [ref=f1e203]:
+          - paragraph [ref=f1e204]: Rezervasyon
+          - heading "Masanız birkaç adımda hazır" [level=2] [ref=f1e205]
+        - paragraph [ref=f1e206]: Şube ve bölgeyi seçin, saatinizi belirleyin. Rezervasyonunuz anında onaylanır, SMS ile teyit gelir.
+        - link "Rezervasyona başla" [ref=f1e208] [cursor=pointer]:
+          - /url: /rezervasyon.php
+      - list [ref=f1e209]:
+        - listitem [ref=f1e210]:
+          - generic [ref=f1e211]: 1. Şube
+          - generic [ref=f1e212]: Üçkuyular · Narlıdere · Bostanlı
+        - listitem [ref=f1e213]:
+          - generic [ref=f1e214]: 2. Tarih ve saat
+          - generic [ref=f1e215]: Öğle veya akşam servisi
+        - listitem [ref=f1e216]:
+          - generic [ref=f1e217]: 3. Bilgileriniz
+          - generic [ref=f1e218]: Ad, telefon, kişi sayısı
+        - listitem [ref=f1e219]:
+          - generic [ref=f1e220]: 4. Onay
+          - generic [ref=f1e221]: Mesai saatinde teyit
+    - generic [ref=f1e224]:
+      - generic [ref=f1e226]:
+        - paragraph [ref=f1e227]: Sık sorulanlar
+        - heading "Gelmeden önce" [level=2] [ref=f1e228]
+      - generic [ref=f1e229]:
+        - group [ref=f1e230]:
+          - generic "Rezervasyon ücretli mi? –" [ref=f1e231] [cursor=pointer]
+          - generic [ref=f1e232]: Hayır. Rezervasyon için ön ödeme veya kart bilgisi istemiyoruz.
+        - group [ref=f1e233]:
+          - generic "Kaç kişiye kadar rezervasyon yapabilirim? +" [ref=f1e234] [cursor=pointer]
+        - group [ref=f1e235]:
+          - generic "Bölge seçimim garanti mi? +" [ref=f1e236] [cursor=pointer]
+        - group [ref=f1e237]:
+          - generic "Paket servis var mı? +" [ref=f1e238] [cursor=pointer]
+  - contentinfo [ref=f1e239]:
+    - generic [ref=f1e240]:
+      - generic [ref=f1e241]:
+        - generic [ref=f1e242]:
+          - paragraph [ref=f1e243]: Boğaziçi Restaurant
+          - paragraph [ref=f1e244]: 1993’ten bugüne İzmir’de lezzet, kalite ve misafirperverliği aynı özenle sofralarınıza taşıyoruz.
+          - paragraph [ref=f1e245]: İyi Ye, İyi Yaşa
+          - generic [ref=f1e246]:
+            - link "Instagram" [ref=f1e247] [cursor=pointer]:
+              - /url: "#"
+            - link "Facebook" [ref=f1e252] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f1e255]:
+          - heading "Hızlı Erişim" [level=2] [ref=f1e256]
+          - list [ref=f1e257]:
+            - listitem [ref=f1e258]:
+              - link "Ana Sayfa" [ref=f1e259] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f1e260]:
+              - link "Kurumsal" [ref=f1e261] [cursor=pointer]:
+                - /url: /kurumsal.php
+            - listitem [ref=f1e262]:
+              - link "Şubelerimiz" [ref=f1e263] [cursor=pointer]:
+                - /url: /subeler.php
+            - listitem [ref=f1e264]:
+              - link "Menü" [ref=f1e265] [cursor=pointer]:
+                - /url: /menu.php
+            - listitem [ref=f1e266]:
+              - link "Hizmetler" [ref=f1e267] [cursor=pointer]:
+                - /url: /hizmetler.php
+            - listitem [ref=f1e268]:
+              - link "İletişim" [ref=f1e269] [cursor=pointer]:
+                - /url: /iletisim.php
+            - listitem [ref=f1e270]:
+              - link "Rezervasyon" [ref=f1e271] [cursor=pointer]:
+                - /url: /rezervasyon.php
+        - generic [ref=f1e272]:
+          - heading "Şubelerimiz" [level=2] [ref=f1e273]
+          - list [ref=f1e274]:
+            - listitem [ref=f1e275]:
+              - link "Üçkuyular" [ref=f1e276] [cursor=pointer]:
+                - /url: /sube.php?s=uckuyular
+            - listitem [ref=f1e277]:
+              - link "Narlıdere" [ref=f1e278] [cursor=pointer]:
+                - /url: /sube.php?s=narlidere
+            - listitem [ref=f1e279]:
+              - link "Bostanlı" [ref=f1e280] [cursor=pointer]:
+                - /url: /sube.php?s=bostanli
+          - list [ref=f1e281]:
+            - listitem [ref=f1e282]:
+              - link "0850 850 0850" [ref=f1e283] [cursor=pointer]:
+                - /url: tel:+908508500850
+            - listitem [ref=f1e284]:
+              - link "info@bogazicirestaurant.com.tr" [ref=f1e285] [cursor=pointer]:
+                - /url: mailto:info@bogazicirestaurant.com.tr
+        - generic [ref=f1e286]:
+          - heading "Kurumsal" [level=2] [ref=f1e287]
+          - list [ref=f1e288]:
+            - listitem [ref=f1e289]:
+              - link "İnsan Kaynakları" [ref=f1e290] [cursor=pointer]:
+                - /url: /ik.php
+            - listitem [ref=f1e291]:
+              - link "KVKK Metni" [ref=f1e292] [cursor=pointer]:
+                - /url: /kvkk.php
+            - listitem [ref=f1e293]:
+              - link "Çerez Aydınlatma Metni" [ref=f1e294] [cursor=pointer]:
+                - /url: /cerez.php
+            - listitem [ref=f1e295]:
+              - link "Gizlilik Politikası" [ref=f1e296] [cursor=pointer]:
+                - /url: /gizlilik.php
+      - generic [ref=f1e297]:
+        - generic [ref=f1e298]: © 2026 Boğaziçi Restaurant. Tüm Hakları Saklıdır.
+        - generic [ref=f1e299]:
+          - link "KVKK" [ref=f1e300] [cursor=pointer]:
+            - /url: /kvkk.php
+          - text: "|"
+          - link "Çerez Politikası" [ref=f1e301] [cursor=pointer]:
+            - /url: /cerez.php
+          - text: "|"
+          - link "Gizlilik Politikası" [ref=f1e302] [cursor=pointer]:
+            - /url: /gizlilik.php

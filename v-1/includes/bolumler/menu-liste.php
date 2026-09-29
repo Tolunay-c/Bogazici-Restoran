@@ -19,19 +19,28 @@
             <ul class="menu-grup__liste">
               <?php foreach (($k['urunler'] ?? []) as $u): ?>
                 <li class="urun" data-goster>
-                  <div class="urun__ust">
-                    <h3 class="urun__ad"><?= e($u['ad']) ?></h3>
+                  <?php if (!empty($u['gorsel'])): ?>
+                    <button class="urun__gorsel" type="button" data-lightbox="<?= e(gorsel_url($u['gorsel'], 1440)) ?>" aria-label="<?= e($u['ad']) ?> görselini büyüt">
+                      <?= gorsel($u['gorsel'], '72px', ['alt' => '', 'en' => 480, 'boy' => 480]) ?>
+                    </button>
+                  <?php else: ?>
+                    <span class="urun__gorsel urun__gorsel--bos" aria-hidden="true"><span class="ikon ikon--sm">restaurant</span></span>
+                  <?php endif; ?>
+                  <div class="urun__govde">
+                    <div class="urun__ust">
+                      <h3 class="urun__ad"><?= e($u['ad']) ?></h3>
+                    </div>
+                    <?php if (!empty($u['aciklama'])): ?>
+                      <p class="urun__aciklama"><?= e($u['aciklama']) ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($u['etiketler'])): ?>
+                      <ul class="urun__etiketler">
+                        <?php foreach ($u['etiketler'] as $et): ?>
+                          <li class="rozet"><?= e($et) ?></li>
+                        <?php endforeach; ?>
+                      </ul>
+                    <?php endif; ?>
                   </div>
-                  <?php if (!empty($u['aciklama'])): ?>
-                    <p class="urun__aciklama"><?= e($u['aciklama']) ?></p>
-                  <?php endif; ?>
-                  <?php if (!empty($u['etiketler'])): ?>
-                    <ul class="urun__etiketler">
-                      <?php foreach ($u['etiketler'] as $et): ?>
-                        <li class="rozet"><?= e($et) ?></li>
-                      <?php endforeach; ?>
-                    </ul>
-                  <?php endif; ?>
                 </li>
               <?php endforeach; ?>
             </ul>

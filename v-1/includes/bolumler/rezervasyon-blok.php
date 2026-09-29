@@ -9,6 +9,7 @@
         <?php endif; ?>
         <div class="btn-grup" style="margin-top:var(--bosluk-6)">
           <?= buton($b['buton_yazi'] ?? '', $b['buton_link'] ?? '', 'birincil', 'btn--lg') ?>
+          <?= buton($b['buton2_yazi'] ?? '', $b['buton2_link'] ?? '', 'ikincil', 'btn--lg') ?>
         </div>
       </div>
 

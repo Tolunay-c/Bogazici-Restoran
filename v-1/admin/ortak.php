@@ -427,5 +427,6 @@ function alan_etiket(string $k): string
         'bolumler'       => 'Bölümler',
         'kimlik'         => 'Bağlantı Kimliği (id, opsiyonel)',
         'alinti'         => 'Alıntı / Slogan',
+        'alt_not'        => 'Alt Not (küçük yazı)',
     ][$k] ?? ucfirst(str_replace('_', ' ', $k));
 }
