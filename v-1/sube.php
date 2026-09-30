@@ -32,7 +32,7 @@ $bolumler = [
 
     ['tip' => 'rezervasyon-blok', 'zemin' => 'koyu',
      'ustluk' => 'Rezervasyon', 'baslik' => $sube['ad'] . ' için yer ayırın',
-     'metin' => 'Bölgeyi ve saati seçin, rezervasyonunuz anında onaylansın.',
+     'metin' => 'Tarih ve saati seçin, rezervasyon talebinizi iletin; ekibimiz sizinle iletişime geçerek teyit etsin.',
      'buton_yazi' => 'Rezervasyona başla',
      'buton_link' => '/rezervasyon.php?sube=' . $sube['slug']],
 ];

@@ -76,6 +76,7 @@ main > .bolum[data-zemin="koyu"]:last-child {
 .metin-gorsel__izgara { display: grid; gap: var(--bosluk-6); }
 .metin-gorsel__gorsel { --oran: 4 / 3; order: -1; }     /* mobilde görsel her zaman üstte */
 .metin-gorsel__metin { display: grid; gap: var(--bosluk-5); align-content: center; }
+.metin-gorsel__metin .bolum-basligi { margin-bottom: 0; }
 
 @media (min-width: 900px) {
   .metin-gorsel__izgara { grid-template-columns: 7fr 5fr; gap: var(--bosluk-9); align-items: center; }
@@ -86,6 +87,8 @@ main > .bolum[data-zemin="koyu"]:last-child {
   .metin-gorsel--sol .metin-gorsel__gorsel { margin-left: calc(var(--kenar) * -1); border-radius: 0 var(--r-md) var(--r-md) 0; }
   .metin-gorsel--sol .metin-gorsel__izgara { grid-template-columns: 5fr 7fr; }
   .metin-gorsel--sol .metin-gorsel__gorsel { order: -1; }
+  .metin-gorsel--tam.metin-gorsel--sag .metin-gorsel__izgara { grid-template-columns: 5fr 7fr; }
+  .metin-gorsel--tam.metin-gorsel--sol .metin-gorsel__izgara { grid-template-columns: 7fr 5fr; }
 }
 
 .metin-gorsel__alinti {
@@ -248,6 +251,13 @@ main > .bolum[data-zemin="koyu"]:last-child {
 .sube__bilgi { display: grid; gap: var(--bosluk-2); font-size: var(--yazi-sm); color: var(--metin-ikincil); }
 .sube__aksiyon { display: grid; gap: var(--bosluk-3); justify-items: start; }
 .sube__aksiyon .btn--birincil { width: 100%; }
+.kart__ek.sube__aksiyon .btn--ikincil { width: 100%; }
+/* Kart linki ::after ile tüm kartı kaplar; butonlar ve telefon üstte kalıp tıklanabilsin */
+.kart--link .sube__aksiyon, .kart--link .sube__tel { position: relative; z-index: 1; }
+.sube__ikincil { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: var(--bosluk-3); width: 100%; }
+.sube__ikincil .btn { padding-inline: var(--bosluk-3); }
+.sube__tel { display: inline-flex; align-items: center; gap: var(--bosluk-2); min-height: 44px; color: var(--metin); text-decoration: none; justify-self: start; }
+@media (hover: hover) { .sube__tel:hover { color: var(--vurgu-metin); } }
 
 /* ==============================================================
    galeri-onizleme
@@ -1034,7 +1044,7 @@ button.urun__gorsel:focus-visible { outline: 2px solid var(--odak); outline-offs
   overflow: hidden;
 }
 .sube-iletisim__gorsel { aspect-ratio: 16 / 9; overflow: hidden; background: var(--zemin-alt); }
-.sube-iletisim__govde { display: flex; flex-direction: column; flex: 1; padding: var(--bosluk-6); }
+.sube-iletisim__govde { display: flex; flex-direction: column; flex: 1; padding: var(--bosluk-5); }
 .sube-iletisim__ad { font-size: var(--yazi-2xl); margin: 0 0 var(--bosluk-3); }
 .sube-iletisim__adres { color: var(--metin-ikincil); margin: 0 0 var(--bosluk-5); }
 .sube-iletisim__bilgi {
@@ -1052,7 +1062,6 @@ button.urun__gorsel:focus-visible { outline: 2px solid var(--odak); outline-offs
   text-decoration: none;
   font-size: var(--yazi-sm);
   min-width: 0;
-  overflow-wrap: anywhere;
 }
 .sube-iletisim__bilgi a .ikon { color: var(--vurgu-metin); flex-shrink: 0; }
 @media (hover: hover) {
@@ -1065,6 +1074,7 @@ button.urun__gorsel:focus-visible { outline: 2px solid var(--odak); outline-offs
   align-items: center;
   gap: var(--bosluk-4);
 }
+.sube-iletisim__aksiyon .btn { flex: 1 1 0; padding-inline: var(--bosluk-3); white-space: nowrap; }
 
 @media (min-width: 640px) { .sube-iletisim__liste { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .sube-iletisim__liste { grid-template-columns: repeat(3, 1fr); } }

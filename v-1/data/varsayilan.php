@@ -17,7 +17,7 @@ $varsayilan = [
             'telefon_yazi' => '0850 850 0850',
             'eposta' => 'uckuyular@bogazicirestaurant.com.tr',
             'saat' => 'Her gün 12:00 – 24:00',
-            'gorsel' => 'sube-uckuyular.webp',
+            'gorsel' => 'sube-uckuyular.jpg',
             'enlem' => 38.3873, 'boylam' => 27.0399,
             'yol_tarifi' => 'https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Uckuyular+Balcova',
             'bolgeler' => ['Deniz manzaralı teras', 'İç salon', 'Bahçe'],
@@ -30,7 +30,7 @@ $varsayilan = [
             'telefon_yazi' => '0850 850 0850',
             'eposta' => 'narlidere@bogazicirestaurant.com.tr',
             'saat' => 'Her gün 11:00 – 01:00',
-            'gorsel' => 'sube-narlidere.webp',
+            'gorsel' => 'sube-narlidere.jpg',
             'enlem' => 38.3925, 'boylam' => 27.0060,
             'yol_tarifi' => 'https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Narlidere',
             'bolgeler' => ['Sahil terası', 'İç salon', 'Loca'],
@@ -43,7 +43,7 @@ $varsayilan = [
             'telefon_yazi' => '0850 850 0850',
             'eposta' => 'bostanli@bogazicirestaurant.com.tr',
             'saat' => 'Her gün 12:00 – 24:00',
-            'gorsel' => 'sube-bostanli.webp',
+            'gorsel' => 'sube-bostanli.jpg',
             'enlem' => 38.4664, 'boylam' => 27.0975,
             'yol_tarifi' => 'https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Bostanli+Izmir',
             'bolgeler' => ['Bahçe', 'İç salon', 'Üst kat'],
@@ -93,8 +93,8 @@ $varsayilan['sayfalar']['anasayfa'] = [
         'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
         'baslik' => 'Yemekte Boğaziçi Dokunuşu',
         'metin' => 'İyi bir yemeğin yalnızca lezzetten ibaret olmadığına inanıyoruz. Özenli sunum, kaliteli ürünler ve güçlü hizmet anlayışımızla her buluşmayı keyifli bir deneyime dönüştürüyoruz.',
-        'gorsel' => 'mutfak.webp', 'gorsel_odak' => 'merkez',
-        'gorsel_alt' => 'Özenle hazırlanmış bir Boğaziçi sofrası',
+        'gorsel' => 'yemekte-bogazici-dokunusu.jpg', 'gorsel_odak' => 'merkez',
+        'gorsel_alt' => 'Boğaziçi Restaurant salonu, deniz manzaralı masalar',
         'buton_yazi' => 'Hikâyemiz', 'buton_link' => '/kurumsal.php',
     ],
     [
@@ -140,7 +140,8 @@ $varsayilan['sayfalar']['kurumsal'] = [
         'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
         'ustluk' => 'Hikâyemiz', 'baslik' => 'İzmir’de Bir Boğaziçi Klasiği',
         'metin' => "Boğaziçi Restaurant’ın yolculuğu 1993 yılında Bostanlı’da başladı. 2010 yılında Üçkuyular, 2017 yılında ise Narlıdere şubesinin katılmasıyla Boğaziçi lezzetleri İzmir Körfezi’nin farklı noktalarında misafirleriyle buluşmaya devam etti.\nYıllar içinde değişen ve gelişen menümüzü; kaliteli ürün, özenli hazırlık ve misafir memnuniyetini merkeze alan hizmet anlayışımızla bir araya getiriyoruz.\nBugün üç şubemizde, yılların deneyimini her sofraya aynı özenle taşıyoruz.",
-        'gorsel' => 'kurumsal-01.webp', 'gorsel_alt' => 'İlk şubenin arşiv fotoğrafı',
+        'gorsel' => 'kurumsal-bogazici-klasigi.jpg',
+        'gorsel_alt' => 'Boğaziçi Restaurant Üçkuyular, Bostanlı ve Narlıdere şubelerinden kareler',
     ],
     [
         'tip' => 'zaman-cizelgesi', 'zemin' => 'kum',
@@ -166,13 +167,14 @@ $varsayilan['sayfalar']['kurumsal'] = [
         'ustluk' => 'Mutfak Anlayışımız', 'baslik' => 'Lezzetin Temelinde Kalite Var',
         'metin' => 'Mevsiminde balık çeşitlerinden yöresel kebaplara, Ege mutfağının zeytinyağlılarından sıcak ve soğuk mezelere uzanan zengin mutfağımızda, ürün kalitesini ve tazeliği ön planda tutuyoruz.',
         'alinti' => '“İyi Ye, İyi Yaşa”',
-        'gorsel' => 'mutfak.webp', 'gorsel_alt' => 'Mutfakta hazırlanan sofra',
+        'gorsel' => 'kurumsal-mutfak-anlayisimiz.jpg', 'gorsel_odak' => 'alt',
+        'gorsel_alt' => 'Mutfakta özenle hazırlanan bir tabak',
     ],
     [
         'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
         'ustluk' => 'Kalite & Hijyen', 'baslik' => 'Kalite, Boğaziçi’nin Temelidir',
         'metin' => 'Sağlıklı ürün, hijyen ve kaliteli hizmet anlayışını mutfağımızın temel standartları arasında görüyoruz. Et ve balık hazırlama süreçlerinin ayrı mutfaklarda yürütülmesi dahil olmak üzere, mutfak organizasyonumuzu kalite ve hijyen anlayışımız doğrultusunda sürdürüyoruz.',
-        'gorsel' => 'kurumsal-01.webp', 'gorsel_alt' => '',
+        'gorsel' => 'kurumsal-kalite-hijyen.jpg', 'gorsel_alt' => 'Mutfakta kesme tahtasında hazırlanan taze balıklar',
     ],
     [
         'tip' => 'cta-bant', 'zemin' => 'koyu',
@@ -209,21 +211,21 @@ $varsayilan['sayfalar']['hizmetler'] = [
         'ustluk' => '01 — İş Toplantıları & Seminerler', 'baslik' => 'İş Buluşmalarınıza Özenli Bir Ev Sahipliği',
         'metin' => 'İş yemekleri, kurumsal buluşmalar, toplantılar ve seminerler için Boğaziçi’nin hizmet anlayışını profesyonel organizasyon deneyimiyle bir araya getiriyoruz.',
         'buton_yazi' => 'Bilgi al', 'buton_link' => '/iletisim.php',
-        'gorsel' => 'hizmet-01.webp', 'gorsel_alt' => 'İş toplantısı için hazırlanmış masa',
+        'gorsel' => 'hizmet-is-toplantisi.jpg', 'gorsel_alt' => 'Deniz manzaralı salonda iş yemeği',
     ],
     [
         'tip' => 'metin-gorsel', 'zemin' => 'kum', 'yon' => 'sol',
         'ustluk' => '02 — Kokteyl & Etkinlik', 'baslik' => 'Özel Anlara Özenli Dokunuşlar',
         'metin' => 'Kurumsal etkinliklerden özel davetlere, farklı organizasyon ihtiyaçlarını Boğaziçi mutfağı ve hizmet kalitesiyle buluşturuyoruz.',
         'buton_yazi' => 'Organizasyon bilgisi al', 'buton_link' => '/iletisim.php',
-        'gorsel' => 'hizmet-02.webp', 'gorsel_alt' => 'Kokteyl etkinliği hazırlığı',
+        'gorsel' => 'hizmet-ozel-anlar.jpg', 'gorsel_alt' => 'Gün batımında deniz manzaralı davet masası',
     ],
     [
         'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
         'ustluk' => '03 — Catering', 'baslik' => 'Boğaziçi Lezzetleri Dilediğiniz Yerde',
         'metin' => 'Toplantı, davet ve özel organizasyonlarınız için Boğaziçi mutfağının deneyimini bulunduğunuz mekâna taşıyoruz.',
         'buton_yazi' => 'Catering için bilgi al', 'buton_link' => '/iletisim.php',
-        'gorsel' => 'hizmet-03.webp', 'gorsel_alt' => 'Catering için hazırlanmış sofra',
+        'gorsel' => 'hizmet-catering.jpg', 'gorsel_alt' => 'Deniz kenarında kurulmuş catering büfesi',
     ],
     [
         'tip' => 'metin-gorsel', 'zemin' => 'kum', 'yon' => 'sol', 'kimlik' => 'paket-servis',
@@ -307,13 +309,6 @@ $varsayilan['sayfalar']['menu'] = [
      'metin' => 'Seçkin lezzetlerimizi Üçkuyular, Narlıdere ve Bostanlı şubelerimizde keşfedin.',
      'buton_yazi' => 'Rezervasyon yap', 'buton_link' => '/rezervasyon.php',
      'buton2_yazi' => 'Şubelerimiz', 'buton2_link' => '/subeler.php'],
-];
-
-$varsayilan['sayfalar']['galeri'] = [
-    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Galeri',
-     'baslik' => 'Mekândan kareler', 'gorsel' => 'basluk-galeri.webp', 'gorsel_alt' => ''],
-    ['tip' => 'galeri-onizleme', 'zemin' => 'beyaz',
-     'ogeler' => $galeri_ogeleri],
 ];
 
 $varsayilan['sayfalar']['rezervasyon'] = [

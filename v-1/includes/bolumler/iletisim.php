@@ -9,32 +9,32 @@
         <?php endif; ?>
       </div>
 
-      <form class="iletisim__form form-izgara" method="post" action="/iletisim-gonder.php" novalidate>
+      <form class="iletisim__form form-izgara" method="post" action="/iletisim-gonder.php">
         <div class="form-izgara form-izgara--iki">
           <div class="alan">
-            <label class="alan__etiket" for="ad">Ad soyad</label>
+            <label class="alan__etiket" for="ad">Ad soyad <span class="alan__zorunlu" aria-hidden="true">*</span></label>
             <input class="girdi" type="text" id="ad" name="ad" autocomplete="name" required>
           </div>
           <div class="alan">
-            <label class="alan__etiket" for="tel">Telefon</label>
+            <label class="alan__etiket" for="tel">Telefon <span class="alan__zorunlu" aria-hidden="true">*</span></label>
             <input class="girdi" type="tel" id="tel" name="telefon" inputmode="tel" autocomplete="tel" required>
           </div>
         </div>
 
         <div class="alan">
-          <label class="alan__etiket" for="eposta">E-posta</label>
-          <input class="girdi" type="email" id="eposta" name="eposta" autocomplete="email">
+          <label class="alan__etiket" for="eposta">E-posta <span class="alan__zorunlu" aria-hidden="true">*</span></label>
+          <input class="girdi" type="email" id="eposta" name="eposta" autocomplete="email" required>
         </div>
 
         <div class="alan">
-          <label class="alan__etiket" for="mesaj">Mesajınız</label>
+          <label class="alan__etiket" for="mesaj">Mesajınız <span class="alan__zorunlu" aria-hidden="true">*</span></label>
           <textarea class="metin-alani" id="mesaj" name="mesaj" required></textarea>
         </div>
 
         <div class="onay">
           <input type="checkbox" id="kvkk" name="kvkk" required>
           <label class="onay__metin" for="kvkk">
-            <a href="/kvkk.php">KVKK aydınlatma metnini</a> okudum, bilgilerimin işlenmesini onaylıyorum.
+            <a href="/kvkk.php">KVKK Aydınlatma Metni</a>'ni okudum ve kabul ediyorum.
           </label>
         </div>
 

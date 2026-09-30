@@ -144,6 +144,7 @@
 /* --- Form ----------------------------------------------------- */
 .alan { display: grid; gap: var(--bosluk-2); }
 .alan__etiket { font-size: var(--yazi-sm); font-weight: 500; }
+.alan__zorunlu { color: var(--vurgu-metin); }
 .alan__ipucu, .alan__hata { font-size: var(--yazi-sm); }
 .alan__ipucu { color: var(--metin-ikincil); }
 .alan__hata { color: var(--hata); }
@@ -371,14 +372,16 @@ body { padding-bottom: var(--altbar-y); }
 .alt__sosyal a {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  line-height: 0;
   border: 1px solid var(--cizgi-ters);
   border-radius: var(--r-tam);
   color: var(--metin-ters-ikincil);
 }
-.alt__sosyal svg { width: 17px; height: 17px; }
-.alt__sosyal a:hover { color: var(--notr-kum); border-color: var(--metin-ters-ikincil); }
+.alt__sosyal svg { width: 20px; height: 20px; }
+@media (hover: hover) { .alt__sosyal a:hover { color: var(--notr-kum); border-color: var(--metin-ters-ikincil); } }
 .alt__telif {
   margin-top: var(--bosluk-8);
   padding-top: var(--bosluk-5);

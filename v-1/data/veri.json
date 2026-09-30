@@ -8,7 +8,7 @@
             "telefon_yazi": "0850 850 0850",
             "eposta": "uckuyular@bogazicirestaurant.com.tr",
             "saat": "Her gün 12:00 – 24:00",
-            "gorsel": "sube-uckuyular.webp",
+            "gorsel": "sube-uckuyular.jpg",
             "enlem": 38.3873,
             "boylam": 27.0399,
             "yol_tarifi": "https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Uckuyular+Balcova",
@@ -26,7 +26,7 @@
             "telefon_yazi": "0850 850 0850",
             "eposta": "narlidere@bogazicirestaurant.com.tr",
             "saat": "Her gün 11:00 – 01:00",
-            "gorsel": "sube-narlidere.webp",
+            "gorsel": "sube-narlidere.jpg",
             "enlem": 38.3925,
             "boylam": 27.006,
             "yol_tarifi": "https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Narlidere",
@@ -44,7 +44,7 @@
             "telefon_yazi": "0850 850 0850",
             "eposta": "bostanli@bogazicirestaurant.com.tr",
             "saat": "Her gün 12:00 – 24:00",
-            "gorsel": "sube-bostanli.webp",
+            "gorsel": "sube-bostanli.jpg",
             "enlem": 38.4664,
             "boylam": 27.0975,
             "yol_tarifi": "https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Bostanli+Izmir",
@@ -82,9 +82,9 @@
                 "zemin": "beyaz",
                 "buton_yazi": "Hikâyemiz",
                 "buton_link": "/kurumsal.php",
-                "gorsel": "mutfak.webp",
+                "gorsel": "yemekte-bogazici-dokunusu.jpg",
                 "gorsel_odak": "merkez",
-                "gorsel_alt": "Özenle hazırlanmış bir Boğaziçi sofrası"
+                "gorsel_alt": "Boğaziçi Restaurant salonu, deniz manzaralı masalar"
             },
             {
                 "tip": "sube-listesi",
@@ -161,8 +161,8 @@
                 "ustluk": "Hikâyemiz",
                 "baslik": "İzmir’de Bir Boğaziçi Klasiği",
                 "metin": "Boğaziçi Restaurant’ın yolculuğu 1993 yılında Bostanlı’da başladı. 2010 yılında Üçkuyular, 2017 yılında ise Narlıdere şubesinin katılmasıyla Boğaziçi lezzetleri İzmir Körfezi’nin farklı noktalarında misafirleriyle buluşmaya devam etti.\nYıllar içinde değişen ve gelişen menümüzü; kaliteli ürün, özenli hazırlık ve misafir memnuniyetini merkeze alan hizmet anlayışımızla bir araya getiriyoruz.\nBugün üç şubemizde, yılların deneyimini her sofraya aynı özenle taşıyoruz.",
-                "gorsel": "kurumsal-01.webp",
-                "gorsel_alt": "İlk şubenin arşiv fotoğrafı"
+                "gorsel": "kurumsal-bogazici-klasigi.jpg",
+                "gorsel_alt": "Boğaziçi Restaurant Üçkuyular, Bostanlı ve Narlıdere şubelerinden kareler"
             },
             {
                 "tip": "zaman-cizelgesi",
@@ -219,8 +219,9 @@
                 "baslik": "Lezzetin Temelinde Kalite Var",
                 "metin": "Mevsiminde balık çeşitlerinden yöresel kebaplara, Ege mutfağının zeytinyağlılarından sıcak ve soğuk mezelere uzanan zengin mutfağımızda, ürün kalitesini ve tazeliği ön planda tutuyoruz.",
                 "alinti": "“İyi Ye, İyi Yaşa”",
-                "gorsel": "mutfak.webp",
-                "gorsel_alt": "Mutfakta hazırlanan sofra"
+                "gorsel": "kurumsal-mutfak-anlayisimiz.jpg",
+                "gorsel_odak": "alt",
+                "gorsel_alt": "Mutfakta özenle hazırlanan bir tabak"
             },
             {
                 "tip": "metin-gorsel",
@@ -229,8 +230,8 @@
                 "ustluk": "Kalite & Hijyen",
                 "baslik": "Kalite, Boğaziçi’nin Temelidir",
                 "metin": "Sağlıklı ürün, hijyen ve kaliteli hizmet anlayışını mutfağımızın temel standartları arasında görüyoruz. Et ve balık hazırlama süreçlerinin ayrı mutfaklarda yürütülmesi dahil olmak üzere, mutfak organizasyonumuzu kalite ve hijyen anlayışımız doğrultusunda sürdürüyoruz.",
-                "gorsel": "kurumsal-01.webp",
-                "gorsel_alt": ""
+                "gorsel": "kurumsal-kalite-hijyen.jpg",
+                "gorsel_alt": "Mutfakta kesme tahtasında hazırlanan taze balıklar"
             },
             {
                 "tip": "cta-bant",
@@ -289,8 +290,8 @@
                 "metin": "İş yemekleri, kurumsal buluşmalar, toplantılar ve seminerler için Boğaziçi’nin hizmet anlayışını profesyonel organizasyon deneyimiyle bir araya getiriyoruz.",
                 "buton_yazi": "Bilgi al",
                 "buton_link": "/iletisim.php",
-                "gorsel": "hizmet-01.webp",
-                "gorsel_alt": "İş toplantısı için hazırlanmış masa"
+                "gorsel": "hizmet-is-toplantisi.jpg",
+                "gorsel_alt": "Deniz manzaralı salonda iş yemeği"
             },
             {
                 "tip": "metin-gorsel",
@@ -301,8 +302,8 @@
                 "metin": "Kurumsal etkinliklerden özel davetlere, farklı organizasyon ihtiyaçlarını Boğaziçi mutfağı ve hizmet kalitesiyle buluşturuyoruz.",
                 "buton_yazi": "Organizasyon bilgisi al",
                 "buton_link": "/iletisim.php",
-                "gorsel": "hizmet-02.webp",
-                "gorsel_alt": "Kokteyl etkinliği hazırlığı"
+                "gorsel": "hizmet-ozel-anlar.jpg",
+                "gorsel_alt": "Gün batımında deniz manzaralı davet masası"
             },
             {
                 "tip": "metin-gorsel",
@@ -313,8 +314,8 @@
                 "metin": "Toplantı, davet ve özel organizasyonlarınız için Boğaziçi mutfağının deneyimini bulunduğunuz mekâna taşıyoruz.",
                 "buton_yazi": "Catering için bilgi al",
                 "buton_link": "/iletisim.php",
-                "gorsel": "hizmet-03.webp",
-                "gorsel_alt": "Catering için hazırlanmış sofra"
+                "gorsel": "hizmet-catering.jpg",
+                "gorsel_alt": "Deniz kenarında kurulmuş catering büfesi"
             },
             {
                 "tip": "metin-gorsel",
@@ -678,130 +679,6 @@
                 "buton_link": "/rezervasyon.php",
                 "buton2_yazi": "Şubelerimiz",
                 "buton2_link": "/subeler.php"
-            }
-        ],
-        "galeri": [
-            {
-                "tip": "sayfa-basligi",
-                "zemin": "koyu",
-                "ustluk": "Galeri",
-                "baslik": "Mekândan kareler",
-                "gorsel": "basluk-galeri.webp",
-                "gorsel_alt": ""
-            },
-            {
-                "tip": "galeri-onizleme",
-                "zemin": "beyaz",
-                "ogeler": [
-                    {
-                        "gorsel": "galeri-01.webp",
-                        "gorsel_alt": "Galeri 1",
-                        "en": 960,
-                        "boy": 1280
-                    },
-                    {
-                        "gorsel": "galeri-02.webp",
-                        "gorsel_alt": "Galeri 2",
-                        "en": 960,
-                        "boy": 720
-                    },
-                    {
-                        "gorsel": "galeri-03.webp",
-                        "gorsel_alt": "Galeri 3",
-                        "en": 960,
-                        "boy": 1440
-                    },
-                    {
-                        "gorsel": "galeri-04.webp",
-                        "gorsel_alt": "Galeri 4",
-                        "en": 960,
-                        "boy": 960
-                    },
-                    {
-                        "gorsel": "galeri-05.webp",
-                        "gorsel_alt": "Galeri 5",
-                        "en": 960,
-                        "boy": 640
-                    },
-                    {
-                        "gorsel": "galeri-06.webp",
-                        "gorsel_alt": "Galeri 6",
-                        "en": 960,
-                        "boy": 1200
-                    },
-                    {
-                        "gorsel": "galeri-07.webp",
-                        "gorsel_alt": "Galeri 7",
-                        "en": 960,
-                        "boy": 1280
-                    },
-                    {
-                        "gorsel": "galeri-08.webp",
-                        "gorsel_alt": "Galeri 8",
-                        "en": 960,
-                        "boy": 960
-                    },
-                    {
-                        "gorsel": "galeri-09.webp",
-                        "gorsel_alt": "Galeri 9",
-                        "en": 960,
-                        "boy": 720
-                    },
-                    {
-                        "gorsel": "galeri-10.webp",
-                        "gorsel_alt": "Galeri 10",
-                        "en": 960,
-                        "boy": 1440
-                    },
-                    {
-                        "gorsel": "galeri-11.webp",
-                        "gorsel_alt": "Galeri 11",
-                        "en": 960,
-                        "boy": 1280
-                    },
-                    {
-                        "gorsel": "galeri-12.webp",
-                        "gorsel_alt": "Galeri 12",
-                        "en": 960,
-                        "boy": 540
-                    },
-                    {
-                        "gorsel": "galeri-13.webp",
-                        "gorsel_alt": "Galeri 13",
-                        "en": 960,
-                        "boy": 960
-                    },
-                    {
-                        "gorsel": "galeri-14.webp",
-                        "gorsel_alt": "Galeri 14",
-                        "en": 960,
-                        "boy": 1200
-                    },
-                    {
-                        "gorsel": "galeri-15.webp",
-                        "gorsel_alt": "Galeri 15",
-                        "en": 960,
-                        "boy": 640
-                    },
-                    {
-                        "gorsel": "galeri-16.webp",
-                        "gorsel_alt": "Galeri 16",
-                        "en": 960,
-                        "boy": 1280
-                    },
-                    {
-                        "gorsel": "galeri-17.webp",
-                        "gorsel_alt": "Galeri 17",
-                        "en": 960,
-                        "boy": 960
-                    },
-                    {
-                        "gorsel": "galeri-18.webp",
-                        "gorsel_alt": "Galeri 18",
-                        "en": 960,
-                        "boy": 720
-                    }
-                ]
             }
         ],
         "rezervasyon": [

@@ -10,16 +10,11 @@
         </p>
         <p class="alt__moto">İyi Ye, İyi Yaşa</p>
         <div class="alt__sosyal">
-          <a href="#" aria-label="Instagram">
+          <a href="https://www.instagram.com/restaurantbogazici/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5"/>
               <circle cx="12" cy="12" r="4.2"/>
               <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-              <path d="M14.5 21v-7.5h2.5l.4-3H14.5V8.4c0-.87.24-1.46 1.5-1.46H17.5V4.35C17.24 4.32 16.36 4.24 15.34 4.24c-2.13 0-3.59 1.3-3.59 3.68V10.5H9.25v3h2.5V21"/>
             </svg>
           </a>
         </div>
@@ -42,7 +37,7 @@
         <h2 class="alt__baslik">Şubelerimiz</h2>
         <ul class="alt__liste">
           <?php foreach (SUBELER as $s): ?>
-            <li><a href="/sube.php?s=<?= e($s['slug']) ?>"><?= e($s['ad']) ?></a></li>
+            <li><a href="/subeler.php#sube-<?= e($s['slug']) ?>"><?= e($s['ad']) ?></a></li>
           <?php endforeach; ?>
         </ul>
         <ul class="alt__liste" style="margin-top:var(--bosluk-5)">

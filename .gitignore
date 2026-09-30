@@ -3,3 +3,7 @@
 .env*.local
 .vercel
 .env*
+
+# Müşterinin gönderdiği orijinaller (sitede kullanılmıyor, türevleri assets/img altında)
+v-1/assets/img/musteri-gorseller/
+.DS_Store
