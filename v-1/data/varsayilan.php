@@ -106,8 +106,8 @@ $varsayilan['sayfalar']['anasayfa'] = [
         'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sol',
         'baslik' => 'Her Sofraya Bir Boğaziçi Klasiği',
         'metin' => 'Geleneksel tatlardan özenle hazırlanan özel lezzetlere uzanan menümüzle, günün her anına eşlik eden zengin bir sofra sunuyoruz.',
-        'gorsel' => 'urun-meze.webp', 'gorsel_odak' => 'merkez',
-        'gorsel_alt' => 'Boğaziçi mezelerinden bir sofra',
+        'gorsel' => 'anasayfa-her-sofraya.jpg', 'gorsel_odak' => 'merkez',
+        'gorsel_alt' => 'Mezeler, balık ve salatalarla kurulmuş Boğaziçi sofrası',
         'buton_yazi' => 'Menüyü İncele', 'buton_link' => '/menu.php',
     ],
     [
@@ -115,9 +115,9 @@ $varsayilan['sayfalar']['anasayfa'] = [
         'baslik' => 'Boğaziçi’nden Kareler',
         'alt_baslik' => 'Üç farklı lokasyon, aynı Boğaziçi atmosferi.',
         'ogeler' => [
-            ['baslik' => 'Üçkuyular', 'gorsel' => 'sube-uckuyular-ic.webp', 'gorsel_alt' => 'Boğaziçi Üçkuyular şubesinden bir kare', 'link' => '/subeler.php#sube-uckuyular'],
-            ['baslik' => 'Narlıdere', 'gorsel' => 'sube-narlidere-ic.webp', 'gorsel_alt' => 'Boğaziçi Narlıdere şubesinden bir kare', 'link' => '/subeler.php#sube-narlidere'],
-            ['baslik' => 'Bostanlı',  'gorsel' => 'sube-bostanli-ic.webp',  'gorsel_alt' => 'Boğaziçi Bostanlı şubesinden bir kare',  'link' => '/subeler.php#sube-bostanli'],
+            ['baslik' => 'Üçkuyular', 'gorsel' => 'sube-uckuyular.jpg', 'gorsel_alt' => 'Boğaziçi Üçkuyular şubesinden bir kare', 'link' => '/subeler.php#sube-uckuyular'],
+            ['baslik' => 'Narlıdere', 'gorsel' => 'sube-narlidere.jpg', 'gorsel_alt' => 'Boğaziçi Narlıdere şubesinden bir kare', 'link' => '/subeler.php#sube-narlidere'],
+            ['baslik' => 'Bostanlı',  'gorsel' => 'sube-bostanli.jpg',  'gorsel_alt' => 'Boğaziçi Bostanlı şubesinden bir kare',  'link' => '/subeler.php#sube-bostanli'],
         ],
     ],
     [
@@ -232,7 +232,8 @@ $varsayilan['sayfalar']['hizmetler'] = [
         'ustluk' => '04 — Paket Servis', 'baslik' => 'Boğaziçi Lezzetleri Size Gelsin',
         'metin' => 'Sevdiğiniz Boğaziçi lezzetlerini restoran deneyiminden ödün vermeden, özenli hazırlık ve paketleme anlayışıyla sofranıza ulaştırıyoruz.',
         'buton_yazi' => 'Paket servis bilgi al', 'buton_link' => '/iletisim.php',
-        'gorsel' => 'mutfak.webp', 'gorsel_alt' => 'Paket servis için hazırlanan lezzetler',
+        'gorsel' => 'hizmet-paket-servis.jpg', 'gorsel_odak' => 'sol',
+        'gorsel_alt' => 'Boğaziçi logolu paket servis çantası ve yemek kapları',
     ],
     [
         'tip' => 'cta-bant', 'zemin' => 'koyu',

@@ -88,6 +88,7 @@
 .kart__gorsel {
   aspect-ratio: var(--oran, 3 / 2);
   overflow: hidden;
+  border-radius: var(--r-md);
   background: var(--zemin-alt);
 }
 /* Yakınlık: grup İÇİ boşluk (16/4), kartlar ARASI boşluktan (48) belirgin küçük.

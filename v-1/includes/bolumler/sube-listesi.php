@@ -31,6 +31,7 @@ $duzen = ($b['duzen'] ?? 'izgara') === 'yatay' ? 'yatay' : 'izgara';
 
               <div class="sube-yatay__aksiyon">
                 <a class="btn btn--birincil" href="/rezervasyon.php?sube=<?= e($s['slug']) ?>">Rezervasyon yap</a>
+                <a class="btn btn--ikincil" href="/sube.php?s=<?= e($s['slug']) ?>">Şubeyi incele</a>
                 <a class="btn btn--ikincil" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol tarifi al</a>
               </div>
             </div>

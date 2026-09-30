@@ -54,6 +54,7 @@ Kaynak: `revizeler.md`. Acil iş (anasayfa hero) bitince sırayla ele alınacak.
 - [x] musteri-gorseller/ .gitignore'a eklendi (bilgisayarda duruyor, repoya gitmiyor)
 
 ## Admin / Yayın
+- [ ] Canlıya geçmeden: config.php:31 SURUM canlıda sabit '1.0.1' → CSS değişince tarayıcı önbelleği takılır. Her yayında artır ya da dosya tarihinden üret.
 - [x] Vercel demo modu (Prompt 19), sonra kalıcı depolama: Upstash Redis + Vercel Blob + çerezli giriş (Prompt 20-21)
 - [ ] DİKKAT: Admin'de ilk kayıttan sonra Vercel içeriği Redis'ten okunur; repodaki veri.json değişiklikleri Vercel'e yansımaz. Metin revizeleri müşteri teste başlamadan bitmeli ya da Redis↔dosya eşitleme aracı yazılmalı.
 - [x] Form: 4 alan zorunlu (*), novalidate kaldırıldı, yeni KVKK cümlesi (Prompt 40)

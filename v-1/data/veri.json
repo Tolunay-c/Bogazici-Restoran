@@ -101,9 +101,9 @@
                 "zemin": "beyaz",
                 "buton_yazi": "Menüyü İncele",
                 "buton_link": "/menu.php",
-                "gorsel": "urun-meze.webp",
+                "gorsel": "anasayfa-her-sofraya.jpg",
                 "gorsel_odak": "merkez",
-                "gorsel_alt": "Boğaziçi mezelerinden bir sofra"
+                "gorsel_alt": "Mezeler, balık ve salatalarla kurulmuş Boğaziçi sofrası"
             },
             {
                 "tip": "kart-izgara",
@@ -113,19 +113,19 @@
                 "ogeler": [
                     {
                         "baslik": "Üçkuyular",
-                        "gorsel": "sube-uckuyular-ic.webp",
+                        "gorsel": "sube-uckuyular.jpg",
                         "gorsel_alt": "Boğaziçi Üçkuyular şubesinden bir kare",
                         "link": "/subeler.php#sube-uckuyular"
                     },
                     {
                         "baslik": "Narlıdere",
-                        "gorsel": "sube-narlidere-ic.webp",
+                        "gorsel": "sube-narlidere.jpg",
                         "gorsel_alt": "Boğaziçi Narlıdere şubesinden bir kare",
                         "link": "/subeler.php#sube-narlidere"
                     },
                     {
                         "baslik": "Bostanlı",
-                        "gorsel": "sube-bostanli-ic.webp",
+                        "gorsel": "sube-bostanli.jpg",
                         "gorsel_alt": "Boğaziçi Bostanlı şubesinden bir kare",
                         "link": "/subeler.php#sube-bostanli"
                     }
@@ -327,8 +327,9 @@
                 "metin": "Sevdiğiniz Boğaziçi lezzetlerini restoran deneyiminden ödün vermeden, özenli hazırlık ve paketleme anlayışıyla sofranıza ulaştırıyoruz.",
                 "buton_yazi": "Paket servis bilgi al",
                 "buton_link": "/iletisim.php",
-                "gorsel": "mutfak.webp",
-                "gorsel_alt": "Paket servis için hazırlanan lezzetler"
+                "gorsel": "hizmet-paket-servis.jpg",
+                "gorsel_odak": "sol",
+                "gorsel_alt": "Boğaziçi logolu paket servis çantası ve yemek kapları"
             },
             {
                 "tip": "cta-bant",

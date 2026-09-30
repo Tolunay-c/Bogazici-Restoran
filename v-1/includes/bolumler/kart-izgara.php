@@ -10,7 +10,7 @@ $ogeler = $b['ogeler'] ?? [];
         <li class="kart <?= !empty($o['link']) ? 'kart--link' : '' ?>" data-goster>
           <?php if (!empty($o['gorsel'])): ?>
             <div class="kart__gorsel" style="--oran:3/2">
-              <?= gorsel($o['gorsel'], '(min-width:900px) 360px, (min-width:640px) 50vw, 100vw', [
+              <?= gorsel($o['gorsel'], '(min-width:900px) 520px, (min-width:640px) 75vw, 150vw', [
                   'alt' => $o['gorsel_alt'] ?? '',
                   'odak' => $o['gorsel_odak'] ?? 'merkez',
               ]) ?>
