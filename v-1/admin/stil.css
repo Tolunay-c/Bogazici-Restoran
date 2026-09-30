@@ -134,6 +134,7 @@ code { font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 .admin-uyari--basari { background: rgba(47,110,75,.08); border-color: rgba(47,110,75,.3); color: var(--a-basari); }
 .admin-uyari--hata   { background: rgba(180,50,31,.06); border-color: rgba(180,50,31,.3); color: var(--a-hata); }
+.admin-uyari--demo   { background: rgba(176,140,74,.12); border-color: rgba(176,140,74,.4); color: var(--a-vurgu-koyu); }
 .admin-uyari code { background: transparent; padding: 0; }
 
 /* ----------- Kartlar / izgara ----------- */

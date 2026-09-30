@@ -121,12 +121,11 @@ $varsayilan['sayfalar']['anasayfa'] = [
         ],
     ],
     [
-        'tip' => 'rezervasyon-blok', 'zemin' => 'koyu',
+        'tip' => 'cta-bant', 'zemin' => 'koyu',
         'ustluk' => 'Rezervasyon', 'baslik' => 'Yeriniz Hazır',
         'metin' => 'Boğaziçi deneyimini Üçkuyular, Narlıdere veya Bostanlı şubemizde yaşayın.',
         'buton_yazi' => 'Rezervasyon Yap', 'buton_link' => '/rezervasyon.php',
         'buton2_yazi' => 'Şubeleri Gör', 'buton2_link' => '/subeler.php',
-        'on_secili_sube' => '',
     ],
 ];
 

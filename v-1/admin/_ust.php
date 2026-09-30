@@ -20,3 +20,9 @@
 </header>
 
 <main class="admin-icerik">
+<?php if (DEMO_MODU): ?>
+  <p class="admin-uyari admin-uyari--demo">
+    <?php if (!empty($_GET['demo'])): ?><strong>Demo modunda kaydetme kapalıdır.</strong> <?php endif; ?>
+    Bu panel önizleme amaçlıdır; yaptığınız değişiklikler kaydedilmez. Canlı sunucuda tüm özellikler aktif olacaktır.
+  </p>
+<?php endif; ?>

@@ -8,7 +8,7 @@ Kaynak: `revizeler.md`. Acil iş (anasayfa hero) bitince sırayla ele alınacak.
 - [ ] SORU: revizeler.md'deki "Üç farklı lokasyon, aynı Boğaziçi deneyimi." + 3 değer (Özenli Mutfak / Kaliteli Hizmet / Keyifli Atmosfer) anasayfada ayrı bölüm olarak isteniyor mu? Prompt 2'de kaldırıldı; müşteri son mesajında sadece başlık + paragraf verdi.
 - [ ] Şube kartları ("Size En Yakın Boğaziçi"): ad + adres + telefon + [Yol Tarifi] [Rezervasyon]; Bostanlı'ya [Paket Servis]. Saat/bölge satırları çıkacak. Görseller müşteriden gelecek.
 - [x] "Boğaziçi'nden Kareler": 3 kare + Şubeler sayfasına anchor (Prompt 5-6). Şimdilik sube-*-ic.webp kullanılıyor; müşteri fotoğrafları gelince admin panelden değiştirilecek.
-- [x] Rezervasyon CTA: "Yeriniz Hazır" + [Rezervasyon Yap] [Şubeleri Gör] (Prompt 7). 4 adımlı liste korundu.
+- [x] Rezervasyon CTA: "Yeriniz Hazır" + [Rezervasyon Yap] [Şubeleri Gör] (Prompt 7). Müşteri talebiyle 4 adımlı liste kaldırıldı, bölüm cta-bant'a çevrildi (Prompt 18).
 - [x] Şube bölümü başlığı "Size En Yakın Boğaziçi" (Prompt 3)
 - [x] Rakamlar bölümü kaldırıldı (Prompt 4)
 - [x] CTA butonları eşit genişlik (Prompt 8)

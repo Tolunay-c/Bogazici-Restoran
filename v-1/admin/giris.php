@@ -37,6 +37,10 @@ if (admin_giris_yapmis()) {
       <p class="admin-giris__ustluk">Boğaziçi · Yönetim</p>
       <h1 class="admin-giris__baslik">Giriş yapın</h1>
 
+      <?php if (DEMO_MODU): ?>
+        <p class="admin-uyari admin-uyari--demo">Bu panel önizleme amaçlıdır; yaptığınız değişiklikler kaydedilmez. Canlı sunucuda tüm özellikler aktif olacaktır.</p>
+      <?php endif; ?>
+
       <?php if ($hata): ?>
         <p class="admin-uyari admin-uyari--hata"><?= e($hata) ?></p>
       <?php endif; ?>
@@ -56,8 +60,6 @@ if (admin_giris_yapmis()) {
 
         <button type="submit" class="admin-btn admin-btn--birincil">Giriş</button>
       </form>
-
-      <p class="admin-giris__ipucu">Varsayılan giriş: <code>admin / bogazici2026</code></p>
     </div>
   </main>
 </body>

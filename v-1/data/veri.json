@@ -132,7 +132,7 @@
                 ]
             },
             {
-                "tip": "rezervasyon-blok",
+                "tip": "cta-bant",
                 "zemin": "koyu",
                 "ustluk": "Rezervasyon",
                 "baslik": "Yeriniz Hazır",
@@ -140,8 +140,7 @@
                 "buton_yazi": "Rezervasyon Yap",
                 "buton_link": "/rezervasyon.php",
                 "buton2_yazi": "Şubeleri Gör",
-                "buton2_link": "/subeler.php",
-                "on_secili_sube": ""
+                "buton2_link": "/subeler.php"
             }
         ],
         "kurumsal": [

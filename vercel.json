@@ -14,6 +14,10 @@
       "dest": "/v-1/assets/$1"
     },
     {
+      "src": "/admin/stil.css",
+      "dest": "/v-1/admin/stil.css"
+    },
+    {
       "src": "/v-2(.*)",
       "dest": "/api/index.php"
     },

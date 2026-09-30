@@ -164,7 +164,7 @@ RewriteRule ^data/ - [F,L]
 - Sertifika kurulduktan sonra aynı sayfada **Force SSL with HTTPS redirect** işaretini aç
 
 ### 3B.6 Admin parolasını değiştir
-İlk giriş sonrası **ZORUNLU** (varsayılan `admin / bogazici2026`).
+İlk giriş sonrası **ZORUNLU** (`admin / (proje sahibinden alın)`).
 
 - **SSH varsa:**
   ```bash
@@ -382,7 +382,7 @@ php -r "echo password_hash('YENI_PAROLA', PASSWORD_BCRYPT), PHP_EOL;"
 
 Kullanıcı adını da değiştirebilirsin (`'kullanici' => 'yeniad'`).
 
-**Varsayılan:** `admin / bogazici2026` — canlıya çıkmadan önce mutlaka değiştir.
+**Giriş:** `admin / (proje sahibinden alın)` — canlıya çıkmadan önce mutlaka değiştir.
 
 ---
 
@@ -417,7 +417,7 @@ mv data/veri.json.yedek data/veri.json
 ## 9. Güvenlik kontrol listesi
 
 - [ ] HTTPS zorunlu (HTTP → HTTPS redirect kurulu)
-- [ ] Admin parolası değişti, `bogazici2026` DEĞİL
+- [ ] Admin parolası değişti, kurulumdaki ilk parola DEĞİL
 - [ ] `data/*.json` ve `data/*.php` web'den doğrudan erişilemiyor (bkz. §4/§5 nginx/apache kuralları)
 - [ ] `session.cookie_secure = 1` (HTTPS zorunluluğu)
 - [ ] Upload dizini (`assets/img/`) PHP çalıştırmıyor (Nginx'te otomatik, Apache'de `.htaccess` içinde `php_flag engine off` eklenebilir)

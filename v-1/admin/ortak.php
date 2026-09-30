@@ -22,6 +22,19 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+/* Demo modu: giriş dışındaki tüm POST'lar (kaydet/yükle/sil) işlenmeden geri döner.
+   Mesaj session yerine query ile taşınır (Vercel'de session kalıcı değil). */
+if (DEMO_MODU && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+    $yol = (string) parse_url($_SERVER['REQUEST_URI'] ?? '/admin/', PHP_URL_PATH);
+    if (!str_ends_with($yol, '/giris.php')) {
+        $sorgu = (string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_QUERY);
+        parse_str($sorgu, $p);
+        $p['demo'] = '1';
+        header('Location: ' . $yol . '?' . http_build_query($p), true, 303);
+        exit;
+    }
+}
+
 function admin_ayar(): array
 {
     static $ayar = null;

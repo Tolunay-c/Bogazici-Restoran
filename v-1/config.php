@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 define('SITE_ADI',   'Boğaziçi Restaurant');
 define('SITE_URL',   'https://bogazicirestaurant.com.tr');
+/* Vercel'de dosya sistemi salt okunur: admin demo modunda açılır (kaydetme kapalı).
+   Yerelde denemek için: BOGAZICI_DEMO=1 ortam değişkeni. */
+define('DEMO_MODU', getenv('VERCEL') === '1' || getenv('BOGAZICI_DEMO') === '1');
 define('VARLIK',     '/assets');            // assets kök yolu
 define('GORSEL_YOL', '/assets/img');        // yüklenen görsellerin kökü
 /* css/js cache-buster.
