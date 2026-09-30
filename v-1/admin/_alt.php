@@ -12,7 +12,8 @@ document.querySelectorAll('[data-secici]').forEach(function (secici) {
   if (!sec || !img) return;
   sec.addEventListener('change', function () {
     if (sec.value) {
-      img.src = '/assets/img/' + sec.value;
+      var secili = sec.options[sec.selectedIndex];
+      img.src = (secili && secili.dataset.url) ? secili.dataset.url : '/assets/img/' + sec.value;
       img.hidden = false;
       if (bos) bos.hidden = true;
     } else {

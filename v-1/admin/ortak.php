@@ -3,27 +3,75 @@ declare(strict_types=1);
 
 /* --------------------------------------------------------------
    Admin — ortak katman
-   - Session başlatır, oturum kontrolü yapar
+   - İmzalı çerezle oturum kontrolü yapar
    - CSRF token üretir/doğrular
-   - Veri okuma/yazma (veri.json)
+   - Veri okuma/yazma (Upstash Redis varsa orası, yoksa veri.json)
    -------------------------------------------------------------- */
 
 require_once __DIR__ . '/../config.php';
 
-/* Session */
-if (session_status() === PHP_SESSION_NONE) {
-    $ayar = require __DIR__ . '/../data/admin.php';
-    session_set_cookie_params([
-        'lifetime' => $ayar['oturum_omru'],
+/* Oturum: session yok, imzalı çerez (Vercel'de serverless örnekler arası kalıcı). */
+function admin_gizli(): string
+{
+    $g = getenv('ADMIN_SECRET');
+    if (is_string($g) && $g !== '') {
+        return $g;
+    }
+    return hash('sha256', admin_ayar()['parola_hash'] . '|bgz');
+}
+
+function guvenli_baglanti(): bool
+{
+    return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https';
+}
+
+function b64url_kodla(string $s): string
+{
+    return rtrim(strtr(base64_encode($s), '+/', '-_'), '=');
+}
+
+function b64url_coz(string $s): string
+{
+    return (string) base64_decode(strtr($s, '-_', '+/'), true);
+}
+
+function admin_cerez_yaz(string $ad, string $deger, int $bitis): void
+{
+    setcookie($ad, $deger, [
+        'expires'  => $bitis,
         'path'     => '/',
+        'secure'   => guvenli_baglanti(),
         'httponly' => true,
         'samesite' => 'Lax',
     ]);
-    session_start();
+}
+
+function admin_giris_yap(string $kullanici): void
+{
+    $bitis = time() + (int) admin_ayar()['oturum_omru'];
+    $yuk = b64url_kodla($kullanici . '|' . $bitis);
+    $imza = hash_hmac('sha256', $yuk, admin_gizli());
+    admin_cerez_yaz('bgz_admin', $yuk . '.' . $imza, $bitis);
+    $_COOKIE['bgz_admin'] = $yuk . '.' . $imza;
+}
+
+function admin_cikis_yap(): void
+{
+    admin_cerez_yaz('bgz_admin', '', time() - 42000);
+    unset($_COOKIE['bgz_admin']);
+}
+
+/* CSRF (double-submit): çerezdeki rastgele değer + HMAC ile imzalı form token'ı */
+if (empty($_COOKIE['bgz_csrf']) || !is_string($_COOKIE['bgz_csrf'])) {
+    $_COOKIE['bgz_csrf'] = bin2hex(random_bytes(16));
+    if (!headers_sent()) {
+        admin_cerez_yaz('bgz_csrf', $_COOKIE['bgz_csrf'], 0);
+    }
 }
 
 /* Demo modu: giriş dışındaki tüm POST'lar (kaydet/yükle/sil) işlenmeden geri döner.
-   Mesaj session yerine query ile taşınır (Vercel'de session kalıcı değil). */
+   Mesaj query ile taşınır (oturum/depo gerektirmez). */
 if (DEMO_MODU && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     $yol = (string) parse_url($_SERVER['REQUEST_URI'] ?? '/admin/', PHP_URL_PATH);
     if (!str_ends_with($yol, '/giris.php')) {
@@ -46,7 +94,16 @@ function admin_ayar(): array
 
 function admin_giris_yapmis(): bool
 {
-    return !empty($_SESSION['admin_kullanici']);
+    $c = $_COOKIE['bgz_admin'] ?? '';
+    if (!is_string($c) || substr_count($c, '.') !== 1) {
+        return false;
+    }
+    [$yuk, $imza] = explode('.', $c);
+    if (!hash_equals(hash_hmac('sha256', $yuk, admin_gizli()), $imza)) {
+        return false;
+    }
+    $parca = explode('|', b64url_coz($yuk));
+    return count($parca) === 2 && $parca[0] === admin_ayar()['kullanici'] && (int) $parca[1] > time();
 }
 
 function admin_zorunlu(): void
@@ -60,16 +117,13 @@ function admin_zorunlu(): void
 /* CSRF */
 function csrf_token(): string
 {
-    if (empty($_SESSION['csrf'])) {
-        $_SESSION['csrf'] = bin2hex(random_bytes(24));
-    }
-    return $_SESSION['csrf'];
+    return hash_hmac('sha256', (string) $_COOKIE['bgz_csrf'], admin_gizli());
 }
 
 function csrf_dogrula(): void
 {
     $gelen = (string) ($_POST['csrf'] ?? '');
-    if (empty($_SESSION['csrf']) || !hash_equals($_SESSION['csrf'], $gelen)) {
+    if (!hash_equals(csrf_token(), $gelen)) {
         http_response_code(400);
         exit('Güvenlik doğrulaması başarısız — sayfayı yenileyip tekrar deneyin.');
     }
@@ -83,6 +137,10 @@ function veri_yolu(): string
 
 function veri_oku(): array
 {
+    $depo = depo_veri_oku();
+    if ($depo !== null) {
+        return $depo;
+    }
     $y = veri_yolu();
     if (is_file($y)) {
         $d = json_decode((string) file_get_contents($y), true);
@@ -100,6 +158,10 @@ function veri_yaz(array $veri): bool
     // ama siteye hiç yansımıyorlar. Her yazımda temizle.
     if (isset($veri['sayfalar']) && is_array($veri['sayfalar'])) {
         unset($veri['sayfalar']['']);
+    }
+
+    if (depo_kv_aktif()) {
+        return depo_veri_yaz($veri);
     }
 
     $y = veri_yolu();
@@ -193,21 +255,136 @@ function gorsel_turevlerini_uret(string $kaynak): void
     if ($src) imagedestroy($src);
 }
 
+/**
+ * Görsel kütüphanesi (ayrıntılı). Her öğe:
+ *   deger  → veriye yazılan değer (paket: dosya adı, blob: tam URL)
+ *   ad     → görünen dosya adı
+ *   url    → önizleme adresi
+ *   kaynak → 'paket' (assets/img) | 'blob' (Vercel Blob)
+ * Blob açıkken paket görselleri salt okunurdur (silinemez/türevlenemez).
+ */
+function gorsel_listesi_detay(): array
+{
+    $turevDeseni = '/-(?:480|960|1440|2200)\.[a-z0-9]+$/i';
+    $paket = [];
+    $dizin = gorsel_dizin();
+    if (is_dir($dizin)) {
+        foreach (scandir($dizin) ?: [] as $ad) {
+            if ($ad === '.' || $ad === '..') continue;
+            if (!is_file($dizin . '/' . $ad)) continue;
+            if (!preg_match('/\.(jpe?g|png|webp|gif|svg)$/i', $ad)) continue;
+            // türev dosyaları (X-480.webp, X-960.webp gibi) listede saklama
+            if (preg_match($turevDeseni, $ad)) continue;
+            $paket[] = ['deger' => $ad, 'ad' => $ad, 'url' => gorsel_url($ad), 'kaynak' => 'paket'];
+        }
+    }
+
+    $blob = [];
+    if (blob_aktif()) {
+        foreach (blob_listele('img/') as $b) {
+            if (!preg_match('/\.(jpe?g|png|webp|gif)$/i', $b['pathname'])) continue;
+            if (preg_match($turevDeseni, $b['pathname'])) continue;
+            $blob[] = ['deger' => $b['url'], 'ad' => basename($b['pathname']), 'url' => $b['url'], 'kaynak' => 'blob'];
+        }
+    }
+
+    $hepsi = array_merge($paket, $blob);
+    usort($hepsi, fn($a, $b) => strnatcasecmp($a['ad'], $b['ad']));
+    return $hepsi;
+}
+
+/** Seçici/önizleme için değer listesi (paket: dosya adı, blob: tam URL). */
 function gorsel_listesi(): array
 {
-    $dizin = gorsel_dizin();
-    if (!is_dir($dizin)) return [];
-    $sonuc = [];
-    foreach (scandir($dizin) ?: [] as $ad) {
-        if ($ad === '.' || $ad === '..') continue;
-        if (!is_file($dizin . '/' . $ad)) continue;
-        if (!preg_match('/\.(jpe?g|png|webp|gif|svg)$/i', $ad)) continue;
-        // türev dosyaları (X-480.webp, X-960.webp gibi) listede saklama
-        if (preg_match('/-(?:480|960|1440|2200)\.[a-z]+$/i', $ad)) continue;
-        $sonuc[] = $ad;
+    return array_column(gorsel_listesi_detay(), 'deger');
+}
+
+/**
+ * Yüklenen görseli doğrular, saklar ve responsive türevlerini üretir.
+ * - Blob kapalı: assets/img'ye yazar; deger = dosya adı.
+ * - Blob açık:   ad'a zaman damgası ekler (CDN önbelleği), orijinal + 4 türevi
+ *                Blob'a yükler; deger = orijinalin tam URL'si.
+ * $tabanAd: dosya adı tabanı (boşsa yüklenen dosyanın adı). $uzerineYaz yalnız dosya modunda anlamlı.
+ */
+function gorsel_yukle_isle(string $tmpYol, string $orijinalAd, string $tabanAd, bool $uzerineYaz): array
+{
+    $hata = fn(string $m) => ['ok' => false, 'deger' => '', 'mesaj' => $m];
+    $blob = blob_aktif();
+
+    $uzanti = strtolower((string) pathinfo($orijinalAd, PATHINFO_EXTENSION));
+    if (!in_array($uzanti, ['jpg', 'jpeg', 'png', 'webp', 'gif'], true)) {
+        return $hata('Desteklenmeyen format. İzinli: jpg, jpeg, png, webp, gif');
     }
-    sort($sonuc, SORT_NATURAL | SORT_FLAG_CASE);
-    return $sonuc;
+    $boyut = (int) @filesize($tmpYol);
+    if ($blob && $boyut > 4 * 1024 * 1024) {
+        return $hata('Görsel en fazla 4 MB olabilir.');
+    }
+    if (!$blob && $boyut > 8 * 1024 * 1024) {
+        return $hata('Görsel çok büyük (max 8 MB).');
+    }
+    if (function_exists('mime_content_type')) {
+        $mime = mime_content_type($tmpYol) ?: '';
+        if (!str_starts_with($mime, 'image/')) {
+            return $hata('Dosya geçerli bir görsel değil.');
+        }
+    }
+
+    if ($tabanAd === '') $tabanAd = pathinfo($orijinalAd, PATHINFO_FILENAME);
+    $slug = trim((string) preg_replace('/[^a-z0-9-]+/', '-', mb_strtolower($tabanAd)), '-');
+    $slug = (string) preg_replace('/-\d{14}$/', '', $slug); // önceki zaman damgasını biriktirme
+    if ($slug === '') $slug = 'gorsel-' . date('Ymd-His');
+
+    if (!$blob) {
+        $hedef = gorsel_dizin() . '/' . $slug . '.' . $uzanti;
+        if (is_file($hedef)) {
+            if ($uzerineYaz) {
+                @unlink($hedef);
+            } else {
+                $hedef = gorsel_dizin() . '/' . $slug . '-' . date('YmdHis') . '.' . $uzanti;
+            }
+        }
+        if (!move_uploaded_file($tmpYol, $hedef)) {
+            return $hata('Diske yazma başarısız (assets/img yazılabilir mi?).');
+        }
+        gorsel_turevlerini_uret($hedef);   // -480/-960/-1440/-2200 türevleri
+        return ['ok' => true, 'deger' => basename($hedef), 'mesaj' => 'Yüklendi: ' . basename($hedef)];
+    }
+
+    // Blob modu
+    $slug .= '-' . date('YmdHis');
+    $gecici = sys_get_temp_dir() . '/bgz-' . bin2hex(random_bytes(6)) . '.' . $uzanti;
+    if (!move_uploaded_file($tmpYol, $gecici)) {
+        return $hata('Geçici dosyaya yazma başarısız.');
+    }
+    gorsel_turevlerini_uret($gecici);
+
+    $tipler = ['jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'png' => 'image/png', 'webp' => 'image/webp', 'gif' => 'image/gif'];
+    $ct = $tipler[$uzanti];
+    $tmpAd = pathinfo($gecici, PATHINFO_FILENAME);
+    $tmpDizin = dirname($gecici);
+
+    $yuklenen = [];
+    $anaUrl = blob_yukle($gecici, "img/{$slug}.{$uzanti}", $ct);
+    $basarili = $anaUrl !== null;
+    if ($basarili) {
+        $yuklenen[] = $anaUrl;
+        foreach (GORSEL_TUREVLERI as $g) {
+            $u = blob_yukle("{$tmpDizin}/{$tmpAd}-{$g}.{$uzanti}", "img/{$slug}-{$g}.{$uzanti}", $ct);
+            if ($u === null) { $basarili = false; break; }
+            $yuklenen[] = $u;
+        }
+    }
+
+    @unlink($gecici);
+    foreach (GORSEL_TUREVLERI as $g) {
+        @unlink("{$tmpDizin}/{$tmpAd}-{$g}.{$uzanti}");
+    }
+
+    if (!$basarili) {
+        if ($yuklenen) blob_sil($yuklenen);
+        return $hata('Görsel buluta yüklenemedi, lütfen tekrar deneyin.');
+    }
+    return ['ok' => true, 'deger' => $anaUrl, 'mesaj' => 'Yüklendi: ' . $slug . '.' . $uzanti];
 }
 
 /* Yardımcı: e() zaten fonksiyonlar.php'de var (config -> fonksiyonlar) */

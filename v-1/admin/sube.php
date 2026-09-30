@@ -28,33 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Görsel satır içi yükleme
     if (!empty($_FILES['yukle_gorsel']['name']) && ($_FILES['yukle_gorsel']['error'] ?? 0) === UPLOAD_ERR_OK) {
         $f = $_FILES['yukle_gorsel'];
-        $izinliUzantilar = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
-        $uzanti = strtolower((string) pathinfo($f['name'], PATHINFO_EXTENSION));
-        if ($f['size'] <= 8 * 1024 * 1024 && in_array($uzanti, $izinliUzantilar, true)) {
-            $mimeOk = true;
-            if (function_exists('mime_content_type')) {
-                $mime = mime_content_type($f['tmp_name']) ?: '';
-                $mimeOk = str_starts_with($mime, 'image/');
-            }
-            if ($mimeOk) {
-                $mevcut = (string) ($_POST['sube']['gorsel'] ?? '');
-                $slugAdı = trim((string) ($_POST['sube']['slug'] ?? ''));
-                $tabanAd = $mevcut !== '' ? pathinfo($mevcut, PATHINFO_FILENAME)
-                    : ($slugAdı !== '' ? 'sube-' . $slugAdı : pathinfo($f['name'], PATHINFO_FILENAME));
-                $slug = trim(preg_replace('/[^a-z0-9-]+/', '-', mb_strtolower($tabanAd)), '-');
-                if ($slug === '') $slug = 'sube-' . date('Ymd-His');
-                $hedef = gorsel_dizin() . '/' . $slug . '.' . $uzanti;
-                if (is_file($hedef)) @unlink($hedef);
-                if (move_uploaded_file($f['tmp_name'], $hedef)) {
-                    gorsel_turevlerini_uret($hedef);   // -480/-960/-1440/-2200 türevleri
-                    $_POST['sube']['gorsel'] = basename($hedef);
-                    $bildirim = 'Görsel yüklendi: ' . basename($hedef);
-                }
-            } else {
-                $hata = 'Geçerli bir görsel değil.';
-            }
+        $mevcut = (string) ($_POST['sube']['gorsel'] ?? '');
+        $slugAdı = trim((string) ($_POST['sube']['slug'] ?? ''));
+        $tabanAd = $mevcut !== '' ? pathinfo($mevcut, PATHINFO_FILENAME)
+            : ($slugAdı !== '' ? 'sube-' . $slugAdı : pathinfo($f['name'], PATHINFO_FILENAME));
+        $sonuc = gorsel_yukle_isle($f['tmp_name'], $f['name'], $tabanAd, true);
+        if ($sonuc['ok']) {
+            $_POST['sube']['gorsel'] = $sonuc['deger'];
+            $bildirim = 'Görsel ' . lcfirst($sonuc['mesaj']);
         } else {
-            $hata = 'Görsel çok büyük veya format desteklenmiyor.';
+            $hata = $sonuc['mesaj'];
         }
     }
 
@@ -224,7 +207,7 @@ require __DIR__ . '/_ust.php';
       <span>Şube kart görseli</span>
       <div class="admin-gorsel-secici" data-secici>
         <div class="admin-gorsel-secici__onizleme">
-          <img src="<?= !empty($sube['gorsel']) ? '/assets/img/' . e($sube['gorsel']) : '' ?>" alt="" loading="lazy"<?= empty($sube['gorsel']) ? ' hidden' : '' ?>>
+          <img src="<?= !empty($sube['gorsel']) ? e(gorsel_url((string) $sube['gorsel'])) : '' ?>" alt="" loading="lazy"<?= empty($sube['gorsel']) ? ' hidden' : '' ?>>
           <span class="admin-gorsel-secici__bos"<?= !empty($sube['gorsel']) ? ' hidden' : '' ?>>Görsel yok</span>
         </div>
         <div class="admin-gorsel-secici__kontrol">
@@ -233,7 +216,7 @@ require __DIR__ . '/_ust.php';
             <select name="sube[gorsel]" data-secici-secim>
               <option value="">— Seçim yok —</option>
               <?php foreach ($gorseller as $g): ?>
-                <option value="<?= e($g) ?>" <?= $g === ($sube['gorsel'] ?? '') ? 'selected' : '' ?>><?= e($g) ?></option>
+                <option value="<?= e($g) ?>" data-url="<?= e(gorsel_url($g)) ?>" <?= $g === ($sube['gorsel'] ?? '') ? 'selected' : '' ?>><?= e(basename($g)) ?></option>
               <?php endforeach; ?>
             </select>
           </label>

@@ -11,8 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ayar = admin_ayar();
 
     if ($k === $ayar['kullanici'] && password_verify($p, $ayar['parola_hash'])) {
-        session_regenerate_id(true);
-        $_SESSION['admin_kullanici'] = $k;
+        admin_giris_yap($k);
         header('Location: /admin/');
         exit;
     }

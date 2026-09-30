@@ -11,7 +11,10 @@ $varsayilan = require __DIR__ . '/varsayilan.php';
 
 $veri = $varsayilan;
 $veriYolu = __DIR__ . '/veri.json';
-if (is_file($veriYolu)) {
+$depoVeri = depo_veri_oku();
+if ($depoVeri !== null) {
+    $veri = $depoVeri;
+} elseif (is_file($veriYolu)) {
     $ham = file_get_contents($veriYolu);
     $yuklu = json_decode((string) $ham, true);
     if (is_array($yuklu) && isset($yuklu['subeler'], $yuklu['sayfalar'])) {

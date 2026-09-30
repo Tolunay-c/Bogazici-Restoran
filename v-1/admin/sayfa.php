@@ -21,35 +21,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ilgili $_POST['bolum'][i][alan] alanına yazılır.
     $yuklemeMesajlari = [];
     if (!empty($_FILES['yukle']['name']) && is_array($_FILES['yukle']['name'])) {
-        $izinliUzantilar = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
-        $maxBoyut = 8 * 1024 * 1024;
+        // Not: döngü değişkeni $ad olmamalı — sayfa slug'ı ($ad) ezilirdi.
         foreach ($_FILES['yukle']['name'] as $i => $alanlar) {
             if (!is_array($alanlar)) continue;
-            foreach ($alanlar as $alan => $ad) {
+            foreach ($alanlar as $alan => $dosyaAdi) {
                 $err = $_FILES['yukle']['error'][$i][$alan] ?? UPLOAD_ERR_NO_FILE;
                 if ($err !== UPLOAD_ERR_OK) continue;
-                $boyut = (int) ($_FILES['yukle']['size'][$i][$alan] ?? 0);
-                if ($boyut > $maxBoyut) { $hata = 'Bir görsel çok büyük (max 8 MB).'; continue; }
                 $tmp = $_FILES['yukle']['tmp_name'][$i][$alan];
-                $uzanti = strtolower((string) pathinfo($ad, PATHINFO_EXTENSION));
-                if (!in_array($uzanti, $izinliUzantilar, true)) { $hata = 'Desteklenmeyen görsel formatı.'; continue; }
-                if (function_exists('mime_content_type')) {
-                    $mime = mime_content_type($tmp) ?: '';
-                    if (!str_starts_with($mime, 'image/')) { $hata = 'Dosya geçerli bir görsel değil.'; continue; }
-                }
 
                 // Dosya adı: mevcut slot'un adını kullan; yoksa gelen dosya adı
                 $mevcut = (string) ($_POST['bolum'][$i][$alan] ?? '');
-                $tabanAd = $mevcut !== '' ? pathinfo($mevcut, PATHINFO_FILENAME) : pathinfo($ad, PATHINFO_FILENAME);
-                $slug = trim(preg_replace('/[^a-z0-9-]+/', '-', mb_strtolower($tabanAd)), '-');
-                if ($slug === '') $slug = 'gorsel-' . date('Ymd-His');
+                $tabanAd = $mevcut !== '' ? pathinfo($mevcut, PATHINFO_FILENAME) : pathinfo($dosyaAdi, PATHINFO_FILENAME);
 
-                $hedef = gorsel_dizin() . '/' . $slug . '.' . $uzanti;
-                if (is_file($hedef)) @unlink($hedef); // üzerine yaz
-                if (move_uploaded_file($tmp, $hedef)) {
-                    gorsel_turevlerini_uret($hedef);   // -480/-960/-1440/-2200 türevleri
-                    $_POST['bolum'][$i][$alan] = basename($hedef);
-                    $yuklemeMesajlari[] = 'Yüklendi: ' . basename($hedef);
+                $sonuc = gorsel_yukle_isle($tmp, $dosyaAdi, $tabanAd, true);
+                if ($sonuc['ok']) {
+                    $_POST['bolum'][$i][$alan] = $sonuc['deger'];
+                    $yuklemeMesajlari[] = $sonuc['mesaj'];
+                } else {
+                    $hata = $sonuc['mesaj'];
                 }
             }
         }
@@ -191,7 +180,7 @@ require __DIR__ . '/_ust.php';
             </span>
             <div class="admin-gorsel-secici" data-secici>
               <div class="admin-gorsel-secici__onizleme">
-                <img src="<?= $v ? '/assets/img/' . e((string)$v) : '' ?>" alt="" loading="lazy"<?= !$v ? ' hidden' : '' ?>>
+                <img src="<?= $v ? e(gorsel_url((string)$v)) : '' ?>" alt="" loading="lazy"<?= !$v ? ' hidden' : '' ?>>
                 <span class="admin-gorsel-secici__bos"<?= $v ? ' hidden' : '' ?>>Görsel yok</span>
               </div>
               <div class="admin-gorsel-secici__kontrol">
@@ -200,7 +189,7 @@ require __DIR__ . '/_ust.php';
                   <select name="<?= e($ad_input) ?>" data-secici-secim>
                     <option value="">— Seçim yok —</option>
                     <?php foreach ($gorseller as $g): ?>
-                      <option value="<?= e($g) ?>" <?= $g === $v ? 'selected' : '' ?>><?= e($g) ?></option>
+                      <option value="<?= e($g) ?>" data-url="<?= e(gorsel_url($g)) ?>" <?= $g === $v ? 'selected' : '' ?>><?= e(basename($g)) ?></option>
                     <?php endforeach; ?>
                   </select>
                 </label>

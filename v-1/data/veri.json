@@ -60,56 +60,56 @@
         "anasayfa": [
             {
                 "tip": "hero",
-                "zemin": "koyu",
                 "ustluk": "Boğaziçi Restaurant",
                 "baslik": "İzmir’de Lezzetin Buluşma Noktası",
                 "alt_baslik": "Üç şubemizde, özenle hazırlanan sofraları kaliteli hizmet ve Boğaziçi deneyimiyle buluşturuyoruz.",
-                "gorsel": "hero-anasayfa.webp",
-                "gorsel_mobil": "hero-anasayfa-mobil.webp",
-                "gorsel_odak": "merkez",
-                "gorsel_alt": "Kordon’a bakan teras ve akşam servisi",
+                "zemin": "koyu",
                 "buton_yazi": "Şubelerimizi Keşfedin",
                 "buton_link": "/subeler.php",
                 "buton2_yazi": "Rezervasyon",
                 "buton2_link": "/rezervasyon.php",
+                "gorsel": "hero-anasayfa.webp",
+                "gorsel_mobil": "hero-anasayfa-mobil.webp",
+                "gorsel_odak": "merkez",
+                "gorsel_alt": "Kordon’a bakan teras ve akşam servisi",
                 "alt_not": "Üçkuyular • Narlıdere • Bostanlı"
             },
             {
                 "tip": "metin-gorsel",
-                "zemin": "beyaz",
-                "yon": "sag",
                 "baslik": "Yemekte Boğaziçi Dokunuşu",
                 "metin": "İyi bir yemeğin yalnızca lezzetten ibaret olmadığına inanıyoruz. Özenli sunum, kaliteli ürünler ve güçlü hizmet anlayışımızla her buluşmayı keyifli bir deneyime dönüştürüyoruz.",
+                "yon": "sag",
+                "zemin": "beyaz",
+                "buton_yazi": "Hikâyemiz",
+                "buton_link": "/kurumsal.php",
                 "gorsel": "mutfak.webp",
                 "gorsel_odak": "merkez",
-                "gorsel_alt": "Özenle hazırlanmış bir Boğaziçi sofrası",
-                "buton_yazi": "Hikâyemiz",
-                "buton_link": "/kurumsal.php"
+                "gorsel_alt": "Özenle hazırlanmış bir Boğaziçi sofrası"
             },
             {
                 "tip": "sube-listesi",
-                "zemin": "beyaz",
                 "ustluk": "Şubeler",
                 "baslik": "Size En Yakın Boğaziçi",
-                "alt_baslik": "İzmir’in üç farklı noktasında aynı lezzet ve hizmet anlayışı."
+                "alt_baslik": "İzmir’in üç farklı noktasında aynı lezzet ve hizmet anlayışı.",
+                "zemin": "beyaz"
             },
             {
                 "tip": "metin-gorsel",
-                "zemin": "beyaz",
-                "yon": "sol",
                 "baslik": "Her Sofraya Bir Boğaziçi Klasiği",
                 "metin": "Geleneksel tatlardan özenle hazırlanan özel lezzetlere uzanan menümüzle, günün her anına eşlik eden zengin bir sofra sunuyoruz.",
+                "yon": "sol",
+                "zemin": "beyaz",
+                "buton_yazi": "Menüyü İncele",
+                "buton_link": "/menu.php",
                 "gorsel": "urun-meze.webp",
                 "gorsel_odak": "merkez",
-                "gorsel_alt": "Boğaziçi mezelerinden bir sofra",
-                "buton_yazi": "Menüyü İncele",
-                "buton_link": "/menu.php"
+                "gorsel_alt": "Boğaziçi mezelerinden bir sofra"
             },
             {
                 "tip": "kart-izgara",
-                "zemin": "beyaz",
                 "baslik": "Boğaziçi’nden Kareler",
                 "alt_baslik": "Üç farklı lokasyon, aynı Boğaziçi atmosferi.",
+                "zemin": "beyaz",
                 "ogeler": [
                     {
                         "baslik": "Üçkuyular",
@@ -133,10 +133,10 @@
             },
             {
                 "tip": "cta-bant",
-                "zemin": "koyu",
                 "ustluk": "Rezervasyon",
                 "baslik": "Yeriniz Hazır",
                 "metin": "Boğaziçi deneyimini Üçkuyular, Narlıdere veya Bostanlı şubemizde yaşayın.",
+                "zemin": "koyu",
                 "buton_yazi": "Rezervasyon Yap",
                 "buton_link": "/rezervasyon.php",
                 "buton2_yazi": "Şubeleri Gör",
@@ -147,7 +147,7 @@
             {
                 "tip": "sayfa-basligi",
                 "zemin": "koyu",
-                "ustluk": "Kurumsal",
+                "ustluk": "Boğaziçi Restaurant",
                 "baslik": "1993’ten Bugüne, Aynı Özenle",
                 "alt_baslik": "İzmir’de başlayan Boğaziçi yolculuğu, bugün Bostanlı, Üçkuyular ve Narlıdere’de aynı kalite ve hizmet anlayışıyla devam ediyor.",
                 "gorsel": "basluk-kurumsal.webp",
@@ -274,7 +274,7 @@
             {
                 "tip": "sayfa-basligi",
                 "zemin": "koyu",
-                "ustluk": "Hizmetler",
+                "ustluk": "Boğaziçi Restaurant",
                 "baslik": "Her Buluşmaya Boğaziçi Dokunuşu",
                 "alt_baslik": "İş dünyasından özel davetlere, farklı ihtiyaçlara özenli mutfak ve profesyonel hizmet anlayışımızla eşlik ediyoruz.",
                 "gorsel": "basluk-hizmetler.webp",
@@ -817,8 +817,9 @@
             {
                 "tip": "sayfa-basligi",
                 "zemin": "koyu",
-                "ustluk": "İletişim",
-                "baslik": "Bize ulaşın",
+                "ustluk": "Boğaziçi Restaurant",
+                "baslik": "Bizimle İletişime Geçin",
+                "alt_baslik": "Görüş, öneri ve talepleriniz için bize ulaşabilir; şubelerimiz hakkında detaylı bilgi alabilirsiniz.",
                 "gorsel": "basluk-iletisim.webp",
                 "gorsel_alt": ""
             },

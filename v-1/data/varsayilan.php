@@ -132,7 +132,7 @@ $varsayilan['sayfalar']['anasayfa'] = [
 $varsayilan['sayfalar']['kurumsal'] = [
     [
         'tip' => 'sayfa-basligi', 'zemin' => 'koyu',
-        'ustluk' => 'Kurumsal', 'baslik' => '1993’ten Bugüne, Aynı Özenle',
+        'ustluk' => 'Boğaziçi Restaurant', 'baslik' => '1993’ten Bugüne, Aynı Özenle',
         'alt_baslik' => 'İzmir’de başlayan Boğaziçi yolculuğu, bugün Bostanlı, Üçkuyular ve Narlıdere’de aynı kalite ve hizmet anlayışıyla devam ediyor.',
         'gorsel' => 'basluk-kurumsal.webp', 'gorsel_odak' => 'ust', 'gorsel_alt' => '',
     ],
@@ -200,7 +200,7 @@ $varsayilan['sayfalar']['subeler'] = [
 $varsayilan['sayfalar']['hizmetler'] = [
     [
         'tip' => 'sayfa-basligi', 'zemin' => 'koyu',
-        'ustluk' => 'Hizmetler', 'baslik' => 'Her Buluşmaya Boğaziçi Dokunuşu',
+        'ustluk' => 'Boğaziçi Restaurant', 'baslik' => 'Her Buluşmaya Boğaziçi Dokunuşu',
         'alt_baslik' => 'İş dünyasından özel davetlere, farklı ihtiyaçlara özenli mutfak ve profesyonel hizmet anlayışımızla eşlik ediyoruz.',
         'gorsel' => 'basluk-hizmetler.webp', 'gorsel_alt' => '',
     ],
@@ -325,8 +325,10 @@ $varsayilan['sayfalar']['rezervasyon'] = [
 ];
 
 $varsayilan['sayfalar']['iletisim'] = [
-    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'İletişim',
-     'baslik' => 'Bize ulaşın', 'gorsel' => 'basluk-iletisim.webp', 'gorsel_alt' => ''],
+    ['tip' => 'sayfa-basligi', 'zemin' => 'koyu', 'ustluk' => 'Boğaziçi Restaurant',
+     'baslik' => 'Bizimle İletişime Geçin',
+     'alt_baslik' => 'Görüş, öneri ve talepleriniz için bize ulaşabilir; şubelerimiz hakkında detaylı bilgi alabilirsiniz.',
+     'gorsel' => 'basluk-iletisim.webp', 'gorsel_alt' => ''],
     ['tip' => 'iletisim', 'zemin' => 'beyaz',
      'ustluk' => 'İletişim', 'baslik' => 'Bize Yazın',
      'metin' => 'Görüş, öneri ve taleplerinizi form aracılığıyla bizimle paylaşabilirsiniz. Ekibimiz en kısa sürede sizinle iletişime geçecektir.'],

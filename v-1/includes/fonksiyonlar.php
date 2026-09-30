@@ -13,6 +13,13 @@ function gorsel_url(string $dosya, ?int $genislik = null): string
     if ($dosya === '') {
         return '';
     }
+    // Vercel Blob gibi tam URL'ler: türev adı uzantıdan önce eklenir
+    if (preg_match('#^https?://#i', $dosya)) {
+        if ($genislik === null) {
+            return $dosya;
+        }
+        return preg_replace('#\.([a-z0-9]+)$#i', '-' . $genislik . '.$1', $dosya) ?? $dosya;
+    }
     if ($genislik === null) {
         return GORSEL_YOL . '/' . $dosya;
     }

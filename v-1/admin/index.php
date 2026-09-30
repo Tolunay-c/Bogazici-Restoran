@@ -55,7 +55,7 @@ require __DIR__ . '/_ust.php';
     <div class="admin-gorsel-onizleme">
       <?php foreach (array_slice($gorseller, 0, 12) as $g): ?>
         <div class="admin-gorsel-onizleme__oge">
-          <img src="/assets/img/<?= e($g) ?>" alt="<?= e($g) ?>" loading="lazy">
+          <img src="<?= e(gorsel_url($g)) ?>" alt="<?= e(basename($g)) ?>" loading="lazy">
         </div>
       <?php endforeach; ?>
     </div>

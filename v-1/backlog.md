@@ -21,7 +21,7 @@ Kaynak: `revizeler.md`. Acil iş (anasayfa hero) bitince sırayla ele alınacak.
 - [ ] SORU: "BUNLARI KALDIRALIM" tam olarak neyi kapsıyor? (CTA mı, bölge rozetleri/saatler mi?)
 
 ## Kurumsal / Hizmetler
-- [ ] Hero üstlükleri "Kurumsal"/"Hizmetler" → "Boğaziçi Restaurant"
+- [x] Hero üstlükleri "Kurumsal"/"Hizmetler" → "Boğaziçi Restaurant" (Prompt 22)
 
 ## Tasarım düzeltmeleri (tamamlandı)
 - [x] Görsel/metin dönüşüm hatası (Prompt 10)
@@ -38,7 +38,11 @@ Kaynak: `revizeler.md`. Acil iş (anasayfa hero) bitince sırayla ele alınacak.
 - [ ] SORU: Örnek ürünler yeni kategorilere dağıtılsın mı, gerçek menü mü gelecek?
 
 ## İletişim
-- [ ] Hero: "BOĞAZİÇİ RESTAURANT / Bizimle İletişime Geçin" + kısa alt metin
+- [x] Hero: "BOĞAZİÇİ RESTAURANT / Bizimle İletişime Geçin" + kısa alt metin (Prompt 22)
+
+## Admin / Yayın
+- [x] Vercel demo modu (Prompt 19), sonra kalıcı depolama: Upstash Redis + Vercel Blob + çerezli giriş (Prompt 20-21)
+- [ ] DİKKAT: Admin'de ilk kayıttan sonra Vercel içeriği Redis'ten okunur; repodaki veri.json değişiklikleri Vercel'e yansımaz. Metin revizeleri müşteri teste başlamadan bitmeli ya da Redis↔dosya eşitleme aracı yazılmalı.
 - [ ] Form: 4 alan da zorunlu (*), KVKK cümlesi "KVKK Aydınlatma Metni'ni okudum ve kabul ediyorum."
 
 ## Footer / Genel

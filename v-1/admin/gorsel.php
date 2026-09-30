@@ -5,37 +5,56 @@ admin_zorunlu();
 
 $bildirim = ''; $hata = '';
 
-$izinliUzantilar = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
-$maxBoyut = 8 * 1024 * 1024; // 8 MB
+$blobAcik = blob_aktif();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_dogrula();
     $eylem = (string) ($_POST['eylem'] ?? '');
+    $gelenDosya = (string) ($_POST['dosya'] ?? '');
 
     if ($eylem === 'turev-yenile') {
-        $ad = basename((string) ($_POST['dosya'] ?? ''));
+        // Blob açıkken türevler yükleme anında üretilir; paket görselleri salt okunur.
+        $ad = basename($gelenDosya);
         $yol = gorsel_dizin() . '/' . $ad;
-        if ($ad !== '' && is_file($yol)) {
+        if ($blobAcik) {
+            $hata = 'Bu görselin türevleri yükleme sırasında üretilir.';
+        } elseif ($ad !== '' && is_file($yol)) {
             gorsel_turevlerini_uret($yol);
             $bildirim = "Türevler yenilendi: {$ad}";
         } else {
             $hata = 'Görsel bulunamadı.';
         }
     } elseif ($eylem === 'sil') {
-        $ad = basename((string) ($_POST['dosya'] ?? ''));
-        $yol = gorsel_dizin() . '/' . $ad;
-        if ($ad !== '' && is_file($yol)) {
-            if (@unlink($yol)) {
-                // Responsive türevleri (-480/-960/-1440/-2200) de sil
-                $uz = pathinfo($yol, PATHINFO_EXTENSION);
-                $tab = pathinfo($yol, PATHINFO_FILENAME);
-                foreach ([480, 960, 1440, 2200] as $g) {
-                    $tur = gorsel_dizin() . '/' . $tab . '-' . $g . '.' . $uz;
-                    if (is_file($tur)) @unlink($tur);
-                }
-                $bildirim = "Silindi: {$ad}";
+        if ($blobAcik) {
+            // Yalnız Blob'daki görseller silinebilir: orijinal + türev URL'leri birlikte
+            $bulunan = null;
+            foreach (gorsel_listesi_detay() as $g) {
+                if ($g['kaynak'] === 'blob' && $g['deger'] === $gelenDosya) { $bulunan = $g; break; }
+            }
+            if ($bulunan === null) {
+                $hata = 'Bu görsel silinemez (pakete dahil ya da bulunamadı).';
             } else {
-                $hata = 'Silme başarısız (izin kontrol edin).';
+                $urller = [$bulunan['url']];
+                foreach (GORSEL_TUREVLERI as $w) $urller[] = gorsel_url($bulunan['url'], $w);
+                $bildirim = blob_sil($urller) ? "Silindi: {$bulunan['ad']}" : '';
+                if ($bildirim === '') $hata = 'Silme başarısız.';
+            }
+        } else {
+            $ad = basename($gelenDosya);
+            $yol = gorsel_dizin() . '/' . $ad;
+            if ($ad !== '' && is_file($yol)) {
+                if (@unlink($yol)) {
+                    // Responsive türevleri (-480/-960/-1440/-2200) de sil
+                    $uz = pathinfo($yol, PATHINFO_EXTENSION);
+                    $tab = pathinfo($yol, PATHINFO_FILENAME);
+                    foreach ([480, 960, 1440, 2200] as $g) {
+                        $tur = gorsel_dizin() . '/' . $tab . '-' . $g . '.' . $uz;
+                        if (is_file($tur)) @unlink($tur);
+                    }
+                    $bildirim = "Silindi: {$ad}";
+                } else {
+                    $hata = 'Silme başarısız (izin kontrol edin).';
+                }
             }
         }
     } elseif ($eylem === 'yukle') {
@@ -43,69 +62,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $hata = 'Dosya yüklenemedi.';
         } else {
             $f = $_FILES['dosya'];
-            if ($f['size'] > $maxBoyut) {
-                $hata = 'Dosya çok büyük (max 8 MB).';
+            $hedefSlot = (string) ($_POST['hedef'] ?? '');
+            $veri = veri_oku();
+            $slotlar = gorsel_slotlari($veri);
+
+            // Dosya adını belirle
+            $temizAd = trim((string) ($_POST['ad'] ?? ''));
+            if ($temizAd === '' && $hedefSlot !== '' && isset($slotlar[$hedefSlot])) {
+                // hedef slot'un mevcut görselinin adını (varsa) taban al
+                $mevcut = _slot_mevcut_dosya($veri, $hedefSlot);
+                if ($mevcut !== '') {
+                    $temizAd = pathinfo($mevcut, PATHINFO_FILENAME);
+                }
+            }
+
+            // Aynı isim: hedef slot'a atanacaksa üzerine yaz, değilse zaman damgası ekle
+            $sonuc = gorsel_yukle_isle($f['tmp_name'], $f['name'], $temizAd, $hedefSlot !== '');
+            if (!$sonuc['ok']) {
+                $hata = $sonuc['mesaj'];
             } else {
-                $uzanti = strtolower((string) pathinfo($f['name'], PATHINFO_EXTENSION));
-                if (!in_array($uzanti, $izinliUzantilar, true)) {
-                    $hata = 'Desteklenmeyen format. İzinli: ' . implode(', ', $izinliUzantilar);
-                } else {
-                    $mimeOk = true;
-                    if (function_exists('mime_content_type')) {
-                        $mime = mime_content_type($f['tmp_name']) ?: '';
-                        $mimeOk = str_starts_with($mime, 'image/');
-                    }
-                    if (!$mimeOk) {
-                        $hata = 'Dosya geçerli bir görsel değil.';
+                $msg = $sonuc['mesaj'];
+                if ($hedefSlot !== '' && isset($slotlar[$hedefSlot])) {
+                    if (slot_atama_yap($hedefSlot, $sonuc['deger'])) {
+                        $msg .= ' — atandı: ' . $slotlar[$hedefSlot];
                     } else {
-                        $hedefSlot = (string) ($_POST['hedef'] ?? '');
-                        $veri = veri_oku();
-                        $slotlar = gorsel_slotlari($veri);
-
-                        // Dosya adını belirle
-                        $temizAd = trim((string) ($_POST['ad'] ?? ''));
-                        if ($temizAd === '' && $hedefSlot !== '' && isset($slotlar[$hedefSlot])) {
-                            // hedef slot'un mevcut görselinin adını (varsa) taban al
-                            $mevcut = _slot_mevcut_dosya($veri, $hedefSlot);
-                            if ($mevcut !== '') {
-                                $temizAd = pathinfo($mevcut, PATHINFO_FILENAME);
-                            }
-                        }
-                        if ($temizAd === '') $temizAd = pathinfo($f['name'], PATHINFO_FILENAME);
-
-                        $slug = preg_replace('/[^a-z0-9-]+/', '-', mb_strtolower($temizAd));
-                        $slug = trim($slug, '-');
-                        if ($slug === '') $slug = 'gorsel-' . date('Ymd-His');
-
-                        $hedef = gorsel_dizin() . '/' . $slug . '.' . $uzanti;
-                        // Aynı isim varsa: hedef slot'a atanacaksa üzerine yaz, değilse zaman damgası ekle
-                        $onceSil = false;
-                        if (is_file($hedef)) {
-                            if ($hedefSlot !== '') {
-                                $onceSil = true; // slot'a yerleşecek — mevcut aynı adlı dosyayı değiştir
-                            } else {
-                                $hedef = gorsel_dizin() . '/' . $slug . '-' . date('YmdHis') . '.' . $uzanti;
-                            }
-                        }
-
-                        if ($onceSil) { @unlink($hedef); }
-                        if (move_uploaded_file($f['tmp_name'], $hedef)) {
-                            gorsel_turevlerini_uret($hedef);   // -480/-960/-1440/-2200 türevleri
-                            $dosyaAdi = basename($hedef);
-                            $msg = 'Yüklendi: ' . $dosyaAdi;
-                            if ($hedefSlot !== '' && isset($slotlar[$hedefSlot])) {
-                                if (slot_atama_yap($hedefSlot, $dosyaAdi)) {
-                                    $msg .= ' — atandı: ' . $slotlar[$hedefSlot];
-                                } else {
-                                    $msg .= ' (slot atama başarısız — kütüphaneye eklendi)';
-                                }
-                            }
-                            $bildirim = $msg;
-                        } else {
-                            $hata = 'Diske yazma başarısız (assets/img yazılabilir mi?).';
-                        }
+                        $msg .= ' (slot atama başarısız — kütüphaneye eklendi)';
                     }
                 }
+                $bildirim = $msg;
             }
         }
     }
@@ -133,7 +117,7 @@ function _slot_mevcut_dosya(array $veri, string $anahtar): string
 $veri = veri_oku();
 $kullanim = gorsel_kullanimlari($veri);
 $slotlar  = gorsel_slotlari($veri);
-$gorseller = gorsel_listesi();
+$gorseller = gorsel_listesi_detay();
 
 $baslik = 'Görseller';
 require __DIR__ . '/_ust.php';
@@ -189,7 +173,7 @@ require __DIR__ . '/_ust.php';
     <div class="admin-form__aksiyon" style="margin-top:12px; padding-top:0; border:0;">
       <button type="submit" class="admin-btn admin-btn--birincil">Yükle</button>
       <span class="admin-yardim" style="margin:0;">
-        Desteklenen: JPG, PNG, WebP, GIF · Max 8 MB · Görseller <code>object-fit: cover</code> ile slot'a yerleşir.
+        Desteklenen: JPG, PNG, WebP, GIF · Max <?= $blobAcik ? '4' : '8' ?> MB · Görseller <code>object-fit: cover</code> ile slot'a yerleşir.
       </span>
     </div>
   </form>
@@ -201,27 +185,36 @@ require __DIR__ . '/_ust.php';
     <p class="admin-yardim">Henüz görsel yok.</p>
   <?php else: ?>
     <div class="admin-gorsel-izgara">
-      <?php foreach ($gorseller as $g):
+      <?php foreach ($gorseller as $oge):
+        $g = $oge['deger'];
         $kul = $kullanim[$g] ?? [];
+        // Blob açıkken paket görselleri salt okunur: sil/türev butonları yok
+        $duzenlenebilir = !$blobAcik || $oge['kaynak'] === 'blob';
       ?>
         <figure class="admin-gorsel-oge <?= empty($kul) ? 'admin-gorsel-oge--bos' : '' ?>">
-          <img src="/assets/img/<?= e($g) ?>" alt="<?= e($g) ?>" loading="lazy">
+          <img src="<?= e($oge['url']) ?>" alt="<?= e($oge['ad']) ?>" loading="lazy">
           <figcaption>
             <div class="admin-gorsel-oge__ust">
-              <code title="<?= e($g) ?>"><?= e($g) ?></code>
+              <code title="<?= e($oge['ad']) ?>"><?= e($oge['ad']) ?></code>
               <div class="admin-gorsel-oge__aksiyonlar">
+                <?php if ($duzenlenebilir && !$blobAcik): ?>
                 <form method="post" title="480/960/1440/2200 türevlerini yeniden üret">
                   <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
                   <input type="hidden" name="eylem" value="turev-yenile">
                   <input type="hidden" name="dosya" value="<?= e($g) ?>">
                   <button type="submit" class="admin-btn admin-btn--ikincil admin-btn--sm">Türevler</button>
                 </form>
-                <form method="post" onsubmit="return confirm('<?= e($g) ?> silinsin mi?')">
+                <?php endif; ?>
+                <?php if ($duzenlenebilir): ?>
+                <form method="post" onsubmit="return confirm('<?= e($oge['ad']) ?> silinsin mi?')">
                   <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
                   <input type="hidden" name="eylem" value="sil">
                   <input type="hidden" name="dosya" value="<?= e($g) ?>">
                   <button type="submit" class="admin-btn admin-btn--tehlike admin-btn--sm">Sil</button>
                 </form>
+                <?php else: ?>
+                  <span class="admin-rozet admin-rozet--bos" title="Pakete dahil, salt okunur">Paket</span>
+                <?php endif; ?>
               </div>
             </div>
             <div class="admin-gorsel-oge__kullanim">

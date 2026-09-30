@@ -11,7 +11,9 @@ define('SITE_ADI',   'Boğaziçi Restaurant');
 define('SITE_URL',   'https://bogazicirestaurant.com.tr');
 /* Vercel'de dosya sistemi salt okunur: admin demo modunda açılır (kaydetme kapalı).
    Yerelde denemek için: BOGAZICI_DEMO=1 ortam değişkeni. */
-define('DEMO_MODU', getenv('VERCEL') === '1' || getenv('BOGAZICI_DEMO') === '1');
+define('DEMO_MODU', getenv('BOGAZICI_DEMO') === '1' || (getenv('VERCEL') === '1' && !(
+    (getenv('KV_REST_API_URL') || getenv('UPSTASH_REDIS_REST_URL')) && getenv('BLOB_READ_WRITE_TOKEN')
+)));
 define('VARLIK',     '/assets');            // assets kök yolu
 define('GORSEL_YOL', '/assets/img');        // yüklenen görsellerin kökü
 /* css/js cache-buster.
@@ -44,5 +46,6 @@ const ODAK_HARITASI = [
 date_default_timezone_set('Europe/Istanbul');
 mb_internal_encoding('UTF-8');
 
+require_once __DIR__ . '/includes/depo.php';
 require_once __DIR__ . '/includes/fonksiyonlar.php';
 require_once __DIR__ . '/data/icerik.php';
