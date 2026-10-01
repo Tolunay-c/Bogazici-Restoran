@@ -56,7 +56,7 @@ function gorsel(string $dosya, string $sizes, array $o = []): string
     $alt     = $o['alt']     ?? '';
     $oran    = $o['oran']    ?? '';
     $odak    = ODAK_HARITASI[$o['odak'] ?? 'merkez'] ?? ODAK_HARITASI['merkez'];
-    $sinif   = trim('gorsel ' . ($o['sinif'] ?? ''));
+    $sinif   = trim('image ' . ($o['sinif'] ?? ''));
     $oncelik = (bool) ($o['oncelik'] ?? false);
 
     $stil = "--odak:{$odak}" . ($oran !== '' ? ";--oran:{$oran}" : '');
@@ -127,7 +127,7 @@ function bolum_ac(array $b, string $ekSinif = ''): string
         : 'beyaz';
 
     return sprintf(
-        '<section class="bolum %s" data-zemin="%s"%s>',
+        '<section class="section %s" data-zemin="%s"%s>',
         e(trim($ekSinif)),
         e($zemin),
         !empty($b['kimlik']) ? ' id="' . e($b['kimlik']) . '"' : ''
@@ -140,15 +140,15 @@ function bolum_basligi(array $b, string $hizalama = 'sol', string $etiket = 'h2'
     if (empty($b['baslik']) && empty($b['ustluk'])) {
         return '';
     }
-    $c  = '<header class="bolum-basligi bolum-basligi--' . e($hizalama) . '">';
+    $c  = '<header class="section-heading section-heading--' . e(['sol' => 'left', 'orta' => 'center', 'sag' => 'right'][$hizalama] ?? 'left') . '">';
     if (!empty($b['ustluk'])) {
-        $c .= '<p class="ustluk">' . e($b['ustluk']) . '</p>';
+        $c .= '<p class="eyebrow">' . e($b['ustluk']) . '</p>';
     }
     if (!empty($b['baslik'])) {
-        $c .= "<{$etiket} class=\"bolum-basligi__baslik\">" . e($b['baslik']) . "</{$etiket}>";
+        $c .= "<{$etiket} class=\"section-heading__title\">" . e($b['baslik']) . "</{$etiket}>";
     }
     if (!empty($b['alt_baslik'])) {
-        $c .= '<p class="bolum-basligi__alt">' . e($b['alt_baslik']) . '</p>';
+        $c .= '<p class="section-heading__sub">' . e($b['alt_baslik']) . '</p>';
     }
     return $c . '</header>';
 }
@@ -159,9 +159,10 @@ function buton(?string $yazi, ?string $link, string $tur = 'birincil', string $e
     if (empty($yazi) || empty($link)) {
         return '';
     }
+    $turSinif = ['birincil' => 'primary', 'ikincil' => 'secondary', 'duz' => 'text'][$tur] ?? $tur;
     return sprintf(
         '<a class="btn btn--%s %s" href="%s">%s</a>',
-        e($tur),
+        e($turSinif),
         e($ek),
         e($link),
         e($yazi)

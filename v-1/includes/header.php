@@ -48,45 +48,45 @@ $menu = [
 </head>
 <body>
 
-<a class="atla-baglantisi" href="#icerik">İçeriğe geç</a>
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
 
-<header class="ust">
-  <div class="konteyner ust__ic">
-    <a class="ust__logo" href="/"><?= e(SITE_ADI) ?></a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__logo" href="/"><?= e(SITE_ADI) ?></a>
 
-    <nav class="ust__menu" aria-label="Ana menü">
+    <nav class="site-header__menu" aria-label="Ana menü">
       <?php foreach ($menu as $anahtar => [$ad, $link]): ?>
         <a href="<?= e($link) ?>"<?= $aktif === $anahtar ? ' aria-current="page"' : '' ?>><?= e($ad) ?></a>
       <?php endforeach; ?>
     </nav>
 
-    <div class="ust__aksiyon">
-      <a class="btn btn--birincil btn--sm" href="/rezervasyon.php">Rezervasyon</a>
-      <button class="menu-btn" type="button" data-cekmece-ac aria-label="Menüyü aç" aria-expanded="false" aria-controls="cekmece">
-        <span class="ikon" aria-hidden="true">menu</span>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm" href="/rezervasyon.php">Rezervasyon</a>
+      <button class="menu-toggle" type="button" data-cekmece-ac aria-label="Menüyü aç" aria-expanded="false" aria-controls="cekmece">
+        <span class="icon" aria-hidden="true">menu</span>
       </button>
     </div>
   </div>
 </header>
 
-<dialog class="cekmece" id="cekmece" aria-label="Site menüsü">
-  <div class="cekmece__ic">
-    <div class="cekmece__ust">
-      <span class="ust__logo"><?= e(SITE_ADI) ?></span>
-      <button class="menu-btn" type="button" data-cekmece-kapat aria-label="Menüyü kapat">
-        <span class="ikon" aria-hidden="true">close</span>
+<dialog class="drawer" id="cekmece" aria-label="Site menüsü">
+  <div class="drawer__inner">
+    <div class="drawer__top">
+      <span class="site-header__logo"><?= e(SITE_ADI) ?></span>
+      <button class="menu-toggle" type="button" data-cekmece-kapat aria-label="Menüyü kapat">
+        <span class="icon" aria-hidden="true">close</span>
       </button>
     </div>
 
-    <nav class="cekmece__menu" aria-label="Mobil menü">
+    <nav class="drawer__menu" aria-label="Mobil menü">
       <?php foreach ($menu as $anahtar => [$ad, $link]): ?>
         <a href="<?= e($link) ?>"<?= $aktif === $anahtar ? ' aria-current="page"' : '' ?>><?= e($ad) ?></a>
       <?php endforeach; ?>
     </nav>
 
-    <div class="cekmece__alt">
-      <a class="btn btn--birincil btn--tam" href="/rezervasyon.php">Rezervasyon yap</a>
-      <a class="btn btn--ikincil btn--tam" href="tel:+908508500850">0850 850 0850</a>
+    <div class="drawer__sub">
+      <a class="btn btn--primary btn--full" href="/rezervasyon.php">Rezervasyon yap</a>
+      <a class="btn btn--secondary btn--full" href="tel:+908508500850">0850 850 0850</a>
     </div>
   </div>
 </dialog>

@@ -19,13 +19,12 @@ $sayfa_aciklama = $sube['ad'] . ' şubemiz: ' . $sube['adres'] . '. ' . $sube['s
 
 $bolumler = [
     ['tip' => 'sayfa-basligi', 'zemin' => 'koyu',
-     'ustluk' => 'Şube', 'baslik' => $sube['ad'],
-     'gorsel' => $sube['gorsel'], 'gorsel_odak' => 'merkez', 'gorsel_alt' => $sube['ad'] . ' şubesi'],
+     'ustluk' => 'Şube', 'baslik' => $sube['ad']],
 
     ['tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
      'ustluk' => 'Mekân', 'baslik' => $sube['ad'] . '’ta bizi bulun',
      'metin' => $sube['adres'] . "\n" . $sube['saat'] . "\nBölgeler: " . implode(', ', $sube['bolgeler']),
-     'gorsel' => 'sube-' . $sube['slug'] . '-ic.webp', 'gorsel_alt' => $sube['ad'] . ' iç mekân',
+     'gorsel' => $sube['gorsel'], 'gorsel_alt' => $sube['ad'] . ' şubesi',
      'buton_yazi' => 'Yol tarifi al', 'buton_link' => $sube['yol_tarifi']],
 
     ['tip' => 'harita', 'zemin' => 'kum', 'baslik' => 'Konum', 'sube' => $sube],

@@ -1,15 +1,15 @@
 </main>
 
-<footer class="alt">
-  <div class="konteyner">
-    <div class="alt__izgara">
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
       <div>
-        <p class="ust__logo" style="color:var(--notr-kum)"><?= e(SITE_ADI) ?></p>
-        <p class="metin-akis" style="margin-top:var(--bosluk-4);color:var(--metin-ters-ikincil);font-size:var(--yazi-sm)">
+        <p class="site-header__logo" style="color:var(--notr-kum)"><?= e(SITE_ADI) ?></p>
+        <p class="prose" style="margin-top:var(--bosluk-4);color:var(--metin-ters-ikincil);font-size:var(--yazi-sm)">
           1993’ten bugüne İzmir’de lezzet, kalite ve misafirperverliği aynı özenle sofralarınıza taşıyoruz.
         </p>
-        <p class="alt__moto">İyi Ye, İyi Yaşa</p>
-        <div class="alt__sosyal">
+        <p class="site-footer__motto">İyi Ye, İyi Yaşa</p>
+        <div class="site-footer__social">
           <a href="https://www.instagram.com/restaurantbogazici/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -21,8 +21,8 @@
       </div>
 
       <div>
-        <h2 class="alt__baslik">Hızlı Erişim</h2>
-        <ul class="alt__liste">
+        <h2 class="site-footer__title">Hızlı Erişim</h2>
+        <ul class="site-footer__list">
           <li><a href="/">Ana Sayfa</a></li>
           <li><a href="/kurumsal.php">Kurumsal</a></li>
           <li><a href="/subeler.php">Şubelerimiz</a></li>
@@ -34,21 +34,21 @@
       </div>
 
       <div>
-        <h2 class="alt__baslik">Şubelerimiz</h2>
-        <ul class="alt__liste">
+        <h2 class="site-footer__title">Şubelerimiz</h2>
+        <ul class="site-footer__list">
           <?php foreach (SUBELER as $s): ?>
             <li><a href="/subeler.php#sube-<?= e($s['slug']) ?>"><?= e($s['ad']) ?></a></li>
           <?php endforeach; ?>
         </ul>
-        <ul class="alt__liste" style="margin-top:var(--bosluk-5)">
+        <ul class="site-footer__list" style="margin-top:var(--bosluk-5)">
           <li><a href="tel:+908508500850">0850 850 0850</a></li>
           <li><a href="mailto:info@bogazicirestaurant.com.tr">info@bogazicirestaurant.com.tr</a></li>
         </ul>
       </div>
 
       <div>
-        <h2 class="alt__baslik">Kurumsal</h2>
-        <ul class="alt__liste">
+        <h2 class="site-footer__title">Kurumsal</h2>
+        <ul class="site-footer__list">
           <li><a href="/ik.php">İnsan Kaynakları</a></li>
           <li><a href="/kvkk.php">KVKK Metni</a></li>
           <li><a href="/cerez.php">Çerez Aydınlatma Metni</a></li>
@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="alt__telif">
+    <div class="site-footer__copyright">
       <span>© 2026 Boğaziçi Restaurant. Tüm Hakları Saklıdır.</span>
       <span><a href="/kvkk.php">KVKK</a> | <a href="/cerez.php">Çerez Politikası</a> | <a href="/gizlilik.php">Gizlilik Politikası</a></span>
     </div>
@@ -65,24 +65,24 @@
 </footer>
 
 <!-- Mobil alt aksiyon çubuğu — dönüşümün büyük kısmı bu üçünden geliyor -->
-<nav class="altbar" aria-label="Hızlı işlemler">
+<nav class="bottom-bar" aria-label="Hızlı işlemler">
   <a href="tel:+908508500850">
-    <span class="ikon ikon--sm" aria-hidden="true">call</span>
+    <span class="icon icon--sm" aria-hidden="true">call</span>
     Ara
   </a>
   <a href="/subeler.php">
-    <span class="ikon ikon--sm" aria-hidden="true">directions</span>
+    <span class="icon icon--sm" aria-hidden="true">directions</span>
     Yol tarifi
   </a>
   <a href="/rezervasyon.php">
-    <span class="ikon ikon--sm" aria-hidden="true">event_available</span>
+    <span class="icon icon--sm" aria-hidden="true">event_available</span>
     Rezervasyon
   </a>
 </nav>
 
 <dialog class="lightbox" id="lightbox" aria-label="Görsel önizleme">
-  <div class="lightbox__ic">
-    <button class="lightbox__kapat" type="button" data-lightbox-kapat>Kapat ✕</button>
+  <div class="lightbox__inner">
+    <button class="lightbox__close" type="button" data-lightbox-kapat>Kapat ✕</button>
     <img alt="">
   </div>
 </dialog>

@@ -99,7 +99,7 @@
       // ÖNEMLİ: ölçümden önce mutlak yerleşime geç. Yedek ızgarada
       // görseller doğal genişlikte durduğu için kapsayıcı taşmış
       // oluyor ve clientWidth yanlış (taşmış) değeri veriyor.
-      kap.classList.add('galeri--hazir');
+      kap.classList.add('gallery--ready');
       kap.style.height = '';
       var w = kap.clientWidth;
       if (!w) return;
@@ -174,11 +174,11 @@
 
   function haritaIsaretIkonu() {
     return L.divIcon({
-      className: 'harita__isaret-kutu',
-      html: '<span class="harita__isaret">' +
-              '<span class="harita__isaret-halka"></span>' +
-              '<span class="harita__isaret-halka harita__isaret-halka--gec"></span>' +
-              '<span class="harita__isaret-nokta"></span>' +
+      className: 'map__marker-box',
+      html: '<span class="map__marker">' +
+              '<span class="map__marker-ring"></span>' +
+              '<span class="map__marker-ring map__marker-ring--delayed"></span>' +
+              '<span class="map__marker-dot"></span>' +
             '</span>',
       iconSize: [22, 22],
       iconAnchor: [11, 11],
@@ -265,7 +265,7 @@
     harita.on('click', function () { harita.scrollWheelZoom.enable(); });
     harita.on('mouseout', function () { harita.scrollWheelZoom.disable(); });
 
-    var sekmeler = kok.parentElement.querySelectorAll('.harita-sekmeli__sekme');
+    var sekmeler = kok.parentElement.querySelectorAll('.map-tabs__tab');
     var link = kok.querySelector('[data-harita-sekmeli-link]');
     var adEl = kok.querySelector('[data-harita-sekmeli-ad]');
     var adresEl = kok.querySelector('[data-harita-sekmeli-adres]');
@@ -277,10 +277,10 @@
         if (isNaN(e) || isNaN(b)) return;
 
         sekmeler.forEach(function (s) {
-          s.classList.remove('harita-sekmeli__sekme--aktif');
+          s.classList.remove('map-tabs__tab--active');
           s.setAttribute('aria-selected', 'false');
         });
-        sekme.classList.add('harita-sekmeli__sekme--aktif');
+        sekme.classList.add('map-tabs__tab--active');
         sekme.setAttribute('aria-selected', 'true');
 
         harita.setView([e, b], 15);
@@ -348,11 +348,11 @@
      v-2 MASTER §7.1 spec, v-1 token'larıyla. Roving tabindex,
      ArrowLeft/Right; şube değişince form sıfırlanır;
      bölge seçilince aria-live duyurusu + form kilit açılır. */
-  var rez = document.querySelector('.rezervasyon');
+  var rez = document.querySelector('.reservation');
   if (rez) {
-    var sekmeler = Array.prototype.slice.call(rez.querySelectorAll('.rezervasyon__sekme'));
-    var paneller = Array.prototype.slice.call(rez.querySelectorAll('.rezervasyon__panel'));
-    var form     = rez.querySelector('.rezervasyon__form');
+    var sekmeler = Array.prototype.slice.call(rez.querySelectorAll('.reservation__tab'));
+    var paneller = Array.prototype.slice.call(rez.querySelectorAll('.reservation__panel'));
+    var form     = rez.querySelector('.reservation__form');
     var duyuru   = rez.querySelector('[data-duyuru]');
     var secimAd  = rez.querySelector('[data-secim-ad]');
     var secimIp  = rez.querySelector('[data-secim-ipucu]');
@@ -371,7 +371,7 @@
         var aktif = s.getAttribute('data-sube') === slug;
         s.setAttribute('aria-selected', aktif ? 'true' : 'false');
         s.setAttribute('tabindex', aktif ? '0' : '-1');
-        s.classList.toggle('rezervasyon__sekme--secili', aktif);
+        s.classList.toggle('reservation__tab--selected', aktif);
       });
       panelGoster(slug);
       seciliSube.value = slug;
@@ -394,7 +394,7 @@
       var id     = tetik.getAttribute('data-bolge-id');
       var ad     = tetik.getAttribute('data-bolge-ad');
       var musait = tetik.getAttribute('data-bolge-musait');
-      var panel  = tetik.closest('.rezervasyon__panel');
+      var panel  = tetik.closest('.reservation__panel');
       if (!panel) return;
 
       panel.querySelectorAll('[data-bolge-id]').forEach(function (el) {
@@ -435,16 +435,16 @@
     });
 
     // Kroki / Liste toggle
-    rez.querySelectorAll('.rezervasyon__gorunum').forEach(function (grup) {
-      var btnlar = Array.prototype.slice.call(grup.querySelectorAll('.rezervasyon__gorunum-btn'));
+    rez.querySelectorAll('.reservation__view').forEach(function (grup) {
+      var btnlar = Array.prototype.slice.call(grup.querySelectorAll('.reservation__view-btn'));
       btnlar.forEach(function (b) {
         b.addEventListener('click', function () {
           var mod = b.getAttribute('data-gorunum');
-          var panel = b.closest('.rezervasyon__panel');
+          var panel = b.closest('.reservation__panel');
           btnlar.forEach(function (x) {
             var aktif = x === b;
             x.setAttribute('aria-selected', aktif ? 'true' : 'false');
-            x.classList.toggle('rezervasyon__gorunum-btn--secili', aktif);
+            x.classList.toggle('reservation__view-btn--selected', aktif);
           });
           panel.querySelectorAll('[data-gorunum-panel]').forEach(function (p) {
             if (p.getAttribute('data-gorunum-panel') === mod) p.removeAttribute('hidden');
@@ -470,7 +470,7 @@
 
     // Nefes hint (§5.3): açılışta aktif panelde 2 döngü
     if (!azHareket) {
-      var aktifPanel = rez.querySelector('.rezervasyon__panel:not([hidden])');
+      var aktifPanel = rez.querySelector('.reservation__panel:not([hidden])');
       if (aktifPanel) {
         aktifPanel.setAttribute('data-nefes', '1');
         setTimeout(function () { aktifPanel.removeAttribute('data-nefes'); }, 3600);

@@ -1,48 +1,56 @@
 <?php /** @var array $b */ ?>
-<?= bolum_ac($b, 'iletisim') ?>
-  <div class="konteyner">
-    <div class="iletisim__ic">
-      <div class="iletisim__yan">
+<?= bolum_ac($b, 'contact') ?>
+  <div class="container">
+    <div class="contact__inner">
+      <div class="contact__aside">
         <?= bolum_basligi($b) ?>
         <?php if (!empty($b['metin'])): ?>
-          <p class="metin-ikincil"><?= e($b['metin']) ?></p>
+          <p class="text-muted"><?= e($b['metin']) ?></p>
         <?php endif; ?>
       </div>
 
-      <form class="iletisim__form form-izgara" method="post" action="/iletisim-gonder.php">
-        <div class="form-izgara form-izgara--iki">
-          <div class="alan">
-            <label class="alan__etiket" for="ad">Ad soyad <span class="alan__zorunlu" aria-hidden="true">*</span></label>
-            <input class="girdi" type="text" id="ad" name="ad" autocomplete="name" required>
+      <form class="contact__form form-grid" method="post" action="/iletisim-gonder.php" id="iletisim-form">
+        <?php if (($_GET['form'] ?? '') === 'tamam'): ?>
+          <p class="form-alert form-alert--success" role="status">Mesajınız alındı. Ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+        <?php elseif (($_GET['form'] ?? '') === 'hata'): ?>
+          <p class="form-alert form-alert--error" role="alert">Mesajınız gönderilemedi. Lütfen tüm alanları eksiksiz doldurup tekrar deneyin.</p>
+        <?php endif; ?>
+        <div class="form-grid form-grid--two">
+          <div class="field">
+            <label class="field__label" for="ad">Ad soyad <span class="field__required" aria-hidden="true">*</span></label>
+            <input class="input" type="text" id="ad" name="ad" autocomplete="name" required>
           </div>
-          <div class="alan">
-            <label class="alan__etiket" for="tel">Telefon <span class="alan__zorunlu" aria-hidden="true">*</span></label>
-            <input class="girdi" type="tel" id="tel" name="telefon" inputmode="tel" autocomplete="tel" required>
+          <div class="field">
+            <label class="field__label" for="tel">Telefon <span class="field__required" aria-hidden="true">*</span></label>
+            <input class="input" type="tel" id="tel" name="telefon" inputmode="tel" autocomplete="tel" required>
           </div>
         </div>
 
-        <div class="alan">
-          <label class="alan__etiket" for="eposta">E-posta <span class="alan__zorunlu" aria-hidden="true">*</span></label>
-          <input class="girdi" type="email" id="eposta" name="eposta" autocomplete="email" required>
+        <div class="field">
+          <label class="field__label" for="eposta">E-posta <span class="field__required" aria-hidden="true">*</span></label>
+          <input class="input" type="email" id="eposta" name="eposta" autocomplete="email" required>
         </div>
 
-        <div class="alan">
-          <label class="alan__etiket" for="mesaj">Mesajınız <span class="alan__zorunlu" aria-hidden="true">*</span></label>
-          <textarea class="metin-alani" id="mesaj" name="mesaj" required></textarea>
+        <div class="field">
+          <label class="field__label" for="mesaj">Mesajınız <span class="field__required" aria-hidden="true">*</span></label>
+          <textarea class="textarea" id="mesaj" name="mesaj" required></textarea>
         </div>
 
-        <div class="onay">
+        <div class="consent">
           <input type="checkbox" id="kvkk" name="kvkk" required>
-          <label class="onay__metin" for="kvkk">
+          <label class="consent__text" for="kvkk">
             <a href="/kvkk.php">KVKK Aydınlatma Metni</a>'ni okudum ve kabul ediyorum.
           </label>
         </div>
 
-        <button class="btn btn--birincil" type="submit">Mesajı gönder</button>
+        <input type="hidden" name="zaman" value="<?= time() ?>">
+        <div class="honeypot" aria-hidden="true"><label for="web_sitesi">Web siteniz</label><input type="text" id="web_sitesi" name="web_sitesi" tabindex="-1" autocomplete="off"></div>
 
-        <p class="iletisim__form__rez-not">
+        <button class="btn btn--primary" type="submit">Mesajı gönder</button>
+
+        <p class="contact__form-reservation-note">
           Rezervasyon işlemleri için Rezervasyon sayfamızı kullanabilirsiniz.
-          <a class="btn btn--ikincil btn--sm" href="/rezervasyon.php">Rezervasyon yap</a>
+          <a class="btn btn--secondary btn--sm" href="/rezervasyon.php">Rezervasyon yap</a>
         </p>
       </form>
     </div>

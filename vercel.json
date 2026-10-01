@@ -18,6 +18,10 @@
       "dest": "/v-1/admin/stil.css"
     },
     {
+      "src": "/v-1(/.*)?",
+      "dest": "/api/index.php"
+    },
+    {
       "src": "/v-2(.*)",
       "dest": "/api/index.php"
     },

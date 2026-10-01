@@ -1,15 +1,15 @@
 <?php /** @var array $b */ ?>
-<?= bolum_ac($b, 'sss') ?>
-  <div class="konteyner">
-    <div class="sss__ic">
-      <div class="sss__baslik">
+<?= bolum_ac($b, 'faq') ?>
+  <div class="container">
+    <div class="faq__inner">
+      <div class="faq__title">
         <?= bolum_basligi($b) ?>
       </div>
-      <div class="sss__liste">
+      <div class="faq__list">
         <?php foreach (($b['ogeler'] ?? []) as $i => $o): ?>
-          <details class="sss__oge"<?= $i === 0 ? ' open data-mobilde-kapali' : '' ?>>
-            <summary class="sss__soru"><?= e($o['baslik'] ?? '') ?></summary>
-            <div class="sss__cevap"><?= nl2br(e($o['metin'] ?? '')) ?></div>
+          <details class="faq__item"<?= $i === 0 ? ' open data-mobilde-kapali' : '' ?>>
+            <summary class="faq__question"><?= e($o['baslik'] ?? '') ?></summary>
+            <div class="faq__answer"><?= nl2br(e($o['metin'] ?? '')) ?></div>
           </details>
         <?php endforeach; ?>
       </div>

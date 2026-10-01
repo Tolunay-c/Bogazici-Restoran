@@ -1,0 +1,76 @@
+BOĞAZİÇİ RESTAURANT — WEB SİTESİ KURULUM NOTU (DirectAdmin)
+Alan adı: bogazicirestaurant.com.tr
+==========================================================
+
+Paket içeriği
+-------------
+public_html/   → Alan adının web köküne (public_html) yüklenecek dosyalar.
+                 İçinde gizli dosyalar var (.htaccess, data/.htaccess); bunların da
+                 yüklendiğinden emin olun.
+KURULUM.txt    → Bu dosya (sunucuya yüklenmez).
+
+Veritabanı YOKTUR. İçerik dosyalarda (data/*.json) tutulur.
+
+
+1. Sunucu gereksinimleri
+------------------------
+- PHP 8.1 veya üstü (8.2 / 8.3 önerilir)
+- PHP eklentileri: mbstring, gd, fileinfo, json (curl isteğe bağlı)
+- Apache + .htaccess desteği (AllowOverride All), mod_rewrite açık
+- PHP ayarları (yönetim panelinden görsel yükleme için):
+    upload_max_filesize = 10M
+    post_max_size       = 12M
+    memory_limit        = 256M
+- SSL sertifikası (Let's Encrypt yeterli). .htaccess tüm trafiği
+  https://bogazicirestaurant.com.tr adresine (www'suz) yönlendirir.
+
+
+2. Yükleme
+----------
+1) public_html/ klasörünün İÇERİĞİNİ alan adının public_html dizinine kopyalayın
+   (public_html/public_html şeklinde iç içe olmamalı; index.php doğrudan kökte olmalı).
+2) Varsayılan hosting sayfası (index.html vb.) varsa silin.
+
+
+3. Yazma izinleri
+-----------------
+PHP'nin şu dizinlere YAZABİLMESİ gerekir (yönetim paneli kaydeder, form mesajları buraya düşer):
+    data/          (veri.json, mesajlar.json)
+    assets/img/    (panelden yüklenen görseller)
+Dizinler 755, dosyalar 644 ve sahibi site kullanıcısı olmalıdır (PHP-FPM / suPHP).
+777 VERMEYİN.
+
+
+4. E-posta (iletişim ve rezervasyon formları)
+---------------------------------------------
+Formlar PHP mail() ile şu adrese gönderir:
+    Alıcı:   info@bogazicirestaurant.com.tr
+    Gönderen: no-reply@bogazicirestaurant.com.tr  (Yanıtla: ziyaretçinin e-postası)
+Lütfen:
+- info@bogazicirestaurant.com.tr posta kutusunun var olduğunu,
+- alan adının SPF kaydının bu sunucuyu kapsadığını ve DKIM'in açık olduğunu
+  kontrol edin (aksi halde mailler spam klasörüne düşebilir).
+Mailler ayrıca yönetim panelinde "Mesajlar" bölümünde de saklanır.
+Her gönderimin mail durumu data/mail.log dosyasına yazılır (kişisel veri içermez)
+ve panelde "Mesajlar → Mail kayıtları" altında görülebilir. Mail ulaşmıyorsa
+önce bu kayda bakın: "gonderilemedi" → sunucunun mail() ayarı; "gonderildi" ama
+gelmiyor → spam klasörü / SPF-DKIM.
+
+
+5. Güvenlik
+-----------
+- data/ ve includes/ klasörlerine web'den erişim .htaccess ile kapalıdır.
+  Nginx kullanılıyorsa aynı kısıtlamayı sunucu yapılandırmasında ekleyin:
+    location ~ ^/(data|includes)/ { deny all; }
+- Yönetim paneli: https://bogazicirestaurant.com.tr/admin/
+  Giriş bilgileri site sahibinden ayrıca iletilecektir (bu pakette yazılı değildir).
+
+
+6. Kurulum sonrası kontrol
+--------------------------
+[ ] https://bogazicirestaurant.com.tr açılıyor, görseller yükleniyor
+[ ] http:// ve www. adresleri https://bogazicirestaurant.com.tr adresine yönleniyor
+[ ] https://bogazicirestaurant.com.tr/data/veri.json → 403 Forbidden
+[ ] https://bogazicirestaurant.com.tr/includes/depo.php → 403 Forbidden
+[ ] /admin/ giriş sayfası açılıyor
+[ ] İletişim formundan bir test mesajı gönderildiğinde info@ adresine mail geliyor

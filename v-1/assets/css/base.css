@@ -1,5 +1,5 @@
 /* ==============================================================
-   BASE — reset, font yükleme, tipografi, konteyner
+   BASE — reset, font yükleme, tipografi, container
    ============================================================== */
 
 /* --- Fontlar --------------------------------------------------
@@ -14,7 +14,7 @@
    ------------------------------------------------------------ */
 
 /* --- Material Symbols ---------------------------------------- */
-.ikon {
+.icon {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
@@ -28,8 +28,8 @@
   -webkit-font-smoothing: antialiased;
   user-select: none;
 }
-.ikon--sm { font-size: 18px; }
-.ikon--lg { font-size: 28px; }
+.icon--sm { font-size: 18px; }
+.icon--lg { font-size: 28px; }
 
 /* --- Reset ---------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -89,7 +89,7 @@ p { text-wrap: pretty; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
 /* Üstlük — display başlığın karşı kutbu. Yapısal etiket, süs değil. */
-.ustluk {
+.eyebrow {
   font-family: var(--f-govde);
   font-size: var(--yazi-xs);
   font-weight: 500;
@@ -98,28 +98,28 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; 
   color: var(--metin-ikincil);
 }
 
-.metin-akis > * + * { margin-top: var(--bosluk-4); }
-.metin-akis { max-width: 65ch; }
-.metin-ikincil { color: var(--metin-ikincil); }
+.prose > * + * { margin-top: var(--bosluk-4); }
+.prose { max-width: 65ch; }
+.text-muted { color: var(--metin-ikincil); }
 
 /* --- Yerleşim ------------------------------------------------- */
-.konteyner {
+.container {
   width: 100%;
-  max-width: var(--konteyner);
+  max-width: var(--container);
   margin-inline: auto;
   padding-inline: var(--kenar);
 }
-.konteyner--dar { max-width: var(--konteyner-dar); }
-.konteyner--genis { max-width: 1400px; }
+.container--narrow { max-width: var(--container-dar); }
+.container--wide { max-width: 1400px; }
 
 /* Sabit oranlı görsel yuvası */
-.gorsel {
+.image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: var(--odak, 50% 50%);
 }
-.gorsel-yuva {
+.image-frame {
   position: relative;
   overflow: hidden;
   aspect-ratio: var(--oran, 3 / 2);
@@ -134,7 +134,7 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; 
   border-radius: var(--r-sm);
 }
 
-.gizli-gorsel {
+.sr-only {
   position: absolute;
   width: 1px; height: 1px;
   padding: 0; margin: -1px;
@@ -143,7 +143,7 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; 
   white-space: nowrap;
 }
 
-.atla-baglantisi {
+.skip-link {
   position: absolute;
   top: var(--bosluk-2);
   left: var(--bosluk-2);
@@ -153,11 +153,11 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; 
   color: var(--metin-ters);
   transform: translateY(-200%);
 }
-.atla-baglantisi:focus-visible { transform: translateY(0); }
+.skip-link:focus-visible { transform: translateY(0); }
 
 /* Hover yalnızca gerçek hover cihazında ve yalnızca tıklanabilir öğede */
 @media (hover: none) {
-  .btn:hover, .kart:hover, a:hover { transform: none; }
+  .btn:hover, .card:hover, a:hover { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

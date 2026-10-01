@@ -19,12 +19,12 @@ function calistir(string $baseDir, string $subPath): void
     }
 
     $target = realpath($baseDir . '/' . $subPath);
-    if ($target && str_starts_with($target, $baseDir)) {
+    if ($target && str_starts_with($target, $baseDir) && !str_starts_with($target, $baseDir . '/data')) {
         if (is_dir($target) && is_file($target . '/index.php')) {
             require $target . '/index.php';
             return;
         }
-        if (is_file($target)) {
+        if (is_file($target) && str_ends_with($target, '.php')) {
             require $target;
             return;
         }

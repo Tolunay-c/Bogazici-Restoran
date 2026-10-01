@@ -78,8 +78,8 @@
   --bosluk-10: 128px;
 
   /* --- Yerleşim ------------------------------------------------ */
-  --konteyner:     1140px;
-  --konteyner-dar: 720px;
+  --container:     1140px;
+  --container-dar: 720px;
   --kenar:         clamp(16px, 5vw, 40px);
   --oluk:          clamp(16px, 3vw, 32px);
   --galeri-oluk:   clamp(6px, 0.7vw, 8px);     /* yoğun doku için dar; dikey = yatay */

@@ -54,11 +54,15 @@ Kaynak: `revizeler.md`. Acil iş (anasayfa hero) bitince sırayla ele alınacak.
 - [x] musteri-gorseller/ .gitignore'a eklendi (bilgisayarda duruyor, repoya gitmiyor)
 
 ## Admin / Yayın
+- [x] Site class adları İngilizceye çevrildi (Prompt 55, tools/rename_classes.py + class-map.json). CSS değişkenleri, data-* öznitelikleri, admin paneli Türkçe kaldı.
+- [ ] OKUBENI.md eski class adlarını anıyor; güncellenecek.
 - [ ] Canlıya geçmeden: config.php:31 SURUM canlıda sabit '1.0.1' → CSS değişince tarayıcı önbelleği takılır. Her yayında artır ya da dosya tarihinden üret.
 - [x] Vercel demo modu (Prompt 19), sonra kalıcı depolama: Upstash Redis + Vercel Blob + çerezli giriş (Prompt 20-21)
 - [ ] DİKKAT: Admin'de ilk kayıttan sonra Vercel içeriği Redis'ten okunur; repodaki veri.json değişiklikleri Vercel'e yansımaz. Metin revizeleri müşteri teste başlamadan bitmeli ya da Redis↔dosya eşitleme aracı yazılmalı.
 - [x] Form: 4 alan zorunlu (*), novalidate kaldırıldı, yeni KVKK cümlesi (Prompt 40)
-- [ ] Form gönderimi: /iletisim-gonder.php YOK (404). Mail gönderen dosya yazılacak. SORU: mesajlar hangi adrese gitsin?
+- [x] Form gönderimi + admin Mesajlar sayfası (Prompt 50-51). Vercel'de mail gitmez, sadece panele düşer.
+- [ ] SORU: form mesajları hangi e-posta adresine gitsin? → config.php ILETISIM_EPOSTA
+- [ ] GÜVENLİK: Vercel'de /v-1/data/admin.php ve PHP kaynakları düz metin sızıyordu; düzeltme (P51) yerelde hazır, PUSH EDİLMEDİ. Push sonrası curl ile doğrula. Vercel'de ADMIN_SECRET (Production) tanımlı mı kontrol et. Canlıdan önce admin şifresini değiştir.
 - [x] Anasayfa şube kartları: saat/bölge çıktı, telefon, Rezervasyon + Yol tarifi (+ Bostanlı Paket servis), kart linki butonları örtme hatası (Prompt 39)
 
 ## Footer / Genel

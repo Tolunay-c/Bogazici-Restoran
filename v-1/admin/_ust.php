@@ -14,6 +14,7 @@
   <nav class="admin-ust__nav">
     <a href="/admin/">Panel</a>
     <a href="/admin/gorsel.php">Görseller</a>
+    <a href="/admin/mesajlar.php">Mesajlar<?php if ($n = okunmamis_mesaj_sayisi()): ?> <span class="admin-rozet"><?= $n ?></span><?php endif; ?></a>
     <a href="/" target="_blank" rel="noopener">Siteyi Aç ↗</a>
     <a href="/admin/cikis.php" class="admin-ust__cikis">Çıkış</a>
   </nav>

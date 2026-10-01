@@ -9,12 +9,18 @@ declare(strict_types=1);
    -------------------------------------------------------------- */
 
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../includes/mesaj.php';
 
 /* Oturum: session yok, imzalı çerez (Vercel'de serverless örnekler arası kalıcı). */
 function admin_gizli(): string
 {
     $g = getenv('ADMIN_SECRET');
     if (is_string($g) && $g !== '') {
+        return $g;
+    }
+    // Sunucuya özel rastgele anahtar (data/admin.php); yoksa son çare olarak hash'ten türetilir
+    $g = (string) (admin_ayar()['gizli'] ?? '');
+    if ($g !== '') {
         return $g;
     }
     return hash('sha256', admin_ayar()['parola_hash'] . '|bgz');

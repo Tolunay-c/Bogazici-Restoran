@@ -22,23 +22,23 @@ if ($tam) {
     $gorselOpt['boy'] = $tamBoy;
 }
 ?>
-<?= bolum_ac($b, 'metin-gorsel metin-gorsel--' . $yon . ($tam ? ' metin-gorsel--tam' : '')) ?>
-  <div class="konteyner">
-    <div class="metin-gorsel__izgara">
-      <div class="metin-gorsel__metin" data-goster>
+<?= bolum_ac($b, 'text-image text-image--' . ($yon === 'sol' ? 'left' : 'right') . ($tam ? ' text-image--full' : '')) ?>
+  <div class="container">
+    <div class="text-image__grid">
+      <div class="text-image__text" data-goster>
         <?= bolum_basligi($b) ?>
         <?php if (!empty($b['metin'])): ?>
-          <div class="metin-akis"><p><?= nl2br(e($b['metin'])) ?></p></div>
+          <div class="prose"><p><?= nl2br(e($b['metin'])) ?></p></div>
         <?php endif; ?>
         <?php if (!empty($b['alinti'])): ?>
-          <blockquote class="metin-gorsel__alinti"><?= e($b['alinti']) ?></blockquote>
+          <blockquote class="text-image__quote"><?= e($b['alinti']) ?></blockquote>
         <?php endif; ?>
         <?php if ($btn = buton($b['buton_yazi'] ?? '', $b['buton_link'] ?? '', 'ikincil')): ?>
-          <div class="btn-grup"><?= $btn ?></div>
+          <div class="btn-group"><?= $btn ?></div>
         <?php endif; ?>
       </div>
 
-      <div class="metin-gorsel__gorsel gorsel-yuva"<?= $tam ? ' style="' . e('--oran:' . $tamEn . ' / ' . $tamBoy) . '"' : '' ?>>
+      <div class="text-image__image image-frame"<?= $tam ? ' style="' . e('--oran:' . $tamEn . ' / ' . $tamBoy) . '"' : '' ?>>
         <?= gorsel($b['gorsel'] ?? '', $tam ? '(min-width:900px) 760px, 100vw' : '(min-width:900px) 1200px, 160vw', $gorselOpt) ?>
       </div>
     </div>

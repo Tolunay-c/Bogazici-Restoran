@@ -2,14 +2,14 @@
 /** @var array $b */
 $ilk = SUBELER[0];
 ?>
-<?= bolum_ac($b, 'harita-sekmeli') ?>
-  <div class="konteyner">
+<?= bolum_ac($b, 'map-tabs') ?>
+  <div class="container">
     <?= bolum_basligi($b, 'orta') ?>
 
-    <div class="harita-sekmeli__sekmeler" role="tablist" aria-label="Şube haritası">
+    <div class="map-tabs__tabs" role="tablist" aria-label="Şube haritası">
       <?php foreach (SUBELER as $i => $s): ?>
         <button type="button"
-                class="harita-sekmeli__sekme<?= $i === 0 ? ' harita-sekmeli__sekme--aktif' : '' ?>"
+                class="map-tabs__tab<?= $i === 0 ? ' map-tabs__tab--active' : '' ?>"
                 role="tab" aria-selected="<?= $i === 0 ? 'true' : 'false' ?>"
                 data-enlem="<?= e((string) $s['enlem']) ?>"
                 data-boylam="<?= e((string) $s['boylam']) ?>"
@@ -21,8 +21,8 @@ $ilk = SUBELER[0];
       <?php endforeach; ?>
     </div>
 
-    <div class="harita__cerceve" data-harita-sekmeli>
-      <div class="harita__tuval"
+    <div class="map__frame" data-harita-sekmeli>
+      <div class="map__canvas"
            data-harita-sekmeli-tuval
            data-enlem="<?= e((string) $ilk['enlem']) ?>"
            data-boylam="<?= e((string) $ilk['boylam']) ?>"
@@ -30,12 +30,12 @@ $ilk = SUBELER[0];
            role="img"
            aria-label="<?= e($ilk['ad']) ?> şubesi konumu haritada"></div>
 
-      <div class="harita__kart">
+      <div class="map__card">
         <div>
-          <p class="ustluk" data-harita-sekmeli-ad><?= e($ilk['ad']) ?></p>
+          <p class="eyebrow" data-harita-sekmeli-ad><?= e($ilk['ad']) ?></p>
           <p style="margin-top:var(--bosluk-2)" data-harita-sekmeli-adres><?= e($ilk['adres']) ?></p>
         </div>
-        <a class="btn btn--birincil btn--sm" data-harita-sekmeli-link href="<?= e($ilk['yol_tarifi']) ?>" target="_blank" rel="noopener">
+        <a class="btn btn--primary btn--sm" data-harita-sekmeli-link href="<?= e($ilk['yol_tarifi']) ?>" target="_blank" rel="noopener">
           Google Maps’te Aç <span aria-hidden="true">→</span>
         </a>
       </div>

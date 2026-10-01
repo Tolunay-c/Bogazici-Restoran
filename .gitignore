@@ -7,3 +7,10 @@
 # Müşterinin gönderdiği orijinaller (sitede kullanılmıyor, türevleri assets/img altında)
 v-1/assets/img/musteri-gorseller/
 .DS_Store
+
+# İletişim formu mesajları (kişisel veri, yerel test)
+v-1/data/mesajlar.json
+
+# Yayın paketleri (paketle.sh çıktısı)
+dist/
+v-1/data/mail.log*

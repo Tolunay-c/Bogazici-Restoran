@@ -513,3 +513,73 @@ code { font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 .admin-giris__ustluk { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--a-vurgu-koyu); margin: 0 0 10px; }
 .admin-giris__baslik { font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 26px; margin: 0 0 24px; color: var(--a-marka); }
 .admin-giris__ipucu { margin-top: 20px; font-size: 12px; color: var(--a-metin-ikincil); text-align: center; }
+
+/* --- Mesajlar ------------------------------------------------- */
+.admin-rozet {
+  display: inline-block;
+  min-width: 18px;
+  padding: 0 6px;
+  border-radius: 9px;
+  background: var(--a-vurgu);
+  color: var(--a-marka);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+.admin-mesaj-liste { display: grid; gap: 12px; }
+.admin-mesaj { display: block; }
+.admin-mesaj--yeni { border-left: 3px solid var(--a-vurgu); }
+.admin-mesaj--yeni .admin-kart__baslik { font-weight: 700; }
+.admin-mesaj__ust { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.admin-mesaj__metin { margin: 12px 0; line-height: 1.6; }
+.admin-mesaj__aksiyon { display: flex; gap: 8px; }
+.admin-mesaj__mail { margin: 0 0 12px; font-size: 13px; color: var(--a-metin-ikincil); }
+.admin-mesaj__mail--gonderildi { color: var(--a-basari); }
+.admin-mesaj__mail--gonderilemedi { color: var(--a-hata); }
+.admin-log summary { cursor: pointer; }
+.admin-log__icerik {
+  margin: 12px 0 0;
+  padding: 12px;
+  max-height: 360px;
+  overflow: auto;
+  background: var(--a-yuzey);
+  border: 1px solid var(--a-cizgi);
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre;
+}
+.admin-mesaj__dugme {
+  padding: 6px 12px;
+  border: 1px solid var(--a-cizgi-guclu);
+  border-radius: 6px;
+  background: var(--a-yuzey);
+  color: var(--a-marka);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.admin-mesaj__dugme--sil { color: var(--a-tehlike); }
+.admin-etiket {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: var(--a-vurgu);
+  color: var(--a-marka);
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.admin-filtre { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.admin-filtre__link {
+  padding: 6px 14px;
+  border: 1px solid var(--a-cizgi-guclu);
+  border-radius: 999px;
+  color: var(--a-metin-ikincil);
+  font-size: 13px;
+  text-decoration: none;
+}
+.admin-filtre__link--aktif { background: var(--a-marka); border-color: var(--a-marka); color: var(--a-yuzey); font-weight: 600; }
+.admin-etiket--tur { background: transparent; border: 1px solid var(--a-vurgu); color: var(--a-vurgu-koyu); }
+.admin-mesaj__rez { margin: 6px 0 2px; font-weight: 600; color: var(--a-marka); }
