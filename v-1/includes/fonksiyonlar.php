@@ -1,6 +1,18 @@
 <?php
 declare(strict_types=1);
 
+/* PHP 7.4 uyumluluğu (sunucu PHP 8 değilse) */
+if (!function_exists('str_starts_with')) {
+    function str_starts_with(string $metin, string $on): bool { return $on === '' || strncmp($metin, $on, strlen($on)) === 0; }
+}
+if (!function_exists('str_ends_with')) {
+    function str_ends_with(string $metin, string $son): bool { return $son === '' || substr($metin, -strlen($son)) === $son; }
+}
+if (!function_exists('str_contains')) {
+    function str_contains(string $metin, string $parca): bool { return $parca === '' || strpos($metin, $parca) !== false; }
+}
+
+
 /** HTML kaçışı — çıktı veren her yerde zorunlu. */
 function e(?string $s): string
 {

@@ -21,6 +21,7 @@ $varsayilan = [
             'enlem' => 38.3873, 'boylam' => 27.0399,
             'yol_tarifi' => 'https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Uckuyular+Balcova',
             'bolgeler' => ['Deniz manzaralı teras', 'İç salon', 'Bahçe'],
+            'not' => 'Kahvaltı Servisi Mevcuttur',
         ],
         [
             'slug' => 'narlidere',
@@ -34,6 +35,7 @@ $varsayilan = [
             'enlem' => 38.3925, 'boylam' => 27.0060,
             'yol_tarifi' => 'https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Narlidere',
             'bolgeler' => ['Sahil terası', 'İç salon', 'Loca'],
+            'not' => 'Kahvaltı Servisi Mevcuttur',
         ],
         [
             'slug' => 'bostanli',
@@ -47,6 +49,7 @@ $varsayilan = [
             'enlem' => 38.4664, 'boylam' => 27.0975,
             'yol_tarifi' => 'https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Bostanli+Izmir',
             'bolgeler' => ['Bahçe', 'İç salon', 'Üst kat'],
+            'not' => 'Kahvaltı Servisi Mevcuttur',
             'paket_servis' => '/hizmetler.php#paket-servis',
         ],
     ],
@@ -104,6 +107,14 @@ $varsayilan['sayfalar']['anasayfa'] = [
     ],
     [
         'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sol',
+        'baslik' => 'Güne Boğaziçi ile Başlayın',
+        'metin' => 'Özenle hazırlanan kahvaltılıklar, sıcak lezzetler ve sofranın vazgeçilmezleriyle güne keyifli bir başlangıç yapın. Kahvaltımız üç şubemizde de sizi bekliyor.',
+        'gorsel' => 'anasayfa-kahvalti.jpg', 'gorsel_odak' => 'merkez',
+        'gorsel_alt' => 'Peynir, reçel, zeytin ve sıcaklarla kurulmuş Boğaziçi kahvaltı sofrası',
+        'buton_yazi' => 'Menüyü İncele', 'buton_link' => '/menu.php',
+    ],
+    [
+        'tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
         'baslik' => 'Her Sofraya Bir Boğaziçi Klasiği',
         'metin' => 'Geleneksel tatlardan özenle hazırlanan özel lezzetlere uzanan menümüzle, günün her anına eşlik eden zengin bir sofra sunuyoruz.',
         'gorsel' => 'anasayfa-her-sofraya.jpg', 'gorsel_odak' => 'merkez',

@@ -21,7 +21,7 @@
                 <li class="menu-item" data-goster>
                   <?php if (!empty($u['gorsel'])): ?>
                     <button class="menu-item__image" type="button" data-lightbox="<?= e(gorsel_url($u['gorsel'], 1440)) ?>" aria-label="<?= e($u['ad']) ?> görselini büyüt">
-                      <?= gorsel($u['gorsel'], '72px', ['alt' => '', 'en' => 480, 'boy' => 480]) ?>
+                      <?= gorsel($u['gorsel'], '88px', ['alt' => '', 'en' => 480, 'boy' => 480]) ?>
                     </button>
                   <?php else: ?>
                     <span class="menu-item__image menu-item__image--empty" aria-hidden="true"><span class="icon icon--sm">restaurant</span></span>

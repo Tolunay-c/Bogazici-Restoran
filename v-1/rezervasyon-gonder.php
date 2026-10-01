@@ -4,7 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/mesaj.php';
 
-function rezervasyon_yonlendir(string $sube = '', string $durum = ''): never
+function rezervasyon_yonlendir(string $sube = '', string $durum = ''): void
 {
     $sorgu = [];
     if ($sube !== '') {
@@ -68,6 +68,7 @@ $gecerli = $subeAd !== ''
     && mb_strlen($ad) >= 2 && mb_strlen($ad) <= 100
     && mb_strlen($telefon) >= 7 && mb_strlen($telefon) <= 30
     && preg_match('/^[0-9\s+()\-]+$/', $telefon) === 1
+    && strlen((string) preg_replace('/\D/', '', $telefon)) >= 10 && strlen((string) preg_replace('/\D/', '', $telefon)) <= 13
     && mb_strlen($not) <= 1000
     && $kvkk;
 

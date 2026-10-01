@@ -41,6 +41,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Şube sayfası banner görseli
+    if (!empty($_FILES['yukle_banner']['name']) && ($_FILES['yukle_banner']['error'] ?? 0) === UPLOAD_ERR_OK) {
+        $f = $_FILES['yukle_banner'];
+        $mevcutBanner = (string) ($_POST['sube']['banner'] ?? '');
+        $slugAdı = trim((string) ($_POST['sube']['slug'] ?? ''));
+        $tabanAd = $mevcutBanner !== '' ? pathinfo($mevcutBanner, PATHINFO_FILENAME)
+            : ($slugAdı !== '' ? 'sube-banner-' . $slugAdı : pathinfo($f['name'], PATHINFO_FILENAME));
+        $sonuc = gorsel_yukle_isle($f['tmp_name'], $f['name'], $tabanAd, true);
+        if ($sonuc['ok']) {
+            $_POST['sube']['banner'] = $sonuc['deger'];
+            $bildirim = 'Banner ' . lcfirst($sonuc['mesaj']);
+        } else {
+            $hata = $sonuc['mesaj'];
+        }
+    }
+
     if ($eylem === 'sil' && $index !== null) {
         array_splice($veri['subeler'], $index, 1);
         if (veri_yaz($veri)) {
@@ -61,11 +77,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'eposta'       => trim((string) ($g['eposta'] ?? '')),
             'saat'         => trim((string) ($g['saat'] ?? '')),
             'gorsel'       => trim((string) ($g['gorsel'] ?? '')),
+            'banner'       => trim((string) ($g['banner'] ?? '')),
             'enlem'        => (float) ($g['enlem'] ?? 0),
             'boylam'       => (float) ($g['boylam'] ?? 0),
             'yol_tarifi'   => trim((string) ($g['yol_tarifi'] ?? '')),
             'bolgeler'     => $bolgeler,
             'paket_servis' => trim((string) ($g['paket_servis'] ?? '')),
+            'not'          => trim((string) ($g['not'] ?? '')),
         ];
 
         if ($yeniSube['slug'] === '' || $yeniSube['ad'] === '') {
@@ -104,9 +122,9 @@ if (!empty($_GET['kaydedildi'])) {
 
 $sube = $mevcut ?? [
     'slug' => '', 'ad' => '', 'adres' => '', 'telefon' => '+90', 'telefon_yazi' => '',
-    'eposta' => '', 'saat' => 'Her gün 12:00 – 24:00', 'gorsel' => '',
+    'eposta' => '', 'saat' => 'Her gün 12:00 – 24:00', 'gorsel' => '', 'banner' => '',
     'enlem' => 38.4, 'boylam' => 27.1, 'yol_tarifi' => '', 'bolgeler' => [],
-    'paket_servis' => '',
+    'paket_servis' => '', 'not' => '',
 ];
 
 $gorseller = gorsel_listesi();
@@ -183,6 +201,11 @@ require __DIR__ . '/_ust.php';
       <span>Paket servis bağlantısı <small class="admin-alan__ipucu">(opsiyonel — boş bırakılırsa kart üzerinde buton görünmez)</small></span>
       <input type="text" name="sube[paket_servis]" value="<?= e($sube['paket_servis'] ?? '') ?>" placeholder="/hizmetler.php#paket-servis">
     </label>
+
+    <label class="admin-alan">
+      <span>Kart notu <small class="admin-alan__ipucu">(opsiyonel — telefonun altında görünür, ör. "Kahvaltı servisi mevcuttur"; boş bırakılırsa görünmez)</small></span>
+      <input type="text" name="sube[not]" value="<?= e($sube['not'] ?? '') ?>" maxlength="80">
+    </label>
   </section>
 
   <section class="admin-bolum">
@@ -204,7 +227,7 @@ require __DIR__ . '/_ust.php';
     <div class="admin-bolum__legend"><span class="admin-bolum__tip">Görsel</span></div>
 
     <div class="admin-alan admin-alan--gorsel">
-      <span>Şube kart görseli</span>
+      <span>Şube kart görseli <small class="admin-alan__ipucu">(şube kartları ve şube sayfasındaki Mekân bölümü)</small></span>
       <div class="admin-gorsel-secici" data-secici>
         <div class="admin-gorsel-secici__onizleme">
           <img src="<?= !empty($sube['gorsel']) ? e(gorsel_url((string) $sube['gorsel'])) : '' ?>" alt="" loading="lazy"<?= empty($sube['gorsel']) ? ' hidden' : '' ?>>
@@ -223,6 +246,32 @@ require __DIR__ . '/_ust.php';
           <label class="admin-gorsel-secici__satir">
             <span>veya yeni dosya yükle</span>
             <input type="file" name="yukle_gorsel" accept="image/*">
+          </label>
+          <p class="admin-gorsel-secici__not">Yükleme yaparsan mevcut dosyanın adıyla üzerine yazılır; kütüphane seçimi göz ardı edilir.</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="admin-alan admin-alan--gorsel">
+      <span>Şube sayfası banner görseli <small class="admin-alan__ipucu">(şube sayfasının en üstündeki koyu alan; önerilen 2400×800 px, konu ortada — kenarlar ekran genişliğine göre kırpılır)</small></span>
+      <div class="admin-gorsel-secici" data-secici>
+        <div class="admin-gorsel-secici__onizleme">
+          <img src="<?= !empty($sube['banner']) ? e(gorsel_url((string) $sube['banner'])) : '' ?>" alt="" loading="lazy"<?= empty($sube['banner']) ? ' hidden' : '' ?>>
+          <span class="admin-gorsel-secici__bos"<?= !empty($sube['banner']) ? ' hidden' : '' ?>>Görsel yok</span>
+        </div>
+        <div class="admin-gorsel-secici__kontrol">
+          <label class="admin-gorsel-secici__satir">
+            <span>Kütüphaneden seç</span>
+            <select name="sube[banner]" data-secici-secim>
+              <option value="">— Seçim yok —</option>
+              <?php foreach ($gorseller as $g): ?>
+                <option value="<?= e($g) ?>" data-url="<?= e(gorsel_url($g)) ?>" <?= $g === ($sube['banner'] ?? '') ? 'selected' : '' ?>><?= e(basename($g)) ?></option>
+              <?php endforeach; ?>
+            </select>
+          </label>
+          <label class="admin-gorsel-secici__satir">
+            <span>veya yeni dosya yükle</span>
+            <input type="file" name="yukle_banner" accept="image/*">
           </label>
           <p class="admin-gorsel-secici__not">Yükleme yaparsan mevcut dosyanın adıyla üzerine yazılır; kütüphane seçimi göz ardı edilir.</p>
         </div>

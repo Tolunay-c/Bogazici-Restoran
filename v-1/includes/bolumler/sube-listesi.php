@@ -21,6 +21,9 @@ $duzen = ($b['duzen'] ?? 'izgara') === 'yatay' ? 'yatay' : 'izgara';
                 </h3>
                 <p class="branch-row__address"><?= e($s['adres']) ?></p>
                 <p class="branch-row__hours"><?= e($s['saat']) ?></p>
+                <?php if (!empty($s['not'])): ?>
+                  <p class="branch__note"><span class="icon icon--sm" aria-hidden="true">free_breakfast</span><?= e($s['not']) ?></p>
+                <?php endif; ?>
 
                 <ul class="branch-row__zones">
                   <?php foreach ($s['bolgeler'] as $bolge): ?>
@@ -65,6 +68,9 @@ $duzen = ($b['duzen'] ?? 'izgara') === 'yatay' ? 'yatay' : 'izgara';
               <div class="branch__info">
                 <span><?= e($s['adres']) ?></span>
                 <a class="branch__phone" href="tel:<?= e($s['telefon']) ?>"><span class="icon icon--sm" aria-hidden="true">call</span><?= e($s['telefon_yazi']) ?></a>
+                <?php if (!empty($s['not'])): ?>
+                  <span class="branch__note"><span class="icon icon--sm" aria-hidden="true">free_breakfast</span><?= e($s['not']) ?></span>
+                <?php endif; ?>
               </div>
             </div>
             <div class="card__actions branch__actions">

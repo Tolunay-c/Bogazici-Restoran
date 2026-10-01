@@ -258,6 +258,7 @@ main > .section[data-zemin="koyu"]:last-child {
 .branch__secondary .btn { padding-inline: var(--bosluk-3); }
 .branch__phone { display: inline-flex; align-items: center; gap: var(--bosluk-2); min-height: 44px; color: var(--metin); text-decoration: none; justify-self: start; }
 @media (hover: hover) { .branch__phone:hover { color: var(--vurgu-metin); } }
+.branch__note { display: inline-flex; align-items: center; gap: var(--bosluk-2); color: var(--metin); font-size: var(--yazi-sm); }
 
 /* ==============================================================
    galeri-onizleme

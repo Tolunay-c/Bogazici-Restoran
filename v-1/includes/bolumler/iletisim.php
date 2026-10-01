@@ -13,7 +13,7 @@
         <?php if (($_GET['form'] ?? '') === 'tamam'): ?>
           <p class="form-alert form-alert--success" role="status">Mesajınız alındı. Ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
         <?php elseif (($_GET['form'] ?? '') === 'hata'): ?>
-          <p class="form-alert form-alert--error" role="alert">Mesajınız gönderilemedi. Lütfen tüm alanları eksiksiz doldurup tekrar deneyin.</p>
+          <p class="form-alert form-alert--error" role="alert">Mesajınız gönderilemedi. Lütfen bilgilerinizi kontrol edip tekrar deneyin: telefon 0532 123 45 67 biçiminde olmalı, e-posta geçerli olmalı, mesaj en az 5 karakter olmalı.</p>
         <?php endif; ?>
         <div class="form-grid form-grid--two">
           <div class="field">
@@ -22,7 +22,7 @@
           </div>
           <div class="field">
             <label class="field__label" for="tel">Telefon <span class="field__required" aria-hidden="true">*</span></label>
-            <input class="input" type="tel" id="tel" name="telefon" inputmode="tel" autocomplete="tel" required>
+            <input class="input" type="tel" id="tel" name="telefon" inputmode="tel" autocomplete="tel" pattern="0[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" maxlength="14" title="Telefon numaranızı 0532 123 45 67 biçiminde girin" placeholder="05xx xxx xx xx" required>
           </div>
         </div>
 

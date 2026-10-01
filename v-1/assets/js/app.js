@@ -43,6 +43,22 @@
     });
   }
 
+  /* --- Telefon maskesi: 0532 123 45 67 (11 hane) ---------------
+     +90 / 90 ile yapıştırılırsa ön ek atılır, baştaki 0 kendiliğinden gelir. */
+  function telefonBicimle(deger) {
+    var d = deger.replace(/\D/g, '');
+    if (d.indexOf('90') === 0 && d.length > 10) d = d.slice(2);
+    if (d !== '' && d.charAt(0) !== '0') d = '0' + d;
+    d = d.slice(0, 11);
+    return [d.slice(0, 4), d.slice(4, 7), d.slice(7, 9), d.slice(9, 11)].filter(Boolean).join(' ');
+  }
+  document.querySelectorAll('input[type="tel"]').forEach(function (alan) {
+    alan.addEventListener('input', function () {
+      var yeni = telefonBicimle(alan.value);
+      if (yeni !== alan.value) alan.value = yeni;
+    });
+  });
+
   /* --- Galeri lightbox ---------------------------------------- */
   var kutu = document.getElementById('lightbox');
   if (kutu) {
@@ -406,6 +422,11 @@
       secimAd.textContent = ad;
       secimIp.textContent = musait + ' masa müsait — bilgilerinizi girip onaylayın.';
       // aria-live duyurusu için içerik değişikliği yeterli
+    }
+
+    // Form içindeki şube seçimi → sekmeleri günceller
+    if (seciliSube) {
+      seciliSube.addEventListener('change', function () { subeSec(seciliSube.value); });
     }
 
     // Tab click + klavye

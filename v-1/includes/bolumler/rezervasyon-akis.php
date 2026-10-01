@@ -11,7 +11,7 @@ $rezForm = (string) ($_GET['form'] ?? '');
     <?= bolum_basligi($b, 'orta', 'h1') ?>
 
     <div class="reservation__branches" role="tablist" aria-label="Şube seçimi">
-      <?php $ilk = true; foreach (SUBELER as $s): $secili = $ilk; ?>
+      <?php foreach (SUBELER as $s): $secili = $s['slug'] === $secSube; ?>
         <button
           class="reservation__tab<?= $secili ? ' reservation__tab--selected' : '' ?>"
           role="tab"
@@ -23,7 +23,7 @@ $rezForm = (string) ($_GET['form'] ?? '');
           type="button">
           <?= e($s['ad']) ?>
         </button>
-      <?php $ilk = false; endforeach; ?>
+      <?php endforeach; ?>
     </div>
 
     <div class="reservation__inner reservation__inner--single">
@@ -34,7 +34,6 @@ $rezForm = (string) ($_GET['form'] ?? '');
         <?php elseif ($rezForm === 'hata'): ?>
           <p class="form-alert form-alert--error" role="alert">Rezervasyon talebiniz gönderilemedi. Lütfen tarih, saat ve iletişim bilgilerinizi kontrol edip tekrar deneyin.</p>
         <?php endif; ?>
-        <input type="hidden" name="sube"  value="<?= e($secSube) ?>" data-secili-sube>
 
         <header class="reservation__form-header">
           <p class="eyebrow">Masa Rezervasyonu</p>
@@ -45,6 +44,17 @@ $rezForm = (string) ($_GET['form'] ?? '');
         </header>
 
         <div class="reservation__rest">
+          <!-- Şube seçimi üstteki sekmelerle iki yönlü bağlı; ziyaretçi nereye
+               rezervasyon yaptığını formun içinde de görüp değiştirebilsin. -->
+          <div class="field">
+            <label class="field__label" for="rez-sube">Şube</label>
+            <select class="select" id="rez-sube" name="sube" required data-secili-sube>
+              <?php foreach (SUBELER as $s): ?>
+                <option value="<?= e($s['slug']) ?>"<?= $s['slug'] === $secSube ? ' selected' : '' ?>><?= e($s['ad']) ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+
           <div class="form-grid form-grid--two">
             <div class="field">
               <label class="field__label" for="rez-tarih">Tarih</label>
@@ -90,7 +100,7 @@ $rezForm = (string) ($_GET['form'] ?? '');
 
           <div class="field">
             <label class="field__label" for="rez-tel">Telefon</label>
-            <input class="input" type="tel" id="rez-tel" name="telefon" inputmode="tel" autocomplete="tel" placeholder="0 5xx xxx xx xx" required>
+            <input class="input" type="tel" id="rez-tel" name="telefon" inputmode="tel" autocomplete="tel" pattern="0[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" maxlength="14" title="Telefon numaranızı 0532 123 45 67 biçiminde girin" placeholder="05xx xxx xx xx" required>
           </div>
 
           <div class="field">

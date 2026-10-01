@@ -107,8 +107,9 @@ function _slot_mevcut_dosya(array $veri, string $anahtar): string
             return (string) ($veri['sayfalar'][$ad][$idx]['ogeler'][$oi]['gorsel'] ?? '');
         }
     } elseif ($p[0] === 'sube') {
+        $alan = ($p[2] ?? 'gorsel') === 'banner' ? 'banner' : 'gorsel';
         foreach ($veri['subeler'] as $s) {
-            if (($s['slug'] ?? '') === $p[1]) return (string) ($s['gorsel'] ?? '');
+            if (($s['slug'] ?? '') === $p[1]) return (string) ($s[$alan] ?? '');
         }
     }
     return '';

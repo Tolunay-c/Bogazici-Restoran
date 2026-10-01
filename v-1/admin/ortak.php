@@ -464,12 +464,15 @@ function gorsel_kullanimlari(array $veri): array
     }
 
     foreach (($veri['subeler'] ?? []) as $s) {
-        if (!is_array($s) || empty($s['gorsel'])) continue;
-        $ekle($s['gorsel'], [
-            'yer'  => 'Şube · ' . ($s['ad'] ?? $s['slug'] ?? ''),
-            'link' => '/admin/sube.php?slug=' . rawurlencode((string) ($s['slug'] ?? '')),
-            'sube' => (string) ($s['slug'] ?? ''),
-        ]);
+        if (!is_array($s)) continue;
+        foreach (['gorsel' => '', 'banner' => ' · banner'] as $alan => $ek) {
+            if (empty($s[$alan])) continue;
+            $ekle($s[$alan], [
+                'yer'  => 'Şube · ' . ($s['ad'] ?? $s['slug'] ?? '') . $ek,
+                'link' => '/admin/sube.php?slug=' . rawurlencode((string) ($s['slug'] ?? '')),
+                'sube' => (string) ($s['slug'] ?? ''),
+            ]);
+        }
     }
 
     return $harita;
@@ -511,6 +514,7 @@ function gorsel_slotlari(array $veri): array
         $slug = (string) ($s['slug'] ?? '');
         if ($slug === '') continue;
         $slotlar["sube|{$slug}|gorsel"] = 'Şube · ' . ($s['ad'] ?? $slug);
+        $slotlar["sube|{$slug}|banner"] = 'Şube · ' . ($s['ad'] ?? $slug) . ' · banner';
     }
     return $slotlar;
 }
@@ -540,11 +544,12 @@ function slot_atama_yap(string $anahtar, string $dosyaAdi): bool
             return false;
         }
     } elseif ($parca[0] === 'sube') {
-        [$_, $slug] = $parca;
+        $slug = $parca[1] ?? '';
+        $alan = ($parca[2] ?? 'gorsel') === 'banner' ? 'banner' : 'gorsel';
         $bulundu = false;
         foreach ($veri['subeler'] as $i => $s) {
             if (($s['slug'] ?? '') === $slug) {
-                $veri['subeler'][$i]['gorsel'] = $dosyaAdi;
+                $veri['subeler'][$i][$alan] = $dosyaAdi;
                 $bulundu = true;
                 break;
             }

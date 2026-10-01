@@ -16,7 +16,8 @@
                 "Deniz manzaralı teras",
                 "İç salon",
                 "Bahçe"
-            ]
+            ],
+            "not": "Kahvaltı Servisi Mevcuttur"
         },
         {
             "slug": "narlidere",
@@ -34,7 +35,8 @@
                 "Sahil terası",
                 "İç salon",
                 "Loca"
-            ]
+            ],
+            "not": "Kahvaltı Servisi Mevcuttur"
         },
         {
             "slug": "bostanli",
@@ -53,7 +55,8 @@
                 "İç salon",
                 "Üst kat"
             ],
-            "paket_servis": "/hizmetler.php#paket-servis"
+            "paket_servis": "/hizmetler.php#paket-servis",
+            "not": "Kahvaltı Servisi Mevcuttur"
         }
     ],
     "sayfalar": {
@@ -95,9 +98,21 @@
             },
             {
                 "tip": "metin-gorsel",
+                "baslik": "Güne Boğaziçi ile Başlayın",
+                "metin": "Özenle hazırlanan kahvaltılıklar, sıcak lezzetler ve sofranın vazgeçilmezleriyle güne keyifli bir başlangıç yapın. Kahvaltımız üç şubemizde de sizi bekliyor.",
+                "yon": "sol",
+                "zemin": "beyaz",
+                "buton_yazi": "Menüyü İncele",
+                "buton_link": "/menu.php",
+                "gorsel": "anasayfa-kahvalti.jpg",
+                "gorsel_odak": "merkez",
+                "gorsel_alt": "Peynir, reçel, zeytin ve sıcaklarla kurulmuş Boğaziçi kahvaltı sofrası"
+            },
+            {
+                "tip": "metin-gorsel",
                 "baslik": "Her Sofraya Bir Boğaziçi Klasiği",
                 "metin": "Geleneksel tatlardan özenle hazırlanan özel lezzetlere uzanan menümüzle, günün her anına eşlik eden zengin bir sofra sunuyoruz.",
-                "yon": "sol",
+                "yon": "sag",
                 "zemin": "beyaz",
                 "buton_yazi": "Menüyü İncele",
                 "buton_link": "/menu.php",

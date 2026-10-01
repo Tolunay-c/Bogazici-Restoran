@@ -12,12 +12,11 @@ $donus = '/admin/mesajlar.php' . ($tur !== '' ? '?tur=' . $tur : '');
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     csrf_dogrula();
     $id = (string) ($_POST['id'] ?? '');
-    match ((string) ($_POST['islem'] ?? '')) {
-        'okundu'   => mesaj_okundu($id, true),
-        'okunmadi' => mesaj_okundu($id, false),
-        'sil'      => mesaj_sil($id),
-        default    => false,
-    };
+    switch ((string) ($_POST['islem'] ?? '')) {
+        case 'okundu':   mesaj_okundu($id, true);  break;
+        case 'okunmadi': mesaj_okundu($id, false); break;
+        case 'sil':      mesaj_sil($id);           break;
+    }
     header('Location: ' . $donus, true, 303);
     exit;
 }

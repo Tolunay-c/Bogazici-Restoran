@@ -4,7 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/mesaj.php';
 
-function iletisim_yonlendir(string $durum = ''): never
+function iletisim_yonlendir(string $durum = ''): void
 {
     $adres = '/iletisim.php' . ($durum !== '' ? '?form=' . $durum . '#iletisim-form' : '');
     header('Location: ' . $adres, true, 303);
@@ -31,6 +31,7 @@ $kvkk    = !empty($_POST['kvkk']);
 $gecerli = mb_strlen($ad) >= 2 && mb_strlen($ad) <= 100
     && mb_strlen($telefon) >= 7 && mb_strlen($telefon) <= 30
     && preg_match('/^[0-9\s+()\-]+$/', $telefon) === 1
+    && strlen((string) preg_replace('/\D/', '', $telefon)) >= 10 && strlen((string) preg_replace('/\D/', '', $telefon)) <= 13
     && mb_strlen($eposta) <= 150 && filter_var($eposta, FILTER_VALIDATE_EMAIL) !== false
     && mb_strlen($mesaj) >= 5 && mb_strlen($mesaj) <= 3000
     && $kvkk;
