@@ -74,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'adres'        => trim((string) ($g['adres'] ?? '')),
             'telefon'      => trim((string) ($g['telefon'] ?? '')),
             'telefon_yazi' => trim((string) ($g['telefon_yazi'] ?? '')),
+            'telefon2_yazi' => trim((string) ($g['telefon2_yazi'] ?? '')),
             'eposta'       => trim((string) ($g['eposta'] ?? '')),
             'saat'         => trim((string) ($g['saat'] ?? '')),
             'gorsel'       => trim((string) ($g['gorsel'] ?? '')),
@@ -83,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'yol_tarifi'   => trim((string) ($g['yol_tarifi'] ?? '')),
             'bolgeler'     => $bolgeler,
             'paket_servis' => trim((string) ($g['paket_servis'] ?? '')),
-            'not'          => trim((string) ($g['not'] ?? '')),
+            'not'          => implode("\n", array_filter(array_map('trim', preg_split('/\R/u', (string) ($g['not'] ?? '')) ?: []), 'strlen')),
         ];
 
         if ($yeniSube['slug'] === '' || $yeniSube['ad'] === '') {
@@ -188,6 +189,11 @@ require __DIR__ . '/_ust.php';
     </label>
 
     <label class="admin-alan">
+      <span>İkinci telefon <small class="admin-alan__ipucu">(opsiyonel — kartlarda ilk numaranın altında görünür; boş bırakılırsa görünmez)</small></span>
+      <input type="text" name="sube[telefon2_yazi]" value="<?= e($sube['telefon2_yazi'] ?? SUBE_IKINCI_TELEFON) ?>" placeholder="0850 850 0850">
+    </label>
+
+    <label class="admin-alan">
       <span>E-posta</span>
       <input type="email" name="sube[eposta]" value="<?= e($sube['eposta']) ?>">
     </label>
@@ -203,8 +209,8 @@ require __DIR__ . '/_ust.php';
     </label>
 
     <label class="admin-alan">
-      <span>Kart notu <small class="admin-alan__ipucu">(opsiyonel — telefonun altında görünür, ör. "Kahvaltı servisi mevcuttur"; boş bırakılırsa görünmez)</small></span>
-      <input type="text" name="sube[not]" value="<?= e($sube['not'] ?? '') ?>" maxlength="80">
+      <span>Kart notları <small class="admin-alan__ipucu">(opsiyonel — her satıra bir not; telefonun altında alt alta görünür, ör. "Kahvaltı Servisi Mevcuttur" / "Paket Servis Mevcuttur"; boş bırakılırsa görünmez)</small></span>
+      <textarea name="sube[not]" rows="3" maxlength="400"><?= e($sube['not'] ?? '') ?></textarea>
     </label>
   </section>
 

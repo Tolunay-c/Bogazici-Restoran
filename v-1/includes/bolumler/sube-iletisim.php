@@ -12,18 +12,15 @@
             <h3 class="branch-contact__name"><?= e($s['ad']) ?></h3>
             <p class="branch-contact__address"><?= e($s['adres']) ?></p>
             <div class="branch-contact__info">
-              <a href="tel:<?= e($s['telefon']) ?>">
-                <span class="icon icon--sm" aria-hidden="true">call</span><?= e($s['telefon_yazi']) ?>
-              </a>
+              <?php if (sube_telefonlari($s)): ?>
+                <p class="branch-contact__phones"><span class="icon icon--sm" aria-hidden="true">call</span><span class="phone-line"><?= sube_telefon_satiri($s) ?></span></p>
+              <?php endif; ?>
               <a href="mailto:<?= e($s['eposta']) ?>">
                 <span class="icon icon--sm" aria-hidden="true">mail</span><?= str_replace('@', '@<wbr>', e($s['eposta'])) ?>
               </a>
             </div>
             <div class="branch-contact__actions">
               <a class="btn btn--secondary btn--sm" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol tarifi al</a>
-              <?php if (!empty($s['paket_servis'])): ?>
-                <a class="btn btn--secondary btn--sm" href="<?= e($s['paket_servis']) ?>">Paket servis</a>
-              <?php endif; ?>
             </div>
           </div>
         </li>

@@ -6,7 +6,17 @@ $ogeler = $b['ogeler'] ?? [];
   <div class="container">
     <?= bolum_basligi($b, 'orta') ?>
     <ul class="card-grid__list" data-adet="<?= count($ogeler) ?>">
-      <?php foreach ($ogeler as $o): ?>
+      <?php foreach ($ogeler as $o):
+        // Şubeye bağlı kart (link #sube-slug ya da ?s=slug): görsel şubenin güncel
+        // görselinden gelir, başlığın altında şube telefonları gösterilir.
+        $kartSube = null;
+        if (preg_match('/(?:#sube-|[?&]s=)([a-z0-9-]+)/', (string) ($o['link'] ?? ''), $m)) {
+            foreach (SUBELER as $s) {
+                if (($s['slug'] ?? '') === $m[1]) { $kartSube = $s; break; }
+            }
+        }
+        if ($kartSube && !empty($kartSube['gorsel'])) $o['gorsel'] = $kartSube['gorsel'];
+      ?>
         <li class="card <?= !empty($o['link']) ? 'card--link' : '' ?>" data-goster>
           <?php if (!empty($o['gorsel'])): ?>
             <div class="card__image" style="--oran:3/2">
@@ -25,6 +35,9 @@ $ogeler = $b['ogeler'] ?? [];
               <?php endif; ?>
             </h3>
             <?php if (!empty($o['metin'])): ?><p class="card__text"><?= e($o['metin']) ?></p><?php endif; ?>
+            <?php if ($kartSube && sube_telefonlari($kartSube)): ?>
+              <p class="branch__phone"><span class="icon icon--sm" aria-hidden="true">call</span><span class="phone-line"><?= sube_telefon_satiri($kartSube) ?></span></p>
+            <?php endif; ?>
           </div>
         </li>
       <?php endforeach; ?>

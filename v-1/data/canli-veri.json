@@ -1,0 +1,1368 @@
+{
+    "subeler": [
+        {
+            "slug": "uckuyular",
+            "ad": "Üçkuyular",
+            "adres": "Bahçeler Arası Mah. Haydar Aliyev Bulvarı No: 2/A Balçova / İzmir",
+            "telefon": "+905305687437",
+            "telefon_yazi": "0530 568 74 37",
+            "telefon2_yazi": "0850 850 0850",
+            "eposta": "uckuyular@bogazicirestaurant.com.tr",
+            "saat": "Her gün 09:00 – 24:00",
+            "gorsel": "sube-uckuyular.png",
+            "banner": "",
+            "enlem": 38.3873,
+            "boylam": 27.0399,
+            "yol_tarifi": "https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Uckuyular+Balcova",
+            "bolgeler": [
+                "Deniz manzaralı teras",
+                "İç salon"
+            ],
+            "paket_servis": "",
+            "not": "Kahvaltı Servisi Mevcuttur\nPaket Servis Mevcuttur"
+        },
+        {
+            "slug": "narlidere",
+            "ad": "Narlıdere",
+            "adres": "Limanreis Mah. Mithatpaşa Cd. No: 606, Narlıdere / İzmir",
+            "telefon": "+905309157651",
+            "telefon_yazi": "0 530 915 76 51",
+            "telefon2_yazi": "0850 850 0850",
+            "eposta": "narlidere@bogazicirestaurant.com.tr",
+            "saat": "Her gün 09:00 – 24:00",
+            "gorsel": "sube-narlidere.jpg",
+            "banner": "",
+            "enlem": 38.3925,
+            "boylam": 27.006,
+            "yol_tarifi": "https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Narlidere",
+            "bolgeler": [
+                "Sahil terası",
+                "Deniz Manzaralı Salon"
+            ],
+            "paket_servis": "",
+            "not": "Kahvaltı Servisi Mevcuttur\nPaket Servis Mevcuttur"
+        },
+        {
+            "slug": "bostanli",
+            "ad": "Bostanlı",
+            "adres": "Cengiz Topel Caddesi No: 38/B            Bostanlı / İzmir",
+            "telefon": "+905325719615",
+            "telefon_yazi": "0 532 571 96 15",
+            "telefon2_yazi": "0850 850 0850",
+            "eposta": "bostanli@bogazicirestaurant.com.tr",
+            "saat": "Her gün 09:00 – 24:00",
+            "gorsel": "sube-bostanli.png",
+            "banner": "",
+            "enlem": 38.4664,
+            "boylam": 27.0975,
+            "yol_tarifi": "https://www.google.com/maps/search/?api=1&query=Bogazici+Restaurant+Bostanli+Izmir",
+            "bolgeler": [
+                "Bahçe",
+                "İç salon",
+                "Üst kat"
+            ],
+            "paket_servis": "/hizmetler.php#paket-servis",
+            "not": "Kahvaltı Servisi Mevcuttur\nPaket Servis Mevcuttur"
+        }
+    ],
+    "sayfalar": {
+        "anasayfa": [
+            {
+                "tip": "hero",
+                "ustluk": "Boğaziçi Restaurant",
+                "baslik": "İzmir’de Lezzetin Buluşma Noktası",
+                "alt_baslik": "Üç şubemizde, özenle hazırlanan sofraları kaliteli hizmet ve Boğaziçi deneyimiyle buluşturuyoruz.",
+                "zemin": "koyu",
+                "buton_yazi": "Şubelerimizi Keşfedin",
+                "buton_link": "/subeler.php",
+                "buton2_yazi": "Rezervasyon",
+                "buton2_link": "/rezervasyon.php",
+                "gorsel": "hero-anasayfa.webp",
+                "gorsel_mobil": "hero-anasayfa-mobil.webp",
+                "gorsel_odak": "merkez",
+                "gorsel_alt": "Kordon’a bakan teras ve akşam servisi",
+                "alt_not": "Üçkuyular • Narlıdere • Bostanlı"
+            },
+            {
+                "tip": "metin-gorsel",
+                "baslik": "Yemekte Boğaziçi Dokunuşu",
+                "metin": "İyi bir yemeğin yalnızca lezzetten ibaret olmadığına inanıyoruz. Özenli sunum, kaliteli ürünler ve güçlü hizmet anlayışımızla her buluşmayı keyifli bir deneyime dönüştürüyoruz.",
+                "yon": "sag",
+                "zemin": "beyaz",
+                "buton_yazi": "Hikâyemiz",
+                "buton_link": "/kurumsal.php",
+                "gorsel": "yemekte-bogazici-dokunusu.png",
+                "gorsel_odak": "merkez",
+                "gorsel_alt": "Boğaziçi Restaurant salonu, deniz manzaralı masalar"
+            },
+            {
+                "tip": "sube-listesi",
+                "ustluk": "Şubeler",
+                "baslik": "Size En Yakın Boğaziçi",
+                "alt_baslik": "İzmir’in üç farklı noktasında aynı lezzet ve hizmet anlayışı.",
+                "zemin": "beyaz"
+            },
+            {
+                "tip": "metin-gorsel",
+                "baslik": "Güne Boğaziçi ile Başlayın",
+                "metin": "Özenle hazırlanan kahvaltılıklar, sıcak lezzetler ve sofranın vazgeçilmezleriyle güne keyifli bir başlangıç yapın. Kahvaltımız üç şubemizde de sizi bekliyor.",
+                "yon": "sol",
+                "zemin": "beyaz",
+                "buton_yazi": "Menüyü İncele",
+                "buton_link": "/menu.php",
+                "gorsel": "anasayfa-kahvalti.jpg",
+                "gorsel_odak": "merkez",
+                "gorsel_alt": "Peynir, reçel, zeytin ve sıcaklarla kurulmuş Boğaziçi kahvaltı sofrası"
+            },
+            {
+                "tip": "metin-gorsel",
+                "baslik": "Her Sofraya Bir Boğaziçi Klasiği",
+                "metin": "Geleneksel tatlardan özenle hazırlanan özel lezzetlere uzanan menümüzle, günün her anına eşlik eden zengin bir sofra sunuyoruz.",
+                "yon": "sag",
+                "zemin": "beyaz",
+                "buton_yazi": "Menüyü İncele",
+                "buton_link": "/menu.php",
+                "gorsel": "anasayfa-her-sofraya.jpg",
+                "gorsel_odak": "merkez",
+                "gorsel_alt": "Mezeler, balık ve salatalarla kurulmuş Boğaziçi sofrası"
+            },
+            {
+                "tip": "kart-izgara",
+                "baslik": "Boğaziçi’nden Kareler",
+                "alt_baslik": "Üç farklı lokasyon, aynı Boğaziçi atmosferi.",
+                "zemin": "beyaz",
+                "ogeler": [
+                    {
+                        "baslik": "Üçkuyular",
+                        "gorsel": "sube-uckuyular.jpg",
+                        "gorsel_alt": "Boğaziçi Üçkuyular şubesinden bir kare",
+                        "link": "/subeler.php#sube-uckuyular"
+                    },
+                    {
+                        "baslik": "Narlıdere",
+                        "gorsel": "sube-narlidere.jpg",
+                        "gorsel_alt": "Boğaziçi Narlıdere şubesinden bir kare",
+                        "link": "/subeler.php#sube-narlidere"
+                    },
+                    {
+                        "baslik": "Bostanlı",
+                        "gorsel": "bogazici-restaurant-bostanli.png",
+                        "gorsel_alt": "Boğaziçi Bostanlı şubesinden bir kare",
+                        "link": "/subeler.php#sube-bostanli"
+                    }
+                ]
+            },
+            {
+                "tip": "cta-bant",
+                "ustluk": "Rezervasyon",
+                "baslik": "Yeriniz Hazır",
+                "metin": "Boğaziçi deneyimini Üçkuyular, Narlıdere veya Bostanlı şubemizde yaşayın.",
+                "zemin": "koyu",
+                "buton_yazi": "Rezervasyon Yap",
+                "buton_link": "/rezervasyon.php",
+                "buton2_yazi": "Şubeleri Gör",
+                "buton2_link": "/subeler.php"
+            }
+        ],
+        "kurumsal": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Boğaziçi Restaurant",
+                "baslik": "1993’ten Bugüne, Aynı Özenle",
+                "alt_baslik": "İzmir’de başlayan Boğaziçi yolculuğu, bugün Bostanlı, Üçkuyular ve Narlıdere’de aynı kalite ve hizmet anlayışıyla devam ediyor.",
+                "gorsel": "basluk-kurumsal.webp",
+                "gorsel_odak": "ust",
+                "gorsel_alt": ""
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "beyaz",
+                "yon": "sag",
+                "ustluk": "Hikâyemiz",
+                "baslik": "İzmir’de Bir Boğaziçi Klasiği",
+                "metin": "Boğaziçi Restaurant’ın yolculuğu 1993 yılında Bostanlı’da başladı. 2010 yılında Üçkuyular, 2017 yılında ise Narlıdere şubesinin katılmasıyla Boğaziçi lezzetleri İzmir Körfezi’nin farklı noktalarında misafirleriyle buluşmaya devam etti.\nYıllar içinde değişen ve gelişen menümüzü; kaliteli ürün, özenli hazırlık ve misafir memnuniyetini merkeze alan hizmet anlayışımızla bir araya getiriyoruz.\nBugün üç şubemizde, yılların deneyimini her sofraya aynı özenle taşıyoruz.",
+                "gorsel": "kurumsal-bogazici-klasigi.jpg",
+                "gorsel_alt": "Boğaziçi Restaurant Üçkuyular, Bostanlı ve Narlıdere şubelerinden kareler"
+            },
+            {
+                "tip": "zaman-cizelgesi",
+                "zemin": "kum",
+                "baslik": "30 Yılı Aşan Bir Hikâye",
+                "ogeler": [
+                    {
+                        "yil": "1993",
+                        "baslik": "Bostanlı",
+                        "metin": "Boğaziçi Restaurant’ın İzmir’deki yolculuğu başladı."
+                    },
+                    {
+                        "yil": "2010",
+                        "baslik": "Üçkuyular",
+                        "metin": "Boğaziçi deneyimi Körfez’in diğer yakasına taşındı."
+                    },
+                    {
+                        "yil": "2017",
+                        "baslik": "Narlıdere",
+                        "metin": "Üçüncü şubemizle İzmir’deki hizmet ağımız genişledi."
+                    },
+                    {
+                        "yil": "Bugün",
+                        "baslik": "Üç Şube, Tek Boğaziçi",
+                        "metin": "Bostanlı, Üçkuyular ve Narlıdere’de aynı hizmet anlayışıyla misafirlerimizi ağırlamaya devam ediyoruz."
+                    }
+                ]
+            },
+            {
+                "tip": "kart-izgara",
+                "zemin": "beyaz",
+                "ustluk": "Çalışma biçimimiz",
+                "baslik": "Boğaziçi’nin Değişmeyen Değerleri",
+                "ogeler": [
+                    {
+                        "baslik": "Kalite",
+                        "metin": "Ürün seçiminden sunuma kadar her aşamada kaliteyi ön planda tutuyoruz."
+                    },
+                    {
+                        "baslik": "Özen",
+                        "metin": "Her tabağı, her sofrayı ve her misafirimizi Boğaziçi deneyiminin bir parçası olarak görüyoruz."
+                    },
+                    {
+                        "baslik": "Misafirperverlik",
+                        "metin": "Yılların deneyimini güler yüzlü ve özenli hizmet anlayışıyla buluşturuyoruz."
+                    }
+                ]
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "kum",
+                "yon": "sol",
+                "ustluk": "Mutfak Anlayışımız",
+                "baslik": "Lezzetin Temelinde Kalite Var",
+                "metin": "Mevsiminde balık çeşitlerinden yöresel kebaplara, Ege mutfağının zeytinyağlılarından sıcak ve soğuk mezelere uzanan zengin mutfağımızda, ürün kalitesini ve tazeliği ön planda tutuyoruz.",
+                "alinti": "“İyi Ye, İyi Yaşa”",
+                "gorsel": "kurumsal-mutfak-anlayisimiz.jpg",
+                "gorsel_odak": "alt",
+                "gorsel_alt": "Mutfakta özenle hazırlanan bir tabak"
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "beyaz",
+                "yon": "sag",
+                "ustluk": "Kalite & Hijyen",
+                "baslik": "Kalite, Boğaziçi’nin Temelidir",
+                "metin": "Sağlıklı ürün, hijyen ve kaliteli hizmet anlayışını mutfağımızın temel standartları arasında görüyoruz. Et ve balık hazırlama süreçlerinin ayrı mutfaklarda yürütülmesi dahil olmak üzere, mutfak organizasyonumuzu kalite ve hijyen anlayışımız doğrultusunda sürdürüyoruz.",
+                "gorsel": "kurumsal-kalite-hijyen.jpg",
+                "gorsel_alt": "Mutfakta kesme tahtasında hazırlanan taze balıklar"
+            },
+            {
+                "tip": "cta-bant",
+                "zemin": "koyu",
+                "baslik": "Boğaziçi Deneyimini Keşfedin",
+                "metin": "Bostanlı, Üçkuyular ve Narlıdere şubelerimizde sizi aynı özen ve misafirperverlikle karşılıyoruz.",
+                "buton_yazi": "Şubelerimiz",
+                "buton_link": "/subeler.php",
+                "buton2_yazi": "Rezervasyon",
+                "buton2_link": "/rezervasyon.php"
+            }
+        ],
+        "subeler": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Boğaziçi Restaurant",
+                "baslik": "Üç Şube, Tek Boğaziçi Deneyimi",
+                "alt_baslik": "İzmir’in üç farklı noktasında, aynı özenli hizmet anlayışı ve Boğaziçi lezzetleriyle sizi ağırlıyoruz.",
+                "gorsel": "basluk-subeler.webp",
+                "gorsel_odak": "merkez",
+                "gorsel_alt": ""
+            },
+            {
+                "tip": "sube-listesi",
+                "zemin": "beyaz",
+                "duzen": "yatay",
+                "baslik": "Boğaziçi’nde Buluşalım",
+                "alt_baslik": "Size en yakın Boğaziçi şubesini seçin, sofranızı ayırtın."
+            },
+            {
+                "tip": "cta-bant",
+                "zemin": "koyu",
+                "baslik": "Üç Farklı Lokasyon, Aynı Boğaziçi",
+                "metin": "İzmir’in üç farklı noktasında, aynı özen ve hizmet anlayışıyla sizi ağırlıyoruz.",
+                "buton_yazi": "Rezervasyon Yap",
+                "buton_link": "/rezervasyon.php"
+            }
+        ],
+        "hizmetler": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Boğaziçi Restaurant",
+                "baslik": "Her Buluşmaya Boğaziçi Dokunuşu",
+                "alt_baslik": "İş dünyasından özel davetlere, farklı ihtiyaçlara özenli mutfak ve profesyonel hizmet anlayışımızla eşlik ediyoruz.",
+                "gorsel": "basluk-hizmetler.webp",
+                "gorsel_alt": ""
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "beyaz",
+                "yon": "sag",
+                "ustluk": "01 — İş Toplantıları & Seminerler",
+                "baslik": "İş Buluşmalarınıza Özenli Bir Ev Sahipliği",
+                "metin": "İş yemekleri, kurumsal buluşmalar, toplantılar ve seminerler için Boğaziçi’nin hizmet anlayışını profesyonel organizasyon deneyimiyle bir araya getiriyoruz. Gruplara özel, farklı alternatiflerden oluşan fix menü seçeneklerimizle davetinizin içeriğine ve kişi sayısına uygun çözümler sunuyoruz.",
+                "buton_yazi": "Bilgi al",
+                "buton_link": "/iletisim.php",
+                "gorsel": "hizmet-is-toplantisi.jpg",
+                "gorsel_alt": "Deniz manzaralı salonda iş yemeği"
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "kum",
+                "yon": "sol",
+                "ustluk": "02 — Kahvaltı",
+                "baslik": "Güne Boğaziçi Kahvaltı Lezzetleriyle Başlayın",
+                "metin": "Özenle hazırlanan kahvaltı seçeneklerimiz ve keyifli sofralarımızla güne lezzetli bir başlangıç yapın. Bostanlı, Üçkuyular ve Narlıdere şubelerimizde Boğaziçi kahvaltı keyfini sevdiklerinizle paylaşın.",
+                "buton_yazi": "Şubelerimizi Keşfedin",
+                "buton_link": "/subeler.php",
+                "gorsel": "anasayfa-kahvalti.jpg",
+                "gorsel_alt": "Peynir, reçel, zeytin ve sıcaklarla kurulmuş Boğaziçi kahvaltı sofrası"
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "beyaz",
+                "yon": "sag",
+                "ustluk": "03 — Catering",
+                "baslik": "Boğaziçi Lezzetleri Dilediğiniz Yerde",
+                "metin": "Toplantı, davet ve özel organizasyonlarınız için Boğaziçi mutfağının deneyimini bulunduğunuz mekâna taşıyoruz.",
+                "buton_yazi": "Catering için bilgi al",
+                "buton_link": "/iletisim.php",
+                "gorsel": "hizmet-catering.jpg",
+                "gorsel_alt": "Deniz kenarında kurulmuş catering büfesi"
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "kum",
+                "yon": "sol",
+                "kimlik": "paket-servis",
+                "ustluk": "04 — Paket Servis",
+                "baslik": "Boğaziçi Lezzetleri Size Gelsin",
+                "metin": "Sevdiğiniz Boğaziçi lezzetlerini restoran deneyiminden ödün vermeden, özenli hazırlık ve paketleme anlayışıyla sofranıza ulaştırıyoruz.",
+                "buton_yazi": "Paket servis bilgi al",
+                "buton_link": "/iletisim.php",
+                "gorsel": "hizmet-paket-servis.png",
+                "gorsel_odak": "sol",
+                "gorsel_alt": "Boğaziçi logolu paket servis çantası ve yemek kapları"
+            },
+            {
+                "tip": "metin-gorsel",
+                "zemin": "beyaz",
+                "yon": "sag",
+                "kimlik": "grup-menu",
+                "ustluk": "05 — Grup Menüleri",
+                "baslik": "Gruplara Özel Fix Menü",
+                "metin": "Kurumsal yemeklerden özel davetlere, toplantılardan kalabalık grup organizasyonlarına kadar farklı ihtiyaçlara yönelik alternatifli fix menü seçenekleri sunuyoruz. Grup yapınıza, kişi sayınıza ve organizasyonunuzun içeriğine uygun menü alternatifleriyle planlama sürecini kolaylaştırıyoruz.",
+                "buton_yazi": "Bilgi Alın",
+                "buton_link": "/iletisim.php",
+                "gorsel": "hizmet-grup-menu.jpg",
+                "gorsel_alt": "Deniz manzaralı salonda grup için kurulmuş uzun masa"
+            },
+            {
+                "tip": "cta-bant",
+                "zemin": "koyu",
+                "baslik": "İhtiyacınıza Özel Çözümler",
+                "metin": "Organizasyon, catering ve diğer hizmetlerimiz hakkında detaylı bilgi almak için ekibimizle iletişime geçebilirsiniz.",
+                "buton_yazi": "Bilgi alın",
+                "buton_link": "/iletisim.php",
+                "buton2_yazi": "İletişim",
+                "buton2_link": "/iletisim.php"
+            }
+        ],
+        "menu": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Menü",
+                "baslik": "Boğaziçi Mutfağını Keşfedin",
+                "alt_baslik": "Deniz ürünlerinden Ege’nin sevilen lezzetlerine, mezelerden sıcaklara uzanan Boğaziçi mutfağını keşfedin.",
+                "gorsel": "basluk-menu.webp",
+                "gorsel_alt": ""
+            },
+            {
+                "tip": "menu-liste",
+                "zemin": "beyaz",
+                "alt_baslik": "Menü içeriği şubelere ve ürünlerin mevsimsel durumuna göre farklılık gösterebilir.",
+                "kategoriler": [
+                    {
+                        "ad": "Başlangıçlar",
+                        "urunler": [
+                            {
+                                "ad": "Komple Söğüş (Tulum Peynirli)"
+                            },
+                            {
+                                "ad": "Tereyağ & Erzincan Tulum Peynir"
+                            },
+                            {
+                                "ad": "Ezine Beyaz Peynir"
+                            },
+                            {
+                                "ad": "Eski Kaşar"
+                            },
+                            {
+                                "ad": "Tulum Peyniri"
+                            },
+                            {
+                                "ad": "Hellim Peyniri"
+                            },
+                            {
+                                "ad": "Eritme Tulum Peyniri"
+                            },
+                            {
+                                "ad": "Komple Söğüş (Beyaz Peynirli)"
+                            },
+                            {
+                                "ad": "Kavun Peynir"
+                            },
+                            {
+                                "ad": "Peynir Tabağı"
+                            },
+                            {
+                                "ad": "Karpuz Peynir"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Mezeler",
+                        "urunler": [
+                            {
+                                "ad": "Girit Kabağı"
+                            },
+                            {
+                                "ad": "Gelincik"
+                            },
+                            {
+                                "ad": "Atomlu Patlıcan Ezme"
+                            },
+                            {
+                                "ad": "Bademlik"
+                            },
+                            {
+                                "ad": "Fırında Enginar Kalbi"
+                            },
+                            {
+                                "ad": "Tekmil Fava"
+                            },
+                            {
+                                "ad": "Çıtır Meze"
+                            },
+                            {
+                                "ad": "Cunda Meze"
+                            },
+                            {
+                                "ad": "Antibiyotik"
+                            },
+                            {
+                                "ad": "Panzehir"
+                            },
+                            {
+                                "ad": "Fesleğenli Girit"
+                            },
+                            {
+                                "ad": "Kıtır Humus"
+                            },
+                            {
+                                "ad": "Köy Biberi"
+                            },
+                            {
+                                "ad": "Enginar Söğüş"
+                            },
+                            {
+                                "ad": "Şımarık"
+                            },
+                            {
+                                "ad": "Benjamin"
+                            },
+                            {
+                                "ad": "Köz Humus"
+                            },
+                            {
+                                "ad": "Altın Kereviz"
+                            },
+                            {
+                                "ad": "Fıstıklı Mor Kadife"
+                            },
+                            {
+                                "ad": "Mor Ve Ötesi"
+                            },
+                            {
+                                "ad": "Mantarlama"
+                            },
+                            {
+                                "ad": "Holosko"
+                            },
+                            {
+                                "ad": "Elmalı Pancar"
+                            },
+                            {
+                                "ad": "Kabaké"
+                            },
+                            {
+                                "ad": "Köz Patlıcan"
+                            },
+                            {
+                                "ad": "Yoğurtlu Semizotu (Mevsimsel)"
+                            },
+                            {
+                                "ad": "Kurucacık"
+                            },
+                            {
+                                "ad": "İncik Söğüş"
+                            },
+                            {
+                                "ad": "Antep Ezme"
+                            },
+                            {
+                                "ad": "Şakşuka"
+                            },
+                            {
+                                "ad": "Brokoli"
+                            },
+                            {
+                                "ad": "Paprika"
+                            },
+                            {
+                                "ad": "Fava"
+                            },
+                            {
+                                "ad": "Haydari"
+                            },
+                            {
+                                "ad": "Barbunya Pilaki"
+                            },
+                            {
+                                "ad": "Patlıcan Ezme"
+                            },
+                            {
+                                "ad": "Cibes (Mevsimsel)"
+                            },
+                            {
+                                "ad": "Karışık Ot Tabağı (Mevsim Otları)"
+                            },
+                            {
+                                "ad": "Dil Söğüş"
+                            },
+                            {
+                                "ad": "Pancar Turşusu"
+                            },
+                            {
+                                "ad": "Kuru Börülce"
+                            },
+                            {
+                                "ad": "Şevketi Bostan"
+                            },
+                            {
+                                "ad": "Atomlu Yoğurt"
+                            },
+                            {
+                                "ad": "Kuru Domates"
+                            },
+                            {
+                                "ad": "Köpeoğlu"
+                            },
+                            {
+                                "ad": "Ev Turşu"
+                            },
+                            {
+                                "ad": "Bademli Ezme"
+                            },
+                            {
+                                "ad": "Patlıcan Tarama"
+                            },
+                            {
+                                "ad": "Taze Börülce (Mevsimsel)"
+                            },
+                            {
+                                "ad": "Deniz Börülce (Mevsimsel)"
+                            },
+                            {
+                                "ad": "Çiğ Köfte"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Balık Mezeler",
+                        "urunler": [
+                            {
+                                "ad": "Füme Hamsi Salamura"
+                            },
+                            {
+                                "ad": "Bottarga"
+                            },
+                            {
+                                "ad": "Balık Pastırma"
+                            },
+                            {
+                                "ad": "Ahtapot Salatası"
+                            },
+                            {
+                                "ad": "Havyar Tarama"
+                            },
+                            {
+                                "ad": "Baby Ahtapot"
+                            },
+                            {
+                                "ad": "Ahtapot Carpaccio"
+                            },
+                            {
+                                "ad": "Lakerda"
+                            },
+                            {
+                                "ad": "Levrek Marine"
+                            },
+                            {
+                                "ad": "Füme Çiroz"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Ara Sıcaklar",
+                        "urunler": [
+                            {
+                                "ad": "Kaşarlı Sıcak Köz Patlıcan"
+                            },
+                            {
+                                "ad": "Kuşbaşı Kaşarlı Fındık Lahmacun"
+                            },
+                            {
+                                "ad": "Kaşarlı Kıymalı Fındık Lahmacun"
+                            },
+                            {
+                                "ad": "Şevketi Bostanlı Altı Ezmeli Sıcak Ot Tabağı"
+                            },
+                            {
+                                "ad": "Şevketi Bostanlı Sıcak Ot Tabağı"
+                            },
+                            {
+                                "ad": "Sade Sıcak Ot Tabağı"
+                            },
+                            {
+                                "ad": "Kıl Biberli Sıcak Tarator"
+                            },
+                            {
+                                "ad": "Kuşbaşılı Fındık Lahmacun"
+                            },
+                            {
+                                "ad": "Altı Ezmeli Sıcak Ot Tabağı"
+                            },
+                            {
+                                "ad": "İçli Köfte 1 Adet"
+                            },
+                            {
+                                "ad": "Pastırmalı Humus"
+                            },
+                            {
+                                "ad": "Pastırmalı Börek (1 Adet)"
+                            },
+                            {
+                                "ad": "Kaşarlı Mantar"
+                            },
+                            {
+                                "ad": "Tereyağında İncik"
+                            },
+                            {
+                                "ad": "Pomfrit"
+                            },
+                            {
+                                "ad": "Soğanlı Mantar"
+                            },
+                            {
+                                "ad": "Közde Soğan"
+                            },
+                            {
+                                "ad": "Közde Sarımsak"
+                            },
+                            {
+                                "ad": "Sıcak Köz Patlıcan"
+                            },
+                            {
+                                "ad": "Sıcak Antibiyotik"
+                            },
+                            {
+                                "ad": "Yaprak Ciğer"
+                            },
+                            {
+                                "ad": "Çöp Ciğer"
+                            },
+                            {
+                                "ad": "Kıymalı Fındık Lahmacun"
+                            },
+                            {
+                                "ad": "Mersin Köylü Patates"
+                            },
+                            {
+                                "ad": "Kokoreç"
+                            },
+                            {
+                                "ad": "Yunan Usulü Kabak"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Balık Ara Sıcaklar",
+                        "urunler": [
+                            {
+                                "ad": "Balık Çorba"
+                            },
+                            {
+                                "ad": "Kalamar Tava"
+                            },
+                            {
+                                "ad": "Kalamar Izgara"
+                            },
+                            {
+                                "ad": "Tereyağlı Karides"
+                            },
+                            {
+                                "ad": "Karides Güveç"
+                            },
+                            {
+                                "ad": "Ahtapot Izgara"
+                            },
+                            {
+                                "ad": "Ahtapot Güveç"
+                            },
+                            {
+                                "ad": "Deniz Mahsulleri Kokoreç"
+                            },
+                            {
+                                "ad": "Deniz Mahsulleri Börek (1 Adet)"
+                            },
+                            {
+                                "ad": "Sütte Balık (1 Porsiyon)"
+                            },
+                            {
+                                "ad": "Deniz Mahsullü Şevketi Bostan"
+                            },
+                            {
+                                "ad": "Bademli Levrek"
+                            },
+                            {
+                                "ad": "Deniz Mahsulleri Erişte"
+                            },
+                            {
+                                "ad": "Şevketi Bostanlı Levrek"
+                            },
+                            {
+                                "ad": "Karides Kokteyl"
+                            },
+                            {
+                                "ad": "Balık Simit"
+                            },
+                            {
+                                "ad": "Beybi Kalamar Izgara"
+                            },
+                            {
+                                "ad": "Okyanus Böreği"
+                            },
+                            {
+                                "ad": "Deniz Mahsüllü Mantı"
+                            },
+                            {
+                                "ad": "Balık Köfte (1 Adet)"
+                            },
+                            {
+                                "ad": "Beğendili Ahtapot"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Salatalar",
+                        "urunler": [
+                            {
+                                "ad": "Narlı Bahçe Salatası"
+                            },
+                            {
+                                "ad": "Gavurdağı Salata"
+                            },
+                            {
+                                "ad": "Kaşık Salata"
+                            },
+                            {
+                                "ad": "Mevsim Salata"
+                            },
+                            {
+                                "ad": "Yeşil Salata"
+                            },
+                            {
+                                "ad": "Ocakbaşı Salata"
+                            },
+                            {
+                                "ad": "İstanbul Salata"
+                            },
+                            {
+                                "ad": "Marul Salata"
+                            },
+                            {
+                                "ad": "Kahraman Salata"
+                            },
+                            {
+                                "ad": "Çoban Salata"
+                            },
+                            {
+                                "ad": "Bahçıvan Salata"
+                            },
+                            {
+                                "ad": "Karışık Salata"
+                            },
+                            {
+                                "ad": "Ev Salatası"
+                            },
+                            {
+                                "ad": "Roka Salata"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Peynirli Salatalar",
+                        "urunler": [
+                            {
+                                "ad": "Peynirli Kaşık Salata"
+                            },
+                            {
+                                "ad": "Peynirli Gavurdağı Salatası"
+                            },
+                            {
+                                "ad": "Peynirli Mevsim Salata"
+                            },
+                            {
+                                "ad": "Peynirli Yeşil Salata"
+                            },
+                            {
+                                "ad": "Peynirli Çoban Salata"
+                            },
+                            {
+                                "ad": "Peynirli İstanbul Salata"
+                            },
+                            {
+                                "ad": "Peynirli Marul Salata"
+                            },
+                            {
+                                "ad": "Peynirli Ev Salata"
+                            },
+                            {
+                                "ad": "Peynirli Karışık Salata"
+                            },
+                            {
+                                "ad": "Peynirli Roka Salata"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Pideler & Lahmacunlar",
+                        "urunler": [
+                            {
+                                "ad": "Kıymalı Pide"
+                            },
+                            {
+                                "ad": "Kıymalı Yumurtalı Pide"
+                            },
+                            {
+                                "ad": "Kıymalı Kaşarlı Pide"
+                            },
+                            {
+                                "ad": "Kaşarlı Pide"
+                            },
+                            {
+                                "ad": "Kuşbaşılı Pide"
+                            },
+                            {
+                                "ad": "Kaşarlı Yumurtalı Pide"
+                            },
+                            {
+                                "ad": "Kuşbaşılı Kaşarlı Pide"
+                            },
+                            {
+                                "ad": "Kuşbaşılı Yumurtalı Pide"
+                            },
+                            {
+                                "ad": "Lahmacun"
+                            },
+                            {
+                                "ad": "Kuşbaşılı Lahmacun"
+                            },
+                            {
+                                "ad": "Kuşbaşılı Kaşarlı Lahmacun"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Kebaplar",
+                        "urunler": [
+                            {
+                                "ad": "Karışık Izgara Piliçsiz"
+                            },
+                            {
+                                "ad": "Küşleme"
+                            },
+                            {
+                                "ad": "İnegöl Köfte"
+                            },
+                            {
+                                "ad": "Adana (Acılı)"
+                            },
+                            {
+                                "ad": "Urfa (Acısız)"
+                            },
+                            {
+                                "ad": "Kuzu Şiş"
+                            },
+                            {
+                                "ad": "Çöp Şiş"
+                            },
+                            {
+                                "ad": "Kuzu Pirzola"
+                            },
+                            {
+                                "ad": "Kuzu Kaburga"
+                            },
+                            {
+                                "ad": "Kasap Köfte"
+                            },
+                            {
+                                "ad": "Kuzu Kaburga Sıyırma"
+                            },
+                            {
+                                "ad": "Dürüm Beyti"
+                            },
+                            {
+                                "ad": "Kuzu Kaburga Şiş"
+                            },
+                            {
+                                "ad": "Tereyağında Küşleme"
+                            },
+                            {
+                                "ad": "Fıstıklı Dürüm Beyti"
+                            },
+                            {
+                                "ad": "Kaşarlı Köfte"
+                            },
+                            {
+                                "ad": "Yağlı Kara"
+                            },
+                            {
+                                "ad": "Karışık Izgara"
+                            },
+                            {
+                                "ad": "Kuzu Lokum"
+                            },
+                            {
+                                "ad": "Beyti Yoğurtlu Soslu"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Kebap Spesiyal",
+                        "urunler": [
+                            {
+                                "ad": "Alinazik (Urfadan)"
+                            },
+                            {
+                                "ad": "Kilis Alinazik"
+                            },
+                            {
+                                "ad": "Boğaziçi Pirzola"
+                            },
+                            {
+                                "ad": "Yoğurtlu Kebap (Adanadan)"
+                            },
+                            {
+                                "ad": "Yoğurtlu Kebap (Urfadan)"
+                            },
+                            {
+                                "ad": "Çökertme Kebabı (Küşlemeden)"
+                            },
+                            {
+                                "ad": "Boğaziçi Julyen Kebap"
+                            },
+                            {
+                                "ad": "Patlıcan Kebap"
+                            },
+                            {
+                                "ad": "Altı Ezmeli"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Dana Bonfile Çeşitleri",
+                        "urunler": [
+                            {
+                                "ad": "Bonfileden Çoban Kavurma"
+                            },
+                            {
+                                "ad": "Dana Bonfile Şiş"
+                            },
+                            {
+                                "ad": "Boğaziçi Lokum"
+                            },
+                            {
+                                "ad": "Boğaziçi Spagetti"
+                            },
+                            {
+                                "ad": "Tereyağında Lokum"
+                            },
+                            {
+                                "ad": "Boğaziçi Şaşlık"
+                            },
+                            {
+                                "ad": "Kaşarlı Bonfile"
+                            },
+                            {
+                                "ad": "Dana Bonfile Sote"
+                            },
+                            {
+                                "ad": "Kaşarlı Mantarlı Bonfile"
+                            },
+                            {
+                                "ad": "Soğanlı Bonfile"
+                            },
+                            {
+                                "ad": "Mantar Soslu Bonfile"
+                            },
+                            {
+                                "ad": "Bonfile"
+                            },
+                            {
+                                "ad": "Bonfileden Saç Kavurma"
+                            },
+                            {
+                                "ad": "Boğaziçi Lokum Çökertme"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Kavurma & Soteler",
+                        "urunler": [
+                            {
+                                "ad": "Çoban Kavurma"
+                            },
+                            {
+                                "ad": "Saç Kavurma (Kuzu Şişten)"
+                            },
+                            {
+                                "ad": "Kurban Kavurma"
+                            },
+                            {
+                                "ad": "Küşlemeden Çoban Kavurma"
+                            },
+                            {
+                                "ad": "Küşlemeden Kurban Kavurma"
+                            },
+                            {
+                                "ad": "Küşlemeden Et Sote"
+                            },
+                            {
+                                "ad": "Et Sote"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Piliçler",
+                        "urunler": [
+                            {
+                                "ad": "Terbiyeli Piliç Şiş"
+                            },
+                            {
+                                "ad": "Çıtır Kanat"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Balıklar",
+                        "urunler": [
+                            {
+                                "ad": "Kaya Levreği"
+                            },
+                            {
+                                "ad": "Levrek"
+                            },
+                            {
+                                "ad": "Levrek Lokum"
+                            },
+                            {
+                                "ad": "Barbun Balığı"
+                            },
+                            {
+                                "ad": "Deniz Çipura"
+                            },
+                            {
+                                "ad": "Sinarit"
+                            },
+                            {
+                                "ad": "Jumbo Karides"
+                            },
+                            {
+                                "ad": "Dil Balığı"
+                            },
+                            {
+                                "ad": "Dil Şiş"
+                            },
+                            {
+                                "ad": "Mercan Balığı"
+                            },
+                            {
+                                "ad": "Lüfer"
+                            },
+                            {
+                                "ad": "Çinekop"
+                            },
+                            {
+                                "ad": "Fangri"
+                            },
+                            {
+                                "ad": "Lagos"
+                            },
+                            {
+                                "ad": "Adabeyi"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Tatlılar",
+                        "urunler": [
+                            {
+                                "ad": "Künefe"
+                            },
+                            {
+                                "ad": "Kabak Tatlısı"
+                            },
+                            {
+                                "ad": "Ayva Tatlısı"
+                            },
+                            {
+                                "ad": "İncir Tatlısı"
+                            },
+                            {
+                                "ad": "Tekirdağ Peynir Tatlısı"
+                            },
+                            {
+                                "ad": "İrmik Helva"
+                            },
+                            {
+                                "ad": "Dondurmalı İrmik Helva"
+                            },
+                            {
+                                "ad": "Fırın Helva"
+                            },
+                            {
+                                "ad": "Çikolatalı Sufle"
+                            },
+                            {
+                                "ad": "Balbadem Tatlısı"
+                            },
+                            {
+                                "ad": "Sakızlı Muhallebi"
+                            },
+                            {
+                                "ad": "Antep Fıstıklı Kazandibi"
+                            },
+                            {
+                                "ad": "Dondurmalı Kazandibi"
+                            },
+                            {
+                                "ad": "Kechy Dondurma"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Kahvaltı",
+                        "urunler": [
+                            {
+                                "ad": "Takım Kahvaltı (Kişi Başı)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tip": "cta-bant",
+                "zemin": "kum",
+                "baslik": "Boğaziçi Sofrasında Yerinizi Ayırtın",
+                "metin": "Seçkin lezzetlerimizi Üçkuyular, Narlıdere ve Bostanlı şubelerimizde keşfedin.",
+                "buton_yazi": "Rezervasyon yap",
+                "buton_link": "/rezervasyon.php",
+                "buton2_yazi": "Şubelerimiz",
+                "buton2_link": "/subeler.php"
+            }
+        ],
+        "rezervasyon": [
+            {
+                "tip": "rezervasyon-akis",
+                "zemin": "beyaz",
+                "ustluk": "Rezervasyon",
+                "baslik": "Yeriniz hazır olsun",
+                "alt_baslik": "Şubenizi seçin, tarih ve saatinizi belirleyin. Rezervasyonunuz mesai saatinde onaylanır."
+            }
+        ],
+        "iletisim": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Boğaziçi Restaurant",
+                "baslik": "Bizimle İletişime Geçin",
+                "alt_baslik": "Görüş, öneri ve talepleriniz için bize ulaşabilir; şubelerimiz hakkında detaylı bilgi alabilirsiniz.",
+                "gorsel": "basluk-iletisim.webp",
+                "gorsel_alt": ""
+            },
+            {
+                "tip": "sube-iletisim",
+                "zemin": "kum",
+                "ustluk": "Şubeler",
+                "baslik": "Şubelerimize Ulaşın"
+            },
+            {
+                "tip": "harita-sekmeli",
+                "zemin": "beyaz",
+                "ustluk": "Harita",
+                "baslik": "Size En Yakın Boğaziçi"
+            },
+            {
+                "tip": "genel-iletisim",
+                "zemin": "kum",
+                "ustluk": "Genel",
+                "baslik": "Genel İletişim",
+                "telefon": "+908508500850",
+                "telefon_yazi": "0850 850 0850",
+                "eposta": "info@bogazicirestaurant.com.tr"
+            }
+        ],
+        "kvkk": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Kurumsal",
+                "baslik": "KVKK Aydınlatma Metni"
+            },
+            {
+                "tip": "belge",
+                "zemin": "beyaz",
+                "guncelleme": "Ocak 2026",
+                "bolumler": [
+                    {
+                        "baslik": "Veri Sorumlusu",
+                        "metin": "İşbu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca, Boğaziçi Restaurant (“Boğaziçi”, veri sorumlusu) tarafından işlenen kişisel verileriniz hakkında sizi bilgilendirmek amacıyla hazırlanmıştır."
+                    },
+                    {
+                        "baslik": "İşlenen Kişisel Veriler",
+                        "metin": "Rezervasyon, iletişim formu ve şube içi işlemleriniz sırasında ad soyad, telefon, e-posta, rezervasyon tercihleri ve mesaj içeriğiniz gibi kişisel verileriniz işlenmektedir."
+                    },
+                    {
+                        "baslik": "İşleme Amaçları",
+                        "metin": "Kişisel verileriniz; rezervasyon taleplerinizin karşılanması, iletişim formu üzerinden ilettiğiniz talep ve önerilerin yanıtlanması, hizmet kalitesinin artırılması ve yasal yükümlülüklerin yerine getirilmesi amaçlarıyla işlenir."
+                    },
+                    {
+                        "baslik": "Aktarım",
+                        "metin": "Kişisel verileriniz, yasal zorunluluklar dışında üçüncü kişilerle paylaşılmaz; yalnızca hizmetin sunumu için gerekli iş ortaklarımızla (örn. rezervasyon/SMS altyapı sağlayıcıları) sınırlı ölçüde paylaşılabilir."
+                    },
+                    {
+                        "baslik": "Haklarınız",
+                        "metin": "KVKK’nın 11. maddesi kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya silinmesini talep etme dahil haklarınızı kullanmak için info@bogazicirestaurant.com.tr adresinden bizimle iletişime geçebilirsiniz."
+                    }
+                ]
+            }
+        ],
+        "gizlilik": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Kurumsal",
+                "baslik": "Gizlilik Politikası"
+            },
+            {
+                "tip": "belge",
+                "zemin": "beyaz",
+                "guncelleme": "Ocak 2026",
+                "bolumler": [
+                    {
+                        "baslik": "Kapsam",
+                        "metin": "Bu gizlilik politikası, bogazicirestaurant.com.tr web sitesi üzerinden topladığımız bilgilerin nasıl kullanıldığını ve korunduğunu açıklar."
+                    },
+                    {
+                        "baslik": "Toplanan Bilgiler",
+                        "metin": "Rezervasyon ve iletişim formları aracılığıyla paylaştığınız ad soyad, telefon, e-posta ve mesaj bilgileri ile sitenin genel kullanım istatistiklerine ilişkin teknik veriler toplanır."
+                    },
+                    {
+                        "baslik": "Bilgilerin Kullanımı",
+                        "metin": "Toplanan bilgiler yalnızca rezervasyon süreçlerinizin yürütülmesi, taleplerinize dönüş yapılması ve site deneyiminin iyileştirilmesi amacıyla kullanılır; pazarlama amacıyla üçüncü taraflarla paylaşılmaz."
+                    },
+                    {
+                        "baslik": "Veri Güvenliği",
+                        "metin": "Kişisel verilerinizin güvenliğini sağlamak için makul teknik ve idari tedbirler alınmaktadır. Yine de internet üzerinden yapılan hiçbir veri aktarımının %100 güvenli olduğu garanti edilemez."
+                    },
+                    {
+                        "baslik": "İletişim",
+                        "metin": "Gizlilik politikamızla ilgili sorularınız için info@bogazicirestaurant.com.tr adresinden bize ulaşabilirsiniz."
+                    }
+                ]
+            }
+        ],
+        "cerez": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Kurumsal",
+                "baslik": "Çerez Aydınlatma Metni"
+            },
+            {
+                "tip": "belge",
+                "zemin": "beyaz",
+                "guncelleme": "Ocak 2026",
+                "bolumler": [
+                    {
+                        "baslik": "Çerez Nedir?",
+                        "metin": "Çerezler, ziyaret ettiğiniz web siteleri tarafından tarayıcınıza kaydedilen küçük metin dosyalarıdır. Sitemizin düzgün çalışmasını ve deneyiminizi iyileştirmeyi sağlarlar."
+                    },
+                    {
+                        "baslik": "Kullanılan Çerez Türleri",
+                        "metin": "Sitemizde; temel site işlevlerini sağlayan zorunlu çerezler ile ziyaretçi davranışlarını anonim biçimde ölçen performans/analiz çerezleri kullanılmaktadır."
+                    },
+                    {
+                        "baslik": "Çerez Yönetimi",
+                        "metin": "Tarayıcı ayarlarınız üzerinden çerezleri silebilir veya engelleyebilirsiniz. Ancak zorunlu çerezlerin engellenmesi, sitenin bazı bölümlerinin düzgün çalışmamasına neden olabilir."
+                    },
+                    {
+                        "baslik": "İletişim",
+                        "metin": "Çerez kullanımımızla ilgili sorularınız için info@bogazicirestaurant.com.tr adresinden bize ulaşabilirsiniz."
+                    }
+                ]
+            }
+        ],
+        "ik": [
+            {
+                "tip": "sayfa-basligi",
+                "zemin": "koyu",
+                "ustluk": "Kurumsal",
+                "baslik": "İnsan Kaynakları"
+            },
+            {
+                "tip": "belge",
+                "zemin": "beyaz",
+                "bolumler": [
+                    {
+                        "baslik": "Neden Boğaziçi?",
+                        "metin": "1993’ten bu yana İzmir’de aynı özenle hizmet veren ekibimiz, üç şubede büyümeye devam ediyor. Boğaziçi ailesinde uzun soluklu bir kariyer, güçlü bir mutfak kültürü ve misafirperverlik anlayışı sizi bekliyor."
+                    },
+                    {
+                        "baslik": "Açık Pozisyonlar",
+                        "metin": "Şu anda güncel ilan bulunmasa da, mutfak, servis ve yönetim alanlarında özgeçmişinizi değerlendirmek üzere ik@bogazicirestaurant.com.tr adresine iletebilirsiniz."
+                    },
+                    {
+                        "baslik": "Başvuru Süreci",
+                        "metin": "Başvurunuz İnsan Kaynakları ekibimiz tarafından değerlendirilir; uygun bir pozisyon açıldığında sizinle iletişime geçilir."
+                    },
+                    {
+                        "baslik": "KVKK Bilgilendirmesi",
+                        "metin": "Paylaştığınız özgeçmiş ve iletişim bilgileri, yalnızca işe alım süreçleri kapsamında işlenir. Detaylı bilgi için KVKK Aydınlatma Metni’ni inceleyebilirsiniz."
+                    }
+                ]
+            }
+        ]
+    }
+}

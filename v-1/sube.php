@@ -23,8 +23,14 @@ $bolumler = [
      'gorsel' => $sube['banner'] ?? '', 'gorsel_alt' => ''],
 
     ['tip' => 'metin-gorsel', 'zemin' => 'beyaz', 'yon' => 'sag',
-     'ustluk' => 'Mekân', 'baslik' => $sube['ad'] . '’ta bizi bulun',
-     'metin' => $sube['adres'] . "\n" . $sube['saat'] . (!empty($sube['not']) ? "\n" . $sube['not'] : '') . "\nBölgeler: " . implode(', ', $sube['bolgeler']),
+     'ustluk' => 'Mekân', 'baslik' => bulunma_eki($sube['ad']) . ' bizi bulun',
+     'bilgiler' => array_merge(
+         [['ikon' => 'location_on', 'metin' => $sube['adres']],
+          ['ikon' => 'schedule', 'metin' => $sube['saat']],
+          ['ikon' => 'call', 'html' => sube_telefon_satiri($sube)]],
+         sube_notlari($sube),
+         $sube['bolgeler'] ? [['ikon' => 'table_restaurant', 'metin' => implode(' · ', $sube['bolgeler'])]] : []
+     ),
      'gorsel' => $sube['gorsel'], 'gorsel_alt' => $sube['ad'] . ' şubesi',
      'buton_yazi' => 'Yol tarifi al', 'buton_link' => $sube['yol_tarifi']],
 

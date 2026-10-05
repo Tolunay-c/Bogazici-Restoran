@@ -21,9 +21,12 @@ $duzen = ($b['duzen'] ?? 'izgara') === 'yatay' ? 'yatay' : 'izgara';
                 </h3>
                 <p class="branch-row__address"><?= e($s['adres']) ?></p>
                 <p class="branch-row__hours"><?= e($s['saat']) ?></p>
-                <?php if (!empty($s['not'])): ?>
-                  <p class="branch__note"><span class="icon icon--sm" aria-hidden="true">free_breakfast</span><?= e($s['not']) ?></p>
+                <?php if (sube_telefonlari($s)): ?>
+                  <p class="branch__phone"><span class="icon icon--sm" aria-hidden="true">call</span><span class="phone-line"><?= sube_telefon_satiri($s) ?></span></p>
                 <?php endif; ?>
+                <?php foreach (sube_notlari($s) as $not): ?>
+                  <p class="branch__note"><span class="icon icon--sm" aria-hidden="true"><?= e($not['ikon']) ?></span><?= e($not['metin']) ?></p>
+                <?php endforeach; ?>
 
                 <ul class="branch-row__zones">
                   <?php foreach ($s['bolgeler'] as $bolge): ?>
@@ -33,7 +36,7 @@ $duzen = ($b['duzen'] ?? 'izgara') === 'yatay' ? 'yatay' : 'izgara';
               </div>
 
               <div class="branch-row__actions">
-                <a class="btn btn--primary" href="/rezervasyon.php?sube=<?= e($s['slug']) ?>">Rezervasyon yap</a>
+                <?php if (REZERVASYON_AKTIF): ?><a class="btn btn--primary" href="/rezervasyon.php?sube=<?= e($s['slug']) ?>">Rezervasyon yap</a><?php endif; ?>
                 <a class="btn btn--secondary" href="/sube.php?s=<?= e($s['slug']) ?>">Şubeyi incele</a>
                 <a class="btn btn--secondary" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol tarifi al</a>
               </div>
@@ -67,19 +70,18 @@ $duzen = ($b['duzen'] ?? 'izgara') === 'yatay' ? 'yatay' : 'izgara';
               </h3>
               <div class="branch__info">
                 <span><?= e($s['adres']) ?></span>
-                <a class="branch__phone" href="tel:<?= e($s['telefon']) ?>"><span class="icon icon--sm" aria-hidden="true">call</span><?= e($s['telefon_yazi']) ?></a>
-                <?php if (!empty($s['not'])): ?>
-                  <span class="branch__note"><span class="icon icon--sm" aria-hidden="true">free_breakfast</span><?= e($s['not']) ?></span>
+                <?php if (sube_telefonlari($s)): ?>
+                  <span class="branch__phone"><span class="icon icon--sm" aria-hidden="true">call</span><span class="phone-line"><?= sube_telefon_satiri($s) ?></span></span>
                 <?php endif; ?>
+                <?php foreach (sube_notlari($s) as $not): ?>
+                  <span class="branch__note"><span class="icon icon--sm" aria-hidden="true"><?= e($not['ikon']) ?></span><?= e($not['metin']) ?></span>
+                <?php endforeach; ?>
               </div>
             </div>
             <div class="card__actions branch__actions">
-              <a class="btn btn--primary" href="/rezervasyon.php?sube=<?= e($s['slug']) ?>">Rezervasyon</a>
+              <?php if (REZERVASYON_AKTIF): ?><a class="btn btn--primary" href="/rezervasyon.php?sube=<?= e($s['slug']) ?>">Rezervasyon</a><?php endif; ?>
               <div class="branch__secondary">
                 <a class="btn btn--secondary" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol tarifi</a>
-                <?php if (!empty($s['paket_servis'])): ?>
-                  <a class="btn btn--secondary" href="<?= e($s['paket_servis']) ?>">Paket servis</a>
-                <?php endif; ?>
               </div>
             </div>
           </li>

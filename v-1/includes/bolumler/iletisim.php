@@ -48,10 +48,12 @@
 
         <button class="btn btn--primary" type="submit">Mesajı gönder</button>
 
+        <?php if (REZERVASYON_AKTIF): ?>
         <p class="contact__form-reservation-note">
           Rezervasyon işlemleri için Rezervasyon sayfamızı kullanabilirsiniz.
           <a class="btn btn--secondary btn--sm" href="/rezervasyon.php">Rezervasyon yap</a>
         </p>
+        <?php endif; ?>
       </form>
     </div>
   </div>

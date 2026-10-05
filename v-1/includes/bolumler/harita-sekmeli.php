@@ -15,7 +15,8 @@ $ilk = SUBELER[0];
                 data-boylam="<?= e((string) $s['boylam']) ?>"
                 data-ad="<?= e($s['ad']) ?>"
                 data-adres="<?= e($s['adres']) ?>"
-                data-yol-tarifi="<?= e($s['yol_tarifi']) ?>">
+                data-yol-tarifi="<?= e($s['yol_tarifi']) ?>"
+                data-slug="<?= e($s['slug']) ?>">
           <?= e($s['ad']) ?>
         </button>
       <?php endforeach; ?>
@@ -35,6 +36,9 @@ $ilk = SUBELER[0];
           <p class="eyebrow" data-harita-sekmeli-ad><?= e($ilk['ad']) ?></p>
           <p style="margin-top:var(--bosluk-2)" data-harita-sekmeli-adres><?= e($ilk['adres']) ?></p>
         </div>
+        <?php foreach (SUBELER as $i => $s): if (!sube_telefonlari($s)) continue; ?>
+          <p class="map__phones phone-line" data-harita-sekmeli-tel="<?= e($s['slug']) ?>"<?= $i === 0 ? '' : ' hidden' ?>><?= sube_telefon_satiri($s) ?></p>
+        <?php endforeach; ?>
         <a class="btn btn--primary btn--sm" data-harita-sekmeli-link href="<?= e($ilk['yol_tarifi']) ?>" target="_blank" rel="noopener">
           Google Maps’te Aç <span aria-hidden="true">→</span>
         </a>

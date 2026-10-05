@@ -23,7 +23,9 @@ $s = $b['sube'] ?? SUBELER[0];
         <p class="text-muted" style="font-size:var(--yazi-sm)"><?= e($s['saat']) ?></p>
         <div class="branch__actions">
           <a class="btn btn--primary btn--sm" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol tarifi</a>
-          <a class="btn btn--text" href="tel:<?= e($s['telefon']) ?>"><?= e($s['telefon_yazi']) ?></a>
+          <?php if (sube_telefonlari($s)): ?>
+            <p class="map__phones phone-line"><?= sube_telefon_satiri($s) ?></p>
+          <?php endif; ?>
         </div>
       </div>
     </div>

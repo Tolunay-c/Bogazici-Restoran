@@ -18,6 +18,11 @@ function rezervasyon_yonlendir(string $sube = '', string $durum = ''): void
     exit;
 }
 
+if (!REZERVASYON_AKTIF) {
+    header('Location: /subeler.php', true, 303); // rezervasyon geçici kapalı
+    exit;
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
     rezervasyon_yonlendir();
 }

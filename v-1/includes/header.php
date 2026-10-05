@@ -30,7 +30,7 @@ $menu = [
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=block">
 
 <link rel="stylesheet" href="<?= VARLIK ?>/css/tokens.css?v=<?= SURUM ?>">
@@ -61,7 +61,7 @@ $menu = [
     </nav>
 
     <div class="site-header__actions">
-      <a class="btn btn--primary btn--sm" href="/rezervasyon.php">Rezervasyon</a>
+      <?php if (REZERVASYON_AKTIF): ?><a class="btn btn--primary btn--sm" href="/rezervasyon.php">Rezervasyon</a><?php endif; ?>
       <button class="menu-toggle" type="button" data-cekmece-ac aria-label="Menüyü aç" aria-expanded="false" aria-controls="cekmece">
         <span class="icon" aria-hidden="true">menu</span>
       </button>
@@ -85,7 +85,7 @@ $menu = [
     </nav>
 
     <div class="drawer__sub">
-      <a class="btn btn--primary btn--full" href="/rezervasyon.php">Rezervasyon yap</a>
+      <?php if (REZERVASYON_AKTIF): ?><a class="btn btn--primary btn--full" href="/rezervasyon.php">Rezervasyon yap</a><?php endif; ?>
       <a class="btn btn--secondary btn--full" href="tel:+908508500850">0850 850 0850</a>
     </div>
   </div>

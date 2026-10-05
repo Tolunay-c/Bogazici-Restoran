@@ -30,6 +30,15 @@ if ($tam) {
         <?php if (!empty($b['metin'])): ?>
           <div class="prose"><p><?= nl2br(e($b['metin'])) ?></p></div>
         <?php endif; ?>
+        <?php if (!empty($b['bilgiler'])): ?>
+          <ul class="text-image__facts">
+            <?php foreach ($b['bilgiler'] as $bilgi): if (($bilgi['metin'] ?? '') === '' && empty($bilgi['html'])) continue; ?>
+              <li><span class="icon icon--sm" aria-hidden="true"><?= e($bilgi['ikon'] ?? 'check_circle') ?></span><?php
+                // 'html' yalnızca kodun ürettiği güvenli işaretleme içindir (ör. telefon linkleri); panel verisi buraya gelmez
+                if (!empty($bilgi['html'])): ?><span class="phone-line"><?= $bilgi['html'] ?></span><?php else: ?><span><?= e($bilgi['metin']) ?></span><?php endif; ?></li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
         <?php if (!empty($b['alinti'])): ?>
           <blockquote class="text-image__quote"><?= e($b['alinti']) ?></blockquote>
         <?php endif; ?>

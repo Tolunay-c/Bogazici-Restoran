@@ -307,6 +307,9 @@
         if (adEl) adEl.textContent = sekme.getAttribute('data-ad') || '';
         if (adresEl) adresEl.textContent = sekme.getAttribute('data-adres') || '';
         if (link) link.setAttribute('href', sekme.getAttribute('data-yol-tarifi') || '#');
+        kok.querySelectorAll('[data-harita-sekmeli-tel]').forEach(function (tel) {
+          tel.hidden = tel.getAttribute('data-harita-sekmeli-tel') !== sekme.getAttribute('data-slug');
+        });
 
         setTimeout(function () { harita.invalidateSize(); }, 50);
       });
@@ -497,6 +500,41 @@
         setTimeout(function () { aktifPanel.removeAttribute('data-nefes'); }, 3600);
       }
     }
+  }
+
+  /* --- Menü: ekrandaki kategoriyi solda/üstte işaretle ---------- */
+  var menuNav = document.querySelector('.menu-list__nav');
+  if (menuNav) {
+    var navLinkler = Array.prototype.slice.call(menuNav.querySelectorAll('a[href^="#"]'));
+    var gruplar = navLinkler.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    var sonAktif = null;
+    var aktifIsaretle = function () {
+      // Header + yapışkan şeridin hemen altındaki çizgiyi geçen son grup aktiftir
+      // (masaüstünde şerit sol sütun olduğundan header altı esas alınır)
+      var dikey = getComputedStyle(menuNav).flexDirection === 'column';
+      var esik = dikey ? 160 : menuNav.getBoundingClientRect().bottom + 24;
+      var idx = 0;
+      gruplar.forEach(function (g, i) { if (g && g.getBoundingClientRect().top <= esik) idx = i; });
+      // Sayfanın dibinde son kısa kategoriler de seçilebilsin
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) idx = gruplar.length - 1;
+      var a = navLinkler[idx];
+      if (!a || a === sonAktif) return;
+      if (sonAktif) { sonAktif.classList.remove('is-active'); sonAktif.removeAttribute('aria-current'); }
+      a.classList.add('is-active'); a.setAttribute('aria-current', 'true');
+      sonAktif = a;
+      // Mobil yatay şeritte aktif öğeyi görünür alana kaydır (sayfayı kaydırmadan)
+      if (menuNav.scrollWidth > menuNav.clientWidth) {
+        menuNav.scrollTo({ left: a.offsetLeft - (menuNav.clientWidth - a.offsetWidth) / 2, behavior: azHareket ? 'auto' : 'smooth' });
+      }
+    };
+    var bekleyen = false;
+    window.addEventListener('scroll', function () {
+      if (bekleyen) return;
+      bekleyen = true;
+      requestAnimationFrame(function () { bekleyen = false; aktifIsaretle(); });
+    }, { passive: true });
+    window.addEventListener('resize', aktifIsaretle);
+    aktifIsaretle();
   }
 
   /* --- Scroll reveal: tek tip, stagger yok --------------------- */

@@ -29,7 +29,7 @@
           <li><a href="/menu.php">Menü</a></li>
           <li><a href="/hizmetler.php">Hizmetler</a></li>
           <li><a href="/iletisim.php">İletişim</a></li>
-          <li><a href="/rezervasyon.php">Rezervasyon</a></li>
+          <?php if (REZERVASYON_AKTIF): ?><li><a href="/rezervasyon.php">Rezervasyon</a></li><?php endif; ?>
         </ul>
       </div>
 
@@ -37,7 +37,12 @@
         <h2 class="site-footer__title">Şubelerimiz</h2>
         <ul class="site-footer__list">
           <?php foreach (SUBELER as $s): ?>
-            <li><a href="/subeler.php#sube-<?= e($s['slug']) ?>"><?= e($s['ad']) ?></a></li>
+            <li>
+              <a href="/subeler.php#sube-<?= e($s['slug']) ?>"><?= e($s['ad']) ?></a>
+              <?php if (sube_telefonlari($s)): ?>
+                <span class="site-footer__branch-tel phone-line"><?= sube_telefon_satiri($s) ?></span>
+              <?php endif; ?>
+            </li>
           <?php endforeach; ?>
         </ul>
         <ul class="site-footer__list" style="margin-top:var(--bosluk-5)">
@@ -74,10 +79,17 @@
     <span class="icon icon--sm" aria-hidden="true">directions</span>
     Yol tarifi
   </a>
+  <?php if (REZERVASYON_AKTIF): ?>
   <a href="/rezervasyon.php">
     <span class="icon icon--sm" aria-hidden="true">event_available</span>
     Rezervasyon
   </a>
+  <?php else: ?>
+  <a href="/menu.php">
+    <span class="icon icon--sm" aria-hidden="true">restaurant_menu</span>
+    Menü
+  </a>
+  <?php endif; ?>
 </nav>
 
 <dialog class="lightbox" id="lightbox" aria-label="Görsel önizleme">

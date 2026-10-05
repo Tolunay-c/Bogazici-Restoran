@@ -25,6 +25,11 @@ foreach (glob(__DIR__ . '/assets/{css,js}/*.{css,js}', GLOB_BRACE) ?: [] as $dos
 }
 define('SURUM', (string) $ensonDegisim);
 
+/* Rezervasyon sistemi açık mı? false iken rezervasyon sayfası, formu, tüm
+   "Rezervasyon" butonları/linkleri ve rezervasyon bölümleri siteden gizlenir.
+   Geri açmak için true yapmak yeterli (kod ve veri silinmedi). */
+define('REZERVASYON_AKTIF', false);
+
 /* İletişim ve rezervasyon formlarının gideceği adres. Boşsa mail atılmaz, mesaj yalnızca panele düşer.
    Yerelde (localhost) boştur, test mailleri gerçek adrese gitmez. */
 define('ILETISIM_EPOSTA', YEREL ? '' : (string) (getenv('ILETISIM_EPOSTA') ?: 'info@bogazicirestaurant.com.tr'));
