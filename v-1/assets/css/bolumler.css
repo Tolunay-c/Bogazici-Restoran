@@ -1103,6 +1103,8 @@ button.menu-item__image:focus-visible { outline: 2px solid var(--odak); outline-
   min-width: 0;
 }
 .branch-contact__info a .icon { color: var(--vurgu-metin); flex-shrink: 0; }
+.branch-contact__info .branch__note { display: flex; gap: var(--bosluk-3); margin: 0; }
+.branch-contact__info .branch__note .icon { color: var(--vurgu-metin); flex-shrink: 0; }
 @media (hover: hover) {
   .branch-contact__info a:hover { color: var(--vurgu-metin); }
 }

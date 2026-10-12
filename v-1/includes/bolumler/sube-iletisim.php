@@ -18,6 +18,9 @@
               <a href="mailto:<?= e($s['eposta']) ?>">
                 <span class="icon icon--sm" aria-hidden="true">mail</span><?= str_replace('@', '@<wbr>', e($s['eposta'])) ?>
               </a>
+              <?php foreach (sube_notlari($s) as $not): ?>
+                <p class="branch__note"><span class="icon icon--sm" aria-hidden="true"><?= e($not['ikon']) ?></span><?= e($not['metin']) ?></p>
+              <?php endforeach; ?>
             </div>
             <div class="branch-contact__actions">
               <a class="btn btn--secondary btn--sm" href="<?= e($s['yol_tarifi']) ?>" target="_blank" rel="noopener">Yol tarifi al</a>
