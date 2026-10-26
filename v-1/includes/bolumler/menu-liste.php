@@ -24,8 +24,8 @@ $kategoriler = array_filter($b['kategoriler'] ?? [], static function ($k): bool 
               <?php foreach (($k['urunler'] ?? []) as $u): ?>
                 <li class="menu-item<?= empty($u['gorsel']) ? ' menu-item--text' : '' ?>" data-goster>
                   <?php if (!empty($u['gorsel'])): ?>
-                    <button class="menu-item__image" type="button" data-lightbox="<?= e(gorsel_url($u['gorsel'], 1440)) ?>" aria-label="<?= e($u['ad']) ?> görselini büyüt">
-                      <?= gorsel($u['gorsel'], '88px', ['alt' => '', 'en' => 480, 'boy' => 480]) ?>
+                    <button class="menu-item__image" type="button" data-lightbox="<?= e(gorsel_url($u['gorsel'], 960)) ?>" aria-label="<?= e($u['ad']) ?> görselini büyüt">
+                      <img src="<?= e(gorsel_url($u['gorsel'], 480)) ?>" alt="" class="image" width="60" height="60" loading="lazy" decoding="async">
                     </button>
                   <?php endif; ?>
                   <div class="menu-item__body">

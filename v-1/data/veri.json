@@ -436,13 +436,15 @@
                                 "ad": "Gelincik"
                             },
                             {
-                                "ad": "Atomlu Patlıcan Ezme"
+                                "ad": "Atomlu Patlıcan Ezme",
+                                "gorsel": "menu/atomlu-patlican-ezme.jpg"
                             },
                             {
                                 "ad": "Bademlik"
                             },
                             {
-                                "ad": "Fırında Enginar Kalbi"
+                                "ad": "Fırında Enginar Kalbi",
+                                "gorsel": "menu/firinda-canak-enginar.jpg"
                             },
                             {
                                 "ad": "Tekmil Fava"
@@ -460,7 +462,8 @@
                                 "ad": "Panzehir"
                             },
                             {
-                                "ad": "Fesleğenli Girit"
+                                "ad": "Fesleğenli Girit",
+                                "gorsel": "menu/feslegenli-girit-ezme.jpg"
                             },
                             {
                                 "ad": "Kıtır Humus"
@@ -538,7 +541,8 @@
                                 "ad": "Patlıcan Ezme"
                             },
                             {
-                                "ad": "Cibes (Mevsimsel)"
+                                "ad": "Cibes (Mevsimsel)",
+                                "gorsel": "menu/cibes.jpg"
                             },
                             {
                                 "ad": "Karışık Ot Tabağı (Mevsim Otları)"
@@ -588,13 +592,15 @@
                         "ad": "Balık Mezeler",
                         "urunler": [
                             {
-                                "ad": "Füme Hamsi Salamura"
+                                "ad": "Füme Hamsi Salamura",
+                                "gorsel": "menu/fume-hamsi-salamura.jpg"
                             },
                             {
                                 "ad": "Bottarga"
                             },
                             {
-                                "ad": "Balık Pastırma"
+                                "ad": "Balık Pastırma",
+                                "gorsel": "menu/balik-pastirma.jpg"
                             },
                             {
                                 "ad": "Ahtapot Salatası"
@@ -612,10 +618,12 @@
                                 "ad": "Lakerda"
                             },
                             {
-                                "ad": "Levrek Marine"
+                                "ad": "Levrek Marine",
+                                "gorsel": "menu/levrek-marine.jpg"
                             },
                             {
-                                "ad": "Füme Çiroz"
+                                "ad": "Füme Çiroz",
+                                "gorsel": "menu/fume-ciroz.jpg"
                             }
                         ]
                     },
@@ -623,70 +631,90 @@
                         "ad": "Ara Sıcaklar",
                         "urunler": [
                             {
-                                "ad": "Kaşarlı Sıcak Köz Patlıcan"
+                                "ad": "Kaşarlı Sıcak Köz Patlıcan",
+                                "gorsel": "menu/kasrali-koz-patlican.jpg"
                             },
                             {
-                                "ad": "Kuşbaşı Kaşarlı Fındık Lahmacun"
+                                "ad": "Kuşbaşı Kaşarlı Fındık Lahmacun",
+                                "gorsel": "menu/kusbasili-kasarli-findik-lahmacun.jpg"
                             },
                             {
-                                "ad": "Kaşarlı Kıymalı Fındık Lahmacun"
+                                "ad": "Kaşarlı Kıymalı Fındık Lahmacun",
+                                "gorsel": "menu/findik-lahmacun-kasarli.jpg"
                             },
                             {
-                                "ad": "Şevketi Bostanlı Altı Ezmeli Sıcak Ot Tabağı"
+                                "ad": "Şevketi Bostanlı Altı Ezmeli Sıcak Ot Tabağı",
+                                "gorsel": "menu/alti-ezmeli-sevketi-bostanli-sicak-ot-tabagi.jpg"
                             },
                             {
-                                "ad": "Şevketi Bostanlı Sıcak Ot Tabağı"
+                                "ad": "Şevketi Bostanlı Sıcak Ot Tabağı",
+                                "gorsel": "menu/sevketi-bostanli-sicak-ot-tabagi.jpg"
                             },
                             {
-                                "ad": "Sade Sıcak Ot Tabağı"
+                                "ad": "Sade Sıcak Ot Tabağı",
+                                "gorsel": "menu/sade-sicak-ot-tabagi.jpg"
                             },
                             {
                                 "ad": "Kıl Biberli Sıcak Tarator"
                             },
                             {
-                                "ad": "Kuşbaşılı Fındık Lahmacun"
+                                "ad": "Kuşbaşılı Fındık Lahmacun",
+                                "gorsel": "menu/kusbasili-findik-lahmacun.jpg"
                             },
                             {
-                                "ad": "Altı Ezmeli Sıcak Ot Tabağı"
+                                "ad": "Altı Ezmeli Sıcak Ot Tabağı",
+                                "gorsel": "menu/alti-ezmeli-sicak-ot-tabagi.jpg"
                             },
                             {
-                                "ad": "İçli Köfte 1 Adet"
+                                "ad": "İçli Köfte 1 Adet",
+                                "gorsel": "menu/icli-kofte.jpg"
                             },
                             {
-                                "ad": "Pastırmalı Humus"
+                                "ad": "Pastırmalı Humus",
+                                "gorsel": "menu/pastirmali-humus.jpg"
                             },
                             {
-                                "ad": "Pastırmalı Börek (1 Adet)"
+                                "ad": "Pastırmalı Börek (1 Adet)",
+                                "gorsel": "menu/pastirmali-borek.jpg"
                             },
                             {
-                                "ad": "Kaşarlı Mantar"
+                                "ad": "Kaşarlı Mantar",
+                                "gorsel": "menu/kasarli-mantar.jpg"
                             },
                             {
-                                "ad": "Tereyağında İncik"
+                                "ad": "Tereyağında İncik",
+                                "gorsel": "menu/tereyaginda-incik.jpg"
                             },
                             {
-                                "ad": "Pomfrit"
+                                "ad": "Pomfrit",
+                                "gorsel": "menu/pomfrit.jpg"
                             },
                             {
-                                "ad": "Soğanlı Mantar"
+                                "ad": "Soğanlı Mantar",
+                                "gorsel": "menu/soganli-mantar.jpg"
                             },
                             {
-                                "ad": "Közde Soğan"
+                                "ad": "Közde Soğan",
+                                "gorsel": "menu/kozde-sogan.jpg"
                             },
                             {
-                                "ad": "Közde Sarımsak"
+                                "ad": "Közde Sarımsak",
+                                "gorsel": "menu/kozde-sarimsak.jpg"
                             },
                             {
-                                "ad": "Sıcak Köz Patlıcan"
+                                "ad": "Sıcak Köz Patlıcan",
+                                "gorsel": "menu/sicak-koz-patlican.jpg"
                             },
                             {
                                 "ad": "Sıcak Antibiyotik"
                             },
                             {
-                                "ad": "Yaprak Ciğer"
+                                "ad": "Yaprak Ciğer",
+                                "gorsel": "menu/yaprak-ciger.jpg"
                             },
                             {
-                                "ad": "Çöp Ciğer"
+                                "ad": "Çöp Ciğer",
+                                "gorsel": "menu/cop-ciger.jpg"
                             },
                             {
                                 "ad": "Kıymalı Fındık Lahmacun"
@@ -706,43 +734,55 @@
                         "ad": "Balık Ara Sıcaklar",
                         "urunler": [
                             {
-                                "ad": "Balık Çorba"
+                                "ad": "Balık Çorba",
+                                "gorsel": "menu/balik-corba.jpg"
                             },
                             {
-                                "ad": "Kalamar Tava"
+                                "ad": "Kalamar Tava",
+                                "gorsel": "menu/kalamar-tava.jpg"
                             },
                             {
-                                "ad": "Kalamar Izgara"
+                                "ad": "Kalamar Izgara",
+                                "gorsel": "menu/kalamar-izgara.jpg"
                             },
                             {
-                                "ad": "Tereyağlı Karides"
+                                "ad": "Tereyağlı Karides",
+                                "gorsel": "menu/tereyagli-karides.jpg"
                             },
                             {
-                                "ad": "Karides Güveç"
+                                "ad": "Karides Güveç",
+                                "gorsel": "menu/karides-guvec.jpg"
                             },
                             {
-                                "ad": "Ahtapot Izgara"
+                                "ad": "Ahtapot Izgara",
+                                "gorsel": "menu/ahtapot-izgara.jpg"
                             },
                             {
-                                "ad": "Ahtapot Güveç"
+                                "ad": "Ahtapot Güveç",
+                                "gorsel": "menu/ahtapot-guvec.jpg"
                             },
                             {
-                                "ad": "Deniz Mahsulleri Kokoreç"
+                                "ad": "Deniz Mahsulleri Kokoreç",
+                                "gorsel": "menu/deniz-mahsulleri-kokorec.jpg"
                             },
                             {
                                 "ad": "Deniz Mahsulleri Börek (1 Adet)"
                             },
                             {
-                                "ad": "Sütte Balık (1 Porsiyon)"
+                                "ad": "Sütte Balık (1 Porsiyon)",
+                                "gorsel": "menu/sutte-balik.jpg"
                             },
                             {
-                                "ad": "Deniz Mahsullü Şevketi Bostan"
+                                "ad": "Deniz Mahsullü Şevketi Bostan",
+                                "gorsel": "menu/deniz-mahsullu-sevketi-bostan.jpg"
                             },
                             {
-                                "ad": "Bademli Levrek"
+                                "ad": "Bademli Levrek",
+                                "gorsel": "menu/bademli-levrek.jpg"
                             },
                             {
-                                "ad": "Deniz Mahsulleri Erişte"
+                                "ad": "Deniz Mahsulleri Erişte",
+                                "gorsel": "menu/deniz-mahsulleri-eriste.jpg"
                             },
                             {
                                 "ad": "Şevketi Bostanlı Levrek"
@@ -757,16 +797,19 @@
                                 "ad": "Beybi Kalamar Izgara"
                             },
                             {
-                                "ad": "Okyanus Böreği"
+                                "ad": "Okyanus Böreği",
+                                "gorsel": "menu/okyanus-boregi.jpg"
                             },
                             {
                                 "ad": "Deniz Mahsüllü Mantı"
                             },
                             {
-                                "ad": "Balık Köfte (1 Adet)"
+                                "ad": "Balık Köfte (1 Adet)",
+                                "gorsel": "menu/balik-kofte.jpg"
                             },
                             {
-                                "ad": "Beğendili Ahtapot"
+                                "ad": "Beğendili Ahtapot",
+                                "gorsel": "menu/begendili-ahtapot.jpg"
                             }
                         ]
                     },
@@ -774,34 +817,42 @@
                         "ad": "Salatalar",
                         "urunler": [
                             {
-                                "ad": "Narlı Bahçe Salatası"
+                                "ad": "Narlı Bahçe Salatası",
+                                "gorsel": "menu/narli-bahce.jpg"
                             },
                             {
-                                "ad": "Gavurdağı Salata"
+                                "ad": "Gavurdağı Salata",
+                                "gorsel": "menu/gavurdagi.jpg"
                             },
                             {
-                                "ad": "Kaşık Salata"
+                                "ad": "Kaşık Salata",
+                                "gorsel": "menu/kasik-salata.jpg"
                             },
                             {
-                                "ad": "Mevsim Salata"
+                                "ad": "Mevsim Salata",
+                                "gorsel": "menu/mevsim-salata.jpg"
                             },
                             {
-                                "ad": "Yeşil Salata"
+                                "ad": "Yeşil Salata",
+                                "gorsel": "menu/yesil-salata.jpg"
                             },
                             {
-                                "ad": "Ocakbaşı Salata"
+                                "ad": "Ocakbaşı Salata",
+                                "gorsel": "menu/ocakbasi-salata.jpg"
                             },
                             {
                                 "ad": "İstanbul Salata"
                             },
                             {
-                                "ad": "Marul Salata"
+                                "ad": "Marul Salata",
+                                "gorsel": "menu/marul-salata.jpg"
                             },
                             {
                                 "ad": "Kahraman Salata"
                             },
                             {
-                                "ad": "Çoban Salata"
+                                "ad": "Çoban Salata",
+                                "gorsel": "menu/coban-salata.jpg"
                             },
                             {
                                 "ad": "Bahçıvan Salata"
@@ -810,10 +861,12 @@
                                 "ad": "Karışık Salata"
                             },
                             {
-                                "ad": "Ev Salatası"
+                                "ad": "Ev Salatası",
+                                "gorsel": "menu/ev-salata.jpg"
                             },
                             {
-                                "ad": "Roka Salata"
+                                "ad": "Roka Salata",
+                                "gorsel": "menu/roka-salata.jpg"
                             }
                         ]
                     },
@@ -856,37 +909,45 @@
                         "ad": "Pideler & Lahmacunlar",
                         "urunler": [
                             {
-                                "ad": "Kıymalı Pide"
+                                "ad": "Kıymalı Pide",
+                                "gorsel": "menu/kiymali-pide.jpg"
                             },
                             {
                                 "ad": "Kıymalı Yumurtalı Pide"
                             },
                             {
-                                "ad": "Kıymalı Kaşarlı Pide"
+                                "ad": "Kıymalı Kaşarlı Pide",
+                                "gorsel": "menu/kiymali-kasarli-pide.jpg"
                             },
                             {
-                                "ad": "Kaşarlı Pide"
+                                "ad": "Kaşarlı Pide",
+                                "gorsel": "menu/kasarli-pide.jpg"
                             },
                             {
-                                "ad": "Kuşbaşılı Pide"
+                                "ad": "Kuşbaşılı Pide",
+                                "gorsel": "menu/kusbasili-pide.jpg"
                             },
                             {
                                 "ad": "Kaşarlı Yumurtalı Pide"
                             },
                             {
-                                "ad": "Kuşbaşılı Kaşarlı Pide"
+                                "ad": "Kuşbaşılı Kaşarlı Pide",
+                                "gorsel": "menu/kusbasili-kasarli-pide.jpg"
                             },
                             {
-                                "ad": "Kuşbaşılı Yumurtalı Pide"
+                                "ad": "Kuşbaşılı Yumurtalı Pide",
+                                "gorsel": "menu/kusbasili-yumurtali-pide.jpg"
                             },
                             {
                                 "ad": "Lahmacun"
                             },
                             {
-                                "ad": "Kuşbaşılı Lahmacun"
+                                "ad": "Kuşbaşılı Lahmacun",
+                                "gorsel": "menu/kusbasili-lahmacun.jpg"
                             },
                             {
-                                "ad": "Kuşbaşılı Kaşarlı Lahmacun"
+                                "ad": "Kuşbaşılı Kaşarlı Lahmacun",
+                                "gorsel": "menu/kusbasili-kasarli-lahmacun.jpg"
                             }
                         ]
                     },
@@ -900,25 +961,31 @@
                                 "ad": "Küşleme"
                             },
                             {
-                                "ad": "İnegöl Köfte"
+                                "ad": "İnegöl Köfte",
+                                "gorsel": "menu/inegol-kofte.jpg"
                             },
                             {
-                                "ad": "Adana (Acılı)"
+                                "ad": "Adana (Acılı)",
+                                "gorsel": "menu/adana.jpg"
                             },
                             {
-                                "ad": "Urfa (Acısız)"
+                                "ad": "Urfa (Acısız)",
+                                "gorsel": "menu/urfa.jpg"
                             },
                             {
-                                "ad": "Kuzu Şiş"
+                                "ad": "Kuzu Şiş",
+                                "gorsel": "menu/kuzu-sis.jpg"
                             },
                             {
                                 "ad": "Çöp Şiş"
                             },
                             {
-                                "ad": "Kuzu Pirzola"
+                                "ad": "Kuzu Pirzola",
+                                "gorsel": "menu/pirzola.jpg"
                             },
                             {
-                                "ad": "Kuzu Kaburga"
+                                "ad": "Kuzu Kaburga",
+                                "gorsel": "menu/kaburga.jpg"
                             },
                             {
                                 "ad": "Kasap Köfte"
@@ -927,7 +994,8 @@
                                 "ad": "Kuzu Kaburga Sıyırma"
                             },
                             {
-                                "ad": "Dürüm Beyti"
+                                "ad": "Dürüm Beyti",
+                                "gorsel": "menu/durum-beyti.jpg"
                             },
                             {
                                 "ad": "Kuzu Kaburga Şiş"
@@ -939,19 +1007,22 @@
                                 "ad": "Fıstıklı Dürüm Beyti"
                             },
                             {
-                                "ad": "Kaşarlı Köfte"
+                                "ad": "Kaşarlı Köfte",
+                                "gorsel": "menu/kasarli-kofte.jpg"
                             },
                             {
                                 "ad": "Yağlı Kara"
                             },
                             {
-                                "ad": "Karışık Izgara"
+                                "ad": "Karışık Izgara",
+                                "gorsel": "menu/karisik-izgara.jpg"
                             },
                             {
                                 "ad": "Kuzu Lokum"
                             },
                             {
-                                "ad": "Beyti Yoğurtlu Soslu"
+                                "ad": "Beyti Yoğurtlu Soslu",
+                                "gorsel": "menu/yogurtlu-soslu-beyti.jpg"
                             }
                         ]
                     },
@@ -965,13 +1036,16 @@
                                 "ad": "Kilis Alinazik"
                             },
                             {
-                                "ad": "Boğaziçi Pirzola"
+                                "ad": "Boğaziçi Pirzola",
+                                "gorsel": "menu/bogazici-pirzola.jpg"
                             },
                             {
-                                "ad": "Yoğurtlu Kebap (Adanadan)"
+                                "ad": "Yoğurtlu Kebap (Adanadan)",
+                                "gorsel": "menu/yogurtlu-kebap.jpg"
                             },
                             {
-                                "ad": "Yoğurtlu Kebap (Urfadan)"
+                                "ad": "Yoğurtlu Kebap (Urfadan)",
+                                "gorsel": "menu/yogurtlu-kebap.jpg"
                             },
                             {
                                 "ad": "Çökertme Kebabı (Küşlemeden)"
@@ -991,16 +1065,19 @@
                         "ad": "Dana Bonfile Çeşitleri",
                         "urunler": [
                             {
-                                "ad": "Bonfileden Çoban Kavurma"
+                                "ad": "Bonfileden Çoban Kavurma",
+                                "gorsel": "menu/bonfileden-coban-kavurma.jpg"
                             },
                             {
                                 "ad": "Dana Bonfile Şiş"
                             },
                             {
-                                "ad": "Boğaziçi Lokum"
+                                "ad": "Boğaziçi Lokum",
+                                "gorsel": "menu/bogazici-lokum.jpg"
                             },
                             {
-                                "ad": "Boğaziçi Spagetti"
+                                "ad": "Boğaziçi Spagetti",
+                                "gorsel": "menu/bogazici-spagetti.jpg"
                             },
                             {
                                 "ad": "Tereyağında Lokum"
@@ -1009,7 +1086,8 @@
                                 "ad": "Boğaziçi Şaşlık"
                             },
                             {
-                                "ad": "Kaşarlı Bonfile"
+                                "ad": "Kaşarlı Bonfile",
+                                "gorsel": "menu/kasarli-bonfile.jpg"
                             },
                             {
                                 "ad": "Dana Bonfile Sote"
@@ -1018,13 +1096,16 @@
                                 "ad": "Kaşarlı Mantarlı Bonfile"
                             },
                             {
-                                "ad": "Soğanlı Bonfile"
+                                "ad": "Soğanlı Bonfile",
+                                "gorsel": "menu/soganli-bonfile.jpg"
                             },
                             {
-                                "ad": "Mantar Soslu Bonfile"
+                                "ad": "Mantar Soslu Bonfile",
+                                "gorsel": "menu/demiglace-solu-mantarli-bonfile-ipade.jpg"
                             },
                             {
-                                "ad": "Bonfile"
+                                "ad": "Bonfile",
+                                "gorsel": "menu/bonfile.jpg"
                             },
                             {
                                 "ad": "Bonfileden Saç Kavurma"
@@ -1038,7 +1119,8 @@
                         "ad": "Kavurma & Soteler",
                         "urunler": [
                             {
-                                "ad": "Çoban Kavurma"
+                                "ad": "Çoban Kavurma",
+                                "gorsel": "menu/coban-kavurma.jpg"
                             },
                             {
                                 "ad": "Saç Kavurma (Kuzu Şişten)"
@@ -1056,7 +1138,8 @@
                                 "ad": "Küşlemeden Et Sote"
                             },
                             {
-                                "ad": "Et Sote"
+                                "ad": "Et Sote",
+                                "gorsel": "menu/et-sote.jpg"
                             }
                         ]
                     },
@@ -1064,7 +1147,8 @@
                         "ad": "Piliçler",
                         "urunler": [
                             {
-                                "ad": "Terbiyeli Piliç Şiş"
+                                "ad": "Terbiyeli Piliç Şiş",
+                                "gorsel": "menu/terbiyeli-pilic-sis.jpg"
                             },
                             {
                                 "ad": "Çıtır Kanat"
@@ -1081,13 +1165,15 @@
                                 "ad": "Levrek"
                             },
                             {
-                                "ad": "Levrek Lokum"
+                                "ad": "Levrek Lokum",
+                                "gorsel": "menu/levrek-lokum.jpg"
                             },
                             {
                                 "ad": "Barbun Balığı"
                             },
                             {
-                                "ad": "Deniz Çipura"
+                                "ad": "Deniz Çipura",
+                                "gorsel": "menu/cipura.jpg"
                             },
                             {
                                 "ad": "Sinarit"
@@ -1099,7 +1185,8 @@
                                 "ad": "Dil Balığı"
                             },
                             {
-                                "ad": "Dil Şiş"
+                                "ad": "Dil Şiş",
+                                "gorsel": "menu/dil-sis.jpg"
                             },
                             {
                                 "ad": "Mercan Balığı"
@@ -1125,37 +1212,48 @@
                         "ad": "Tatlılar",
                         "urunler": [
                             {
-                                "ad": "Künefe"
+                                "ad": "Künefe",
+                                "gorsel": "menu/kunefe.jpg"
                             },
                             {
-                                "ad": "Kabak Tatlısı"
+                                "ad": "Kabak Tatlısı",
+                                "gorsel": "menu/kabak-tatlisi.jpg"
                             },
                             {
-                                "ad": "Ayva Tatlısı"
+                                "ad": "Ayva Tatlısı",
+                                "gorsel": "menu/ayva-tatlisi.jpg"
                             },
                             {
-                                "ad": "İncir Tatlısı"
+                                "ad": "İncir Tatlısı",
+                                "gorsel": "menu/incir-tatlisi.jpg"
                             },
                             {
-                                "ad": "Tekirdağ Peynir Tatlısı"
+                                "ad": "Tekirdağ Peynir Tatlısı",
+                                "gorsel": "menu/tekirdag-peynir-tatlisi.jpg"
                             },
                             {
-                                "ad": "İrmik Helva"
+                                "ad": "İrmik Helva",
+                                "gorsel": "menu/irmik-helva.jpg"
                             },
                             {
-                                "ad": "Dondurmalı İrmik Helva"
+                                "ad": "Dondurmalı İrmik Helva",
+                                "gorsel": "menu/dondurmali-irmik.jpg"
                             },
                             {
-                                "ad": "Fırın Helva"
+                                "ad": "Fırın Helva",
+                                "gorsel": "menu/firin-helva.jpg"
                             },
                             {
-                                "ad": "Çikolatalı Sufle"
+                                "ad": "Çikolatalı Sufle",
+                                "gorsel": "menu/cikolatali-sufle.jpg"
                             },
                             {
-                                "ad": "Balbadem Tatlısı"
+                                "ad": "Balbadem Tatlısı",
+                                "gorsel": "menu/balbadem.jpg"
                             },
                             {
-                                "ad": "Sakızlı Muhallebi"
+                                "ad": "Sakızlı Muhallebi",
+                                "gorsel": "menu/sakizli-muhallebi.jpg"
                             },
                             {
                                 "ad": "Antep Fıstıklı Kazandibi"

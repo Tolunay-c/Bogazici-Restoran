@@ -14,3 +14,8 @@ v-1/data/mesajlar.json
 # Yayın paketleri (paketle.sh çıktısı)
 dist/
 v-1/data/mail.log*
+
+.DS_Store
+v-1/IPAD*
+**/IPAD*
+*.CR2
