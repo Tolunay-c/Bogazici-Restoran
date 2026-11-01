@@ -220,3 +220,41 @@ function blob_sil(array $urller): bool
     }
     return true;
 }
+
+/**
+ * Sonradan eklenen varsayılan bölümleri, panelden kaydedilmiş eski veride
+ * eksikse tamamlar (veri.json'u ezmeden). Bölüm bir kez panelden kaydedilince
+ * veride kalıcı olur. Yalnızca burada listelenen kimlikler eklenir.
+ */
+function varsayilan_bolumleri_tamamla(array $veri): array
+{
+    $eklenecek = ['hizmetler' => ['vip-odalari']];
+    $varsayilan = require __DIR__ . '/../data/varsayilan.php';
+
+    foreach ($eklenecek as $sayfa => $kimlikler) {
+        if (!isset($veri['sayfalar'][$sayfa]) || !is_array($veri['sayfalar'][$sayfa])) {
+            continue;
+        }
+        foreach ($kimlikler as $kimlik) {
+            $var = false;
+            foreach ($veri['sayfalar'][$sayfa] as $b) {
+                if (($b['kimlik'] ?? '') === $kimlik) { $var = true; break; }
+            }
+            if ($var) continue;
+
+            $yeni = null;
+            foreach ($varsayilan['sayfalar'][$sayfa] ?? [] as $b) {
+                if (($b['kimlik'] ?? '') === $kimlik) { $yeni = $b; break; }
+            }
+            if ($yeni === null) continue;
+
+            // Kapanış bandından (cta-bant) önceye; yoksa sona
+            $konum = count($veri['sayfalar'][$sayfa]);
+            foreach ($veri['sayfalar'][$sayfa] as $i => $b) {
+                if (($b['tip'] ?? '') === 'cta-bant') { $konum = $i; }
+            }
+            array_splice($veri['sayfalar'][$sayfa], $konum, 0, [$yeni]);
+        }
+    }
+    return $veri;
+}

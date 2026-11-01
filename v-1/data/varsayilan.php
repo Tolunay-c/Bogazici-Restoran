@@ -259,6 +259,13 @@ $varsayilan['sayfalar']['hizmetler'] = [
         'gorsel' => 'hizmet-grup-menu.jpg', 'gorsel_alt' => 'Deniz manzaralı salonda grup için kurulmuş uzun masa',
     ],
     [
+        'tip' => 'metin-gorsel', 'zemin' => 'kum', 'yon' => 'sol', 'kimlik' => 'vip-odalari',
+        'ustluk' => '06 — Üçkuyular VIP Odaları', 'baslik' => 'Özel Buluşmalarınıza Ayrıcalıklı Bir Atmosfer',
+        'metin' => "Boğaziçi Restaurant Üçkuyular şubemizde yer alan VIP odalarımız, iş dünyasının önemli buluşmalarından özel kutlamalara kadar farklı organizasyonlar için konforlu ve seçkin bir ortam sunuyor.\n\nÖzenle tasarlanmış özel alanlarımızda, Boğaziçi’nin köklü mutfak deneyimini ve profesyonel hizmet anlayışını bir araya getiriyoruz.\n\nİş yemekleri, yönetici toplantıları, özel davetler ve sevdiklerinizle gerçekleştireceğiniz özel buluşmalar için ihtiyaçlarınıza uygun bir deneyim sunuyoruz.",
+        'buton_yazi' => 'VIP Odalarımız İçin Bilgi Alın', 'buton_link' => '/iletisim.php',
+        'gorsel' => 'hizmet-vip-odalari.jpg', 'gorsel_alt' => 'Boğaziçi Restaurant Üçkuyular şubesi VIP odası',
+    ],
+    [
         'tip' => 'cta-bant', 'zemin' => 'koyu',
         'baslik' => 'İhtiyacınıza Özel Çözümler',
         'metin' => 'Organizasyon, catering ve diğer hizmetlerimiz hakkında detaylı bilgi almak için ekibimizle iletişime geçebilirsiniz.',

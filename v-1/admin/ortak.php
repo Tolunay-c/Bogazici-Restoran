@@ -145,13 +145,13 @@ function veri_oku(): array
 {
     $depo = depo_veri_oku();
     if ($depo !== null) {
-        return $depo;
+        return varsayilan_bolumleri_tamamla($depo);
     }
     $y = veri_yolu();
     if (is_file($y)) {
         $d = json_decode((string) file_get_contents($y), true);
         if (is_array($d) && isset($d['subeler'], $d['sayfalar'])) {
-            return $d;
+            return varsayilan_bolumleri_tamamla($d);
         }
     }
     return require __DIR__ . '/../data/varsayilan.php';

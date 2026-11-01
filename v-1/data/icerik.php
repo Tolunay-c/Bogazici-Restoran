@@ -22,6 +22,8 @@ if ($depoVeri !== null) {
     }
 }
 
+$veri = varsayilan_bolumleri_tamamla($veri);
+
 if (!defined('SUBELER')) {
     define('SUBELER', $veri['subeler']);
 }
