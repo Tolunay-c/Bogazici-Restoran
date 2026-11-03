@@ -344,7 +344,6 @@ $menu_kategorileri = [
     ['ad' => 'Balık Mezeler', 'urunler' => [
         ['ad' => 'Füme Hamsi Salamura', 'gorsel' => 'menu/fume-hamsi-salamura.jpg'],
         ['ad' => 'Bottarga'],
-        ['ad' => 'Balık Pastırma', 'gorsel' => 'menu/balik-pastirma.jpg'],
         ['ad' => 'Ahtapot Salatası'],
         ['ad' => 'Havyar Tarama'],
         ['ad' => 'Baby Ahtapot'],

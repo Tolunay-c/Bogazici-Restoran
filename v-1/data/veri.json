@@ -446,24 +446,28 @@
                                 "ad": "Girit Kabağı"
                             },
                             {
-                                "ad": "Gelincik"
+                                "ad": "Gelincik",
+                                "gorsel": "menu/gelincik.jpg"
                             },
                             {
                                 "ad": "Atomlu Patlıcan Ezme",
                                 "gorsel": "menu/atomlu-patlican-ezme.jpg"
                             },
                             {
-                                "ad": "Bademlik"
+                                "ad": "Bademlik",
+                                "gorsel": "menu/bademlik.jpg"
                             },
                             {
                                 "ad": "Fırında Enginar Kalbi",
                                 "gorsel": "menu/firinda-canak-enginar.jpg"
                             },
                             {
-                                "ad": "Tekmil Fava"
+                                "ad": "Tekmil Fava",
+                                "gorsel": "menu/tekmil-fava.jpg"
                             },
                             {
-                                "ad": "Çıtır Meze"
+                                "ad": "Çıtır Meze",
+                                "gorsel": "menu/citir-meze.jpg"
                             },
                             {
                                 "ad": "Cunda Meze"
@@ -472,83 +476,107 @@
                                 "ad": "Antibiyotik"
                             },
                             {
-                                "ad": "Panzehir"
+                                "ad": "Panzehir",
+                                "gorsel": "menu/atomlu-panzehir.jpg"
                             },
                             {
                                 "ad": "Fesleğenli Girit",
                                 "gorsel": "menu/feslegenli-girit-ezme.jpg"
                             },
                             {
-                                "ad": "Kıtır Humus"
+                                "ad": "Kıtır Humus",
+                                "gorsel": "menu/kitir-humus.jpg"
                             },
                             {
-                                "ad": "Köy Biberi"
+                                "ad": "Köy Biberi",
+                                "gorsel": "menu/koy-biberi.jpg"
                             },
                             {
-                                "ad": "Enginar Söğüş"
+                                "ad": "Enginar Söğüş",
+                                "gorsel": "menu/enginar-sogus.jpg"
                             },
                             {
-                                "ad": "Şımarık"
+                                "ad": "Şımarık",
+                                "gorsel": "menu/simarik.jpg"
                             },
                             {
-                                "ad": "Benjamin"
+                                "ad": "Benjamin",
+                                "gorsel": "menu/benjamin.jpg"
                             },
                             {
-                                "ad": "Köz Humus"
+                                "ad": "Köz Humus",
+                                "gorsel": "menu/koz-humus.jpg"
                             },
                             {
-                                "ad": "Altın Kereviz"
+                                "ad": "Altın Kereviz",
+                                "gorsel": "menu/sapinda-kereviz.jpg"
                             },
                             {
-                                "ad": "Fıstıklı Mor Kadife"
+                                "ad": "Fıstıklı Mor Kadife",
+                                "gorsel": "menu/fistikli-mor-kadife.jpg"
                             },
                             {
-                                "ad": "Mor Ve Ötesi"
+                                "ad": "Mor Ve Ötesi",
+                                "gorsel": "menu/mor-ve-otesi.jpg"
                             },
                             {
-                                "ad": "Mantarlama"
+                                "ad": "Mantarlama",
+                                "gorsel": "menu/mantarlama.jpg"
                             },
                             {
-                                "ad": "Holosko"
+                                "ad": "Holosko",
+                                "gorsel": "menu/holosko.jpg"
                             },
                             {
                                 "ad": "Elmalı Pancar"
                             },
                             {
-                                "ad": "Kabaké"
+                                "ad": "Kabaké",
+                                "gorsel": "menu/kabake.jpg"
                             },
                             {
-                                "ad": "Köz Patlıcan"
+                                "ad": "Köz Patlıcan",
+                                "gorsel": "menu/koz-patlican.jpg"
                             },
                             {
-                                "ad": "Yoğurtlu Semizotu (Mevsimsel)"
+                                "ad": "Yoğurtlu Semizotu (Mevsimsel)",
+                                "gorsel": "menu/yogurtlu-semiz-otu.jpg"
                             },
                             {
-                                "ad": "Kurucacık"
+                                "ad": "Kurucacık",
+                                "gorsel": "menu/kuru-cacik.jpg"
                             },
                             {
-                                "ad": "İncik Söğüş"
+                                "ad": "İncik Söğüş",
+                                "gorsel": "menu/incik-sogus.jpg"
                             },
                             {
-                                "ad": "Antep Ezme"
+                                "ad": "Antep Ezme",
+                                "gorsel": "menu/antep-ezme.jpg"
                             },
                             {
-                                "ad": "Şakşuka"
+                                "ad": "Şakşuka",
+                                "gorsel": "menu/saksuka.jpg"
                             },
                             {
-                                "ad": "Brokoli"
+                                "ad": "Brokoli",
+                                "gorsel": "menu/brokoli.jpg"
                             },
                             {
-                                "ad": "Paprika"
+                                "ad": "Paprika",
+                                "gorsel": "menu/paprika.jpg"
                             },
                             {
-                                "ad": "Fava"
+                                "ad": "Fava",
+                                "gorsel": "menu/fava.jpg"
                             },
                             {
-                                "ad": "Haydari"
+                                "ad": "Haydari",
+                                "gorsel": "menu/haydari.jpg"
                             },
                             {
-                                "ad": "Barbunya Pilaki"
+                                "ad": "Barbunya Pilaki",
+                                "gorsel": "menu/barbunya-pilaki.jpg"
                             },
                             {
                                 "ad": "Patlıcan Ezme"
@@ -558,31 +586,40 @@
                                 "gorsel": "menu/cibes.jpg"
                             },
                             {
-                                "ad": "Karışık Ot Tabağı (Mevsim Otları)"
+                                "ad": "Karışık Ot Tabağı (Mevsim Otları)",
+                                "gorsel": "menu/karisik-ot-tabagi.jpg"
                             },
                             {
-                                "ad": "Dil Söğüş"
+                                "ad": "Dil Söğüş",
+                                "gorsel": "menu/dil-sogus.jpg"
                             },
                             {
-                                "ad": "Pancar Turşusu"
+                                "ad": "Pancar Turşusu",
+                                "gorsel": "menu/pancar-tursusu.jpg"
                             },
                             {
-                                "ad": "Kuru Börülce"
+                                "ad": "Kuru Börülce",
+                                "gorsel": "menu/kuru-borulce.jpg"
                             },
                             {
-                                "ad": "Şevketi Bostan"
+                                "ad": "Şevketi Bostan",
+                                "gorsel": "menu/sevketi-bostan.jpg"
                             },
                             {
-                                "ad": "Atomlu Yoğurt"
+                                "ad": "Atomlu Yoğurt",
+                                "gorsel": "menu/atomlu-yogurt.jpg"
                             },
                             {
-                                "ad": "Kuru Domates"
+                                "ad": "Kuru Domates",
+                                "gorsel": "menu/kuru-domates.jpg"
                             },
                             {
-                                "ad": "Köpeoğlu"
+                                "ad": "Köpeoğlu",
+                                "gorsel": "menu/kopeoglu.jpg"
                             },
                             {
-                                "ad": "Ev Turşu"
+                                "ad": "Ev Turşu",
+                                "gorsel": "menu/ev-tursu.jpg"
                             },
                             {
                                 "ad": "Bademli Ezme"
@@ -594,7 +631,8 @@
                                 "ad": "Taze Börülce (Mevsimsel)"
                             },
                             {
-                                "ad": "Deniz Börülce (Mevsimsel)"
+                                "ad": "Deniz Börülce (Mevsimsel)",
+                                "gorsel": "menu/deniz-borulce.jpg"
                             },
                             {
                                 "ad": "Çiğ Köfte"
@@ -610,10 +648,6 @@
                             },
                             {
                                 "ad": "Bottarga"
-                            },
-                            {
-                                "ad": "Balık Pastırma",
-                                "gorsel": "menu/balik-pastirma.jpg"
                             },
                             {
                                 "ad": "Ahtapot Salatası"
@@ -733,7 +767,8 @@
                                 "ad": "Kıymalı Fındık Lahmacun"
                             },
                             {
-                                "ad": "Mersin Köylü Patates"
+                                "ad": "Mersin Köylü Patates",
+                                "gorsel": "menu/mersin-koylu-patates.jpg"
                             },
                             {
                                 "ad": "Kokoreç"
@@ -815,6 +850,10 @@
                             },
                             {
                                 "ad": "Deniz Mahsüllü Mantı"
+                            },
+                            {
+                                "ad": "Balık Mantı",
+                                "gorsel": "menu/balik-manti.jpg"
                             },
                             {
                                 "ad": "Balık Köfte (1 Adet)",
@@ -1304,7 +1343,8 @@
                                 "ad": "Biberli lor"
                             },
                             {
-                                "ad": "Şımarık"
+                                "ad": "Şımarık",
+                                "gorsel": "menu/simarik.jpg"
                             },
                             {
                                 "ad": "Söğüş tabağı — domates, kıl biber ve salatalık"
