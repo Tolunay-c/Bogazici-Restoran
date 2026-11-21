@@ -1005,6 +1005,7 @@ main > .section[data-zemin="koyu"]:last-child {
 
 .menu-list__groups { display: grid; gap: var(--bosluk-9); }
 .menu-group__title { font-size: var(--yazi-2xl); margin-bottom: var(--bosluk-5); }
+.menu-group__desc { color: var(--metin-ikincil); max-width: 60ch; line-height: 1.7; }
 .menu-group__list { display: grid; gap: var(--bosluk-4); align-items: start; }
 
 .menu-item { display: grid; grid-template-columns: 60px 1fr; gap: var(--bosluk-4); align-items: start; align-content: start; }

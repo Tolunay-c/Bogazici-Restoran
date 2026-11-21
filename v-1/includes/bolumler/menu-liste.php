@@ -1,7 +1,7 @@
 <?php
 /** @var array $b */
 // Ürünü olmayan kategoriler (henüz içerik girilmemiş) sitede gösterilmez; panelde durur.
-$kategoriler = array_filter($b['kategoriler'] ?? [], static function ($k): bool { return !empty($k['urunler']); });
+$kategoriler = array_filter($b['kategoriler'] ?? [], static function ($k): bool { return !empty($k['urunler']) || !empty($k['aciklama']); });
 ?>
 <?= bolum_ac($b, 'menu-list') ?>
   <div class="container">
@@ -20,6 +20,10 @@ $kategoriler = array_filter($b['kategoriler'] ?? [], static function ($k): bool 
         <?php foreach ($kategoriler as $i => $k): ?>
           <section class="menu-group" id="kat-<?= $i ?>">
             <h2 class="menu-group__title"><?= e($k['ad']) ?></h2>
+            <?php if (!empty($k['aciklama'])): ?>
+              <p class="menu-group__desc"><?= e($k['aciklama']) ?></p>
+            <?php endif; ?>
+            <?php if (!empty($k['urunler'])): ?>
             <ul class="menu-group__list">
               <?php foreach (($k['urunler'] ?? []) as $u): ?>
                 <li class="menu-item<?= empty($u['gorsel']) ? ' menu-item--text' : '' ?>" data-goster>
@@ -36,6 +40,7 @@ $kategoriler = array_filter($b['kategoriler'] ?? [], static function ($k): bool 
                 </li>
               <?php endforeach; ?>
             </ul>
+            <?php endif; ?>
           </section>
         <?php endforeach; ?>
       </div>

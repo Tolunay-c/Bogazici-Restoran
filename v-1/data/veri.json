@@ -477,7 +477,7 @@
                             },
                             {
                                 "ad": "Panzehir",
-                                "gorsel": "menu/atomlu-panzehir.jpg"
+                                "gorsel": "menu/panzehir-yeni.jpg"
                             },
                             {
                                 "ad": "Fesleğenli Girit",
@@ -622,13 +622,7 @@
                                 "gorsel": "menu/ev-tursu.jpg"
                             },
                             {
-                                "ad": "Bademli Ezme"
-                            },
-                            {
                                 "ad": "Patlıcan Tarama"
-                            },
-                            {
-                                "ad": "Taze Börülce (Mevsimsel)"
                             },
                             {
                                 "ad": "Deniz Börülce (Mevsimsel)",
@@ -636,6 +630,9 @@
                             },
                             {
                                 "ad": "Çiğ Köfte"
+                            },
+                            {
+                                "ad": "Soğuk Arnavut Ciğeri"
                             }
                         ]
                     },
@@ -654,12 +651,6 @@
                             },
                             {
                                 "ad": "Havyar Tarama"
-                            },
-                            {
-                                "ad": "Baby Ahtapot"
-                            },
-                            {
-                                "ad": "Ahtapot Carpaccio"
                             },
                             {
                                 "ad": "Lakerda"
@@ -682,82 +673,27 @@
                         "ad": "Ara Sıcaklar",
                         "urunler": [
                             {
-                                "ad": "Kaşarlı Sıcak Köz Patlıcan",
-                                "gorsel": "menu/kasrali-koz-patlican.jpg"
-                            },
-                            {
-                                "ad": "Kuşbaşı Kaşarlı Fındık Lahmacun",
-                                "gorsel": "menu/kusbasili-kasarli-findik-lahmacun.jpg"
+                                "ad": "Kıymalı Fındık Lahmacun"
                             },
                             {
                                 "ad": "Kaşarlı Kıymalı Fındık Lahmacun",
                                 "gorsel": "menu/findik-lahmacun-kasarli.jpg"
                             },
                             {
-                                "ad": "Şevketi Bostanlı Altı Ezmeli Sıcak Ot Tabağı",
-                                "gorsel": "menu/alti-ezmeli-sevketi-bostanli-sicak-ot-tabagi.jpg"
-                            },
-                            {
-                                "ad": "Şevketi Bostanlı Sıcak Ot Tabağı",
-                                "gorsel": "menu/sevketi-bostanli-sicak-ot-tabagi.jpg"
-                            },
-                            {
-                                "ad": "Sade Sıcak Ot Tabağı",
-                                "gorsel": "menu/sade-sicak-ot-tabagi.jpg"
-                            },
-                            {
-                                "ad": "Kıl Biberli Sıcak Tarator"
-                            },
-                            {
                                 "ad": "Kuşbaşılı Fındık Lahmacun",
                                 "gorsel": "menu/kusbasili-findik-lahmacun.jpg"
                             },
                             {
-                                "ad": "Altı Ezmeli Sıcak Ot Tabağı",
-                                "gorsel": "menu/alti-ezmeli-sicak-ot-tabagi.jpg"
+                                "ad": "Kuşbaşı Kaşarlı Fındık Lahmacun",
+                                "gorsel": "menu/kusbasili-kasarli-findik-lahmacun.jpg"
                             },
                             {
-                                "ad": "İçli Köfte 1 Adet",
+                                "ad": "İçli Köfte",
                                 "gorsel": "menu/icli-kofte.jpg"
                             },
                             {
                                 "ad": "Pastırmalı Humus",
                                 "gorsel": "menu/pastirmali-humus.jpg"
-                            },
-                            {
-                                "ad": "Pastırmalı Börek (1 Adet)",
-                                "gorsel": "menu/pastirmali-borek.jpg"
-                            },
-                            {
-                                "ad": "Kaşarlı Mantar",
-                                "gorsel": "menu/kasarli-mantar.jpg"
-                            },
-                            {
-                                "ad": "Tereyağında İncik",
-                                "gorsel": "menu/tereyaginda-incik.jpg"
-                            },
-                            {
-                                "ad": "Pomfrit",
-                                "gorsel": "menu/pomfrit.jpg"
-                            },
-                            {
-                                "ad": "Soğanlı Mantar",
-                                "gorsel": "menu/soganli-mantar.jpg"
-                            },
-                            {
-                                "ad": "Közde Soğan",
-                                "gorsel": "menu/kozde-sogan.jpg"
-                            },
-                            {
-                                "ad": "Közde Sarımsak",
-                                "gorsel": "menu/kozde-sarimsak.jpg"
-                            },
-                            {
-                                "ad": "Sıcak Köz Patlıcan",
-                                "gorsel": "menu/sicak-koz-patlican.jpg"
-                            },
-                            {
-                                "ad": "Sıcak Antibiyotik"
                             },
                             {
                                 "ad": "Yaprak Ciğer",
@@ -768,17 +704,75 @@
                                 "gorsel": "menu/cop-ciger.jpg"
                             },
                             {
-                                "ad": "Kıymalı Fındık Lahmacun"
+                                "ad": "Sıcak Arnavut Ciğeri"
+                            },
+                            {
+                                "ad": "Kokoreç"
+                            },
+                            {
+                                "ad": "Pastırmalı Börek",
+                                "gorsel": "menu/pastirmali-borek.jpg"
+                            },
+                            {
+                                "ad": "Sıcak Köz Patlıcan",
+                                "gorsel": "menu/sicak-koz-patlican.jpg"
+                            },
+                            {
+                                "ad": "Kaşarlı Sıcak Köz Patlıcan",
+                                "gorsel": "menu/kasrali-koz-patlican.jpg"
+                            },
+                            {
+                                "ad": "Sade Sıcak Ot Tabağı",
+                                "gorsel": "menu/sade-sicak-ot-tabagi.jpg"
+                            },
+                            {
+                                "ad": "Altı Ezmeli Sıcak Ot Tabağı",
+                                "gorsel": "menu/alti-ezmeli-sicak-ot-tabagi.jpg"
+                            },
+                            {
+                                "ad": "Şevketi Bostanlı Sıcak Ot Tabağı",
+                                "gorsel": "menu/sevketi-bostanli-sicak-ot-tabagi.jpg"
+                            },
+                            {
+                                "ad": "Şevketi Bostanlı Altı Ezmeli Sıcak Ot Tabağı",
+                                "gorsel": "menu/alti-ezmeli-sevketi-bostanli-sicak-ot-tabagi.jpg"
+                            },
+                            {
+                                "ad": "Soğanlı Mantar",
+                                "gorsel": "menu/soganli-mantar.jpg"
+                            },
+                            {
+                                "ad": "Kaşarlı Mantar",
+                                "gorsel": "menu/kasarli-mantar.jpg"
+                            },
+                            {
+                                "ad": "Kıl Biberli Sıcak Tarator"
+                            },
+                            {
+                                "ad": "Sıcak Antibiyotik"
+                            },
+                            {
+                                "ad": "Tereyağında İncik",
+                                "gorsel": "menu/tereyaginda-incik.jpg"
+                            },
+                            {
+                                "ad": "Yunan Usulü Kabak"
                             },
                             {
                                 "ad": "Mersin Köylü Patates",
                                 "gorsel": "menu/mersin-koylu-patates.jpg"
                             },
                             {
-                                "ad": "Kokoreç"
+                                "ad": "Pomfrit",
+                                "gorsel": "menu/pomfrit.jpg"
                             },
                             {
-                                "ad": "Yunan Usulü Kabak"
+                                "ad": "Közde Soğan",
+                                "gorsel": "menu/kozde-sogan.jpg"
+                            },
+                            {
+                                "ad": "Közde Sarımsak",
+                                "gorsel": "menu/kozde-sarimsak.jpg"
                             }
                         ]
                     },
@@ -786,16 +780,15 @@
                         "ad": "Balık Ara Sıcaklar",
                         "urunler": [
                             {
-                                "ad": "Balık Çorba",
-                                "gorsel": "menu/balik-corba.jpg"
-                            },
-                            {
                                 "ad": "Kalamar Tava",
                                 "gorsel": "menu/kalamar-tava-yeni.jpg"
                             },
                             {
                                 "ad": "Kalamar Izgara",
                                 "gorsel": "menu/kalamar-izgara.jpg"
+                            },
+                            {
+                                "ad": "Baby Kalamar Izgara"
                             },
                             {
                                 "ad": "Tereyağlı Karides",
@@ -806,6 +799,9 @@
                                 "gorsel": "menu/karides-guvec.jpg"
                             },
                             {
+                                "ad": "Karides Kokteyl"
+                            },
+                            {
                                 "ad": "Ahtapot Izgara",
                                 "gorsel": "menu/ahtapot-izgara.jpg"
                             },
@@ -814,15 +810,24 @@
                                 "gorsel": "menu/ahtapot-guvec.jpg"
                             },
                             {
+                                "ad": "Beğendili Ahtapot",
+                                "gorsel": "menu/begendili-ahtapot.jpg"
+                            },
+                            {
                                 "ad": "Deniz Mahsulleri Kokoreç",
                                 "gorsel": "menu/deniz-mahsulleri-kokorec.jpg"
                             },
                             {
-                                "ad": "Deniz Mahsulleri Börek (1 Adet)"
+                                "ad": "Okyanus Böreği",
+                                "gorsel": "menu/okyanus-boregi.jpg"
                             },
                             {
-                                "ad": "Sütte Balık (1 Porsiyon)",
-                                "gorsel": "menu/sutte-balik.jpg"
+                                "ad": "Balık Mantı",
+                                "gorsel": "menu/balik-manti.jpg"
+                            },
+                            {
+                                "ad": "Deniz Mahsulleri Erişte",
+                                "gorsel": "menu/deniz-mahsulleri-eriste.jpg"
                             },
                             {
                                 "ad": "Deniz Mahsullü Şevketi Bostan",
@@ -833,39 +838,22 @@
                                 "gorsel": "menu/bademli-levrek.jpg"
                             },
                             {
-                                "ad": "Deniz Mahsulleri Erişte",
-                                "gorsel": "menu/deniz-mahsulleri-eriste.jpg"
-                            },
-                            {
                                 "ad": "Şevketi Bostanlı Levrek"
                             },
                             {
-                                "ad": "Karides Kokteyl"
+                                "ad": "Sütte Balık (1 Porsiyon)",
+                                "gorsel": "menu/sutte-balik.jpg"
                             },
                             {
                                 "ad": "Balık Simit"
-                            },
-                            {
-                                "ad": "Beybi Kalamar Izgara"
-                            },
-                            {
-                                "ad": "Okyanus Böreği",
-                                "gorsel": "menu/okyanus-boregi.jpg"
-                            },
-                            {
-                                "ad": "Deniz Mahsüllü Mantı"
-                            },
-                            {
-                                "ad": "Balık Mantı",
-                                "gorsel": "menu/balik-manti.jpg"
                             },
                             {
                                 "ad": "Balık Köfte (1 Adet)",
                                 "gorsel": "menu/balik-kofte.jpg"
                             },
                             {
-                                "ad": "Beğendili Ahtapot",
-                                "gorsel": "menu/begendili-ahtapot.jpg"
+                                "ad": "Balık Çorba",
+                                "gorsel": "menu/balik-corba.jpg"
                             }
                         ]
                     },
@@ -965,26 +953,30 @@
                         "ad": "Pideler & Lahmacunlar",
                         "urunler": [
                             {
-                                "ad": "Kıymalı Pide",
-                                "gorsel": "menu/kiymali-pide.jpg"
+                                "ad": "Lahmacun"
                             },
                             {
-                                "ad": "Kıymalı Yumurtalı Pide"
+                                "ad": "Kuşbaşılı Lahmacun",
+                                "gorsel": "menu/kusbasili-lahmacun.jpg"
+                            },
+                            {
+                                "ad": "Kuşbaşılı Kaşarlı Lahmacun",
+                                "gorsel": "menu/kusbasili-kasarli-lahmacun.jpg"
+                            },
+                            {
+                                "ad": "Kıymalı Pide",
+                                "gorsel": "menu/kiymali-pide.jpg"
                             },
                             {
                                 "ad": "Kıymalı Kaşarlı Pide",
                                 "gorsel": "menu/kiymali-kasarli-pide.jpg"
                             },
                             {
-                                "ad": "Kaşarlı Pide",
-                                "gorsel": "menu/kasarli-pide.jpg"
+                                "ad": "Kıymalı Yumurtalı Pide"
                             },
                             {
                                 "ad": "Kuşbaşılı Pide",
                                 "gorsel": "menu/kusbasili-pide.jpg"
-                            },
-                            {
-                                "ad": "Kaşarlı Yumurtalı Pide"
                             },
                             {
                                 "ad": "Kuşbaşılı Kaşarlı Pide",
@@ -995,31 +987,17 @@
                                 "gorsel": "menu/kusbasili-yumurtali-pide.jpg"
                             },
                             {
-                                "ad": "Lahmacun"
+                                "ad": "Kaşarlı Pide",
+                                "gorsel": "menu/kasarli-pide.jpg"
                             },
                             {
-                                "ad": "Kuşbaşılı Lahmacun",
-                                "gorsel": "menu/kusbasili-lahmacun.jpg"
-                            },
-                            {
-                                "ad": "Kuşbaşılı Kaşarlı Lahmacun",
-                                "gorsel": "menu/kusbasili-kasarli-lahmacun.jpg"
+                                "ad": "Kaşarlı Yumurtalı Pide"
                             }
                         ]
                     },
                     {
                         "ad": "Kebaplar",
                         "urunler": [
-                            {
-                                "ad": "Karışık Izgara Piliçsiz"
-                            },
-                            {
-                                "ad": "Küşleme"
-                            },
-                            {
-                                "ad": "İnegöl Köfte",
-                                "gorsel": "menu/inegol-kofte.jpg"
-                            },
                             {
                                 "ad": "Adana (Acılı)",
                                 "gorsel": "menu/adana.jpg"
@@ -1036,6 +1014,21 @@
                                 "ad": "Çöp Şiş"
                             },
                             {
+                                "ad": "Kuzu Kaburga Şiş"
+                            },
+                            {
+                                "ad": "Küşleme"
+                            },
+                            {
+                                "ad": "Tereyağında Küşleme"
+                            },
+                            {
+                                "ad": "Kuzu Lokum"
+                            },
+                            {
+                                "ad": "Yağlı Kara"
+                            },
+                            {
                                 "ad": "Kuzu Pirzola",
                                 "gorsel": "menu/pirzola.jpg"
                             },
@@ -1044,41 +1037,33 @@
                                 "gorsel": "menu/kaburga.jpg"
                             },
                             {
-                                "ad": "Kasap Köfte"
-                            },
-                            {
                                 "ad": "Kuzu Kaburga Sıyırma"
                             },
                             {
-                                "ad": "Dürüm Beyti",
-                                "gorsel": "menu/durum-beyti.jpg"
-                            },
-                            {
-                                "ad": "Kuzu Kaburga Şiş"
-                            },
-                            {
-                                "ad": "Tereyağında Küşleme"
-                            },
-                            {
-                                "ad": "Fıstıklı Dürüm Beyti"
+                                "ad": "Kasap Köfte"
                             },
                             {
                                 "ad": "Kaşarlı Köfte",
                                 "gorsel": "menu/kasarli-kofte.jpg"
                             },
                             {
-                                "ad": "Yağlı Kara"
+                                "ad": "İnegöl Köfte",
+                                "gorsel": "menu/inegol-kofte.jpg"
                             },
                             {
-                                "ad": "Karışık Izgara",
-                                "gorsel": "menu/karisik-izgara.jpg"
+                                "ad": "Dürüm Beyti",
+                                "gorsel": "menu/durum-beyti.jpg"
                             },
                             {
-                                "ad": "Kuzu Lokum"
+                                "ad": "Fıstıklı Dürüm Beyti"
                             },
                             {
                                 "ad": "Beyti Yoğurtlu Soslu",
                                 "gorsel": "menu/yogurtlu-soslu-beyti.jpg"
+                            },
+                            {
+                                "ad": "Karışık Izgara",
+                                "gorsel": "menu/karisik-izgara.jpg"
                             }
                         ]
                     },
@@ -1086,14 +1071,20 @@
                         "ad": "Kebap Spesiyal",
                         "urunler": [
                             {
+                                "ad": "Boğaziçi Pirzola",
+                                "gorsel": "menu/bogazici-pirzola.jpg"
+                            },
+                            {
+                                "ad": "Boğaziçi Julyen Kebap"
+                            },
+                            {
+                                "ad": "Çökertme Kebabı (Küşlemeden)"
+                            },
+                            {
                                 "ad": "Alinazik (Urfadan)"
                             },
                             {
                                 "ad": "Kilis Alinazik"
-                            },
-                            {
-                                "ad": "Boğaziçi Pirzola",
-                                "gorsel": "menu/bogazici-pirzola.jpg"
                             },
                             {
                                 "ad": "Yoğurtlu Kebap (Adanadan)",
@@ -1102,12 +1093,6 @@
                             {
                                 "ad": "Yoğurtlu Kebap (Urfadan)",
                                 "gorsel": "menu/yogurtlu-kebap.jpg"
-                            },
-                            {
-                                "ad": "Çökertme Kebabı (Küşlemeden)"
-                            },
-                            {
-                                "ad": "Boğaziçi Julyen Kebap"
                             },
                             {
                                 "ad": "Patlıcan Kebap"
@@ -1121,53 +1106,53 @@
                         "ad": "Dana Bonfile Çeşitleri",
                         "urunler": [
                             {
-                                "ad": "Bonfileden Çoban Kavurma",
-                                "gorsel": "menu/bonfileden-coban-kavurma.jpg"
-                            },
-                            {
-                                "ad": "Dana Bonfile Şiş"
-                            },
-                            {
                                 "ad": "Boğaziçi Lokum",
                                 "gorsel": "menu/bogazici-lokum.jpg"
+                            },
+                            {
+                                "ad": "Tereyağında Lokum"
+                            },
+                            {
+                                "ad": "Boğaziçi Lokum Çökertme"
+                            },
+                            {
+                                "ad": "Boğaziçi Şaşlık"
                             },
                             {
                                 "ad": "Boğaziçi Spagetti",
                                 "gorsel": "menu/bogazici-spagetti.jpg"
                             },
                             {
-                                "ad": "Tereyağında Lokum"
-                            },
-                            {
-                                "ad": "Boğaziçi Şaşlık"
+                                "ad": "Bonfile",
+                                "gorsel": "menu/bonfile.jpg"
                             },
                             {
                                 "ad": "Kaşarlı Bonfile",
                                 "gorsel": "menu/kasarli-bonfile.jpg"
                             },
                             {
-                                "ad": "Dana Bonfile Sote"
-                            },
-                            {
                                 "ad": "Kaşarlı Mantarlı Bonfile"
-                            },
-                            {
-                                "ad": "Soğanlı Bonfile",
-                                "gorsel": "menu/soganli-bonfile.jpg"
                             },
                             {
                                 "ad": "Mantar Soslu Bonfile",
                                 "gorsel": "menu/demiglace-solu-mantarli-bonfile-ipade.jpg"
                             },
                             {
-                                "ad": "Bonfile",
-                                "gorsel": "menu/bonfile.jpg"
+                                "ad": "Soğanlı Bonfile",
+                                "gorsel": "menu/soganli-bonfile.jpg"
+                            },
+                            {
+                                "ad": "Dana Bonfile Şiş"
+                            },
+                            {
+                                "ad": "Bonfileden Çoban Kavurma",
+                                "gorsel": "menu/bonfileden-coban-kavurma.jpg"
                             },
                             {
                                 "ad": "Bonfileden Saç Kavurma"
                             },
                             {
-                                "ad": "Boğaziçi Lokum Çökertme"
+                                "ad": "Dana Bonfile Sote"
                             }
                         ]
                     },
@@ -1179,23 +1164,23 @@
                                 "gorsel": "menu/coban-kavurma.jpg"
                             },
                             {
+                                "ad": "Küşlemeden Çoban Kavurma"
+                            },
+                            {
                                 "ad": "Saç Kavurma (Kuzu Şişten)"
                             },
                             {
                                 "ad": "Kurban Kavurma"
                             },
                             {
-                                "ad": "Küşlemeden Çoban Kavurma"
-                            },
-                            {
                                 "ad": "Küşlemeden Kurban Kavurma"
-                            },
-                            {
-                                "ad": "Küşlemeden Et Sote"
                             },
                             {
                                 "ad": "Et Sote",
                                 "gorsel": "menu/et-sote.jpg"
+                            },
+                            {
+                                "ad": "Küşlemeden Et Sote"
                             }
                         ]
                     },
@@ -1323,56 +1308,68 @@
                         ]
                     },
                     {
-                        "ad": "Kahvaltı",
+                        "ad": "Takım Kahvaltı",
+                        "urunler": [],
+                        "aciklama": "Yeşil zeytin ve siyah zeytin, çemen, iki çeşit reçel (kendi üretimimizdir), bal ve kaymak, çikolata, tereyağı, biberli lor, şımarık, söğüş tabağı (domates, kıl biber ve salatalık), peynir tabağı (tulum, beyaz peynir ve taze kaşar), sigara böreği, patates kızartması, pişi, taze yeşillikler, çay, gevrek ve ekmek çeşitleri."
+                    },
+                    {
+                        "ad": "Kahvaltı Ekstralar",
                         "urunler": [
                             {
-                                "ad": "Yeşil zeytin ve siyah zeytin"
+                                "ad": "Yumurta Çeşitleri"
                             },
                             {
-                                "ad": "Çemen"
+                                "ad": "Omlet Çeşitleri"
                             },
                             {
-                                "ad": "İki çeşit reçel"
+                                "ad": "Sahanda Çeşitleri"
                             },
                             {
-                                "ad": "Bal ve kaymak"
+                                "ad": "Kahvaltı Reçelleri (kendi üretimimizdir)"
                             },
                             {
-                                "ad": "Çikolata"
+                                "ad": "Izgara Hellim"
                             },
                             {
-                                "ad": "Tereyağı"
+                                "ad": "Mıhlama"
                             },
                             {
-                                "ad": "Biberli lor"
+                                "ad": "Tulum Eritme"
                             },
                             {
-                                "ad": "Şımarık",
-                                "gorsel": "menu/simarik.jpg"
+                                "ad": "Kıymalı Çiğ Börek"
                             },
                             {
-                                "ad": "Söğüş tabağı — domates, kıl biber ve salatalık"
+                                "ad": "Peynirli Çiğ Börek"
                             },
                             {
-                                "ad": "Peynir tabağı — 3 çeşit: tulum, beyaz peynir ve taze kaşar"
-                            },
+                                "ad": "Paçanga Böreği"
+                            }
+                        ]
+                    },
+                    {
+                        "ad": "Kahvaltı İçecekleri",
+                        "urunler": [
                             {
-                                "ad": "Sigara böreği"
-                            },
-                            {
-                                "ad": "Patates kızartması"
-                            },
-                            {
-                                "ad": "Pişi"
-                            },
-                            {
-                                "ad": "Taze yeşillikler"
+                                "ad": "Taze Sıkılmış Portakal Suyu"
                             },
                             {
                                 "ad": "Çay"
                             },
                             {
-                                "ad": "Gevrek ve ekmek çeşitleri"
+                                "ad": "Americano"
+                            },
+                            {
+                                "ad": "Türk Kahvesi"
+                            },
+                            {
+                                "ad": "Espresso"
+                            },
+                            {
+                                "ad": "Nescafe"
+                            },
+                            {
+                                "ad": "Bitki Çayı Çeşitleri"
                             }
                         ]
                     }

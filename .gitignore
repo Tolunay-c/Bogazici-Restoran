@@ -19,3 +19,11 @@ v-1/data/mail.log*
 v-1/IPAD*
 **/IPAD*
 *.CR2
+
+# Müşteriden gelen büyük materyaller (Drive indirmeleri, docx/pdf) ve araç çıktıları
+v-1/Mezeler/
+v-1/Mezeler-*.zip
+v-1/drive-download*
+v-1/Menü*.docx
+v-1/Menü*.pdf
+.playwright-mcp/
