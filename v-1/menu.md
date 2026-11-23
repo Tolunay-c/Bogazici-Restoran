@@ -108,15 +108,11 @@ TAKIM KAHVALTILAR
 1 Kişilik Takım Kahvaltı (Kişi Başı Fiyatlandırılı)	TAKIM KAHVALTILAR
 DANA BONFİLE ÇEŞİTLERİ	
 Bonfileden Çoban Kavurma	DANA BONFİLE ÇEŞİTLERİ
-Dana Bonfile Şiş	DANA BONFİLE ÇEŞİTLERİ
 Boğaziçi Lokum	DANA BONFİLE ÇEŞİTLERİ
 Boğaziçi Spagetti	DANA BONFİLE ÇEŞİTLERİ
 Tereyağında Lokum	DANA BONFİLE ÇEŞİTLERİ
 Boğaziçi Şaşlık	DANA BONFİLE ÇEŞİTLERİ
-Kaşarlı Bonfile	DANA BONFİLE ÇEŞİTLERİ
 Dana Bonfile Sote	DANA BONFİLE ÇEŞİTLERİ
-Kaşarlı Mantarlı Bonfile	DANA BONFİLE ÇEŞİTLERİ
-Soğanlı Bonfile	DANA BONFİLE ÇEŞİTLERİ
 Mantar Soslu Bonfile	DANA BONFİLE ÇEŞİTLERİ
 Bonfile	DANA BONFİLE ÇEŞİTLERİ
 Bonfileden Saç Kavurma	DANA BONFİLE ÇEŞİTLERİ
@@ -143,7 +139,6 @@ Kuzu Kaburga	KEBAPLAR
 Kasap Köfte	KEBAPLAR
 Kuzu Kaburga Sıyırma	KEBAPLAR
 Dürüm Beyti	KEBAPLAR
-Kuzu Kaburga Şiş	KEBAPLAR
 Tereyağında Küşleme	KEBAPLAR
 Fıstıklı Dürüm Beyti	KEBAPLAR
 Kaşarlı Köfte	KEBAPLAR

@@ -1008,9 +1008,6 @@
                                 "ad": "Çöp Şiş"
                             },
                             {
-                                "ad": "Kuzu Kaburga Şiş"
-                            },
-                            {
                                 "ad": "Küşleme"
                             },
                             {
@@ -1121,22 +1118,8 @@
                                 "gorsel": "menu/bonfile.jpg"
                             },
                             {
-                                "ad": "Kaşarlı Bonfile",
-                                "gorsel": "menu/kasarli-bonfile.jpg"
-                            },
-                            {
-                                "ad": "Kaşarlı Mantarlı Bonfile"
-                            },
-                            {
                                 "ad": "Mantar Soslu Bonfile",
                                 "gorsel": "menu/demiglace-solu-mantarli-bonfile-ipade.jpg"
-                            },
-                            {
-                                "ad": "Soğanlı Bonfile",
-                                "gorsel": "menu/soganli-bonfile.jpg"
-                            },
-                            {
-                                "ad": "Dana Bonfile Şiş"
                             },
                             {
                                 "ad": "Bonfileden Çoban Kavurma",
