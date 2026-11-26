@@ -4,7 +4,6 @@ Kıymalı Yumurtalı Pide	Pideler
 Kıymalı Kaşarlı Pide	Pideler
 Kaşarlı Pide	Pideler
 Kuşbaşılı Pide	Pideler
-Kaşarlı Yumurtalı Pide	Pideler
 Kuşbaşılı Kaşarlı Pide	Pideler
 Kuşbaşılı Yumurt.Pide	Pideler
 Lahmacun	Lahmacunlar

@@ -438,7 +438,6 @@ $menu_kategorileri = [
         ['ad' => 'Kuşbaşılı Kaşarlı Pide', 'gorsel' => 'menu/kusbasili-kasarli-pide.jpg'],
         ['ad' => 'Kuşbaşılı Yumurtalı Pide', 'gorsel' => 'menu/kusbasili-yumurtali-pide.jpg'],
         ['ad' => 'Kaşarlı Pide', 'gorsel' => 'menu/kasarli-pide.jpg'],
-        ['ad' => 'Kaşarlı Yumurtalı Pide'],
     ]],
     ['ad' => 'Kebaplar', 'urunler' => [
         ['ad' => 'Adana (Acılı)', 'gorsel' => 'menu/adana.jpg'],
